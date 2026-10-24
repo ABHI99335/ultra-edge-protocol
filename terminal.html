@@ -205,74 +205,86 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
         
-<script>
-    const assets = [
-        { id: 'spx', price: 5210.40, base: 5210.40, dec: 2, vol: 2 },
-        { id: 'ndx', price: 18245.30, base: 18245.30, dec: 2, vol: 15 },
-        { id: 'dji', price: 39120.80, base: 39120.80, dec: 2, vol: 10 },
-        { id: 'eur', price: 1.08540, base: 1.08540, dec: 5, vol: 0.0002 },
-        { id: 'gbp', price: 1.26450, base: 1.26450, dec: 5, vol: 0.0002 },
-        { id: 'jpy', price: 154.220, base: 154.220, dec: 3, vol: 0.02 },
-        { id: 'dxy', price: 105.240, base: 105.240, dec: 3, vol: 0.03 },
-        { id: 'btc', price: 64120.00, base: 64120.00, dec: 2, vol: 45 },
-        { id: 'eth', price: 3140.50, base: 3140.50, dec: 2, vol: 5 },
-        { id: 'sol', price: 145.20, base: 145.20, dec: 2, vol: 0.5 },
-        { id: 'xau', price: 2384.50, base: 2384.50, dec: 2, vol: 1.5 },
-        { id: 'wti', price: 82.40, base: 82.40, dec: 2, vol: 0.1 }
-    ];
+    <script>
+    // Real Live Data via Free APIs
+    const assets = {
+        btc: { symbol: 'BTCUSDT', type: 'crypto', dec: 2 },
+        eth: { symbol: 'ETHUSDT', type: 'crypto', dec: 2 },
+        sol: { symbol: 'SOLUSDT', type: 'crypto', dec: 2 },
+        xau: { symbol: 'GC=F', type: 'yahoo', dec: 2 },
+        ndx: { symbol: 'NQ=F', type: 'yahoo', dec: 2 },
+        spx: { symbol: 'ES=F', type: 'yahoo', dec: 2 },
+        dji: { symbol: 'YM=F', type: 'yahoo', dec: 2 },
+        eur: { symbol: 'EURUSD=X', type: 'yahoo', dec: 4 },
+        gbp: { symbol: 'GBPUSD=X', type: 'yahoo', dec: 4 },
+        jpy: { symbol: 'JPY=X', type: 'yahoo', dec: 2 },
+        dxy: { symbol: 'DX-Y.NYB', type: 'yahoo', dec: 2 },
+        wti: { symbol: 'CL=F', type: 'yahoo', dec: 2 }
+    };
 
-    function updatePrices() {
-        assets.forEach(asset => {
-            // Price change
-            const change = (Math.random() - 0.5) * asset.vol;
-            asset.price += change;
-            
-            const priceEl = document.getElementById(asset.id + '-price');
-            if(!priceEl) return;
+    async function fetchLiveData() {
+        try {
+            const binanceReq = await fetch('https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","SOLUSDT"]');
+            const binanceData = await binanceReq.json();
+            binanceData.forEach(d => {
+                const id = d.symbol.replace('USDT', '').toLowerCase();
+                updateDOM(id, parseFloat(d.lastPrice), parseFloat(d.priceChangePercent), assets[id].dec);
+            });
+        } catch (e) { console.error('Crypto fetch error', e); }
 
-            priceEl.innerText = asset.price.toFixed(asset.dec);
-            priceEl.classList.remove('flash-green', 'flash-red');
-            void priceEl.offsetWidth; 
-            if (change > 0) priceEl.classList.add('flash-green');
-            else if (change < 0) priceEl.classList.add('flash-red');
+        for (const [id, asset] of Object.entries(assets)) {
+            if (asset.type !== 'yahoo') continue;
+            try {
+                const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://query1.finance.yahoo.com/v8/finance/chart/${asset.symbol}`)}`;
+                const yfReq = await fetch(proxyUrl);
+                const yfData = await yfReq.json();
+                
+                if (yfData && yfData.chart && yfData.chart.result) {
+                    const meta = yfData.chart.result[0].meta;
+                    const price = meta.regularMarketPrice;
+                    const prevClose = meta.chartPreviousClose || meta.previousClose;
+                    const pctChange = ((price - prevClose) / prevClose) * 100;
+                    
+                    updateDOM(id, price, pctChange, asset.dec);
+                }
+            } catch (e) { console.error(`Yahoo fetch error for ${id}`, e); }
+        }
+    }
 
-            // Pct change
-            const pct = ((asset.price - asset.base) / asset.base) * 100;
-            updatePct(asset.id + '-1h', pct * 0.3);
-            updatePct(asset.id + '-12h', pct * 0.7);
-            updatePct(asset.id + '-24h', pct);
+    function updateDOM(id, price, pctChange, dec) {
+        const priceEl = document.getElementById(id + '-price');
+        if(!priceEl) return;
+        const oldPrice = parseFloat(priceEl.innerText.replace(/,/g, ''));
+        priceEl.innerText = price.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+        
+        priceEl.classList.remove('flash-green', 'flash-red');
+        void priceEl.offsetWidth; 
+        if (price > oldPrice) priceEl.classList.add('flash-green');
+        else if (price < oldPrice) priceEl.classList.add('flash-red');
 
-            // Technical Indicators
-            const rsi = Math.floor(Math.random() * 50) + 25; // 25 - 75
-            const macd = (Math.random() - 0.5) * 4;
-            const vol = Math.floor(Math.random() * 5000) + 1000;
+        updatePct(id + '-1h', pctChange * 0.2);
+        updatePct(id + '-12h', pctChange * 0.6);
+        updatePct(id + '-24h', pctChange);
 
-            // Regime Logic
-            let regime = "RANGING";
-            let regimeClass = "regime-ranging";
-            if (rsi > 65 && macd > 1) { regime = "TRENDING UP"; regimeClass = "regime-trending"; }
-            else if (rsi < 35 && macd < -1) { regime = "TRENDING DOWN"; regimeClass = "regime-trending"; }
-            else if (vol > 5500) { regime = "VOLATILE"; regimeClass = "regime-volatile"; }
+        const rsi = Math.min(Math.max(Math.floor(50 + (pctChange * 5) + (Math.random() * 10 - 5)), 10), 90);
+        const macd = pctChange * 0.5 + (Math.random() - 0.5);
+        const vol = Math.floor(Math.random() * 5000) + 1000;
 
-            const rsiEl = document.getElementById(asset.id + '-rsi');
-            const macdEl = document.getElementById(asset.id + '-macd');
-            const volEl = document.getElementById(asset.id + '-vol');
-            const regEl = document.getElementById(asset.id + '-regime');
+        let regime = "RANGING";
+        let regimeClass = "regime-ranging";
+        if (rsi > 60 && macd > 0.5) { regime = "TRENDING UP"; regimeClass = "regime-trending"; }
+        else if (rsi < 40 && macd < -0.5) { regime = "TRENDING DOWN"; regimeClass = "regime-trending"; }
+        else if (vol > 5500) { regime = "VOLATILE"; regimeClass = "regime-volatile"; }
 
-            if(rsiEl) {
-                rsiEl.innerText = rsi;
-                rsiEl.className = rsi > 70 ? 'down' : (rsi < 30 ? 'up' : 'neutral');
-            }
-            if(macdEl) {
-                macdEl.innerText = macd.toFixed(2);
-                macdEl.className = macd > 0 ? 'up' : 'down';
-            }
-            if(volEl) volEl.innerText = vol.toLocaleString();
-            if(regEl) {
-                regEl.innerText = regime;
-                regEl.className = 'regime-text ' + regimeClass;
-            }
-        });
+        const rsiEl = document.getElementById(id + '-rsi');
+        const macdEl = document.getElementById(id + '-macd');
+        const volEl = document.getElementById(id + '-vol');
+        const regEl = document.getElementById(id + '-regime');
+
+        if(rsiEl) { rsiEl.innerText = rsi; rsiEl.className = rsi > 70 ? 'down' : (rsi < 30 ? 'up' : 'neutral'); }
+        if(macdEl) { macdEl.innerText = macd.toFixed(2); macdEl.className = macd > 0 ? 'up' : 'down'; }
+        if(volEl) volEl.innerText = vol.toLocaleString();
+        if(regEl) { regEl.innerText = regime; regEl.className = 'regime-text ' + regimeClass; }
     }
 
     function updatePct(id, val) {
@@ -282,7 +294,8 @@ document.addEventListener("DOMContentLoaded", () => {
         el.className = val > 0 ? 'up' : (val < 0 ? 'down' : 'neutral');
     }
 
-    setInterval(updatePrices, 1500);
+    fetchLiveData();
+    setInterval(fetchLiveData, 10000);
 
     const logBox = document.getElementById('log-box');
     const logMessages = [
@@ -291,13 +304,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "3-Stage validation passed: EURUSD",
         "WARNING: Liquidity gap on SOLUSD",
         "Tick data recalibrated to UTC",
-        "Prop-Firm constraints updated",
-        "Calculating R-expectancy for XAUUSD",
-        "Volatility squeeze detected on GBPUSD",
-        "MACD crossover detected on US500"
+        "Calculating R-expectancy for XAUUSD"
     ];
     let logIdx = 0;
-    
     function addLog() {
         if(!logBox) return;
         const now = new Date();
@@ -309,11 +318,11 @@ document.addEventListener("DOMContentLoaded", () => {
         logBox.appendChild(div);
         logBox.scrollTop = logBox.scrollHeight;
         logIdx++;
-        setTimeout(addLog, Math.random() * 2000 + 1000);
+        setTimeout(addLog, Math.random() * 3000 + 2000);
     }
     if(logBox) setTimeout(addLog, 1000);
-</script>
-
+    </script>
+    
     </body>
     </html>
     
