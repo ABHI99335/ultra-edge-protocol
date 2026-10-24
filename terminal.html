@@ -206,7 +206,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         
     <script>
-    // Real Live Data via Free APIs
     const assets = {
         btc: { symbol: 'BTCUSDT', type: 'crypto', dec: 2 },
         eth: { symbol: 'ETHUSDT', type: 'crypto', dec: 2 },
@@ -235,32 +234,41 @@ document.addEventListener("DOMContentLoaded", () => {
         for (const [id, asset] of Object.entries(assets)) {
             if (asset.type !== 'yahoo') continue;
             try {
-                const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(`https://query1.finance.yahoo.com/v8/finance/chart/${asset.symbol}`)}`;
+                // Using Codetabs proxy (more reliable than allorigins)
+                const targetUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${asset.symbol}`;
+                const proxyUrl = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}`;
+                
                 const yfReq = await fetch(proxyUrl);
                 const yfData = await yfReq.json();
                 
-                if (yfData && yfData.chart && yfData.chart.result) {
+                if (yfData && yfData.chart && yfData.chart.result && yfData.chart.result.length > 0) {
                     const meta = yfData.chart.result[0].meta;
                     const price = meta.regularMarketPrice;
                     const prevClose = meta.chartPreviousClose || meta.previousClose;
                     const pctChange = ((price - prevClose) / prevClose) * 100;
                     
                     updateDOM(id, price, pctChange, asset.dec);
+                } else {
+                    throw new Error("Invalid data format");
                 }
-            } catch (e) { console.error(`Yahoo fetch error for ${id}`, e); }
+            } catch (e) { 
+                console.error(`Yahoo fetch error for ${id}`, e);
+                const priceEl = document.getElementById(id + '-price');
+                if(priceEl) priceEl.innerText = "ERR";
+            }
         }
     }
 
     function updateDOM(id, price, pctChange, dec) {
         const priceEl = document.getElementById(id + '-price');
         if(!priceEl) return;
-        const oldPrice = parseFloat(priceEl.innerText.replace(/,/g, ''));
-        priceEl.innerText = price.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
         
-        priceEl.classList.remove('flash-green', 'flash-red');
+        priceEl.innerText = price.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
+        priceEl.classList.remove('flash-green', 'flash-red', 'down', 'up', 'neutral');
         void priceEl.offsetWidth; 
-        if (price > oldPrice) priceEl.classList.add('flash-green');
-        else if (price < oldPrice) priceEl.classList.add('flash-red');
+        
+        if (pctChange > 0) priceEl.classList.add('flash-green', 'up');
+        else if (pctChange < 0) priceEl.classList.add('flash-red', 'down');
 
         updatePct(id + '-1h', pctChange * 0.2);
         updatePct(id + '-12h', pctChange * 0.6);
@@ -270,8 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const macd = pctChange * 0.5 + (Math.random() - 0.5);
         const vol = Math.floor(Math.random() * 5000) + 1000;
 
-        let regime = "RANGING";
-        let regimeClass = "regime-ranging";
+        let regime = "RANGING"; let regimeClass = "regime-ranging";
         if (rsi > 60 && macd > 0.5) { regime = "TRENDING UP"; regimeClass = "regime-trending"; }
         else if (rsi < 40 && macd < -0.5) { regime = "TRENDING DOWN"; regimeClass = "regime-trending"; }
         else if (vol > 5500) { regime = "VOLATILE"; regimeClass = "regime-volatile"; }
@@ -296,31 +303,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchLiveData();
     setInterval(fetchLiveData, 10000);
-
-    const logBox = document.getElementById('log-box');
-    const logMessages = [
-        "Ingest pipeline sync: OK",
-        "Order flow divergence detected on NAS100",
-        "3-Stage validation passed: EURUSD",
-        "WARNING: Liquidity gap on SOLUSD",
-        "Tick data recalibrated to UTC",
-        "Calculating R-expectancy for XAUUSD"
-    ];
-    let logIdx = 0;
-    function addLog() {
-        if(!logBox) return;
-        const now = new Date();
-        const timeStr = `[${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}]`;
-        const msg = logMessages[logIdx % logMessages.length];
-        const isWarn = msg.includes("WARNING");
-        const div = document.createElement('div');
-        div.innerHTML = `<span class="log-time">${timeStr}</span> <span class="${isWarn ? 'log-error' : 'log-success'}">${isWarn ? 'WARN' : 'INFO'}</span>: ${msg}`;
-        logBox.appendChild(div);
-        logBox.scrollTop = logBox.scrollHeight;
-        logIdx++;
-        setTimeout(addLog, Math.random() * 3000 + 2000);
-    }
-    if(logBox) setTimeout(addLog, 1000);
     </script>
     
     </body>
