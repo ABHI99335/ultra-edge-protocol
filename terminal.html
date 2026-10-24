@@ -4,303 +4,67 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="ULTRA EDGE PROTOCOL - Quantitative research portfolio specializing in algorithmic strategy validation and market microstructure.">
         <title>Terminal | ULTRA EDGE PROTOCOL</title>
-        
-<style>
-    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@400;600&display=swap');
-    :root {
-        --bg: #131416; --surface: #1b1c1e; --surface-2: #242527; --orange: #FF6600; 
-        --text-white: #F5F5F5; --text-dim: #9A9A9A; --border: #333436;
-        --mono: 'JetBrains Mono', monospace; --sans: 'Inter', sans-serif;
-        --up: #00FF66; --down: #FF3333;
-    }
-    
-    html, body { margin: 0; padding: 0; overflow-x: hidden; background-color: var(--bg); }
-    
-    ::-webkit-scrollbar { width: 8px; height: 8px; }
-    ::-webkit-scrollbar-track { background: var(--bg); border-left: 1px solid var(--border); }
-    ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 4px; }
-    
-    body { color: var(--text-white); font-family: var(--mono); line-height: 1.6; font-size: 14px; -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums; }
-    
-    h1, h2, h3 { 
-        color: var(--orange); font-weight: 700; margin-top: 0; text-transform: uppercase; letter-spacing: 0.05em; 
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6), 0px 0px 15px rgba(255, 102, 0, 0.1);
-    }
-
-    /* White Glowing Cursor */
-    @media (pointer: fine) {
-        * { cursor: none !important; }
-        .cursor-dot { position: fixed; width: 6px; height: 6px; background: #FFFFFF; border-radius: 50%; pointer-events: none; z-index: 2147483647; transform: translate(-50%, -50%); box-shadow: 0 0 10px rgba(255,255,255,0.8); transition: background 0.2s; }
-        .cursor-ring { position: fixed; width: 35px; height: 35px; border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 50%; pointer-events: none; z-index: 2147483646; transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s, border-color 0.2s; }
-        .cursor-hover .cursor-dot { background: var(--orange); box-shadow: 0 0 15px var(--orange); }
-        .cursor-hover .cursor-ring { width: 60px; height: 60px; border-color: var(--orange); background: rgba(255, 102, 0, 0.05); }
-    }
-
-    /* Navigation */
-    .nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; border-bottom: 1px solid var(--border); background: rgba(19, 20, 22, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
-    .brand { font-size: 18px; font-weight: 700; letter-spacing: 0.1em; text-decoration: none; color: var(--text-white); }
-    .brand span { color: var(--orange); }
-    .nav-links { display: flex; gap: 15px; flex-wrap: wrap; }
-    .nav-links a { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; padding: 6px 12px; transition: 0.2s; border: 1px solid transparent; border-radius: 2px; }
-    .nav-links a:hover, .nav-links a.active { color: #000; background: var(--orange); border: 1px solid var(--orange); font-weight: bold; box-shadow: 0 0 15px rgba(255, 102, 0, 0.3); }
-
-    /* Layout */
-    .container { max-width: 1400px; margin: 0 auto; padding: 50px 20px; min-height: 80vh; }
-    .hero-title { font-size: 2.8rem; border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-bottom: 30px; }
-    .lead { color: var(--text-dim); font-size: 1.1rem; margin-bottom: 40px; max-width: 80ch; }
-
-    /* Traders Quotes */
-    .quote-box { border-left: 4px solid var(--orange); background: rgba(255, 102, 0, 0.05); padding: 20px 25px; margin: 30px 0; font-size: 1.1rem; font-style: italic; color: #DDD; }
-    .quote-author { display: block; margin-top: 10px; font-size: 12px; font-style: normal; color: var(--orange); font-weight: 700; letter-spacing: 0.1em; }
-
-    /* Pro Terminal Tables */
-    .panel-title { font-size: 12px; color: var(--text-dim); letter-spacing: 0.1em; margin: 30px 0 10px 0; text-transform: uppercase; border-left: 3px solid var(--orange); padding-left: 10px; }
-    .table-container { overflow-x: auto; border: 1px solid var(--border); background: var(--surface); border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    table { width: 100%; border-collapse: collapse; text-align: left; min-width: 1100px; }
-    th, td { padding: 12px 18px; border-bottom: 1px solid var(--border); font-size: 13px; }
-    th { background: var(--surface-2); color: var(--orange); text-transform: uppercase; font-weight: 700; border-bottom: 2px solid var(--orange); letter-spacing: 0.1em; font-size: 11px; position: sticky; top: 0; }
-    tr:hover td { background: rgba(255, 102, 0, 0.03); }
-    
-    .asset-name { font-weight: 700; font-size: 15px; color: var(--text-white); display: block; }
-    .asset-desc { font-size: 10px; color: var(--text-dim); display: block; margin-top: 2px; text-transform: uppercase; }
-    .price { font-size: 16px; font-weight: 500; color: #FFF; }
-    
-    .up { color: var(--up); font-weight: 700; }
-    .down { color: var(--down); font-weight: 700; }
-    .neutral { color: var(--text-dim); font-weight: 700; }
-    .flash-green { animation: flash-green 0.5s ease; }
-    .flash-red { animation: flash-red 0.5s ease; }
-    @keyframes flash-green { 0% { background-color: rgba(0, 255, 102, 0.2); } 100% { background-color: transparent; } }
-    @keyframes flash-red { 0% { background-color: rgba(255, 51, 51, 0.2); } 100% { background-color: transparent; } }
-    
-    .bias-badge { padding: 4px 8px; font-size: 11px; font-weight: 700; border-radius: 2px; letter-spacing: 0.05em; display: inline-block; }
-    .bias-bullish { background: rgba(0, 255, 102, 0.1); color: var(--up); border: 1px solid rgba(0, 255, 102, 0.3); }
-    .bias-bearish { background: rgba(255, 51, 51, 0.1); color: var(--down); border: 1px solid rgba(255, 51, 51, 0.3); }
-    .bias-neutral { background: rgba(154, 154, 154, 0.1); color: var(--text-dim); border: 1px solid rgba(154, 154, 154, 0.3); }
-
-    .regime-text { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
-    .regime-trending { color: var(--orange); }
-    .regime-ranging { color: #FFCC00; }
-    .regime-volatile { color: var(--down); }
-
-    /* Log Box */
-    .log-box { background: #050505; border: 1px solid var(--border); padding: 20px; margin-top: 50px; border-radius: 4px; font-size: 13px; color: var(--text-dim); line-height: 1.8; box-shadow: inset 0 0 20px rgba(0,0,0,0.9); height: 180px; overflow-y: hidden; position: relative; }
-    .log-box::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 40px; background: linear-gradient(transparent, #050505); }
-    .log-time { color: var(--orange); margin-right: 10px; }
-    .log-success { color: var(--up); }
-    .log-error { color: var(--down); }
-
-    /* Cards */
-    .card { background: var(--surface); border: 1px solid var(--border); padding: 25px; margin-bottom: 20px; position: relative; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
-    .card:hover { border-color: var(--orange); background: var(--surface-2); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 102, 0, 0.1); }
-    .cause { color: #000; background: var(--orange); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 15px; display: inline-block; padding: 4px 8px; border-radius: 2px; }
-    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
-    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; border-top: 1px solid var(--border); padding-top: 30px; margin-top: 40px; }
-    .badge { padding: 4px 8px; border: 1px solid #FF0000; font-size: 11px; font-weight: bold; color: #FF0000; background: rgba(255,0,0,0.1); border-radius: 2px; }
-    .bg-green { color: #00FF00; border-color: #00FF00; background: rgba(0,255,0,0.1); }
-
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
-    .reveal.active { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 900px) {
-        .nav { flex-direction: column; gap: 15px; padding: 15px; }
-        .grid-4 { grid-template-columns: 1fr; }
-        .hero-title { font-size: 2rem; }
-    }
-</style>
-
+        <link rel="stylesheet" href="assets/style.css">
+        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+        <script src="assets/app.js" defer></script>
     </head>
     <body>
-        
-    <nav class="nav" data-lenis-prevent>
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header>
+    <nav class="nav">
         <a class="brand" href="index.html">ULTRA<span>.EDGE</span></a>
         <div class="nav-links"><a href="index.html" >Home</a><a href="terminal.html" class="active">Terminal</a><a href="constitution.html" >Constitution</a><a href="ecosystem.html" >Ecosystem</a><a href="vault.html" >Vault</a><a href="graveyard.html" >Graveyard</a></div>
     </nav>
+    </header>
+        <main id="main-content" class="container">
+            
+    <h1 class="hero-title reveal">MARKET TERMINAL</h1>
+    <p class="lead reveal">Live market data sourced via public APIs (Binance, Gold-API, Frankfurter, Yahoo Finance). Updates every 10 seconds.</p>
     
-        <div class="container">
-            <h1 class="hero-title reveal">MARKET TERMINAL</h1>
-            <p class="lead reveal">Live institutional quote board. 1H, 12H, and 24H directional bias with real-time technical regime simulation.</p>
-            
-            <div class="quote-box reveal">
-                "The market can remain irrational longer than you can remain solvent."
-                <span class="quote-author">— John Maynard Keynes</span>
-            </div>
-            
-            <div class="reveal">
-                <div class="panel-title">Global Macro & Indices</div>
-                <div class="table-container">
-                    <table>
-                        <tr><th style="width: 20%;">Asset</th><th>Price</th><th>1H</th><th>12H</th><th>24H</th><th>RSI</th><th>MACD</th><th>Vol</th><th>Regime</th></tr>
-                        <tr><td><span class="asset-name">US500</span><span class="asset-desc">S&P 500</span></td><td class="price" id="spx-price">5,210.40</td><td id="spx-1h" class="up">+0.15%</td><td id="spx-12h" class="up">+0.45%</td><td id="spx-24h" class="up">+1.10%</td><td id="spx-rsi" class="neutral">50</td><td id="spx-macd" class="neutral">0.0</td><td id="spx-vol" class="neutral">0</td><td id="spx-regime" class="regime-text regime-ranging">RANGING</td></tr>
-                        <tr><td><span class="asset-name">NAS100</span><span class="asset-desc">Nasdaq 100</span></td><td class="price" id="ndx-price">18,245.30</td><td id="ndx-1h" class="down">-0.34%</td><td id="ndx-12h" class="up">+0.85%</td><td id="ndx-24h" class="up">+2.10%</td><td id="ndx-rsi" class="neutral">50</td><td id="ndx-macd" class="neutral">0.0</td><td id="ndx-vol" class="neutral">0</td><td id="ndx-regime" class="regime-text regime-ranging">RANGING</td></tr>
-                        <tr><td><span class="asset-name">DXY</span><span class="asset-desc">Dollar Index</span></td><td class="price" id="dxy-price">105.240</td><td id="dxy-1h" class="up">+0.08%</td><td id="dxy-12h" class="up">+0.22%</td><td id="dxy-24h" class="up">+0.40%</td><td id="dxy-rsi" class="neutral">50</td><td id="dxy-macd" class="neutral">0.0</td><td id="dxy-vol" class="neutral">0</td><td id="dxy-regime" class="regime-text regime-ranging">RANGING</td></tr>
-                        <tr><td><span class="asset-name">EURUSD</span><span class="asset-desc">Euro / Dollar</span></td><td class="price" id="eur-price">1.08540</td><td id="eur-1h" class="down">-0.05%</td><td id="eur-12h" class="down">-0.12%</td><td id="eur-24h" class="up">+0.08%</td><td id="eur-rsi" class="neutral">50</td><td id="eur-macd" class="neutral">0.0</td><td id="eur-vol" class="neutral">0</td><td id="eur-regime" class="regime-text regime-ranging">RANGING</td></tr>
-                    </table>
-                </div>
-
-                <div class="panel-title" style="margin-top: 40px;">Digital Assets & Commodities</div>
-                <div class="table-container">
-                    <table>
-                        <tr><th style="width: 20%;">Asset</th><th>Price</th><th>1H</th><th>12H</th><th>24H</th><th>RSI</th><th>MACD</th><th>Vol</th><th>Regime</th></tr>
-                        <tr><td><span class="asset-name">BTCUSD</span><span class="asset-desc">Bitcoin</span></td><td class="price" id="btc-price">64,120.00</td><td id="btc-1h" class="up">+0.15%</td><td id="btc-12h" class="down">-1.20%</td><td id="btc-24h" class="down">-3.40%</td><td id="btc-rsi" class="neutral">50</td><td id="btc-macd" class="neutral">0.0</td><td id="btc-vol" class="neutral">0</td><td id="btc-regime" class="regime-text regime-ranging">RANGING</td></tr>
-                        <tr><td><span class="asset-name">ETHUSD</span><span class="asset-desc">Ethereum</span></td><td class="price" id="eth-price">3,140.50</td><td id="eth-1h" class="down">-0.10%</td><td id="eth-12h" class="up">+0.50%</td><td id="eth-24h" class="down">-1.10%</td><td id="eth-rsi" class="neutral">50</td><td id="eth-macd" class="neutral">0.0</td><td id="eth-vol" class="neutral">0</td><td id="eth-regime" class="regime-text regime-ranging">RANGING</td></tr>
-                        <tr><td><span class="asset-name">XAUUSD</span><span class="asset-desc">Gold Spot</span></td><td class="price" id="xau-price">2,384.50</td><td id="xau-1h" class="up">+0.12%</td><td id="xau-12h" class="up">+0.45%</td><td id="xau-24h" class="up">+1.20%</td><td id="xau-rsi" class="neutral">50</td><td id="xau-macd" class="neutral">0.0</td><td id="xau-vol" class="neutral">0</td><td id="xau-regime" class="regime-text regime-ranging">RANGING</td></tr>
-                        <tr><td><span class="asset-name">WTIUSD</span><span class="asset-desc">Crude Oil</span></td><td class="price" id="wti-price">82.40</td><td id="wti-1h" class="down">-0.45%</td><td id="wti-12h" class="down">-1.10%</td><td id="wti-24h" class="down">-2.30%</td><td id="wti-rsi" class="neutral">50</td><td id="wti-macd" class="neutral">0.0</td><td id="wti-vol" class="neutral">0</td><td id="wti-regime" class="regime-text regime-ranging">RANGING</td></tr>
-                    </table>
-                </div>
-
-                <div class="log-box" id="log-box">
-                    <div><span class="log-time">[SYSTEM]</span> Connecting to ingest pipeline...</div>
-                    <div><span class="log-time">[SYSTEM]</span> <span class="log-success">SUCCESS</span>: Streams mapped (UTC).</div>
-                </div>
-            </div>
+    <div class="reveal">
+        <div class="panel-title">Global Macro & Indices</div>
+        <div class="table-container">
+            <table aria-live="polite">
+                <tr><th style="width: 20%;">Asset</th><th>Price</th><th>1H</th><th>12H</th><th>24H</th><th>RSI</th><th>MACD</th><th>Vol</th><th>Regime</th></tr>
+                <tr><td><span class="asset-name">US500</span><span class="asset-desc">S&P 500</span></td><td class="price" id="spx-price">LOADING</td><td id="spx-1h">-</td><td id="spx-12h">-</td><td id="spx-24h">-</td><td id="spx-rsi">-</td><td id="spx-macd">-</td><td id="spx-vol">-</td><td id="spx-regime" class="regime-text">-</td></tr>
+                <tr><td><span class="asset-name">NAS100</span><span class="asset-desc">Nasdaq 100</span></td><td class="price" id="ndx-price">LOADING</td><td id="ndx-1h">-</td><td id="ndx-12h">-</td><td id="ndx-24h">-</td><td id="ndx-rsi">-</td><td id="ndx-macd">-</td><td id="ndx-vol">-</td><td id="ndx-regime" class="regime-text">-</td></tr>
+                <tr><td><span class="asset-name">DXY</span><span class="asset-desc">Dollar Index</span></td><td class="price" id="dxy-price">LOADING</td><td id="dxy-1h">-</td><td id="dxy-12h">-</td><td id="dxy-24h">-</td><td id="dxy-rsi">-</td><td id="dxy-macd">-</td><td id="dxy-vol">-</td><td id="dxy-regime" class="regime-text">-</td></tr>
+                <tr><td><span class="asset-name">EURUSD</span><span class="asset-desc">Euro / Dollar</span></td><td class="price" id="eur-price">LOADING</td><td id="eur-1h">-</td><td id="eur-12h">-</td><td id="eur-24h">-</td><td id="eur-rsi">-</td><td id="eur-macd">-</td><td id="eur-vol">-</td><td id="eur-regime" class="regime-text">-</td></tr>
+                <tr><td><span class="asset-name">USDJPY</span><span class="asset-desc">Dollar / Yen</span></td><td class="price" id="jpy-price">LOADING</td><td id="jpy-1h">-</td><td id="jpy-12h">-</td><td id="jpy-24h">-</td><td id="jpy-rsi">-</td><td id="jpy-macd">-</td><td id="jpy-vol">-</td><td id="jpy-regime" class="regime-text">-</td></tr>
+            </table>
         </div>
-        
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const isDesktop = window.matchMedia("(pointer: fine)").matches;
 
-    if (isDesktop) {
-        const dot = document.createElement('div'); dot.className = 'cursor-dot';
-        const ring = document.createElement('div'); ring.className = 'cursor-ring';
-        document.body.appendChild(dot); document.body.appendChild(ring);
-        let mX = 0, mY = 0, rX = 0, rY = 0;
-        
-        window.addEventListener('mousemove', (e) => {
-            mX = e.clientX; mY = e.clientY;
-            dot.style.transform = `translate(${mX}px, ${mY}px) translate(-50%, -50%)`;
-        });
-        
-        function animate() {
-            rX += (mX - rX) * 0.15; rY += (mY - rY) * 0.15;
-            ring.style.transform = `translate(${rX}px, ${rY}px) translate(-50%, -50%)`;
-            requestAnimationFrame(animate);
-        }
-        animate();
-        
-        document.querySelectorAll('a, button, .card, tr').forEach(el => {
-            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-        });
-    }
+        <div class="panel-title" style="margin-top: 40px;">Digital Assets & Commodities</div>
+        <div class="table-container">
+            <table aria-live="polite">
+                <tr><th style="width: 20%;">Asset</th><th>Price</th><th>1H</th><th>12H</th><th>24H</th><th>RSI</th><th>MACD</th><th>Vol</th><th>Regime</th></tr>
+                <tr><td><span class="asset-name">BTCUSD</span><span class="asset-desc">Bitcoin</span></td><td class="price" id="btc-price">LOADING</td><td id="btc-1h">-</td><td id="btc-12h">-</td><td id="btc-24h">-</td><td id="btc-rsi">-</td><td id="btc-macd">-</td><td id="btc-vol">-</td><td id="btc-regime" class="regime-text">-</td></tr>
+                <tr><td><span class="asset-name">ETHUSD</span><span class="asset-desc">Ethereum</span></td><td class="price" id="eth-price">LOADING</td><td id="eth-1h">-</td><td id="eth-12h">-</td><td id="eth-24h">-</td><td id="eth-rsi">-</td><td id="eth-macd">-</td><td id="eth-vol">-</td><td id="eth-regime" class="regime-text">-</td></tr>
+                <tr><td><span class="asset-name">XAUUSD</span><span class="asset-desc">Gold Spot</span></td><td class="price" id="xau-price">LOADING</td><td id="xau-1h">-</td><td id="xau-12h">-</td><td id="xau-24h">-</td><td id="xau-rsi">-</td><td id="xau-macd">-</td><td id="xau-vol">-</td><td id="xau-regime" class="regime-text">-</td></tr>
+                <tr><td><span class="asset-name">WTIUSD</span><span class="asset-desc">Crude Oil</span></td><td class="price" id="wti-price">LOADING</td><td id="wti-1h">-</td><td id="wti-12h">-</td><td id="wti-24h">-</td><td id="wti-rsi">-</td><td id="wti-macd">-</td><td id="wti-vol">-</td><td id="wti-regime" class="regime-text">-</td></tr>
+            </table>
+        </div>
+
+        <div class="log-box" id="log-box" aria-live="polite">
+            <div><span class="log-time">[SYSTEM]</span> Connecting to APIs...</div>
+        </div>
+    </div>
     
-    const lenis = new Lenis({ duration: 1.1, smoothTouch: false });
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
+        </main>
+        
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="https://www.instagram.com/abhishex08" target="_blank">Instagram</a>
+            <a href="https://github.com/ABHI99335" target="_blank">GitHub</a>
+            <a href="mailto:contact@ultraedge.dev">Email Me</a>
+            <a href="#" onclick="alert('CV Download Integration Coming Soon'); return false;">Download CV</a>
+        </div>
+        <div class="footer-copy">&copy; 2026 Abhishek Gupta. ULTRA EDGE PROTOCOL.</div>
+    </footer>
     
-    var reveals = document.querySelectorAll(".reveal");
-    var observer = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("active");
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
-    reveals.forEach(function(el) { observer.observe(el); });
-});
-</script>
-
-        
-    <script>
-    async function fetchLiveData() {
-        // 1. CRYPTO (Binance - No Proxy Needed)
-        try {
-            const res = await fetch('https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","SOLUSDT"]');
-            const data = await res.json();
-            data.forEach(d => {
-                const id = d.symbol.replace('USDT', '').toLowerCase();
-                updateDOM(id, parseFloat(d.lastPrice), parseFloat(d.priceChangePercent), 2);
-            });
-        } catch (e) { console.error('Crypto Error', e); }
-
-        // 2. GOLD (Gold-API - No Proxy Needed)
-        try {
-            const res = await fetch('https://api.gold-api.com/price/XAU');
-            const data = await res.json();
-            // API does not provide 24h change, so we fake a slight variance
-            updateDOM('xau', data.price, (Math.random() * 0.6 - 0.3), 2); 
-        } catch (e) { console.error('Gold Error', e); }
-
-        // 3. FOREX (Frankfurter - No Proxy Needed)
-        try {
-            const res = await fetch('https://api.frankfurter.app/latest?from=USD');
-            const data = await res.json();
-            if(data.rates) {
-                updateDOM('eur', 1/data.rates.EUR, 0.12, 4);
-                updateDOM('gbp', 1/data.rates.GBP, -0.05, 4);
-                updateDOM('jpy', data.rates.JPY, 0.25, 2);
-            }
-        } catch (e) { console.error('Forex Error', e); }
-
-        // 4. INDICES (Yahoo via Codetabs Proxy)
-        const yahooProxy = 'https://api.codetabs.com/v1/proxy?quest=';
-        const yahooAssets = { ndx: 'NQ=F', spx: 'ES=F', dji: 'YM=F', wti: 'CL=F', dxy: 'DX-Y.NYB' };
-        
-        for (const [id, symbol] of Object.entries(yahooAssets)) {
-            try {
-                const res = await fetch(yahooProxy + encodeURIComponent(`https://query1.finance.yahoo.com/v8/finance/chart/${symbol}`));
-                const data = await res.json();
-                if (data && data.chart && data.chart.result) {
-                    const meta = data.chart.result[0].meta;
-                    const price = meta.regularMarketPrice;
-                    const prevClose = meta.chartPreviousClose || meta.previousClose;
-                    const pct = ((price - prevClose) / prevClose) * 100;
-                    updateDOM(id, price, pct, 2);
-                }
-            } catch (e) { console.error(`Yahoo Error (${id})`, e); }
-        }
-    }
-
-    function updateDOM(id, price, pctChange, dec) {
-        const priceEl = document.getElementById(id + '-price');
-        if(!priceEl) return;
-        
-        priceEl.innerText = price.toLocaleString('en-US', { minimumFractionDigits: dec, maximumFractionDigits: dec });
-        priceEl.classList.remove('flash-green', 'flash-red', 'down', 'up', 'neutral');
-        void priceEl.offsetWidth; 
-        
-        if (pctChange > 0) priceEl.classList.add('flash-green', 'up');
-        else if (pctChange < 0) priceEl.classList.add('flash-red', 'down');
-
-        updatePct(id + '-1h', pctChange * 0.2);
-        updatePct(id + '-12h', pctChange * 0.6);
-        updatePct(id + '-24h', pctChange);
-
-        const rsi = Math.min(Math.max(Math.floor(50 + (pctChange * 5) + (Math.random() * 10 - 5)), 10), 90);
-        const macd = pctChange * 0.5 + (Math.random() - 0.5);
-        const vol = Math.floor(Math.random() * 5000) + 1000;
-
-        let regime = "RANGING"; let regimeClass = "regime-ranging";
-        if (rsi > 60 && macd > 0.5) { regime = "TRENDING UP"; regimeClass = "regime-trending"; }
-        else if (rsi < 40 && macd < -0.5) { regime = "TRENDING DOWN"; regimeClass = "regime-trending"; }
-        else if (vol > 5500) { regime = "VOLATILE"; regimeClass = "regime-volatile"; }
-
-        const rsiEl = document.getElementById(id + '-rsi');
-        const macdEl = document.getElementById(id + '-macd');
-        const volEl = document.getElementById(id + '-vol');
-        const regEl = document.getElementById(id + '-regime');
-
-        if(rsiEl) { rsiEl.innerText = rsi; rsiEl.className = rsi > 70 ? 'down' : (rsi < 30 ? 'up' : 'neutral'); }
-        if(macdEl) { macdEl.innerText = macd.toFixed(2); macdEl.className = macd > 0 ? 'up' : 'down'; }
-        if(volEl) volEl.innerText = vol.toLocaleString();
-        if(regEl) { regEl.innerText = regime; regEl.className = 'regime-text ' + regimeClass; }
-    }
-
-    function updatePct(id, val) {
-        const el = document.getElementById(id);
-        if(!el) return;
-        el.innerText = (val > 0 ? '+' : '') + val.toFixed(2) + '%';
-        el.className = val > 0 ? 'up' : (val < 0 ? 'down' : 'neutral');
-    }
-
-    fetchLiveData();
-    setInterval(fetchLiveData, 10000);
-    </script>
-    
+        <script src="assets/terminal.js" defer></script>
     </body>
     </html>
     
