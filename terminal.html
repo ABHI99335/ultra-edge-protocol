@@ -7,7 +7,6 @@
         <meta name="description" content="ULTRA EDGE PROTOCOL - Quantitative research portfolio specializing in algorithmic strategy validation and market microstructure.">
         <title>Terminal | ULTRA EDGE PROTOCOL</title>
         <link rel="stylesheet" href="assets/style.css">
-        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
         <script src="assets/app.js" defer></script>
     </head>
     <body>
@@ -21,34 +20,38 @@
         <main id="main-content" class="container">
             
     <h1 class="hero-title reveal">MARKET TERMINAL</h1>
-    <p class="lead reveal">Live market data sourced via public APIs (Binance, Gold-API, Frankfurter, Yahoo Finance). Updates every 10 seconds.</p>
+    <p class="lead reveal">Prices sourced via public APIs. <em>Technical indicators (RSI, MACD, Regime) are simulated for UI demonstration.</em></p>
     
     <div class="reveal">
-        <div class="panel-title">Global Macro & Indices</div>
+        <h2 class="panel-title">Global Macro & Indices</h2>
         <div class="table-container">
-            <table aria-live="polite">
-                <tr><th style="width: 20%;">Asset</th><th>Price</th><th>1H</th><th>12H</th><th>24H</th><th>RSI</th><th>MACD</th><th>Vol</th><th>Regime</th></tr>
-                <tr><td><span class="asset-name">US500</span><span class="asset-desc">S&P 500</span></td><td class="price" id="spx-price">LOADING</td><td id="spx-1h">-</td><td id="spx-12h">-</td><td id="spx-24h">-</td><td id="spx-rsi">-</td><td id="spx-macd">-</td><td id="spx-vol">-</td><td id="spx-regime" class="regime-text">-</td></tr>
-                <tr><td><span class="asset-name">NAS100</span><span class="asset-desc">Nasdaq 100</span></td><td class="price" id="ndx-price">LOADING</td><td id="ndx-1h">-</td><td id="ndx-12h">-</td><td id="ndx-24h">-</td><td id="ndx-rsi">-</td><td id="ndx-macd">-</td><td id="ndx-vol">-</td><td id="ndx-regime" class="regime-text">-</td></tr>
-                <tr><td><span class="asset-name">DXY</span><span class="asset-desc">Dollar Index</span></td><td class="price" id="dxy-price">LOADING</td><td id="dxy-1h">-</td><td id="dxy-12h">-</td><td id="dxy-24h">-</td><td id="dxy-rsi">-</td><td id="dxy-macd">-</td><td id="dxy-vol">-</td><td id="dxy-regime" class="regime-text">-</td></tr>
-                <tr><td><span class="asset-name">EURUSD</span><span class="asset-desc">Euro / Dollar</span></td><td class="price" id="eur-price">LOADING</td><td id="eur-1h">-</td><td id="eur-12h">-</td><td id="eur-24h">-</td><td id="eur-rsi">-</td><td id="eur-macd">-</td><td id="eur-vol">-</td><td id="eur-regime" class="regime-text">-</td></tr>
-                <tr><td><span class="asset-name">USDJPY</span><span class="asset-desc">Dollar / Yen</span></td><td class="price" id="jpy-price">LOADING</td><td id="jpy-1h">-</td><td id="jpy-12h">-</td><td id="jpy-24h">-</td><td id="jpy-rsi">-</td><td id="jpy-macd">-</td><td id="jpy-vol">-</td><td id="jpy-regime" class="regime-text">-</td></tr>
+            <table>
+                <thead>
+                    <tr><th scope="col" style="width: 20%;">Asset</th><th scope="col">Price</th><th scope="col">1H</th><th scope="col">12H</th><th scope="col">24H</th><th scope="col">RSI</th><th scope="col">MACD</th><th scope="col">Vol</th><th scope="col">Regime</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Asset"><span class="asset-name">US500</span><span class="asset-desc">S&P 500</span></td><td class="price" data-label="Price" id="spx-price">LOADING</td><td data-label="1H" id="spx-1h">-</td><td data-label="12H" id="spx-12h">-</td><td data-label="24H" id="spx-24h">-</td><td data-label="RSI" id="spx-rsi">-</td><td data-label="MACD" id="spx-macd">-</td><td data-label="Vol" id="spx-vol">-</td><td data-label="Regime" id="spx-regime" class="regime-text">-</td></tr>
+                    <tr><td data-label="Asset"><span class="asset-name">NAS100</span><span class="asset-desc">Nasdaq 100</span></td><td class="price" data-label="Price" id="ndx-price">LOADING</td><td data-label="1H" id="ndx-1h">-</td><td data-label="12H" id="ndx-12h">-</td><td data-label="24H" id="ndx-24h">-</td><td data-label="RSI" id="ndx-rsi">-</td><td data-label="MACD" id="ndx-macd">-</td><td data-label="Vol" id="ndx-vol">-</td><td data-label="Regime" id="ndx-regime" class="regime-text">-</td></tr>
+                    <tr><td data-label="Asset"><span class="asset-name">DXY</span><span class="asset-desc">Dollar Index</span></td><td class="price" data-label="Price" id="dxy-price">LOADING</td><td data-label="1H" id="dxy-1h">-</td><td data-label="12H" id="dxy-12h">-</td><td data-label="24H" id="dxy-24h">-</td><td data-label="RSI" id="dxy-rsi">-</td><td data-label="MACD" id="dxy-macd">-</td><td data-label="Vol" id="dxy-vol">-</td><td data-label="Regime" id="dxy-regime" class="regime-text">-</td></tr>
+                    <tr><td data-label="Asset"><span class="asset-name">EURUSD</span><span class="asset-desc">Euro / Dollar</span></td><td class="price" data-label="Price" id="eur-price">LOADING</td><td data-label="1H" id="eur-1h">-</td><td data-label="12H" id="eur-12h">-</td><td data-label="24H" id="eur-24h">-</td><td data-label="RSI" id="eur-rsi">-</td><td data-label="MACD" id="eur-macd">-</td><td data-label="Vol" id="eur-vol">-</td><td data-label="Regime" id="eur-regime" class="regime-text">-</td></tr>
+                    <tr><td data-label="Asset"><span class="asset-name">USDJPY</span><span class="asset-desc">Dollar / Yen</span></td><td class="price" data-label="Price" id="jpy-price">LOADING</td><td data-label="1H" id="jpy-1h">-</td><td data-label="12H" id="jpy-12h">-</td><td data-label="24H" id="jpy-24h">-</td><td data-label="RSI" id="jpy-rsi">-</td><td data-label="MACD" id="jpy-macd">-</td><td data-label="Vol" id="jpy-vol">-</td><td data-label="Regime" id="jpy-regime" class="regime-text">-</td></tr>
+                </tbody>
             </table>
         </div>
 
-        <div class="panel-title" style="margin-top: 40px;">Digital Assets & Commodities</div>
+        <h2 class="panel-title" style="margin-top: 40px;">Digital Assets & Commodities</h2>
         <div class="table-container">
-            <table aria-live="polite">
-                <tr><th style="width: 20%;">Asset</th><th>Price</th><th>1H</th><th>12H</th><th>24H</th><th>RSI</th><th>MACD</th><th>Vol</th><th>Regime</th></tr>
-                <tr><td><span class="asset-name">BTCUSD</span><span class="asset-desc">Bitcoin</span></td><td class="price" id="btc-price">LOADING</td><td id="btc-1h">-</td><td id="btc-12h">-</td><td id="btc-24h">-</td><td id="btc-rsi">-</td><td id="btc-macd">-</td><td id="btc-vol">-</td><td id="btc-regime" class="regime-text">-</td></tr>
-                <tr><td><span class="asset-name">ETHUSD</span><span class="asset-desc">Ethereum</span></td><td class="price" id="eth-price">LOADING</td><td id="eth-1h">-</td><td id="eth-12h">-</td><td id="eth-24h">-</td><td id="eth-rsi">-</td><td id="eth-macd">-</td><td id="eth-vol">-</td><td id="eth-regime" class="regime-text">-</td></tr>
-                <tr><td><span class="asset-name">XAUUSD</span><span class="asset-desc">Gold Spot</span></td><td class="price" id="xau-price">LOADING</td><td id="xau-1h">-</td><td id="xau-12h">-</td><td id="xau-24h">-</td><td id="xau-rsi">-</td><td id="xau-macd">-</td><td id="xau-vol">-</td><td id="xau-regime" class="regime-text">-</td></tr>
-                <tr><td><span class="asset-name">WTIUSD</span><span class="asset-desc">Crude Oil</span></td><td class="price" id="wti-price">LOADING</td><td id="wti-1h">-</td><td id="wti-12h">-</td><td id="wti-24h">-</td><td id="wti-rsi">-</td><td id="wti-macd">-</td><td id="wti-vol">-</td><td id="wti-regime" class="regime-text">-</td></tr>
+            <table>
+                <thead>
+                    <tr><th scope="col" style="width: 20%;">Asset</th><th scope="col">Price</th><th scope="col">1H</th><th scope="col">12H</th><th scope="col">24H</th><th scope="col">RSI</th><th scope="col">MACD</th><th scope="col">Vol</th><th scope="col">Regime</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td data-label="Asset"><span class="asset-name">BTCUSD</span><span class="asset-desc">Bitcoin</span></td><td class="price" data-label="Price" id="btc-price">LOADING</td><td data-label="1H" id="btc-1h">-</td><td data-label="12H" id="btc-12h">-</td><td data-label="24H" id="btc-24h">-</td><td data-label="RSI" id="btc-rsi">-</td><td data-label="MACD" id="btc-macd">-</td><td data-label="Vol" id="btc-vol">-</td><td data-label="Regime" id="btc-regime" class="regime-text">-</td></tr>
+                    <tr><td data-label="Asset"><span class="asset-name">ETHUSD</span><span class="asset-desc">Ethereum</span></td><td class="price" data-label="Price" id="eth-price">LOADING</td><td data-label="1H" id="eth-1h">-</td><td data-label="12H" id="eth-12h">-</td><td data-label="24H" id="eth-24h">-</td><td data-label="RSI" id="eth-rsi">-</td><td data-label="MACD" id="eth-macd">-</td><td data-label="Vol" id="eth-vol">-</td><td data-label="Regime" id="eth-regime" class="regime-text">-</td></tr>
+                    <tr><td data-label="Asset"><span class="asset-name">XAUUSD</span><span class="asset-desc">Gold Spot</span></td><td class="price" data-label="Price" id="xau-price">LOADING</td><td data-label="1H" id="xau-1h">-</td><td data-label="12H" id="xau-12h">-</td><td data-label="24H" id="xau-24h">-</td><td data-label="RSI" id="xau-rsi">-</td><td data-label="MACD" id="xau-macd">-</td><td data-label="Vol" id="xau-vol">-</td><td data-label="Regime" id="xau-regime" class="regime-text">-</td></tr>
+                    <tr><td data-label="Asset"><span class="asset-name">WTIUSD</span><span class="asset-desc">Crude Oil</span></td><td class="price" data-label="Price" id="wti-price">LOADING</td><td data-label="1H" id="wti-1h">-</td><td data-label="12H" id="wti-12h">-</td><td data-label="24H" id="wti-24h">-</td><td data-label="RSI" id="wti-rsi">-</td><td data-label="MACD" id="wti-macd">-</td><td data-label="Vol" id="wti-vol">-</td><td data-label="Regime" id="wti-regime" class="regime-text">-</td></tr>
+                </tbody>
             </table>
-        </div>
-
-        <div class="log-box" id="log-box" aria-live="polite">
-            <div><span class="log-time">[SYSTEM]</span> Connecting to APIs...</div>
         </div>
     </div>
     
@@ -58,8 +61,7 @@
         <div class="footer-links">
             <a href="https://www.instagram.com/abhishex08" target="_blank">Instagram</a>
             <a href="https://github.com/ABHI99335" target="_blank">GitHub</a>
-            <a href="mailto:contact@ultraedge.dev">Email Me</a>
-            <a href="#" onclick="alert('CV Download Integration Coming Soon'); return false;">Download CV</a>
+            <a href="mailto:abhishek@example.com">Email Me</a>
         </div>
         <div class="footer-copy">&copy; 2026 Abhishek Gupta. ULTRA EDGE PROTOCOL.</div>
     </footer>

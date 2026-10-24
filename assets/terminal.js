@@ -7,13 +7,14 @@ async function fetchLiveData() {
             const id = d.symbol.replace('USDT', '').toLowerCase();
             updateDOM(id, parseFloat(d.lastPrice), parseFloat(d.priceChangePercent), 2);
         });
-    } catch (e) { console.error('Crypto fetch error', e); }
+    } catch (e) { console.error('Crypto fetch error', e); setErr('btc'); setErr('eth'); setErr('sol'); }
 
     try {
         const res = await fetch('https://api.gold-api.com/price/XAU');
         const data = await res.json();
+        // Gold API does not provide 24h change, so we simulate a slight variance for the UI
         updateDOM('xau', data.price, (Math.random() * 0.6 - 0.3), 2); 
-    } catch (e) { console.error('Gold Error', e); }
+    } catch (e) { console.error('Gold Error', e); setErr('xau'); }
 
     try {
         const res = await fetch('https://api.frankfurter.app/latest?from=USD');
@@ -23,7 +24,7 @@ async function fetchLiveData() {
             updateDOM('gbp', 1/data.rates.GBP, -0.05, 4);
             updateDOM('jpy', data.rates.JPY, 0.25, 2);
         }
-    } catch (e) { console.error('Forex Error', e); }
+    } catch (e) { console.error('Forex Error', e); setErr('eur'); setErr('gbp'); setErr('jpy'); }
 
     const yahooProxy = 'https://api.codetabs.com/v1/proxy?quest=';
     const yahooAssets = { ndx: 'NQ=F', spx: 'ES=F', dji: 'YM=F', wti: 'CL=F', dxy: 'DX-Y.NYB' };
@@ -39,8 +40,13 @@ async function fetchLiveData() {
                 const pct = ((price - prevClose) / prevClose) * 100;
                 updateDOM(id, price, pct, 2);
             }
-        } catch (e) { console.error(`Yahoo Error (${id})`, e); }
+        } catch (e) { console.error(`Yahoo Error (${id})`, e); setErr(id); }
     }
+}
+
+function setErr(id) {
+    const el = document.getElementById(id + '-price');
+    if(el) el.innerText = "ERR";
 }
 
 function updateDOM(id, price, pctChange, dec) {
@@ -56,6 +62,7 @@ function updateDOM(id, price, pctChange, dec) {
     updatePct(id + '-12h', pctChange * 0.6);
     updatePct(id + '-24h', pctChange);
 
+    // Simulated Technicals for UI demo
     const rsi = Math.min(Math.max(Math.floor(50 + (pctChange * 5) + (Math.random() * 10 - 5)), 10), 90);
     const macd = pctChange * 0.5 + (Math.random() - 0.5);
     const vol = Math.floor(Math.random() * 5000) + 1000;
@@ -85,23 +92,3 @@ function updatePct(id, val) {
 
 fetchLiveData();
 setInterval(fetchLiveData, 10000);
-
-// Logs
-const logBox = document.getElementById('log-box');
-if(logBox) {
-    const logMessages = ["Ingest pipeline sync: OK", "Order flow divergence detected on NAS100", "3-Stage validation passed: EURUSD", "WARNING: Liquidity gap on SOLUSD", "Tick data recalibrated to UTC", "Calculating R-expectancy for XAUUSD"];
-    let logIdx = 0;
-    function addLog() {
-        const now = new Date();
-        const timeStr = `[${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}]`;
-        const msg = logMessages[logIdx % logMessages.length];
-        const isWarn = msg.includes("WARNING");
-        const div = document.createElement('div');
-        div.innerHTML = `<span class="log-time">${timeStr}</span> <span class="${isWarn ? 'log-error' : 'log-success'}">${isWarn ? 'WARN' : 'INFO'}</span>: ${msg}`;
-        logBox.appendChild(div);
-        logBox.scrollTop = logBox.scrollHeight;
-        logIdx++;
-        setTimeout(addLog, Math.random() * 3000 + 2000);
-    }
-    setTimeout(addLog, 1000);
-}

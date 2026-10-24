@@ -7,7 +7,6 @@
         <meta name="description" content="ULTRA EDGE PROTOCOL - Quantitative research portfolio specializing in algorithmic strategy validation and market microstructure.">
         <title>Vault | ULTRA EDGE PROTOCOL</title>
         <link rel="stylesheet" href="assets/style.css">
-        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
         <script src="assets/app.js" defer></script>
     </head>
     <body>
@@ -26,31 +25,33 @@
         "Without data, you're just another person with an opinion."
         <span class="quote-author">— W. Edwards Deming</span>
     </div>
-    <div class="reveal" style="margin-top: 40px;">
-        <h2 style="font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 10px;">The Fringe Data Graveyard (Sandbox Multiverse)</h2>
-        <p style="color: var(--text-dim); margin-bottom: 20px;">We tested dozens of alternative data sets in the Sandbox. We subjected them to the 3-Stage Factor Validation (Correlation -> Lagged Correlation -> Split-Half). Every single one failed. Fringe data is not orthogonal; it correlates with markets only through shared macro causes. We do not trade it.</p>
+    <div class="reveal mt-40">
+        <h2>The Fringe Data Graveyard (Sandbox Multiverse)</h2>
+        <p class="text-dim mb-20">I tested dozens of alternative data sets in the Sandbox. I subjected them to the 3-Stage Factor Validation (Correlation -> Lagged Correlation -> Split-Half). Every single one failed. Fringe data is not orthogonal; it correlates with markets only through shared macro causes. I do not trade it.</p>
         <div class="grid-2">
             <div class="card">
-                <div class="cause" style="background: #FF3333; color: #FFF;">FAILED EXPERIMENT</div>
+                <div class="cause" style="background: var(--down); color: #FFF;">FAILED EXPERIMENT</div>
                 <h3>Weather & Lunar Cycles</h3>
-                <p style="color: var(--text-dim); font-size: 0.95rem;">Tested cloud cover in Chicago and lunar phases against NAS100. Appeared to have a +15 bps edge in-sample. <strong>Result:</strong> Split-half flipped sign. Pure curve-fitting noise.</p>
+                <p class="text-dim" style="font-size: 0.95rem;">Tested cloud cover in Chicago and lunar phases against NAS100. Appeared to have a +15 bps edge in-sample. <strong>Result:</strong> Split-half flipped sign. Pure curve-fitting noise.</p>
             </div>
             <div class="card">
-                <div class="cause" style="background: #FF3333; color: #FFF;">FAILED EXPERIMENT</div>
+                <div class="cause" style="background: var(--down); color: #FFF;">FAILED EXPERIMENT</div>
                 <h3>Google Trends & Wikipedia</h3>
-                <p style="color: var(--text-dim); font-size: 0.95rem;">Searched for spikes in "recession" and "bankruptcy". <strong>Result:</strong> They lagged the market by exactly 3 weeks. It is a reaction effect, not a prediction effect.</p>
+                <p class="text-dim" style="font-size: 0.95rem;">Searched for spikes in "recession" and "bankruptcy". <strong>Result:</strong> They lagged the market by exactly 3 weeks. It is a reaction effect, not a prediction effect.</p>
             </div>
         </div>
     </div>
-    <div class="reveal" style="margin-top: 60px;">
-        <h2 style="font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 10px;">Data Integrity & Ingestion</h2>
+    <div class="reveal mt-40">
+        <h2>Data Integrity & Ingestion</h2>
         <div class="table-container">
             <table>
-                <tr><th>Asset Class</th><th>Timeframes</th><th>Status</th></tr>
-                <tr><td>XAUUSD (Metal)</td><td>1m, 5m, 15m, 1h, 1d</td><td><span class="badge bg-green">Complete (142k+ bars)</span></td></tr>
-                <tr><td>NAS100 (Index)</td><td>5m, 15m, 1h</td><td><span class="badge bg-green">Complete (51k+ bars)</span></td></tr>
-                <tr><td>NQ Futures</td><td>1m</td><td><span class="badge bg-green">Ingested (1.04M rows)</span></td></tr>
-                <tr><td>Crypto (BTC/ETH)</td><td>1h, 1d</td><td><span class="badge bg-green">Complete (80k+ bars)</span></td></tr>
+                <thead><tr><th scope="col">Asset Class</th><th scope="col">Timeframes</th><th scope="col">Status</th></tr></thead>
+                <tbody>
+                    <tr><td data-label="Asset Class">XAUUSD (Metal)</td><td data-label="Timeframes">1m, 5m, 15m, 1h, 1d</td><td data-label="Status"><span class="badge bg-green">Complete (142k+ bars)</span></td></tr>
+                    <tr><td data-label="Asset Class">NAS100 (Index)</td><td data-label="Timeframes">5m, 15m, 1h</td><td data-label="Status"><span class="badge bg-green">Complete (51k+ bars)</span></td></tr>
+                    <tr><td data-label="Asset Class">NQ Futures</td><td data-label="Timeframes">1m</td><td data-label="Status"><span class="badge bg-green">Ingested (1.04M rows)</span></td></tr>
+                    <tr><td data-label="Asset Class">Crypto (BTC/ETH)</td><td data-label="Timeframes">1h, 1d</td><td data-label="Status"><span class="badge bg-green">Complete (80k+ bars)</span></td></tr>
+                </tbody>
             </table>
         </div>
     </div>
@@ -61,8 +62,7 @@
         <div class="footer-links">
             <a href="https://www.instagram.com/abhishex08" target="_blank">Instagram</a>
             <a href="https://github.com/ABHI99335" target="_blank">GitHub</a>
-            <a href="mailto:contact@ultraedge.dev">Email Me</a>
-            <a href="#" onclick="alert('CV Download Integration Coming Soon'); return false;">Download CV</a>
+            <a href="mailto:abhishek@example.com">Email Me</a>
         </div>
         <div class="footer-copy">&copy; 2026 Abhishek Gupta. ULTRA EDGE PROTOCOL.</div>
     </footer>

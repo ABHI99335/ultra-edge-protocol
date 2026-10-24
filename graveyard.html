@@ -7,7 +7,6 @@
         <meta name="description" content="ULTRA EDGE PROTOCOL - Quantitative research portfolio specializing in algorithmic strategy validation and market microstructure.">
         <title>Graveyard | ULTRA EDGE PROTOCOL</title>
         <link rel="stylesheet" href="assets/style.css">
-        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
         <script src="assets/app.js" defer></script>
     </head>
     <body>
@@ -21,54 +20,54 @@
         <main id="main-content" class="container">
             
     <h1 class="hero-title reveal">THE GRAVEYARD</h1>
-    <p class="lead reveal">A quantitative researcher is judged not by the strategies they trade, but by the strategies they have the discipline to throw away. Here is the autopsy of our failures.</p>
+    <p class="lead reveal">A quantitative researcher is judged not by the strategies they trade, but by the strategies they have the discipline to throw away. Here is the autopsy of my failures.</p>
     <div class="quote-box reveal">
         "I'm always thinking about losing money as opposed to making money. Don't focus on making money, focus on protecting what you have."
         <span class="quote-author">— Paul Tudor Jones</span>
     </div>
-    <h2 class="reveal" style="margin-top: 40px; font-size: 1.3rem;">THE "ALMOST MADE IT" POST-MORTEMS</h2>
-    <p class="lead reveal" style="font-size: 0.95rem;">These strategies looked incredibly profitable at first glance. They hit fantastic metrics on one or two specific tests. But when subjected to the full 12 Rules, they failed. If you are a beginner, <span style="color: #FF0000; font-weight: bold;">do not trade these.</span> Here is exactly what killed them.</p>
+    <h2 class="reveal mt-40">THE "ALMOST MADE IT" POST-MORTEMS</h2>
+    <p class="lead reveal" style="font-size: 0.95rem;">These strategies looked incredibly profitable at first glance. They hit fantastic metrics on one or two specific tests. But when subjected to the full 12 Rules, they failed. If you are a beginner, <span style="color: var(--down); font-weight: bold;">do not trade these.</span> Here is exactly what killed them.</p>
     <div class="grid-2 reveal">
         <div class="card">
             <div class="cause">FATAL FLAW: COST-TO-RISK</div>
             <h3>NQ 1m 3-Red Candle Scalp</h3>
-            <p style="color: var(--text-white); margin-bottom: 10px; font-size: 1.05rem;"><strong>What looked good:</strong> 63.5% Win Rate on the Long side.</p>
-            <p style="color: var(--text-dim); margin-bottom: 15px; font-size: 0.95rem;"><strong>Why it failed:</strong> The median risk was 1.50 points. The round-trip cost was 1.0 point. The cost was 66% of the risk unit. Even winning 63.5% of the time, the Expected Value was mathematically negative because net wins were +0.5 pts and net losses were -2.5 pts. Wiped to $0.</p>
+            <p style="font-size: 1.05rem;"><strong>What looked good:</strong> 63.5% Win Rate on the Long side.</p>
+            <p class="text-dim" style="font-size: 0.95rem;"><strong>Why it failed:</strong> The median risk was 1.50 points. The round-trip cost was 1.0 point. The cost was 66% of the risk unit. Even winning 63.5% of the time, the Expected Value was mathematically negative because net wins were +0.5 pts and net losses were -2.5 pts. Wiped to $0.</p>
             <span class="badge">REJECTED</span>
         </div>
         <div class="card">
             <div class="cause">FATAL FLAW: MAX DRAWDOWN</div>
             <h3>NAS100 Staggered Overnight</h3>
-            <p style="color: var(--text-white); margin-bottom: 10px; font-size: 1.05rem;"><strong>What looked good:</strong> Generated +21,300 gross points over 9 years.</p>
-            <p style="color: var(--text-dim); margin-bottom: 15px; font-size: 0.95rem;"><strong>Why it failed:</strong> Buying hourly from 10am to 11pm ET created a -32,026 point Max Drawdown. Overlapping 14 entries multiplies exposure to the exact same intraday swings. It takes 9 years of profit just to recover from the worst losing streak.</p>
+            <p style="font-size: 1.05rem;"><strong>What looked good:</strong> Generated +21,300 gross points over 9 years.</p>
+            <p class="text-dim" style="font-size: 0.95rem;"><strong>Why it failed:</strong> Buying hourly from 10am to 11pm ET created a -32,026 point Max Drawdown. Overlapping 14 entries multiplies exposure to the exact same intraday swings. It takes 9 years of profit just to recover from the worst losing streak.</p>
             <span class="badge">REJECTED</span>
         </div>
         <div class="card">
             <div class="cause">FATAL FLAW: OVER-LEVERAGE</div>
             <h3>Video Turtle Variant</h3>
-            <p style="color: var(--text-white); margin-bottom: 10px; font-size: 1.05rem;"><strong>What looked good:</strong> 31% CAGR claimed by the strategy video.</p>
-            <p style="color: var(--text-dim); margin-bottom: 15px; font-size: 0.95rem;"><strong>Why it failed:</strong> When we reverse-engineered the math, it was just 6x leverage on the standard daily Turtle. While it makes huge returns in a bull market, a 6x leverage blow-up immediately violates the 10% prop firm drawdown limit on the first bad trade.</p>
+            <p style="font-size: 1.05rem;"><strong>What looked good:</strong> 31% CAGR claimed by the strategy video.</p>
+            <p class="text-dim" style="font-size: 0.95rem;"><strong>Why it failed:</strong> When I reverse-engineered the math, it was just 6x leverage on the standard daily Turtle. While it makes huge returns in a bull market, a 6x leverage blow-up immediately violates the 10% prop firm drawdown limit on the first bad trade.</p>
             <span class="badge">REJECTED</span>
         </div>
         <div class="card">
             <div class="cause">FATAL FLAW: STOP WIDTH</div>
             <h3>ICT Low of Day (LOD) Reversal</h3>
-            <p style="color: var(--text-white); margin-bottom: 10px; font-size: 1.05rem;"><strong>What looked good:</strong> 28.4% Prop Pass Rate (Highest of all tested).</p>
-            <p style="color: var(--text-dim); margin-bottom: 15px; font-size: 0.95rem;"><strong>Why it failed:</strong> The 1-minute structural stop is 40 points wide. On a $5k account, one standard contract risks $800, instantly blowing the $250 daily loss limit (62% fail rate). It only works on Micro contracts (MNQ) or if the prop firm allows much wider daily losses.</p>
+            <p style="font-size: 1.05rem;"><strong>What looked good:</strong> 28.4% Prop Pass Rate (Highest of all tested).</p>
+            <p class="text-dim" style="font-size: 0.95rem;"><strong>Why it failed:</strong> The 1-minute structural stop is 40 points wide. On a $5k account, one standard contract risks $800, instantly blowing the $250 daily loss limit (62% fail rate). It only works on Micro contracts (MNQ) or if the prop firm allows much wider daily losses.</p>
             <span class="badge">REJECTED</span>
         </div>
         <div class="card">
             <div class="cause">FATAL FLAW: RUINOUS DRAWDOWN</div>
             <h3>120-Variation Pullback Grid (XAU 5m)</h3>
-            <p style="color: var(--text-white); margin-bottom: 10px; font-size: 1.05rem;"><strong>What looked good:</strong> +30% CAGR using a 3x ATR stop and 4R target.</p>
-            <p style="color: var(--text-dim); margin-bottom: 15px; font-size: 0.95rem;"><strong>Why it failed:</strong> It came with a -72% Max Drawdown. Grid optimizers will always find a way to make money by taking on insane risk. Without a Calmar ratio constraint, optimizing for maximum return is just a slow path to blowing up.</p>
+            <p style="font-size: 1.05rem;"><strong>What looked good:</strong> +30% CAGR using a 3x ATR stop and 4R target.</p>
+            <p class="text-dim" style="font-size: 0.95rem;"><strong>Why it failed:</strong> It came with a -72% Max Drawdown. Grid optimizers will always find a way to make money by taking on insane risk. Without a Calmar ratio constraint, optimizing for maximum return is just a slow path to blowing up.</p>
             <span class="badge">REJECTED</span>
         </div>
         <div class="card">
             <div class="cause">FATAL FLAW: TIME LIMIT</div>
             <h3>Confluence Sweep Short</h3>
-            <p style="color: var(--text-white); margin-bottom: 10px; font-size: 1.05rem;"><strong>What looked good:</strong> 55% single-account pass rate in early tests.</p>
-            <p style="color: var(--text-dim); margin-bottom: 15px; font-size: 0.95rem;"><strong>Why it failed:</strong> It was mathematically incompatible with the 30-day prop challenge. At 1% risk, it hits the 30-day time limit before hitting the profit target. At 2% risk, it hits the $250 daily loss limit due to intraday variance. It's an edge, but not a fast enough one for a sprint.</p>
+            <p style="font-size: 1.05rem;"><strong>What looked good:</strong> 55% single-account pass rate in early tests.</p>
+            <p class="text-dim" style="font-size: 0.95rem;"><strong>Why it failed:</strong> It was mathematically incompatible with the 30-day prop challenge. At 1% risk, it hits the 30-day time limit before hitting the profit target. At 2% risk, it hits the $250 daily loss limit due to intraday variance. It's an edge, but not a fast enough one for a sprint.</p>
             <span class="badge">REJECTED</span>
         </div>
     </div>
@@ -79,8 +78,7 @@
         <div class="footer-links">
             <a href="https://www.instagram.com/abhishex08" target="_blank">Instagram</a>
             <a href="https://github.com/ABHI99335" target="_blank">GitHub</a>
-            <a href="mailto:contact@ultraedge.dev">Email Me</a>
-            <a href="#" onclick="alert('CV Download Integration Coming Soon'); return false;">Download CV</a>
+            <a href="mailto:abhishek@example.com">Email Me</a>
         </div>
         <div class="footer-copy">&copy; 2026 Abhishek Gupta. ULTRA EDGE PROTOCOL.</div>
     </footer>

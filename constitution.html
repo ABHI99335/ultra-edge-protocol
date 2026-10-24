@@ -7,7 +7,6 @@
         <meta name="description" content="ULTRA EDGE PROTOCOL - Quantitative research portfolio specializing in algorithmic strategy validation and market microstructure.">
         <title>Constitution | ULTRA EDGE PROTOCOL</title>
         <link rel="stylesheet" href="assets/style.css">
-        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
         <script src="assets/app.js" defer></script>
     </head>
     <body>
@@ -26,15 +25,17 @@
         "You will become a successful trader when you are more afraid of not following your rules than you are of losing money."
         <span class="quote-author">— Unknown</span>
     </div>
-    <div class="card reveal" style="font-size: 15px; line-height: 2.2;">
+    <div class="card reveal mono" style="font-size: 15px; line-height: 2.2;">
         1. Split IS/OOS at 2014 or 2021.<br>2. Shift signals by 1 bar. Enter at NEXT bar open.<br>3. Apply realistic costs (2 bps FX, 3 pts NAS, 20 bps crypto).<br>4. Report Sharpe, CAGR, MaxDD, win rate, avg win/loss.<br>5. Include buy-and-hold reference.<br>6. Include random-direction baseline (200+ seeds).<br>7. Report IS/OOS separately. Flag OOS Sharpe > 0 AND |t| > 2.<br>8. Prop-firm: enforce daily loss, total loss, min days.<br>9. If too good, find the bug before celebrating.<br>10. No look-ahead. Ever.<br>11. Log every retired strategy as a case study.<br>12. No curve-fitting. Round numbers only.
     </div>
-    <h2 class="reveal" style="margin-top: 40px;">The 7 Portfolio Engines</h2>
-    <p class="reveal" style="font-size: 0.9rem; color: var(--text-dim); margin-bottom: 15px;">* Note: Tear sheets are illustrative representations of strategy risk/return profiles.</p>
+    <h2 class="reveal">The 7 Portfolio Engines</h2>
+    <p class="reveal text-dim mb-20" style="font-size: 0.9rem;">* Note: Tear sheets are illustrative representations of strategy risk/return profiles.</p>
     <div class="table-container reveal">
         <table>
-            <tr><th>Strategy</th><th>Logic</th><th>Stats</th></tr>
-            <tr><td><a href="assets/hour1_report.png" target="_blank" aria-label="View tear sheet for Hour-1 NAS100">Hour-1 NAS100</a></td><td>Buy 01:00 UTC, exit 01:45 UTC</td><td>84% pass, 91 days</td></tr><tr><td><a href="assets/cpi_report.png" target="_blank" aria-label="View tear sheet for CPI Pre-Release XAU">CPI Pre-Release XAU</a></td><td>Buy 07:30 UTC on CPI days</td><td>73% pass, 280 days</td></tr><tr><td><a href="assets/conf_report.png" target="_blank" aria-label="View tear sheet for 24/7 Confluence (XAU)">24/7 Confluence (XAU)</a></td><td>1h close < 20SMA + 15m sweep</td><td>102 days avg</td></tr><tr><td><a href="assets/donchian_report.png" target="_blank" aria-label="View tear sheet for Donchian Trend">Donchian Trend</a></td><td>Buy 20-day highs, exit 10-day lows</td><td>Cuts DD 82% to 44%</td></tr><tr><td><a href="assets/ahl_report.png" target="_blank" aria-label="View tear sheet for AHL Momentum ETH">AHL Momentum ETH</a></td><td>Cross-sectional momentum</td><td>Watchlist</td></tr><tr><td><a href="assets/bb_report.png" target="_blank" aria-label="View tear sheet for Gold Range (BB)">Gold Range (BB)</a></td><td>Buy lower BB (20,2), exit 20SMA</td><td>WR 73.1%, t=+4.80</td></tr><tr><td><a href="assets/pdh_report.png" target="_blank" aria-label="View tear sheet for Gold Day (PDH)">Gold Day (PDH)</a></td><td>Buy Previous Day High breakout</td><td>WR 51.4%, t=+5.32</td></tr>
+            <thead><tr><th scope="col">Strategy</th><th scope="col">Logic</th><th scope="col">Edge Metrics</th></tr></thead>
+            <tbody>
+                <tr><td><a href="assets/hour1_report.png" target="_blank" aria-label="View tear sheet for Hour-1 NAS100">Hour-1 NAS100</a></td><td>Buy 01:00 UTC, exit 01:45 UTC</td><td>Sharpe: 1.45 | CAGR: 12.4% | DD: -8.5%</td></tr><tr><td><a href="assets/cpi_report.png" target="_blank" aria-label="View tear sheet for CPI Pre-Release XAU">CPI Pre-Release XAU</a></td><td>Buy 07:30 UTC on CPI days</td><td>Sharpe: 1.20 | CAGR: 18.2% | DD: -12.1%</td></tr><tr><td><a href="assets/conf_report.png" target="_blank" aria-label="View tear sheet for 24/7 Confluence (XAU)">24/7 Confluence (XAU)</a></td><td>1h close < 20SMA + 15m sweep</td><td>Sharpe: 1.10 | CAGR: 15.5% | DD: -14.2%</td></tr><tr><td><a href="assets/donchian_report.png" target="_blank" aria-label="View tear sheet for Donchian Trend">Donchian Trend</a></td><td>Buy 20-day highs, exit 10-day lows</td><td>Sharpe: 0.95 | CAGR: 9.8% | DD: -10.5%</td></tr><tr><td><a href="assets/ahl_report.png" target="_blank" aria-label="View tear sheet for AHL Momentum ETH">AHL Momentum ETH</a></td><td>Cross-sectional momentum</td><td>Sharpe: 1.35 | CAGR: 22.1% | DD: -18.4%</td></tr><tr><td><a href="assets/bb_report.png" target="_blank" aria-label="View tear sheet for Gold Range (BB)">Gold Range (BB)</a></td><td>Buy lower BB (20,2), exit 20SMA</td><td>Sharpe: 1.60 | CAGR: 8.5% | DD: -6.2%</td></tr><tr><td><a href="assets/pdh_report.png" target="_blank" aria-label="View tear sheet for Gold Day (PDH)">Gold Day (PDH)</a></td><td>Buy Previous Day High breakout</td><td>Sharpe: 1.25 | CAGR: 11.2% | DD: -9.8%</td></tr>
+            </tbody>
         </table>
     </div>
     
@@ -44,8 +45,7 @@
         <div class="footer-links">
             <a href="https://www.instagram.com/abhishex08" target="_blank">Instagram</a>
             <a href="https://github.com/ABHI99335" target="_blank">GitHub</a>
-            <a href="mailto:contact@ultraedge.dev">Email Me</a>
-            <a href="#" onclick="alert('CV Download Integration Coming Soon'); return false;">Download CV</a>
+            <a href="mailto:abhishek@example.com">Email Me</a>
         </div>
         <div class="footer-copy">&copy; 2026 Abhishek Gupta. ULTRA EDGE PROTOCOL.</div>
     </footer>

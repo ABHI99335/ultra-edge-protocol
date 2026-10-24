@@ -24,12 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     
-    if (!prefersReduced) {
-        const lenis = new Lenis({ duration: 1.1, smoothTouch: false });
-        function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-        requestAnimationFrame(raf);
-    }
-    
     const reveals = document.querySelectorAll(".reveal");
     if (reveals.length > 0 && !prefersReduced) {
         const observer = new IntersectionObserver(function(entries) {
