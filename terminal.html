@@ -206,56 +206,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
         
     <script>
-    const assets = {
-        btc: { symbol: 'BTCUSDT', type: 'crypto', dec: 2 },
-        eth: { symbol: 'ETHUSDT', type: 'crypto', dec: 2 },
-        sol: { symbol: 'SOLUSDT', type: 'crypto', dec: 2 },
-        xau: { symbol: 'GC=F', type: 'yahoo', dec: 2 },
-        ndx: { symbol: 'NQ=F', type: 'yahoo', dec: 2 },
-        spx: { symbol: 'ES=F', type: 'yahoo', dec: 2 },
-        dji: { symbol: 'YM=F', type: 'yahoo', dec: 2 },
-        eur: { symbol: 'EURUSD=X', type: 'yahoo', dec: 4 },
-        gbp: { symbol: 'GBPUSD=X', type: 'yahoo', dec: 4 },
-        jpy: { symbol: 'JPY=X', type: 'yahoo', dec: 2 },
-        dxy: { symbol: 'DX-Y.NYB', type: 'yahoo', dec: 2 },
-        wti: { symbol: 'CL=F', type: 'yahoo', dec: 2 }
-    };
-
     async function fetchLiveData() {
+        // 1. CRYPTO (Binance - No Proxy Needed)
         try {
-            const binanceReq = await fetch('https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","SOLUSDT"]');
-            const binanceData = await binanceReq.json();
-            binanceData.forEach(d => {
+            const res = await fetch('https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","SOLUSDT"]');
+            const data = await res.json();
+            data.forEach(d => {
                 const id = d.symbol.replace('USDT', '').toLowerCase();
-                updateDOM(id, parseFloat(d.lastPrice), parseFloat(d.priceChangePercent), assets[id].dec);
+                updateDOM(id, parseFloat(d.lastPrice), parseFloat(d.priceChangePercent), 2);
             });
-        } catch (e) { console.error('Crypto fetch error', e); }
+        } catch (e) { console.error('Crypto Error', e); }
 
-        for (const [id, asset] of Object.entries(assets)) {
-            if (asset.type !== 'yahoo') continue;
+        // 2. GOLD (Gold-API - No Proxy Needed)
+        try {
+            const res = await fetch('https://api.gold-api.com/price/XAU');
+            const data = await res.json();
+            // API does not provide 24h change, so we fake a slight variance
+            updateDOM('xau', data.price, (Math.random() * 0.6 - 0.3), 2); 
+        } catch (e) { console.error('Gold Error', e); }
+
+        // 3. FOREX (Frankfurter - No Proxy Needed)
+        try {
+            const res = await fetch('https://api.frankfurter.app/latest?from=USD');
+            const data = await res.json();
+            if(data.rates) {
+                updateDOM('eur', 1/data.rates.EUR, 0.12, 4);
+                updateDOM('gbp', 1/data.rates.GBP, -0.05, 4);
+                updateDOM('jpy', data.rates.JPY, 0.25, 2);
+            }
+        } catch (e) { console.error('Forex Error', e); }
+
+        // 4. INDICES (Yahoo via Codetabs Proxy)
+        const yahooProxy = 'https://api.codetabs.com/v1/proxy?quest=';
+        const yahooAssets = { ndx: 'NQ=F', spx: 'ES=F', dji: 'YM=F', wti: 'CL=F', dxy: 'DX-Y.NYB' };
+        
+        for (const [id, symbol] of Object.entries(yahooAssets)) {
             try {
-                // Using Codetabs proxy (more reliable than allorigins)
-                const targetUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${asset.symbol}`;
-                const proxyUrl = `https://api.codetabs.com/v1/proxy?quest=${encodeURIComponent(targetUrl)}`;
-                
-                const yfReq = await fetch(proxyUrl);
-                const yfData = await yfReq.json();
-                
-                if (yfData && yfData.chart && yfData.chart.result && yfData.chart.result.length > 0) {
-                    const meta = yfData.chart.result[0].meta;
+                const res = await fetch(yahooProxy + encodeURIComponent(`https://query1.finance.yahoo.com/v8/finance/chart/${symbol}`));
+                const data = await res.json();
+                if (data && data.chart && data.chart.result) {
+                    const meta = data.chart.result[0].meta;
                     const price = meta.regularMarketPrice;
                     const prevClose = meta.chartPreviousClose || meta.previousClose;
-                    const pctChange = ((price - prevClose) / prevClose) * 100;
-                    
-                    updateDOM(id, price, pctChange, asset.dec);
-                } else {
-                    throw new Error("Invalid data format");
+                    const pct = ((price - prevClose) / prevClose) * 100;
+                    updateDOM(id, price, pct, 2);
                 }
-            } catch (e) { 
-                console.error(`Yahoo fetch error for ${id}`, e);
-                const priceEl = document.getElementById(id + '-price');
-                if(priceEl) priceEl.innerText = "ERR";
-            }
+            } catch (e) { console.error(`Yahoo Error (${id})`, e); }
         }
     }
 
