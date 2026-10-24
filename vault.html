@@ -1,0 +1,207 @@
+
+    <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Vault | ULTRA EDGE PROTOCOL</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@400;600&display=swap');
+    :root {
+        --bg: #131416; --surface: #1b1c1e; --surface-2: #242527; --orange: #FF6600; 
+        --text-white: #F5F5F5; --text-dim: #9A9A9A; --border: #333436;
+        --mono: 'JetBrains Mono', monospace; --sans: 'Inter', sans-serif;
+        --up: #00FF66; --down: #FF3333;
+    }
+    
+    html, body { margin: 0; padding: 0; overflow-x: hidden; background-color: var(--bg); }
+    
+    ::-webkit-scrollbar { width: 8px; height: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); border-left: 1px solid var(--border); }
+    ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 4px; }
+    
+    body { color: var(--text-white); font-family: var(--mono); line-height: 1.6; font-size: 14px; -webkit-font-smoothing: antialiased; font-variant-numeric: tabular-nums; }
+    
+    h1, h2, h3 { 
+        color: var(--orange); font-weight: 700; margin-top: 0; text-transform: uppercase; letter-spacing: 0.05em; 
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6), 0px 0px 15px rgba(255, 102, 0, 0.1);
+    }
+
+    /* White Glowing Cursor */
+    @media (pointer: fine) {
+        * { cursor: none !important; }
+        .cursor-dot { position: fixed; width: 6px; height: 6px; background: #FFFFFF; border-radius: 50%; pointer-events: none; z-index: 2147483647; transform: translate(-50%, -50%); box-shadow: 0 0 10px rgba(255,255,255,0.8); transition: background 0.2s; }
+        .cursor-ring { position: fixed; width: 35px; height: 35px; border: 1px solid rgba(255, 255, 255, 0.4); border-radius: 50%; pointer-events: none; z-index: 2147483646; transform: translate(-50%, -50%); transition: width 0.2s, height 0.2s, border-color 0.2s; }
+        .cursor-hover .cursor-dot { background: var(--orange); box-shadow: 0 0 15px var(--orange); }
+        .cursor-hover .cursor-ring { width: 60px; height: 60px; border-color: var(--orange); background: rgba(255, 102, 0, 0.05); }
+    }
+
+    /* Navigation */
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; border-bottom: 1px solid var(--border); background: rgba(19, 20, 22, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 20px rgba(0,0,0,0.2); }
+    .brand { font-size: 18px; font-weight: 700; letter-spacing: 0.1em; text-decoration: none; color: var(--text-white); }
+    .brand span { color: var(--orange); }
+    .nav-links { display: flex; gap: 15px; flex-wrap: wrap; }
+    .nav-links a { font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); text-decoration: none; padding: 6px 12px; transition: 0.2s; border: 1px solid transparent; border-radius: 2px; }
+    .nav-links a:hover, .nav-links a.active { color: #000; background: var(--orange); border: 1px solid var(--orange); font-weight: bold; box-shadow: 0 0 15px rgba(255, 102, 0, 0.3); }
+
+    /* Layout */
+    .container { max-width: 1400px; margin: 0 auto; padding: 50px 20px; min-height: 80vh; }
+    .hero-title { font-size: 2.8rem; border-bottom: 1px solid var(--border); padding-bottom: 15px; margin-bottom: 30px; }
+    .lead { color: var(--text-dim); font-size: 1.1rem; margin-bottom: 40px; max-width: 80ch; }
+
+    /* Traders Quotes */
+    .quote-box { border-left: 4px solid var(--orange); background: rgba(255, 102, 0, 0.05); padding: 20px 25px; margin: 30px 0; font-size: 1.1rem; font-style: italic; color: #DDD; }
+    .quote-author { display: block; margin-top: 10px; font-size: 12px; font-style: normal; color: var(--orange); font-weight: 700; letter-spacing: 0.1em; }
+
+    /* Pro Terminal Tables */
+    .panel-title { font-size: 12px; color: var(--text-dim); letter-spacing: 0.1em; margin: 30px 0 10px 0; text-transform: uppercase; border-left: 3px solid var(--orange); padding-left: 10px; }
+    .table-container { overflow-x: auto; border: 1px solid var(--border); background: var(--surface); border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    table { width: 100%; border-collapse: collapse; text-align: left; min-width: 1100px; }
+    th, td { padding: 12px 18px; border-bottom: 1px solid var(--border); font-size: 13px; }
+    th { background: var(--surface-2); color: var(--orange); text-transform: uppercase; font-weight: 700; border-bottom: 2px solid var(--orange); letter-spacing: 0.1em; font-size: 11px; position: sticky; top: 0; }
+    tr:hover td { background: rgba(255, 102, 0, 0.03); }
+    
+    .asset-name { font-weight: 700; font-size: 15px; color: var(--text-white); display: block; }
+    .asset-desc { font-size: 10px; color: var(--text-dim); display: block; margin-top: 2px; text-transform: uppercase; }
+    .price { font-size: 16px; font-weight: 500; color: #FFF; }
+    
+    .up { color: var(--up); font-weight: 700; }
+    .down { color: var(--down); font-weight: 700; }
+    .neutral { color: var(--text-dim); font-weight: 700; }
+    .flash-green { animation: flash-green 0.5s ease; }
+    .flash-red { animation: flash-red 0.5s ease; }
+    @keyframes flash-green { 0% { background-color: rgba(0, 255, 102, 0.2); } 100% { background-color: transparent; } }
+    @keyframes flash-red { 0% { background-color: rgba(255, 51, 51, 0.2); } 100% { background-color: transparent; } }
+    
+    .bias-badge { padding: 4px 8px; font-size: 11px; font-weight: 700; border-radius: 2px; letter-spacing: 0.05em; display: inline-block; }
+    .bias-bullish { background: rgba(0, 255, 102, 0.1); color: var(--up); border: 1px solid rgba(0, 255, 102, 0.3); }
+    .bias-bearish { background: rgba(255, 51, 51, 0.1); color: var(--down); border: 1px solid rgba(255, 51, 51, 0.3); }
+    .bias-neutral { background: rgba(154, 154, 154, 0.1); color: var(--text-dim); border: 1px solid rgba(154, 154, 154, 0.3); }
+
+    .regime-text { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+    .regime-trending { color: var(--orange); }
+    .regime-ranging { color: #FFCC00; }
+    .regime-volatile { color: var(--down); }
+
+    /* Log Box */
+    .log-box { background: #050505; border: 1px solid var(--border); padding: 20px; margin-top: 50px; border-radius: 4px; font-size: 13px; color: var(--text-dim); line-height: 1.8; box-shadow: inset 0 0 20px rgba(0,0,0,0.9); height: 180px; overflow-y: hidden; position: relative; }
+    .log-box::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 40px; background: linear-gradient(transparent, #050505); }
+    .log-time { color: var(--orange); margin-right: 10px; }
+    .log-success { color: var(--up); }
+    .log-error { color: var(--down); }
+
+    /* Cards */
+    .card { background: var(--surface); border: 1px solid var(--border); padding: 25px; margin-bottom: 20px; position: relative; border-radius: 4px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .card:hover { border-color: var(--orange); background: var(--surface-2); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 102, 0, 0.1); }
+    .cause { color: #000; background: var(--orange); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 15px; display: inline-block; padding: 4px 8px; border-radius: 2px; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; border-top: 1px solid var(--border); padding-top: 30px; margin-top: 40px; }
+    .badge { padding: 4px 8px; border: 1px solid #FF0000; font-size: 11px; font-weight: bold; color: #FF0000; background: rgba(255,0,0,0.1); border-radius: 2px; }
+    .bg-green { color: #00FF00; border-color: #00FF00; background: rgba(0,255,0,0.1); }
+
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+        .nav { flex-direction: column; gap: 15px; padding: 15px; }
+        .grid-4 { grid-template-columns: 1fr; }
+        .hero-title { font-size: 2rem; }
+    }
+</style>
+</head><body>
+    <nav class="nav" data-lenis-prevent>
+        <a class="brand" href="index.html">ULTRA<span>.EDGE</span></a>
+        <div class="nav-links"><a href="index.html" >Home</a><a href="terminal.html" >Terminal</a><a href="constitution.html" >Constitution</a><a href="ecosystem.html" >Ecosystem</a><a href="vault.html" class="active">Vault</a><a href="graveyard.html" >Graveyard</a></div>
+    </nav>
+    
+    <div class="container"><h1 class="hero-title reveal">THE VAULT</h1><p class="lead reveal">Data engineering & ingestion pipelines. This is the foundation of the Ultra Edge Protocol.</p>
+    
+    <div class="quote-box reveal">
+        "Without data, you're just another person with an opinion."
+        <span class="quote-author">— W. Edwards Deming</span>
+    </div>
+
+    <div class="reveal" style="margin-top: 40px;">
+        <h2 style="font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 10px;">The Fringe Data Graveyard (Sandbox Multiverse)</h2>
+        <p style="color: var(--text-dim); margin-bottom: 20px;">We tested dozens of alternative data sets in the Sandbox. We subjected them to the 3-Stage Factor Validation (Correlation -> Lagged Correlation -> Split-Half). Every single one failed. Fringe data is not orthogonal; it correlates with markets only through shared macro causes. We do not trade it.</p>
+        
+        <div class="grid-2">
+            <div class="card">
+                <div class="cause" style="background: #FF3333; color: #FFF;">FAILED EXPERIMENT</div>
+                <h3>Weather & Lunar Cycles</h3>
+                <p style="color: var(--text-dim); font-size: 0.95rem;">Tested cloud cover in Chicago and lunar phases against NAS100. Appeared to have a +15 bps edge in-sample. <strong>Result:</strong> Split-half flipped sign. Pure curve-fitting noise.</p>
+            </div>
+            <div class="card">
+                <div class="cause" style="background: #FF3333; color: #FFF;">FAILED EXPERIMENT</div>
+                <h3>Google Trends & Wikipedia</h3>
+                <p style="color: var(--text-dim); font-size: 0.95rem;">Searched for spikes in "recession" and "bankruptcy". <strong>Result:</strong> They lagged the market by exactly 3 weeks. It is a reaction effect, not a prediction effect.</p>
+            </div>
+            <div class="card">
+                <div class="cause" style="background: #FF3333; color: #FFF;">FAILED EXPERIMENT</div>
+                <h3>Gun Sales & Weather</h3>
+                <p style="color: var(--text-dim); font-size: 0.95rem;">Classic alternative data. Correlated perfectly with volatility in 2020. <strong>Result:</strong> Once we normalized for the COVID regime shift, the correlation disappeared entirely.</p>
+            </div>
+            <div class="card">
+                <div class="cause" style="background: #FF3333; color: #FFF;">FAILED EXPERIMENT</div>
+                <h3>Cross-Asset Correlation</h3>
+                <p style="color: var(--text-dim); font-size: 0.95rem;">Tested if Bitcoin leads NAS100. <strong>Result:</strong> Correlation of 0.45 on same-day, but 0.00 on lagged day. They move together due to liquidity, not causation.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="reveal" style="margin-top: 60px;">
+        <h2 style="font-size: 1.5rem; border-bottom: 1px solid var(--border); padding-bottom: 10px;">Data Integrity & Ingestion</h2>
+        <div class="table-container">
+            <table>
+                <tr><th>Asset Class</th><th>Timeframes</th><th>Status</th></tr>
+                <tr><td>XAUUSD (Metal)</td><td>1m, 5m, 15m, 1h, 1d</td><td><span class="badge bg-green">Complete (142k+ bars)</span></td></tr>
+                <tr><td>NAS100 (Index)</td><td>5m, 15m, 1h</td><td><span class="badge bg-green">Complete (51k+ bars)</span></td></tr>
+                <tr><td>NQ Futures</td><td>1m</td><td><span class="badge bg-green">Ingested (1.04M rows)</span></td></tr>
+                <tr><td>Crypto (BTC/ETH)</td><td>1h, 1d</td><td><span class="badge bg-green">Complete (80k+ bars)</span></td></tr>
+            </table>
+        </div>
+    </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const isDesktop = window.matchMedia("(pointer: fine)").matches;
+
+    if (isDesktop) {
+        const dot = document.createElement('div'); dot.className = 'cursor-dot';
+        const ring = document.createElement('div'); ring.className = 'cursor-ring';
+        document.body.appendChild(dot); document.body.appendChild(ring);
+        let mX = 0, mY = 0, rX = 0, rY = 0;
+        
+        window.addEventListener('mousemove', (e) => {
+            mX = e.clientX; mY = e.clientY;
+            dot.style.transform = `translate(${mX}px, ${mY}px) translate(-50%, -50%)`;
+        });
+        
+        function animate() {
+            rX += (mX - rX) * 0.15; rY += (mY - rY) * 0.15;
+            ring.style.transform = `translate(${rX}px, ${rY}px) translate(-50%, -50%)`;
+            requestAnimationFrame(animate);
+        }
+        animate();
+        
+        document.querySelectorAll('a, button, .card, tr').forEach(el => {
+            el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+            el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+        });
+    }
+    
+    const lenis = new Lenis({ duration: 1.1, smoothTouch: false });
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+    
+    var reveals = document.querySelectorAll(".reveal");
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    reveals.forEach(function(el) { observer.observe(el); });
+});
+</script>
+</body></html>
+    
