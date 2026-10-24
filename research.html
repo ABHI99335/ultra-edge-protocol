@@ -1,0 +1,105 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Research | Ultra Edge Research</title>
+        <meta name="description" content="Independent quantitative research specializing in algorithmic strategy validation and market microstructure.">
+        <link rel="stylesheet" href="assets/style.css">
+        <!-- Favicon -->
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+        <!-- Open Graph -->
+        <meta property="og:title" content="Research | Ultra Edge Research">
+        <meta property="og:description" content="Systematic Macro & Cross-Asset Research">
+        <meta property="og:type" content="website">
+    </head>
+    <body>
+        
+    <header>
+        <div class="nav">
+            <a class="brand" href="index.html">Ultra Edge</a>
+            <div class="nav-links"><a href="index.html" >Home</a><a href="approach.html" >Approach</a><a href="research.html" class="active">Research</a><a href="principal.html" >Principal</a><a href="firm.html" >Firm</a><a href="contact.html" >Contact</a></div>
+        </div>
+    </header>
+    
+        <main>
+            
+    <section class="container">
+        <span class="hero-eyebrow">Research Log</span>
+        <h1>Research & Post-Mortems</h1>
+        <p style="font-size: 1.2rem; color: var(--ink); margin-bottom: 40px;">
+            A quantitative researcher is judged not by the strategies they trade, but by the strategies they have the discipline to throw away.
+        </p>
+
+        <h2>Active Portfolio Engines</h2>
+        <table>
+            <thead>
+                <tr><th>Strategy</th><th>Category</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+                <tr><td data-label="Strategy">Hour-1 NAS100</td><td data-label="Category">Intraday index</td><td data-label="Status" class="status-research">In research</td></tr>
+                <tr><td data-label="Strategy">CPI Pre-Release XAU</td><td data-label="Category">Event driven</td><td data-label="Status" class="status-research">In research</td></tr>
+                <tr><td data-label="Strategy">Donchian Trend</td><td data-label="Category">Trend following</td><td data-label="Status" class="status-retired">Retired</td></tr>
+                <tr><td data-label="Strategy">Gold Range (BB)</td><td data-label="Category">Mean reversion</td><td data-label="Status" class="status-retired">Retired</td></tr>
+            </tbody>
+        </table>
+
+        <h2 style="margin-top: 60px;">Post-Mortems (The Graveyard)</h2>
+        <p>These strategies looked profitable at first glance but failed strict validation.</p>
+        
+        <div class="grid-2">
+            <div class="card">
+                <h3>NQ 1m 3-Red Candle Scalp</h3>
+                <p><strong>Fatal Flaw:</strong> Cost-to-Risk Ratio.</p>
+                <p>The median risk was 1.50 points. The round-trip cost was 1.0 point. The cost was 66% of the risk unit. Even with a 63.5% win rate, the Expected Value was deeply negative. Wiped to $0.</p>
+            </div>
+            <div class="card">
+                <h3>NAS100 Staggered Overnight</h3>
+                <p><strong>Fatal Flaw:</strong> Max Drawdown.</p>
+                <p>Buying hourly from 10am to 11pm ET created a -32,026 point Max Drawdown. Overlapping 14 entries multiplies exposure to the exact same intraday swings.</p>
+            </div>
+            <div class="card">
+                <h3>ICT Low of Day (LOD) Reversal</h3>
+                <p><strong>Fatal Flaw:</strong> Stop Width.</p>
+                <p>The 1-minute structural stop is 40 points wide. On a $5k account, one standard contract risks $800, instantly blowing the $250 daily loss limit (62% fail rate).</p>
+            </div>
+            <div class="card">
+                <h3>120-Variation Pullback Grid (XAU 5m)</h3>
+                <p><strong>Fatal Flaw:</strong> Ruinous Drawdown.</p>
+                <p>The optimizer found a +30% CAGR variation, but it came with a -72% Max Drawdown. Optimization without a Calmar constraint is just a slow path to blowing up.</p>
+            </div>
+        </div>
+
+        <h2 style="margin-top: 60px;">Rejected Alternative Data</h2>
+        <p>Fringe data is not orthogonal. It correlates with markets only through shared macro causes.</p>
+        <ul>
+            <li><strong>Weather & Lunar Cycles:</strong> Appeared to have a +15 bps edge in-sample. Split-half flipped sign. Pure noise.</li>
+            <li><strong>Google Trends:</strong> Searches for "recession" lagged the market by exactly 3 weeks. It is a reaction effect, not a prediction effect.</li>
+        </ul>
+    </section>
+    
+        </main>
+        
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Ultra Edge Research</h4>
+                <p style="color: var(--paper); margin-bottom: 10px;">Systematic Macro & Cross-Asset Research</p>
+                <p style="color: var(--paper); font-size: 0.9rem;">Independent quantitative research specializing in algorithmic strategy validation, market microstructure, and data engineering.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <a href="mailto:abhishekgupta10m@gmail.com">abhishekgupta10m@gmail.com</a>
+                <a href="https://github.com/ABHI99335" target="_blank">GitHub Profile</a>
+                <a href="https://www.instagram.com/abhishex08" target="_blank">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-disclaimer">
+            <strong>Disclosure:</strong> This site is for informational purposes only and does not constitute an offer to buy or sell any security. Nothing herein is investment advice. Past performance is not indicative of future results. Material is intended for professional and sophisticated investors only. The strategies and research presented represent a methodology and are not live trading track records.
+        </div>
+    </footer>
+    
+    </body>
+    </html>
+    
