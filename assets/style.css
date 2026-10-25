@@ -28,6 +28,15 @@ body {
     flex-direction: column;
 }
 
+/* Ticker Tape */
+.ticker-wrap { width: 100%; overflow: hidden; background: #050505; border-bottom: 1px solid var(--panel-border); display: flex; height: 32px; align-items: center; }
+.ticker { display: flex; white-space: nowrap; padding-left: 100%; animation: ticker 40s linear infinite; }
+.ticker:hover { animation-play-state: paused; }
+.ticker-item { display: inline-flex; align-items: center; gap: 8px; padding: 0 24px; font-family: var(--mono); font-size: 12px; border-right: 1px solid var(--panel-border); }
+.ticker-sym { color: var(--amber); font-weight: 700; }
+.ticker-price { color: #FFF; }
+@keyframes ticker { 0% { transform: translate3d(0, 0, 0); } 100% { transform: translate3d(-100%, 0, 0); } }
+
 /* Global Typography */
 h1, h2, h3, h4 { font-family: var(--mono); color: var(--amber); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
 h1 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.1; }
@@ -114,14 +123,7 @@ strong { color: var(--text); font-weight: 600; }
 .panel-title { color: var(--amber); font-weight: 700; display: flex; align-items: center; gap: 8px; text-transform: uppercase;}
 .panel-title::before { content: '◆'; font-size: 10px; }
 
-/* Terminal Grid */
-.term-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; height: calc(100vh - 120px); }
-.term-left { display: flex; flex-direction: column; gap: 24px; height: 100%; }
-.term-right { display: flex; flex-direction: column; gap: 24px; height: 100%; }
-.term-panel { background: var(--panel); border: 1px solid var(--panel-border); display: flex; flex-direction: column; }
-.term-panel-body { padding: 0; overflow-y: auto; flex: 1; }
-
-/* Terminal Tables */
+/* Tables */
 .term-table { width: 100%; border-collapse: collapse; text-align: left; table-layout: fixed; }
 .term-table th {
     font-family: var(--mono);
@@ -143,11 +145,6 @@ strong { color: var(--text); font-weight: 600; }
 }
 .term-table tr:hover td { background: rgba(255,176,0,0.03); }
 
-/* Asset Cell Fix */
-.asset-cell { display: flex; flex-direction: column; justify-content: center; }
-.asset-sym { color: #FFF; font-weight: 700; font-size: 13px; line-height: 1.2; }
-.asset-name { color: var(--text-dim); font-size: 10px; font-family: var(--sans); line-height: 1.2; }
-
 /* Utilities */
 .text-amber { color: var(--amber) !important; }
 .text-up { color: var(--up) !important; }
@@ -155,30 +152,9 @@ strong { color: var(--text); font-weight: 600; }
 .text-dim { color: var(--text-dim) !important; }
 .badge { padding: 2px 6px; font-size: 10px; border: 1px solid; font-family: var(--mono); white-space: nowrap; }
 .badge-live { color: var(--up); border-color: rgba(63,178,127,0.3); background: rgba(63,178,127,0.1); }
-.badge-delay { color: var(--amber); border-color: rgba(255,176,0,0.3); background: rgba(255,176,0,0.1); }
-.badge-na { color: var(--down); border-color: rgba(224,86,59,0.3); background: rgba(224,86,59,0.1); }
-.trend-up { color: var(--up); border-color: rgba(63,178,127,0.3); }
-.trend-down { color: var(--down); border-color: rgba(224,86,59,0.3); }
-
-/* News & Log */
-.news-content { padding: 16px; flex: 1; overflow-y: auto; font-size: 12px; }
-.news-item { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--panel-border); }
-.news-score { font-family: var(--mono); font-size: 10px; padding: 2px 6px; margin-right: 8px; }
-.score-bull { background: rgba(63,178,127,0.2); color: var(--up); }
-.score-bear { background: rgba(224,86,59,0.2); color: var(--down); }
-.score-neut { background: rgba(255,255,255,0.1); color: var(--text-dim); }
-.news-title { color: var(--text); line-height: 1.4; font-weight: 500; margin-top: 8px; }
-
-.log-content { padding: 16px; flex: 1; overflow-y: auto; font-family: var(--mono); font-size: 11px; line-height: 1.8; }
-.log-row { display: flex; gap: 8px; margin-bottom: 4px; }
-.log-time { color: var(--text-dim); }
-.log-info { color: var(--ice); }
-.log-ok { color: var(--up); }
-.log-err { color: var(--down); }
 
 /* Mobile */
 @media (max-width: 900px) {
-    .term-layout { grid-template-columns: 1fr; height: auto; }
     .grid-2 { grid-template-columns: 1fr; }
     .nav-links { display: none; }
 }

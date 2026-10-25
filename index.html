@@ -12,7 +12,7 @@
         
     <header class="term-header">
         <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
-        <div class="nav-links"><a href="index.html" class="nav-btn active">F1 · HOME</a><a href="terminal.html" class="nav-btn">F2 · TERMINAL</a><a href="approach.html" class="nav-btn">F3 · APPROACH</a><a href="research.html" class="nav-btn">F4 · RESEARCH</a><a href="principal.html" class="nav-btn">F5 · PRINCIPAL</a><a href="contact.html" class="nav-btn">F6 · CONTACT</a></div>
+        <div class="nav-links"><a href="index.html" class="nav-btn active">F1 · HOME</a><a href="approach.html" class="nav-btn">F2 · APPROACH</a><a href="research.html" class="nav-btn">F3 · RESEARCH</a><a href="principal.html" class="nav-btn">F4 · PRINCIPAL</a><a href="contact.html" class="nav-btn">F5 · CONTACT</a></div>
         <div class="term-status mono" style="font-size: 11px; color: var(--text-dim);">
             UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
         </div>
@@ -28,6 +28,13 @@
     }, 1000);
 </script>
 
+    
+        
+    <div class="ticker-wrap">
+        <div class="ticker" id="ticker-track">
+            <div class="ticker-item text-dim">CONNECTING TO MARKET DATA...</div>
+        </div>
+    </div>
     
         <main class="page-container">
             
@@ -96,6 +103,60 @@
         </div>
     </footer>
     
+        
+<script>
+    async function fetchTickerData() {
+        const track = document.getElementById('ticker-track');
+        if (!track) return;
+        
+        try {
+            // Fetch Crypto from Binance
+            const cryptoRes = await fetch('https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","SOLUSDT"]');
+            const cryptoData = await cryptoRes.json();
+            
+            // Fetch FX from Frankfurter
+            const fxRes = await fetch('https://api.frankfurter.app/latest?from=USD');
+            const fxData = await fxRes.json();
+            
+            let html = '';
+            
+            // Add Crypto
+            cryptoData.forEach(d => {
+                const sym = d.symbol.replace('USDT', '');
+                const price = parseFloat(d.lastPrice);
+                const pct = parseFloat(d.priceChangePercent);
+                const colorClass = pct >= 0 ? 'text-up' : 'text-down';
+                const sign = pct >= 0 ? '+' : '';
+                
+                html += `<div class="ticker-item">
+                    <span class="ticker-sym">${sym}</span>
+                    <span class="ticker-price">$${price.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                    <span class="${colorClass}">${sign}${pct.toFixed(2)}%</span>
+                </div>`;
+            });
+            
+            // Add FX
+            if (fxData && fxData.rates) {
+                html += `<div class="ticker-item"><span class="ticker-sym">EURUSD</span><span class="ticker-price">${(1/fxData.rates.EUR).toFixed(4)}</span></div>`;
+                html += `<div class="ticker-item"><span class="ticker-sym">GBPUSD</span><span class="ticker-price">${(1/fxData.rates.GBP).toFixed(4)}</span></div>`;
+                html += `<div class="ticker-item"><span class="ticker-sym">USDJPY</span><span class="ticker-price">${fxData.rates.JPY.toFixed(2)}</span></div>`;
+            }
+            
+            // Duplicate content for seamless scrolling
+            track.innerHTML = html + html; 
+            
+        } catch (e) {
+            console.error("Ticker fetch failed", e);
+            track.innerHTML = '<div class="ticker-item text-dim">DATA FEED OFFLINE · PLEASE CHECK CONNECTION</div>';
+        }
+    }
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        fetchTickerData();
+        setInterval(fetchTickerData, 30000); // update every 30s
+    });
+</script>
+
     </body>
     </html>
     
