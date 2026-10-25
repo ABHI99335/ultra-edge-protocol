@@ -9,12 +9,25 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
     </head>
     <body>
-        <div class="scanline"></div>
         
     <header class="term-header">
         <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
         <div class="nav-links"><a href="index.html" class="nav-btn">F1 · HOME</a><a href="terminal.html" class="nav-btn">F2 · TERMINAL</a><a href="approach.html" class="nav-btn">F3 · APPROACH</a><a href="research.html" class="nav-btn">F4 · RESEARCH</a><a href="principal.html" class="nav-btn active">F5 · PRINCIPAL</a><a href="contact.html" class="nav-btn">F6 · CONTACT</a></div>
+        <div class="term-status mono" style="font-size: 11px; color: var(--text-dim);">
+            UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
+        </div>
     </header>
+    
+<script>
+    setInterval(() => {
+        const now = new Date();
+        const utcEl = document.getElementById('utc-time');
+        const locEl = document.getElementById('local-time');
+        if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0];
+        if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB');
+    }, 1000);
+</script>
+
     
         <main class="page-container">
             
@@ -28,18 +41,10 @@
                 <h2>Background</h2>
                 <p>I am an economics student with over five years of market experience. My transition into quantitative finance was driven by the failures of retail trading. I quickly learned that discretion and conviction are not an edge—they are liabilities when they are the only thing behind a position.</p>
                 <p>My work focuses on systematic macro and cross-asset strategies, specifically algorithmic strategy validation, market microstructure, and high-frequency data engineering.</p>
-                
-                <h2>Focus Areas</h2>
-                <ul>
-                    <li>Systematic strategy validation (IS/OOS, random baselines)</li>
-                    <li>Market microstructure and transaction cost analysis</li>
-                    <li>High-frequency data ingestion and cleaning</li>
-                    <li>Prop-firm risk management and Monte Carlo simulation</li>
-                </ul>
             </div>
             <div>
                 <h2>Credentials</h2>
-                <div style="border: 1px solid var(--panel-border); padding: 24px; background: var(--void);">
+                <div style="border: 1px solid var(--panel-border); padding: 24px; background: #050505;">
                     <h3>Education</h3>
                     <p>BA Economics (In Progress)</p>
                     

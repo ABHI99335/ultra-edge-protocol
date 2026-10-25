@@ -9,12 +9,25 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
     </head>
     <body>
-        <div class="scanline"></div>
         
     <header class="term-header">
         <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
         <div class="nav-links"><a href="index.html" class="nav-btn">F1 · HOME</a><a href="terminal.html" class="nav-btn">F2 · TERMINAL</a><a href="approach.html" class="nav-btn active">F3 · APPROACH</a><a href="research.html" class="nav-btn">F4 · RESEARCH</a><a href="principal.html" class="nav-btn">F5 · PRINCIPAL</a><a href="contact.html" class="nav-btn">F6 · CONTACT</a></div>
+        <div class="term-status mono" style="font-size: 11px; color: var(--text-dim);">
+            UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
+        </div>
     </header>
+    
+<script>
+    setInterval(() => {
+        const now = new Date();
+        const utcEl = document.getElementById('utc-time');
+        const locEl = document.getElementById('local-time');
+        if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0];
+        if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB');
+    }, 1000);
+</script>
+
     
         <main class="page-container">
             
@@ -26,7 +39,7 @@
         <h2 style="margin-top: 40px;">Research Standards (The 12 Rules)</h2>
         <p>Every strategy tested must pass these rules without exception. The value of the project is the process, not the strategies. The retirements matter more than the survivors.</p>
         
-        <div style="background: var(--void); border: 1px solid var(--panel-border); padding: 24px; font-family: var(--mono); font-size: 13px; line-height: 2; color: var(--text); margin-bottom: 40px;">
+        <div style="background: #050505; border: 1px solid var(--panel-border); padding: 24px; font-family: var(--mono); font-size: 13px; line-height: 2; color: var(--text); margin-bottom: 40px;">
             1. Split IS/OOS at 2014 or 2021.<br>
             2. Shift signals by 1 bar. Enter at NEXT bar open.<br>
             3. Apply realistic costs (2 bps FX, 3 pts NAS, 20 bps crypto).<br>
@@ -43,13 +56,13 @@
 
         <h2>Data Pipeline</h2>
         <p>Before a single strategy is backtested, the data must be pristine.</p>
-        <table class="term-table">
+        <table class="term-table" style="background: #050505;">
             <thead><tr><th>ASSET CLASS</th><th>TIMEFRAMES</th><th>INGESTION STATUS</th></tr></thead>
             <tbody>
-                <tr><td data-label="Asset Class">XAUUSD (Metal)</td><td data-label="Timeframes">1m, 5m, 15m, 1h, 1d</td><td data-label="Status"><span class="badge badge-live">COMPLETE (142k+ BARS)</span></td></tr>
-                <tr><td data-label="Asset Class">NAS100 (Index)</td><td data-label="Timeframes">5m, 15m, 1h</td><td data-label="Status"><span class="badge badge-live">COMPLETE (51k+ BARS)</span></td></tr>
-                <tr><td data-label="Asset Class">NQ Futures</td><td data-label="Timeframes">1m</td><td data-label="Status"><span class="badge badge-live">INGESTED (1.04M ROWS)</span></td></tr>
-                <tr><td data-label="Asset Class">Crypto (BTC/ETH)</td><td data-label="Timeframes">1h, 1d</td><td data-label="Status"><span class="badge badge-live">COMPLETE (80k+ BARS)</span></td></tr>
+                <tr><td>XAUUSD (Metal)</td><td>1m, 5m, 15m, 1h, 1d</td><td><span class="badge badge-live">COMPLETE</span></td></tr>
+                <tr><td>NAS100 (Index)</td><td>5m, 15m, 1h</td><td><span class="badge badge-live">COMPLETE</span></td></tr>
+                <tr><td>NQ Futures</td><td>1m</td><td><span class="badge badge-live">INGESTED</span></td></tr>
+                <tr><td>Crypto (BTC/ETH)</td><td>1h, 1d</td><td><span class="badge badge-live">COMPLETE</span></td></tr>
             </tbody>
         </table>
     </div>

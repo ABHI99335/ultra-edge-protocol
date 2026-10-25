@@ -9,12 +9,25 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
     </head>
     <body>
-        <div class="scanline"></div>
         
     <header class="term-header">
         <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
         <div class="nav-links"><a href="index.html" class="nav-btn">F1 · HOME</a><a href="terminal.html" class="nav-btn">F2 · TERMINAL</a><a href="approach.html" class="nav-btn">F3 · APPROACH</a><a href="research.html" class="nav-btn">F4 · RESEARCH</a><a href="principal.html" class="nav-btn">F5 · PRINCIPAL</a><a href="contact.html" class="nav-btn active">F6 · CONTACT</a></div>
+        <div class="term-status mono" style="font-size: 11px; color: var(--text-dim);">
+            UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
+        </div>
     </header>
+    
+<script>
+    setInterval(() => {
+        const now = new Date();
+        const utcEl = document.getElementById('utc-time');
+        const locEl = document.getElementById('local-time');
+        if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0];
+        if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB');
+    }, 1000);
+</script>
+
     
         <main class="page-container">
             
@@ -24,16 +37,15 @@
         <p style="font-size: 1.1rem; color: var(--text);">For research inquiries, collaboration, or hiring, please reach out directly.</p>
 
         <div class="grid-2" style="margin-top: 40px;">
-            <div style="border: 1px solid var(--panel-border); padding: 32px; background: var(--void);">
+            <div style="border: 1px solid var(--panel-border); padding: 32px; background: #050505;">
                 <h3>Email</h3>
                 <p style="margin-bottom: 24px;">I monitor this inbox daily.</p>
-                <a href="mailto:abhishekgupta10m@gmail.com" class="btn">abhishekgupta10m@gmail.com</a>
+                <a href="mailto:abhishekgupta10m@gmail.com" style="display: inline-block; background: var(--amber); color: #000; padding: 12px 24px; text-decoration: none; font-family: var(--mono); font-weight: 700;">abhishekgupta10m@gmail.com</a>
             </div>
-            <div style="border: 1px solid var(--panel-border); padding: 32px; background: var(--void);">
+            <div style="border: 1px solid var(--panel-border); padding: 32px; background: #050505;">
                 <h3>Social & Code</h3>
                 <p style="margin-bottom: 24px;">View my open-source research and data pipelines.</p>
-                <a href="https://github.com/ABHI99335" target="_blank" class="btn btn-outline">GitHub Profile</a>
-                <a href="https://www.instagram.com/abhishex08" target="_blank" class="btn btn-outline" style="margin-top: 10px;">Instagram</a>
+                <a href="https://github.com/ABHI99335" target="_blank" style="display: inline-block; border: 1px solid var(--amber); color: var(--amber); padding: 12px 24px; text-decoration: none; font-family: var(--mono); font-weight: 700;">GitHub Profile</a>
             </div>
         </div>
     </div>

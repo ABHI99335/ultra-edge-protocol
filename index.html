@@ -9,12 +9,25 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
     </head>
     <body>
-        <div class="scanline"></div>
         
     <header class="term-header">
         <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
         <div class="nav-links"><a href="index.html" class="nav-btn active">F1 · HOME</a><a href="terminal.html" class="nav-btn">F2 · TERMINAL</a><a href="approach.html" class="nav-btn">F3 · APPROACH</a><a href="research.html" class="nav-btn">F4 · RESEARCH</a><a href="principal.html" class="nav-btn">F5 · PRINCIPAL</a><a href="contact.html" class="nav-btn">F6 · CONTACT</a></div>
+        <div class="term-status mono" style="font-size: 11px; color: var(--text-dim);">
+            UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
+        </div>
     </header>
+    
+<script>
+    setInterval(() => {
+        const now = new Date();
+        const utcEl = document.getElementById('utc-time');
+        const locEl = document.getElementById('local-time');
+        if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0];
+        if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB');
+    }, 1000);
+</script>
+
     
         <main class="page-container">
             
@@ -27,13 +40,25 @@
         <p style="font-size: 1.2rem; color: var(--text); max-width: 800px;">
             A rules-based research process: signals are validated out-of-sample, costed realistically, and compared against random baselines before any capital is considered.
         </p>
-        <a href="approach.html" class="btn" style="margin-top: 16px;">READ THE METHODOLOGY</a>
+        <a href="approach.html" class="btn" style="margin-top: 16px; display: inline-block; background: var(--amber); color: #000; padding: 12px 24px; text-decoration: none; font-family: var(--mono); font-weight: 700;">READ THE METHODOLOGY</a>
         
-        <div class="proof-bar">
-            <div class="proof-item"><span class="val">2021</span><span class="lbl">RESEARCH SINCE</span></div>
-            <div class="proof-item"><span class="val">1.27M+</span><span class="lbl">BARS IN PRODUCTION</span></div>
-            <div class="proof-item"><span class="val">26</span><span class="lbl">ASSETS IN UNIVERSE</span></div>
-            <div class="proof-item"><span class="val">12</span><span class="lbl">GOVERNANCE RULES</span></div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 40px;">
+            <div style="border-left: 2px solid var(--amber); padding-left: 16px;">
+                <div style="font-family: var(--mono); font-size: 3rem; color: var(--amber); font-weight: 700; line-height: 1;">2021</div>
+                <div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Research since</div>
+            </div>
+            <div style="border-left: 2px solid var(--amber); padding-left: 16px;">
+                <div style="font-family: var(--mono); font-size: 3rem; color: var(--amber); font-weight: 700; line-height: 1;">1.27M+</div>
+                <div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Bars in production</div>
+            </div>
+            <div style="border-left: 2px solid var(--amber); padding-left: 16px;">
+                <div style="font-family: var(--mono); font-size: 3rem; color: var(--amber); font-weight: 700; line-height: 1;">26</div>
+                <div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Assets in universe</div>
+            </div>
+            <div style="border-left: 2px solid var(--amber); padding-left: 16px;">
+                <div style="font-family: var(--mono); font-size: 3rem; color: var(--amber); font-weight: 700; line-height: 1;">12</div>
+                <div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Governance rules</div>
+            </div>
         </div>
     </div>
 
@@ -51,7 +76,7 @@
                 <li><strong style="color: var(--text);">Methodology:</strong> The 3-Stage Factor Validation framework.</li>
                 <li><strong style="color: var(--text);">Data:</strong> Rejecting fringe data (weather, lunar cycles).</li>
             </ul>
-            <a href="research.html" class="btn btn-outline" style="margin-top: 16px;">VIEW RESEARCH LOG</a>
+            <a href="research.html" style="display: inline-block; margin-top: 16px; padding: 12px 24px; border: 1px solid var(--amber); color: var(--amber); text-decoration: none; font-family: var(--mono); font-weight: 700;">VIEW RESEARCH LOG</a>
         </div>
     </div>
     

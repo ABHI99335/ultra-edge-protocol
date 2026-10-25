@@ -9,12 +9,25 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
     </head>
     <body>
-        <div class="scanline"></div>
         
     <header class="term-header">
         <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
         <div class="nav-links"><a href="index.html" class="nav-btn">F1 · HOME</a><a href="terminal.html" class="nav-btn">F2 · TERMINAL</a><a href="approach.html" class="nav-btn">F3 · APPROACH</a><a href="research.html" class="nav-btn active">F4 · RESEARCH</a><a href="principal.html" class="nav-btn">F5 · PRINCIPAL</a><a href="contact.html" class="nav-btn">F6 · CONTACT</a></div>
+        <div class="term-status mono" style="font-size: 11px; color: var(--text-dim);">
+            UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
+        </div>
     </header>
+    
+<script>
+    setInterval(() => {
+        const now = new Date();
+        const utcEl = document.getElementById('utc-time');
+        const locEl = document.getElementById('local-time');
+        if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0];
+        if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB');
+    }, 1000);
+</script>
+
     
         <main class="page-container">
             
@@ -24,13 +37,13 @@
         <p style="font-size: 1.1rem; color: var(--text);">A quantitative researcher is judged not by the strategies they trade, but by the strategies they have the discipline to throw away.</p>
 
         <h2 style="margin-top: 40px;">Active Portfolio Engines</h2>
-        <table class="term-table">
+        <table class="term-table" style="background: #050505;">
             <thead><tr><th>STRATEGY</th><th>CATEGORY</th><th>STATUS</th></tr></thead>
             <tbody>
-                <tr><td data-label="Strategy">Hour-1 NAS100</td><td data-label="Category">Intraday index</td><td data-label="Status" class="text-up">IN RESEARCH</td></tr>
-                <tr><td data-label="Strategy">CPI Pre-Release XAU</td><td data-label="Category">Event driven</td><td data-label="Status" class="text-up">IN RESEARCH</td></tr>
-                <tr><td data-label="Strategy">Donchian Trend</td><td data-label="Category">Trend following</td><td data-label="Status" class="text-down">RETIRED</td></tr>
-                <tr><td data-label="Strategy">Gold Range (BB)</td><td data-label="Category">Mean reversion</td><td data-label="Status" class="text-down">RETIRED</td></tr>
+                <tr><td>Hour-1 NAS100</td><td>Intraday index</td><td class="text-up">IN RESEARCH</td></tr>
+                <tr><td>CPI Pre-Release XAU</td><td>Event driven</td><td class="text-up">IN RESEARCH</td></tr>
+                <tr><td>Donchian Trend</td><td>Trend following</td><td class="text-down">RETIRED</td></tr>
+                <tr><td>Gold Range (BB)</td><td>Mean reversion</td><td class="text-down">RETIRED</td></tr>
             </tbody>
         </table>
 
@@ -38,33 +51,27 @@
         <p>These strategies looked profitable at first glance but failed strict validation.</p>
         
         <div class="grid-2">
-            <div style="border: 1px solid var(--panel-border); padding: 24px; background: var(--void);">
+            <div style="border: 1px solid var(--panel-border); padding: 24px; background: #050505;">
                 <h3>NQ 1m 3-Red Candle Scalp</h3>
                 <p><strong class="text-down">FATAL FLAW:</strong> Cost-to-Risk Ratio.</p>
                 <p style="font-size: 0.9rem;">The median risk was 1.50 points. The round-trip cost was 1.0 point. The cost was 66% of the risk unit. Even with a 63.5% win rate, the Expected Value was deeply negative. Wiped to $0.</p>
             </div>
-            <div style="border: 1px solid var(--panel-border); padding: 24px; background: var(--void);">
+            <div style="border: 1px solid var(--panel-border); padding: 24px; background: #050505;">
                 <h3>NAS100 Staggered Overnight</h3>
                 <p><strong class="text-down">FATAL FLAW:</strong> Max Drawdown.</p>
                 <p style="font-size: 0.9rem;">Buying hourly from 10am to 11pm ET created a -32,026 point Max Drawdown. Overlapping 14 entries multiplies exposure to the exact same intraday swings.</p>
             </div>
-            <div style="border: 1px solid var(--panel-border); padding: 24px; background: var(--void);">
+            <div style="border: 1px solid var(--panel-border); padding: 24px; background: #050505;">
                 <h3>ICT Low of Day (LOD)</h3>
                 <p><strong class="text-down">FATAL FLAW:</strong> Stop Width.</p>
                 <p style="font-size: 0.9rem;">The 1-minute structural stop is 40 points wide. On a $5k account, one standard contract risks $800, instantly blowing the $250 daily loss limit (62% fail rate).</p>
             </div>
-            <div style="border: 1px solid var(--panel-border); padding: 24px; background: var(--void);">
+            <div style="border: 1px solid var(--panel-border); padding: 24px; background: #050505;">
                 <h3>120-Variation Pullback Grid</h3>
                 <p><strong class="text-down">FATAL FLAW:</strong> Ruinous Drawdown.</p>
                 <p style="font-size: 0.9rem;">The optimizer found a +30% CAGR variation, but it came with a -72% Max Drawdown. Optimization without a Calmar constraint is just a slow path to blowing up.</p>
             </div>
         </div>
-
-        <h2 style="margin-top: 60px;">Rejected Alternative Data</h2>
-        <ul>
-            <li><strong>Weather & Lunar Cycles:</strong> Appeared to have a +15 bps edge in-sample. Split-half flipped sign. Pure noise.</li>
-            <li><strong>Google Trends:</strong> Searches for "recession" lagged the market by exactly 3 weeks. It is a reaction effect, not a prediction effect.</li>
-        </ul>
     </div>
     
         </main>
