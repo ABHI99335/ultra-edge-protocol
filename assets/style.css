@@ -30,7 +30,7 @@ body {
 
 /* Ticker Tape */
 .ticker-wrap { width: 100%; overflow: hidden; background: #050505; border-bottom: 1px solid var(--panel-border); display: flex; height: 32px; align-items: center; }
-.ticker { display: flex; white-space: nowrap; padding-left: 100%; animation: ticker 40s linear infinite; }
+.ticker { display: flex; white-space: nowrap; padding-left: 100%; animation: ticker 50s linear infinite; }
 .ticker:hover { animation-play-state: paused; }
 .ticker-item { display: inline-flex; align-items: center; gap: 8px; padding: 0 24px; font-family: var(--mono); font-size: 12px; border-right: 1px solid var(--panel-border); }
 .ticker-sym { color: var(--amber); font-weight: 700; }

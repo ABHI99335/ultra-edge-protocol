@@ -109,62 +109,111 @@
         const track = document.getElementById('ticker-track');
         if (!track) return;
         
-        let html = '';
-        let successCount = 0;
+        let items = [];
         
+        // Helper for timeouts
+        async function fetchWithTimeout(url, timeout = 3000) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), timeout);
+            try {
+                const res = await fetch(url, { signal: controller.signal });
+                clearTimeout(id);
+                return res;
+            } catch (e) {
+                clearTimeout(id);
+                throw e;
+            }
+        }
+
         // 1. Fetch Crypto (Binance)
+        const cryptoSyms = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'BNBUSDT', 'XRPUSDT', 'ADAUSDT', 'DOGEUSDT', 'AVAXUSDT'];
         try {
-            const cryptoRes = await fetch('https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","SOLUSDT"]');
-            if (cryptoRes.ok) {
-                const cryptoData = await cryptoRes.json();
-                cryptoData.forEach(d => {
+            const query = encodeURIComponent('["' + cryptoSyms.join('","') + '"]');
+            const res = await fetchWithTimeout(`https://api.binance.com/api/v3/ticker/24hr?symbols=${query}`);
+            if (res.ok) {
+                const data = await res.json();
+                data.forEach(d => {
                     const sym = d.symbol.replace('USDT', '');
                     const price = parseFloat(d.lastPrice);
                     const pct = parseFloat(d.priceChangePercent);
-                    const colorClass = pct >= 0 ? 'text-up' : 'text-down';
+                    const color = pct >= 0 ? 'text-up' : 'text-down';
                     const sign = pct >= 0 ? '+' : '';
-                    
-                    html += `<div class="ticker-item">
-                        <span class="ticker-sym">${sym}</span>
-                        <span class="ticker-price">$${price.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
-                        <span class="${colorClass}">${sign}${pct.toFixed(2)}%</span>
-                    </div>`;
+                    const dec = price < 1 ? 4 : 2;
+                    items.push(`<div class="ticker-item"><span class="ticker-sym">${sym}</span><span class="ticker-price">$${price.toLocaleString('en-US', {minimumFractionDigits: dec, maximumFractionDigits: dec})}</span><span class="${color}">${sign}${pct.toFixed(2)}%</span></div>`);
                 });
-                successCount++;
             }
-        } catch (e) { console.warn("Binance blocked or failed"); }
-        
+        } catch (e) { console.warn("Binance failed"); }
+
         // 2. Fetch FX (Frankfurter)
         try {
-            const fxRes = await fetch('https://api.frankfurter.app/latest?from=USD');
-            if (fxRes.ok) {
-                const fxData = await fxRes.json();
-                if (fxData && fxData.rates) {
-                    html += `<div class="ticker-item"><span class="ticker-sym">EURUSD</span><span class="ticker-price">${(1/fxData.rates.EUR).toFixed(4)}</span></div>`;
-                    html += `<div class="ticker-item"><span class="ticker-sym">GBPUSD</span><span class="ticker-price">${(1/fxData.rates.GBP).toFixed(4)}</span></div>`;
-                    html += `<div class="ticker-item"><span class="ticker-sym">USDJPY</span><span class="ticker-price">${fxData.rates.JPY.toFixed(2)}</span></div>`;
-                    successCount++;
+            const res = await fetchWithTimeout('https://api.frankfurter.app/latest?from=USD');
+            if (res.ok) {
+                const data = await res.json();
+                if (data && data.rates) {
+                    const pairs = [
+                        { sym: 'EURUSD', val: 1/data.rates.EUR, dec: 4 },
+                        { sym: 'GBPUSD', val: 1/data.rates.GBP, dec: 4 },
+                        { sym: 'USDJPY', val: data.rates.JPY, dec: 2 },
+                        { sym: 'AUDUSD', val: 1/data.rates.AUD, dec: 4 },
+                        { sym: 'USDCAD', val: data.rates.CAD, dec: 4 },
+                        { sym: 'USDCHF', val: data.rates.CHF, dec: 4 },
+                        { sym: 'NZDUSD', val: 1/data.rates.NZD, dec: 4 }
+                    ];
+                    pairs.forEach(p => {
+                        items.push(`<div class="ticker-item"><span class="ticker-sym">${p.sym}</span><span class="ticker-price">${p.val.toFixed(p.dec)}</span></div>`);
+                    });
                 }
             }
-        } catch (e) { console.warn("Frankfurter blocked or failed"); }
+        } catch (e) { console.warn("Frankfurter failed"); }
+
+        // 3. Fetch Gold (Gold-API)
+        try {
+            const res = await fetchWithTimeout('https://api.gold-api.com/price/XAU');
+            if (res.ok) {
+                const data = await res.json();
+                items.push(`<div class="ticker-item"><span class="ticker-sym">XAUUSD</span><span class="ticker-price">$${data.price.toLocaleString('en-US', {minimumFractionDigits: 2})}</span></div>`);
+            }
+        } catch (e) { console.warn("Gold API failed"); }
+
+        // 4. Fetch Indices & Oil (Yahoo Finance via Proxy)
+        const yahooAssets = [
+            { sym: 'NAS100', ticker: 'NQ=F', dec: 2 },
+            { sym: 'US500', ticker: 'ES=F', dec: 2 },
+            { sym: 'DE40', ticker: '^GDAXI', dec: 2 },
+            { sym: 'WTIUSD', ticker: 'CL=F', dec: 2 }
+        ];
         
-        // 3. Fallback / Render
-        if (successCount > 0) {
-            // Duplicate content for seamless scrolling
-            track.innerHTML = html + html; 
+        for (let asset of yahooAssets) {
+            try {
+                const target = `https://query1.finance.yahoo.com/v8/finance/chart/${asset.ticker}`;
+                const proxy = `https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`;
+                const res = await fetchWithTimeout(proxy);
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data && data.chart && data.chart.result) {
+                        const meta = data.chart.result[0].meta;
+                        const price = meta.regularMarketPrice;
+                        const prev = meta.chartPreviousClose || meta.previousClose;
+                        const pct = ((price - prev) / prev) * 100;
+                        const color = pct >= 0 ? 'text-up' : 'text-down';
+                        const sign = pct >= 0 ? '+' : '';
+                        items.push(`<div class="ticker-item"><span class="ticker-sym">${asset.sym}</span><span class="ticker-price">${price.toLocaleString('en-US', {minimumFractionDigits: asset.dec, maximumFractionDigits: asset.dec})}</span><span class="${color}">${sign}${pct.toFixed(2)}%</span></div>`);
+                    }
+                }
+            } catch (e) { console.warn(`Yahoo failed: ${asset.sym}`); }
+        }
+
+        // Render
+        if (items.length > 0) {
+            track.innerHTML = items.join('') + items.join(''); // Duplicate for seamless scroll
         } else {
-            // If both APIs fail (e.g. strict adblocker), show a sleek graceful fallback
-            track.innerHTML = `
-                <div class="ticker-item text-dim">MARKET DATA UNAVAILABLE</div>
-                <div class="ticker-item text-dim">CHECK ADBLOCKER OR NETWORK</div>
-                <div class="ticker-item text-dim">SYSTEM OFFLINE</div>
-            `;
+            track.innerHTML = '<div class="ticker-item text-dim">DATA FEED OFFLINE · CHECK CONNECTION OR DISABLE ADBLOCKER</div>';
         }
     }
     
     document.addEventListener("DOMContentLoaded", () => {
         fetchTickerData();
-        setInterval(fetchTickerData, 30000); // update every 30s
+        setInterval(fetchTickerData, 60000); // Update every 60 seconds to avoid rate limits
     });
 </script>
 
