@@ -109,45 +109,56 @@
         const track = document.getElementById('ticker-track');
         if (!track) return;
         
+        let html = '';
+        let successCount = 0;
+        
+        // 1. Fetch Crypto (Binance)
         try {
-            // Fetch Crypto from Binance
             const cryptoRes = await fetch('https://api.binance.com/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","SOLUSDT"]');
-            const cryptoData = await cryptoRes.json();
-            
-            // Fetch FX from Frankfurter
-            const fxRes = await fetch('https://api.frankfurter.app/latest?from=USD');
-            const fxData = await fxRes.json();
-            
-            let html = '';
-            
-            // Add Crypto
-            cryptoData.forEach(d => {
-                const sym = d.symbol.replace('USDT', '');
-                const price = parseFloat(d.lastPrice);
-                const pct = parseFloat(d.priceChangePercent);
-                const colorClass = pct >= 0 ? 'text-up' : 'text-down';
-                const sign = pct >= 0 ? '+' : '';
-                
-                html += `<div class="ticker-item">
-                    <span class="ticker-sym">${sym}</span>
-                    <span class="ticker-price">$${price.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
-                    <span class="${colorClass}">${sign}${pct.toFixed(2)}%</span>
-                </div>`;
-            });
-            
-            // Add FX
-            if (fxData && fxData.rates) {
-                html += `<div class="ticker-item"><span class="ticker-sym">EURUSD</span><span class="ticker-price">${(1/fxData.rates.EUR).toFixed(4)}</span></div>`;
-                html += `<div class="ticker-item"><span class="ticker-sym">GBPUSD</span><span class="ticker-price">${(1/fxData.rates.GBP).toFixed(4)}</span></div>`;
-                html += `<div class="ticker-item"><span class="ticker-sym">USDJPY</span><span class="ticker-price">${fxData.rates.JPY.toFixed(2)}</span></div>`;
+            if (cryptoRes.ok) {
+                const cryptoData = await cryptoRes.json();
+                cryptoData.forEach(d => {
+                    const sym = d.symbol.replace('USDT', '');
+                    const price = parseFloat(d.lastPrice);
+                    const pct = parseFloat(d.priceChangePercent);
+                    const colorClass = pct >= 0 ? 'text-up' : 'text-down';
+                    const sign = pct >= 0 ? '+' : '';
+                    
+                    html += `<div class="ticker-item">
+                        <span class="ticker-sym">${sym}</span>
+                        <span class="ticker-price">$${price.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</span>
+                        <span class="${colorClass}">${sign}${pct.toFixed(2)}%</span>
+                    </div>`;
+                });
+                successCount++;
             }
-            
+        } catch (e) { console.warn("Binance blocked or failed"); }
+        
+        // 2. Fetch FX (Frankfurter)
+        try {
+            const fxRes = await fetch('https://api.frankfurter.app/latest?from=USD');
+            if (fxRes.ok) {
+                const fxData = await fxRes.json();
+                if (fxData && fxData.rates) {
+                    html += `<div class="ticker-item"><span class="ticker-sym">EURUSD</span><span class="ticker-price">${(1/fxData.rates.EUR).toFixed(4)}</span></div>`;
+                    html += `<div class="ticker-item"><span class="ticker-sym">GBPUSD</span><span class="ticker-price">${(1/fxData.rates.GBP).toFixed(4)}</span></div>`;
+                    html += `<div class="ticker-item"><span class="ticker-sym">USDJPY</span><span class="ticker-price">${fxData.rates.JPY.toFixed(2)}</span></div>`;
+                    successCount++;
+                }
+            }
+        } catch (e) { console.warn("Frankfurter blocked or failed"); }
+        
+        // 3. Fallback / Render
+        if (successCount > 0) {
             // Duplicate content for seamless scrolling
             track.innerHTML = html + html; 
-            
-        } catch (e) {
-            console.error("Ticker fetch failed", e);
-            track.innerHTML = '<div class="ticker-item text-dim">DATA FEED OFFLINE · PLEASE CHECK CONNECTION</div>';
+        } else {
+            // If both APIs fail (e.g. strict adblocker), show a sleek graceful fallback
+            track.innerHTML = `
+                <div class="ticker-item text-dim">MARKET DATA UNAVAILABLE</div>
+                <div class="ticker-item text-dim">CHECK ADBLOCKER OR NETWORK</div>
+                <div class="ticker-item text-dim">SYSTEM OFFLINE</div>
+            `;
         }
     }
     
