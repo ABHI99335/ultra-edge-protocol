@@ -1,0 +1,112 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Terminal v2 | ULTRA EDGE</title>
+        <link rel="stylesheet" href="assets/style.css">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
+    </head>
+    <body>
+        <div class="scanline"></div>
+        
+        <!-- Header -->
+        <header class="term-header">
+            <div style="display: flex; align-items: center;">
+                <div class="term-brand">ULTRA EDGE <span>▸ TERMINAL</span></div>
+                <div class="term-nav">
+                    <button class="nav-btn active">F1 OVERVIEW</button>
+                    <button class="nav-btn">F2 MACRO</button>
+                    <button class="nav-btn">F3 CRYPTO</button>
+                    <button class="nav-btn">F4 NEWS</button>
+                    <button class="nav-btn">F5 LOG</button>
+                </div>
+            </div>
+            <div class="term-status">
+                <span>UTC <span id="utc-time" class="text-amber">00:00:00</span></span>
+                <span>LOC <span id="local-time" class="text-amber">00:00:00</span></span>
+                <span><span class="status-dot"></span>ONLINE</span>
+            </div>
+        </header>
+
+        <!-- Main Grid -->
+        <div class="term-grid">
+            
+            <!-- LEFT COLUMN -->
+            <div class="col-left">
+                
+                <!-- Macro Panel -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-title">F2 · GLOBAL MACRO & INDICES</div>
+                        <div class="panel-meta">YAHOO + FRANKFURTER · <span id="macro-time">00:00:00Z</span></div>
+                    </div>
+                    <table class="term-table">
+                        <thead>
+                            <tr><th>ASSET</th><th>LAST</th><th>CHG %</th><th>TREND</th><th>SRC</th></tr>
+                        </thead>
+                        <tbody id="macro-body">
+                            <!-- Javascript injects data here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Crypto Panel -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <div class="panel-title">F3 · DIGITAL ASSETS</div>
+                        <div class="panel-meta">BINANCE · <span id="crypto-time">00:00:00Z</span> · <span id="crypto-status">3/3 OK</span></div>
+                    </div>
+                    <table class="term-table">
+                        <thead>
+                            <tr><th>ASSET</th><th>LAST</th><th>1H</th><th>24H</th><th>24H RANGE</th><th>TREND</th><th>SRC</th></tr>
+                        </thead>
+                        <tbody id="crypto-body">
+                            <!-- Javascript injects data here -->
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN -->
+            <div class="col-right">
+                
+                <!-- News Panel -->
+                <div class="panel news-panel">
+                    <div class="panel-header">
+                        <div class="panel-title">F4 · NEWS SENTIMENT</div>
+                        <div class="panel-meta text-dim" id="news-meta">AWAITING FEED</div>
+                    </div>
+                    <div class="news-content" id="news-feed">
+                        <div class="text-dim" style="margin-bottom: 8px;">Loading headlines...</div>
+                    </div>
+                </div>
+
+                <!-- Log Panel -->
+                <div class="panel log-panel">
+                    <div class="panel-header">
+                        <div class="panel-title">F5 · SYSTEM LOG</div>
+                        <div class="panel-meta" id="log-count">0 EVENTS</div>
+                    </div>
+                    <div class="log-content" id="sys-log">
+                        <!-- Javascript injects logs here -->
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <footer class="term-footer">
+            <div>SOURCES BINANCE · FRANKFURTER · YAHOO (PROXY) · RSS</div>
+            <div>UPDATED <span id="last-update">--:--:--Z</span> · LATENCY <span id="latency">-- MS</span></div>
+            <div>Global USD-denominated universe · Informational only, not investment advice.</div>
+        </footer>
+
+        <script src="assets/terminal.js"></script>
+    </body>
+    </html>
+    
