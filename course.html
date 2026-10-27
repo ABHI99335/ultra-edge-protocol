@@ -1128,6 +1128,7 @@ $$</p>
 </table>
 <p>The fourth is the one that quietly kills research programmes. A signal that fires 40 times in 10 years has a standard error on its Sharpe ratio so wide that no statistical test can rescue it. Bailey &amp; López de Prado's framework is explicit: the minimum track record length required to distinguish a Sharpe of 0.5 from zero at 95% confidence is measured in <em>years</em>, not trades. If your event count is small, your honest conclusion is "untestable," and the correct action is to find a version of the hypothesis that fires more often — not to lower your threshold for belief.</p>
 <hr />
+<p><img alt="Equity Curve" src="assets/course/equity_curve.jpg" /></p>
 <h1>PHASE 3 — BACKTESTING &amp; VALIDATION: THE TWELVE RULES</h1>
 <blockquote>
 <p><em>A backtest is not evidence. A backtest is a hypothesis about the past, and the past is a single sample drawn from a distribution you cannot observe. These twelve rules are how you avoid mistaking one draw for the distribution.</em></p>
@@ -1301,6 +1302,7 @@ $$</p>
 </tbody>
 </table>
 <p><strong>The embargo, explained.</strong> If your label is "return over the next 5 days," then an observation at $$t$$ and one at $$t+3$$ share 2 days of information. Placing them on opposite sides of a split boundary leaks. The embargo removes training observations within the label horizon of the test set. It is a five-line fix and it is skipped in the overwhelming majority of retail and much academic work.</p>
+<p><img alt="Monte Carlo" src="assets/course/monte_carlo.jpg" /></p>
 <h2>3.4 Monte Carlo — the three simulations you actually need</h2>
 <p>A single backtest path is one realisation of a random process. Reporting its maximum drawdown as "the" drawdown is the same error as reporting a single coin flip as "the" probability. Three simulations fix it, and they answer three different questions.</p>
 <p><strong>Simulation 1 — Trade-order shuffle (permutation).</strong> Resample the sequence of trade P&amp;Ls, with replacement or without, thousands of times. Answers: <em>what is the distribution of drawdowns consistent with this edge?</em> Cheap, assumption-light, and the fastest way to discover that your realised max drawdown was lucky. Limitation: destroys autocorrelation, so it <em>understates</em> clustered drawdowns if your strategy's losses cluster.</p>
@@ -1573,6 +1575,7 @@ $$</p>
 <li><strong>Return</strong> — a consequence, not a target.</li>
 </ol>
 <p>Retail content inverts this list. That inversion is the reason most accounts die with a positive-expectancy strategy.</p>
+<p><img alt="Kelly Curve" src="assets/course/kelly_curve.jpg" /></p>
 <h2>4.1 The Kelly criterion — what it says, and why you must not use it</h2>
 <p>Kelly (1956), formalised for markets by Thorp (2006), gives the growth-optimal fraction of capital to risk. For a bet with win probability $$p$$, win fraction $$b$$, loss fraction $$a$$:</p>
 <p>$$f^* = \frac{p}{a} - \frac{1-p}{b} = \frac{pb - (1-p)a}{ab}$$</p>

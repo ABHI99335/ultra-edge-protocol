@@ -54,18 +54,23 @@ li { margin-bottom: 0.5rem; } strong { color: var(--text); font-weight: 600; }
 .term-table tr:hover td { background: rgba(255,176,0,0.03); }
 
 /* Textbook Styles */
-.textbook-content h1, .textbook-content h2, .textbook-content h3 { color: var(--amber); margin-top: 1.5em; font-family: var(--mono); }
-.textbook-content h2 { color: var(--ice); font-size: 1.3rem; border-bottom: 1px solid var(--panel-border); padding-bottom: 8px; }
-.textbook-content h3 { font-size: 1.1rem; color: var(--text); }
-.textbook-content p { color: var(--text-dim); line-height: 1.7; margin-bottom: 1em; }
-.textbook-content table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; font-family: var(--mono); }
-.textbook-content th, .textbook-content td { border: 1px solid var(--panel-border); padding: 10px; text-align: left; }
-.textbook-content th { background: #0a0a0a; color: var(--amber); }
-.textbook-content td { color: var(--text-dim); background: #050505; }
-.textbook-content code { background: #1a1a1a; padding: 2px 6px; border-radius: 4px; font-family: var(--mono); color: var(--ice); }
-.textbook-content blockquote { border-left: 4px solid var(--amber); padding-left: 16px; margin: 20px 0; font-style: italic; color: var(--text); }
-.textbook-content ul, .textbook-content ol { color: var(--text-dim); margin-bottom: 20px; padding-left: 20px; }
-.textbook-content li { margin-bottom: 8px; }
+
+.textbook-content { font-family: 'Inter', sans-serif; font-weight: 500; font-size: 15px; line-height: 1.8; color: #E5E7EB; max-width: 900px; margin: 0 auto; }
+.textbook-content h1 { font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 2.2rem; color: var(--amber); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2em; border-bottom: 2px solid var(--amber); padding-bottom: 10px; }
+.textbook-content h2 { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 1.5rem; color: var(--ice); text-transform: uppercase; letter-spacing: 0.02em; margin-top: 1.5em; }
+.textbook-content h3 { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 1.2rem; color: var(--text); margin-top: 1.2em; }
+.textbook-content p { margin-bottom: 1.2em; color: #D1D5DB; }
+.textbook-content table { width: 100%; border-collapse: collapse; margin: 24px 0; font-size: 0.9rem; font-family: var(--mono); background: #0a0a0a; }
+.textbook-content th, .textbook-content td { border: 1px solid var(--panel-border); padding: 12px 16px; text-align: left; }
+.textbook-content th { background: #111111; color: var(--amber); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+.textbook-content td { color: var(--text-dim); font-weight: 500; }
+.textbook-content code { background: #1a1a1a; padding: 3px 6px; border-radius: 4px; font-family: var(--mono); color: var(--ice); font-weight: 600; }
+.textbook-content blockquote { border-left: 4px solid var(--amber); padding: 16px 20px; margin: 24px 0; font-style: normal; background: rgba(255,176,0,0.05); color: var(--text); font-weight: 500; }
+.textbook-content blockquote p { margin-bottom: 0; }
+.textbook-content ul, .textbook-content ol { margin-bottom: 24px; padding-left: 24px; color: #D1D5DB; }
+.textbook-content li { margin-bottom: 12px; }
+.textbook-content img { max-width: 100%; border: 1px solid var(--panel-border); border-radius: 4px; margin: 30px 0; box-shadow: 0 4px 20px rgba(0,0,0,0.5); }
+
 
 /* Utilities */
 .text-amber { color: var(--amber) !important; } .text-up { color: var(--up) !important; } .text-down { color: var(--down) !important; } .text-dim { color: var(--text-dim) !important; }
