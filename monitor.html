@@ -65,7 +65,7 @@
     
     <script>
     async function fetchMonitorData() {
-        const proxy = 'https://api.allorigins.win/raw?url=';
+        const proxy = 'https://api.codetabs.com/v1/proxy?quest=';
         const assets = [
             { sym: 'SPY', name: 'S&P 500', type: 'risk' },
             { sym: 'QQQ', name: 'Nasdaq 100', type: 'risk' },
@@ -120,31 +120,36 @@
                     </li>`;
                 }
             } catch (e) {
-                pulseHTML += `<tr><td>${asset.name}</td><td class="text-dim">N/A</td><td class="text-dim">--</td></tr>`;
+                pulseHTML += `<tr><td>${asset.name}</td><td class="text-down">N/A</td><td class="text-down">ERR</td></tr>`;
             }
         }
 
         document.getElementById('pulse-body').innerHTML = pulseHTML;
         document.getElementById('regime-details').innerHTML = detailsHTML;
 
-        const scorePct = Math.round((riskScore / maxScore) * 100);
-        const scoreEl = document.getElementById('regime-score');
-        const labelEl = document.getElementById('regime-label');
-        
-        scoreEl.innerText = scorePct;
-        
-        if (scorePct >= 65) {
-            scoreEl.style.color = 'var(--up)';
-            labelEl.innerText = 'RISK-ON';
-            labelEl.style.color = 'var(--up)';
-        } else if (scorePct <= 35) {
-            scoreEl.style.color = 'var(--down)';
-            labelEl.innerText = 'RISK-OFF';
-            labelEl.style.color = 'var(--down)';
+        if (maxScore > 0) {
+            const scorePct = Math.round((riskScore / maxScore) * 100);
+            const scoreEl = document.getElementById('regime-score');
+            const labelEl = document.getElementById('regime-label');
+            
+            scoreEl.innerText = scorePct;
+            
+            if (scorePct >= 65) {
+                scoreEl.style.color = 'var(--up)';
+                labelEl.innerText = 'RISK-ON';
+                labelEl.style.color = 'var(--up)';
+            } else if (scorePct <= 35) {
+                scoreEl.style.color = 'var(--down)';
+                labelEl.innerText = 'RISK-OFF';
+                labelEl.style.color = 'var(--down)';
+            } else {
+                scoreEl.style.color = 'var(--amber)';
+                labelEl.innerText = 'NEUTRAL';
+                labelEl.style.color = 'var(--amber)';
+            }
         } else {
-            scoreEl.style.color = 'var(--amber)';
-            labelEl.innerText = 'NEUTRAL';
-            labelEl.style.color = 'var(--amber)';
+            document.getElementById('regime-label').innerText = 'DATA OFFLINE';
+            document.getElementById('regime-label').style.color = 'var(--down)';
         }
     }
     document.addEventListener("DOMContentLoaded", fetchMonitorData);
