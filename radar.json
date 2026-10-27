@@ -1,0 +1,38 @@
+{
+  "SPY": {
+    "name": "S&P 500",
+    "price": 765.37,
+    "change_pct": 0.71,
+    "above_sma200": true
+  },
+  "QQQ": {
+    "name": "Nasdaq 100",
+    "price": 712.2,
+    "change_pct": 1.11,
+    "above_sma200": true
+  },
+  "BTC-USD": {
+    "name": "Bitcoin",
+    "price": 79580.61,
+    "change_pct": -0.53,
+    "above_sma200": true
+  },
+  "GLD": {
+    "name": "Gold",
+    "price": 367.82,
+    "change_pct": 0.33,
+    "above_sma200": false
+  },
+  "DX-Y.NYB": {
+    "name": "Dollar Index",
+    "price": 102.17,
+    "change_pct": 0.21,
+    "above_sma200": true
+  },
+  "CL=F": {
+    "name": "Crude Oil",
+    "price": 102.49,
+    "change_pct": 0.72,
+    "above_sma200": true
+  }
+}
