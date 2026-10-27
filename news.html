@@ -1,0 +1,138 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>News Wire | ULTRA EDGE</title>
+        <link rel="stylesheet" href="assets/style.css">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
+        <script>
+          MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[', '\\]']] } };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
+        
+    <header class="term-header">
+        <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
+        <div class="nav-links"><a href="index.html" class="nav-btn">F1 · HOME</a><a href="approach.html" class="nav-btn">F2 · APPROACH</a><a href="edge.html" class="nav-btn">F3 · OUR EDGE</a><a href="graveyard.html" class="nav-btn">F4 · GRAVEYARD</a><a href="course.html" class="nav-btn">F5 · COURSE</a><a href="principal.html" class="nav-btn">F6 · PRINCIPAL</a><a href="news.html" class="nav-btn active">F7 · NEWS</a><a href="contact.html" class="nav-btn">F8 · CONTACT</a></div>
+        <div class="term-status mono" style="font-size: 11px; color: var(--text-dim);">
+            UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
+        </div>
+    </header>
+    
+<script>
+    setInterval(() => {
+        const now = new Date();
+        const utcEl = document.getElementById('utc-time');
+        const locEl = document.getElementById('local-time');
+        if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0];
+        if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB');
+    }, 1000);
+</script>
+
+    
+        
+        <main class="page-container">
+            
+    <div class="panel">
+        <div class="panel-header">
+            <div class="panel-title">F7 · GLOBAL NEWS WIRE</div>
+            <div style="color: var(--down); font-weight: bold; display: flex; align-items: center; gap: 6px;">
+                <span style="display: inline-block; width: 8px; height: 8px; background: var(--down); border-radius: 50%; animation: pulse 1.5s infinite;"></span>
+                LIVE INTELLIGENCE
+            </div>
+        </div>
+        <h1>Global News Wire</h1>
+        <p style="font-size: 1.1rem; color: var(--text);">Breaking global macro, geopolitical, and financial news. Filtered for market impact.</p>
+        
+        <style>
+            @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
+            .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 30px; }
+            .news-column { background: #050505; border: 1px solid var(--panel-border); padding: 20px; }
+            .news-header { font-family: var(--mono); color: var(--amber); font-size: 1rem; border-bottom: 1px solid var(--panel-border); padding-bottom: 10px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.1em;}
+            .news-item { border-bottom: 1px solid #111; padding: 12px 0; }
+            .news-item:last-child { border-bottom: none; }
+            .news-meta { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 10px; color: var(--text-dim); margin-bottom: 6px; text-transform: uppercase;}
+            .news-title { color: #FFF; font-weight: 500; font-size: 0.95rem; line-height: 1.4; text-decoration: none; display: block; transition: color 0.2s;}
+            .news-title:hover { color: var(--ice); }
+            .source-world { color: var(--ice); border: 1px solid rgba(111, 183, 214, 0.3); padding: 1px 4px; }
+            .source-mkt { color: var(--up); border: 1px solid rgba(63, 178, 127, 0.3); padding: 1px 4px; }
+            @media (max-width: 900px) { .news-grid { grid-template-columns: 1fr; } }
+        </style>
+
+        <div class="news-grid">
+            <div class="news-column">
+                <div class="news-header">🌍 Global Geopolitics (BBC)</div>
+                <div id="news-world"><div class="text-dim text-center mt-10">Loading headlines...</div></div>
+            </div>
+            <div class="news-column">
+                <div class="news-header">📈 Market Intelligence (CNBC)</div>
+                <div id="news-markets"><div class="text-dim text-center mt-10">Loading headlines...</div></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    async function fetchNews(feedUrl, containerId, sourceClass, sourceName) {
+        try {
+            const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}&api_key=&count=10`);
+            const data = await res.json();
+            
+            if (data.status === 'ok' && data.items.length > 0) {
+                let html = '';
+                data.items.slice(0, 10).forEach(item => {
+                    const date = new Date(item.pubDate);
+                    const timeStr = date.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'});
+                    const dateStr = date.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
+                    
+                    html += `<div class="news-item">
+                        <div class="news-meta">
+                            <span class="${sourceClass}">${sourceName}</span>
+                            <span>${dateStr} ${timeStr}</span>
+                        </div>
+                        <a href="${item.link}" target="_blank" class="news-title">${item.title}</a>
+                    </div>`;
+                });
+                document.getElementById(containerId).innerHTML = html;
+            } else {
+                document.getElementById(containerId).innerHTML = `<div class="text-down">Feed unavailable. Check connection.</div>`;
+            }
+        } catch (e) {
+            console.error(e);
+            document.getElementById(containerId).innerHTML = `<div class="text-down">Failed to load feed.</div>`;
+        }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const bbcUrl = 'http://feeds.bbci.co.uk/news/world/rss.xml';
+        const cnbcUrl = 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114';
+        
+        fetchNews(bbcUrl, 'news-world', 'source-world', 'BBC');
+        fetchNews(cnbcUrl, 'news-markets', 'source-mkt', 'CNBC');
+        
+        // Auto-refresh every 5 minutes
+        setInterval(() => {
+            fetchNews(bbcUrl, 'news-world', 'source-world', 'BBC');
+            fetchNews(cnbcUrl, 'news-markets', 'source-mkt', 'CNBC');
+        }, 300000);
+    });
+    </script>
+    
+        </main>
+        
+    <footer class="term-footer">
+        <div style="margin-bottom: 16px;"><strong style="color: var(--amber);">ULTRA EDGE RESEARCH</strong> · SYSTEMATIC MACRO & CROSS-ASSET</div>
+        <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 16px;">
+            <a href="mailto:abhishekgupta10m@gmail.com">EMAIL</a>
+            <a href="https://github.com/ABHI99335" target="_blank">GITHUB</a>
+            <a href="https://www.instagram.com/abhishex08" target="_blank">INSTAGRAM</a>
+        </div>
+        <div style="font-size: 10px; max-width: 800px; margin: 0 auto; color: #4B5563;">DISCLOSURE: This site is for informational purposes only and does not constitute an offer to buy or sell any security.</div>
+    </footer>
+    
+        
+    </body>
+    </html>
+    
