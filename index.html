@@ -12,7 +12,7 @@
         
     <header class="term-header">
         <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
-        <div class="nav-links"><a href="index.html" class="nav-btn active">F1 · HOME</a><a href="approach.html" class="nav-btn">F2 · APPROACH</a><a href="research.html" class="nav-btn">F3 · RESEARCH</a><a href="principal.html" class="nav-btn">F4 · PRINCIPAL</a><a href="contact.html" class="nav-btn">F5 · CONTACT</a></div>
+        <div class="nav-links"><a href="index.html" class="nav-btn active">F1 · HOME</a><a href="approach.html" class="nav-btn">F2 · APPROACH</a><a href="edge.html" class="nav-btn">F3 · OUR EDGE</a><a href="graveyard.html" class="nav-btn">F4 · GRAVEYARD</a><a href="principal.html" class="nav-btn">F5 · PRINCIPAL</a><a href="contact.html" class="nav-btn">F6 · CONTACT</a></div>
         <div class="term-status mono" style="font-size: 11px; color: var(--text-dim);">
             UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
         </div>
@@ -29,13 +29,7 @@
 </script>
 
     
-        
-    <div class="ticker-wrap">
-        <div class="ticker" id="ticker-track">
-            <div class="ticker-item text-dim">CONNECTING TO MARKET DATA...</div>
-        </div>
-    </div>
-    
+        <div class="ticker-wrap"><div class="ticker" id="ticker-track"><div class="ticker-item text-dim">CONNECTING TO MARKET DATA...</div></div></div>
         <main class="page-container">
             
     <div class="panel">
@@ -63,8 +57,8 @@
                 <div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Assets in universe</div>
             </div>
             <div style="border-left: 2px solid var(--amber); padding-left: 16px;">
-                <div style="font-family: var(--mono); font-size: 3rem; color: var(--amber); font-weight: 700; line-height: 1;">12</div>
-                <div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Governance rules</div>
+                <div style="font-family: var(--mono); font-size: 3rem; color: var(--amber); font-weight: 700; line-height: 1;">08</div>
+                <div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Alpha Survivors</div>
             </div>
         </div>
     </div>
@@ -79,11 +73,11 @@
         <div class="panel">
             <div class="panel-header"><div class="panel-title">LATEST RESEARCH</div></div>
             <ul>
-                <li><strong style="color: var(--text);">Post-Mortem:</strong> Why the NQ 1m Scalp failed (cost-to-risk ratio).</li>
+                <li><strong style="color: var(--text);">Alpha 01:</strong> Project Aegis achieves a 62.8% Prop Firm Pass Rate.</li>
+                <li><strong style="color: var(--text);">The Graveyard:</strong> Why I brutally rejected 8 institutional trading strategies.</li>
                 <li><strong style="color: var(--text);">Methodology:</strong> The 3-Stage Factor Validation framework.</li>
-                <li><strong style="color: var(--text);">Data:</strong> Rejecting fringe data (weather, lunar cycles).</li>
             </ul>
-            <a href="research.html" style="display: inline-block; margin-top: 16px; padding: 12px 24px; border: 1px solid var(--amber); color: var(--amber); text-decoration: none; font-family: var(--mono); font-weight: 700;">VIEW RESEARCH LOG</a>
+            <a href="edge.html" style="display: inline-block; margin-top: 16px; padding: 12px 24px; border: 1px solid var(--amber); color: var(--amber); text-decoration: none; font-family: var(--mono); font-weight: 700;">VIEW OUR EDGE</a>
         </div>
     </div>
     
@@ -110,24 +104,15 @@
         if (!track) return;
         
         let items = [];
-        
-        // Helper for timeouts
         async function fetchWithTimeout(url, timeout = 3000) {
             const controller = new AbortController();
             const id = setTimeout(() => controller.abort(), timeout);
-            try {
-                const res = await fetch(url, { signal: controller.signal });
-                clearTimeout(id);
-                return res;
-            } catch (e) {
-                clearTimeout(id);
-                throw e;
-            }
+            try { const res = await fetch(url, { signal: controller.signal }); clearTimeout(id); return res; } 
+            catch (e) { clearTimeout(id); throw e; }
         }
 
-        // 1. Fetch Crypto (Binance)
-        const cryptoSyms = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'BNBUSDT', 'XRPUSDT', 'ADAUSDT', 'DOGEUSDT', 'AVAXUSDT'];
         try {
+            const cryptoSyms = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'BNBUSDT', 'XRPUSDT', 'ADAUSDT', 'DOGEUSDT', 'AVAXUSDT'];
             const query = encodeURIComponent('["' + cryptoSyms.join('","') + '"]');
             const res = await fetchWithTimeout(`https://api.binance.com/api/v3/ticker/24hr?symbols=${query}`);
             if (res.ok) {
@@ -142,9 +127,8 @@
                     items.push(`<div class="ticker-item"><span class="ticker-sym">${sym}</span><span class="ticker-price">$${price.toLocaleString('en-US', {minimumFractionDigits: dec, maximumFractionDigits: dec})}</span><span class="${color}">${sign}${pct.toFixed(2)}%</span></div>`);
                 });
             }
-        } catch (e) { console.warn("Binance failed"); }
+        } catch (e) {}
 
-        // 2. Fetch FX (Frankfurter)
         try {
             const res = await fetchWithTimeout('https://api.frankfurter.app/latest?from=USD');
             if (res.ok) {
@@ -154,67 +138,17 @@
                         { sym: 'EURUSD', val: 1/data.rates.EUR, dec: 4 },
                         { sym: 'GBPUSD', val: 1/data.rates.GBP, dec: 4 },
                         { sym: 'USDJPY', val: data.rates.JPY, dec: 2 },
-                        { sym: 'AUDUSD', val: 1/data.rates.AUD, dec: 4 },
-                        { sym: 'USDCAD', val: data.rates.CAD, dec: 4 },
-                        { sym: 'USDCHF', val: data.rates.CHF, dec: 4 },
-                        { sym: 'NZDUSD', val: 1/data.rates.NZD, dec: 4 }
+                        { sym: 'AUDUSD', val: 1/data.rates.AUD, dec: 4 }
                     ];
-                    pairs.forEach(p => {
-                        items.push(`<div class="ticker-item"><span class="ticker-sym">${p.sym}</span><span class="ticker-price">${p.val.toFixed(p.dec)}</span></div>`);
-                    });
+                    pairs.forEach(p => items.push(`<div class="ticker-item"><span class="ticker-sym">${p.sym}</span><span class="ticker-price">${p.val.toFixed(p.dec)}</span></div>`));
                 }
             }
-        } catch (e) { console.warn("Frankfurter failed"); }
+        } catch (e) {}
 
-        // 3. Fetch Gold (Gold-API)
-        try {
-            const res = await fetchWithTimeout('https://api.gold-api.com/price/XAU');
-            if (res.ok) {
-                const data = await res.json();
-                items.push(`<div class="ticker-item"><span class="ticker-sym">XAUUSD</span><span class="ticker-price">$${data.price.toLocaleString('en-US', {minimumFractionDigits: 2})}</span></div>`);
-            }
-        } catch (e) { console.warn("Gold API failed"); }
-
-        // 4. Fetch Indices & Oil (Yahoo Finance via Proxy)
-        const yahooAssets = [
-            { sym: 'NAS100', ticker: 'NQ=F', dec: 2 },
-            { sym: 'US500', ticker: 'ES=F', dec: 2 },
-            { sym: 'DE40', ticker: '^GDAXI', dec: 2 },
-            { sym: 'WTIUSD', ticker: 'CL=F', dec: 2 }
-        ];
-        
-        for (let asset of yahooAssets) {
-            try {
-                const target = `https://query1.finance.yahoo.com/v8/finance/chart/${asset.ticker}`;
-                const proxy = `https://api.allorigins.win/raw?url=${encodeURIComponent(target)}`;
-                const res = await fetchWithTimeout(proxy);
-                if (res.ok) {
-                    const data = await res.json();
-                    if (data && data.chart && data.chart.result) {
-                        const meta = data.chart.result[0].meta;
-                        const price = meta.regularMarketPrice;
-                        const prev = meta.chartPreviousClose || meta.previousClose;
-                        const pct = ((price - prev) / prev) * 100;
-                        const color = pct >= 0 ? 'text-up' : 'text-down';
-                        const sign = pct >= 0 ? '+' : '';
-                        items.push(`<div class="ticker-item"><span class="ticker-sym">${asset.sym}</span><span class="ticker-price">${price.toLocaleString('en-US', {minimumFractionDigits: asset.dec, maximumFractionDigits: asset.dec})}</span><span class="${color}">${sign}${pct.toFixed(2)}%</span></div>`);
-                    }
-                }
-            } catch (e) { console.warn(`Yahoo failed: ${asset.sym}`); }
-        }
-
-        // Render
-        if (items.length > 0) {
-            track.innerHTML = items.join('') + items.join(''); // Duplicate for seamless scroll
-        } else {
-            track.innerHTML = '<div class="ticker-item text-dim">DATA FEED OFFLINE · CHECK CONNECTION OR DISABLE ADBLOCKER</div>';
-        }
+        if (items.length > 0) track.innerHTML = items.join('') + items.join(''); 
+        else track.innerHTML = '<div class="ticker-item text-dim">MARKET DATA UNAVAILABLE</div>';
     }
-    
-    document.addEventListener("DOMContentLoaded", () => {
-        fetchTickerData();
-        setInterval(fetchTickerData, 60000); // Update every 60 seconds to avoid rate limits
-    });
+    document.addEventListener("DOMContentLoaded", () => { fetchTickerData(); setInterval(fetchTickerData, 60000); });
 </script>
 
     </body>

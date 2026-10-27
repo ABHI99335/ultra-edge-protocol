@@ -1,0 +1,130 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Our Edge | ULTRA EDGE</title>
+        <link rel="stylesheet" href="assets/style.css">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
+    </head>
+    <body>
+        
+    <header class="term-header">
+        <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
+        <div class="nav-links"><a href="index.html" class="nav-btn">F1 · HOME</a><a href="approach.html" class="nav-btn">F2 · APPROACH</a><a href="edge.html" class="nav-btn active">F3 · OUR EDGE</a><a href="graveyard.html" class="nav-btn">F4 · GRAVEYARD</a><a href="principal.html" class="nav-btn">F5 · PRINCIPAL</a><a href="contact.html" class="nav-btn">F6 · CONTACT</a></div>
+        <div class="term-status mono" style="font-size: 11px; color: var(--text-dim);">
+            UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
+        </div>
+    </header>
+    
+<script>
+    setInterval(() => {
+        const now = new Date();
+        const utcEl = document.getElementById('utc-time');
+        const locEl = document.getElementById('local-time');
+        if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0];
+        if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB');
+    }, 1000);
+</script>
+
+    
+        
+        <main class="page-container">
+            
+    <div class="panel">
+        <div class="panel-header"><div class="panel-title">F3 · ALPHA REGISTRY</div></div>
+        <h1>Our Edge</h1>
+        <p style="font-size: 1.1rem; color: var(--text);">Proprietary systematic strategies that have survived strict Out-of-Sample validation, Monte Carlo simulations, and realistic transaction cost modeling.</p>
+        
+        <table class="term-table" style="background: #050505; margin-top: 30px;">
+            <thead>
+                <tr>
+                    <th>ALPHA CODENAME</th>
+                    <th>CLASSIFICATION</th>
+                    <th>WIN RATE</th>
+                    <th>EXPECTANCY</th>
+                    <th>MAX DD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong style="color: var(--amber);">Alpha 01: Project Aegis</strong></td>
+                    <td>Prop Firm (S-Tier)</td>
+                    <td>62.6%</td>
+                    <td>+0.128R</td>
+                    <td>-6.2%</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--amber);">Alpha 02: The Horizon Protocol</strong></td>
+                    <td>Portfolio Engine</td>
+                    <td>42.5%</td>
+                    <td>+0.250R</td>
+                    <td>-30.0%</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--amber);">Alpha 03: The Echo Matrix</strong></td>
+                    <td>Portfolio Engine</td>
+                    <td>34.9%</td>
+                    <td>+0.050R</td>
+                    <td>-11.5%</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--amber);">Alpha 04: The Ascendant Engine</strong></td>
+                    <td>Prop Firm (B-Tier)</td>
+                    <td>48.2%</td>
+                    <td>+0.160R</td>
+                    <td>-27.8%</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--amber);">Alpha 05: Chronos Drift</strong></td>
+                    <td>Portfolio Engine</td>
+                    <td>84.0%</td>
+                    <td>+0.250R</td>
+                    <td>-5.0%</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--amber);">Alpha 06: Macro Catalyst Preemption</strong></td>
+                    <td>Portfolio Engine</td>
+                    <td>73.0%</td>
+                    <td>+0.350R</td>
+                    <td>-8.0%</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--amber);">Alpha 07: Sovereign Liquidity</strong></td>
+                    <td>Portfolio Engine</td>
+                    <td>45.0%</td>
+                    <td>+0.100R</td>
+                    <td>-14.0%</td>
+                </tr>
+                <tr>
+                    <td><strong style="color: var(--amber);">Alpha 08: Titan Trend Continuum</strong></td>
+                    <td>Portfolio Anchor</td>
+                    <td>48.2%</td>
+                    <td>+0.080R</td>
+                    <td>-10.5%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+        </main>
+        
+    <footer class="term-footer">
+        <div style="margin-bottom: 16px;">
+            <strong style="color: var(--amber);">ULTRA EDGE RESEARCH</strong> · SYSTEMATIC MACRO & CROSS-ASSET
+        </div>
+        <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 16px;">
+            <a href="mailto:abhishekgupta10m@gmail.com">EMAIL</a>
+            <a href="https://github.com/ABHI99335" target="_blank">GITHUB</a>
+            <a href="https://www.instagram.com/abhishex08" target="_blank">INSTAGRAM</a>
+        </div>
+        <div style="font-size: 10px; max-width: 800px; margin: 0 auto; color: #4B5563;">
+            DISCLOSURE: This site is for informational purposes only and does not constitute an offer to buy or sell any security. Past performance is not indicative of future results. The strategies and research presented represent a methodology and are not live trading track records.
+        </div>
+    </footer>
+    
+        
+    </body>
+    </html>
+    
