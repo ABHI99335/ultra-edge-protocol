@@ -99,6 +99,7 @@
 <li><strong>Appendix D — The Anti-Curriculum</strong></li>
 </ul>
 <hr />
+<p><img alt="Retail Trap" src="assets/course/retail_trap.jpg" /></p>
 <h1>INTRODUCTION — THE RETAIL TRAP</h1>
 <h2>0.1 The central error</h2>
 <p>Retail trading education sells a single implicit promise: <strong>that the difficulty of trading is prediction.</strong> Everything downstream of that premise — indicators, patterns, "confluences," alert channels, the search for a higher win rate — is a rational response to a false premise.</p>
@@ -111,6 +112,15 @@ $$</p>
 <p>$$$E = 0.58(0.92) - 0.42(1.00) - 0.15 = 0.5336 - 0.42 - 0.15 = -0.036$$$</p>
 <p>Negative. A 58% hit rate with a 1:1 payoff — the profile that retail education advertises as "profitable" — is a losing system once you charge it for reality. The edge was never in the 58%. It was in the 0.15, and nobody sold you a course about the 0.15.</p>
 <p><strong>Restated as the Protocol's first principle:</strong> <em>the edge is not in the prediction; it is in the risk management and the execution.</em> Prediction determines whether you have a signal at all. Risk and execution determine whether the signal becomes money. Only the second part is defensible, durable, and — critically — non-copyable by the person who sold you the signal.</p>
+<div style="background: #050505; border: 1px solid #FFB000; border-radius: 4px; padding: 20px; margin: 30px 0; font-family: 'JetBrains Mono', monospace;">
+    <div style="color: #FFB000; font-weight: bold; margin-bottom: 10px;">💻 TERMINAL ACTION: PROVE THE RETAIL TRAP</div>
+    <div style="color: #D1D5DB; margin-bottom: 10px;">Open your terminal and run this to simulate a 58% win rate system with realistic slippage:</div>
+    <code style="color: #6FB7D6; display: block; background: #111; padding: 10px; border-radius: 4px; user-select: all;">
+python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.58, 0.42]); net = np.where(wins==1, 0.92, -1.0) - 0.15; print(f'Final Equity: ${10000 + np.sum(net * 100):.2f}')"
+    </code>
+    <div style="color: #9A958A; font-size: 0.9em; margin-top: 10px;">You will see the account bleeds to zero. This is the 0.15R cost erasing the 58% edge.</div>
+</div>
+
 <h2>0.2 Why technical analysis fails, stated precisely</h2>
 <p>"Technical analysis doesn't work" is too crude and it is not what this curriculum claims. Some price-based signals are real and have survived decades of out-of-sample testing: time-series momentum, short-horizon reversal, volatility clustering, intraday session effects. What fails is a specific epistemological package that retail TA bundles with those signals. The distinction matters, because Phase 2 will ask you to build price-based strategies.</p>
 <table>
@@ -276,6 +286,7 @@ $$</p>
 </table>
 <p><strong>The one thing to take from this Introduction.</strong> You are not trying to become a better predictor. You are trying to become a person who has removed the ability to make the specific errors listed in §0.4, and who has built the machinery in Phases 1–6 so that the removal is structural rather than aspirational.</p>
 <hr />
+<p><img alt="Look Ahead" src="assets/course/lookahead.jpg" /></p>
 <h1>PHASE 1 — DATA ENGINEERING &amp; INTEGRITY</h1>
 <blockquote>
 <p><em>Garbage in, garbage out — but the failure is silent. Bad data does not throw an error. It produces a beautiful backtest.</em></p>
@@ -1563,6 +1574,7 @@ $$</p>
 </table>
 <p>The last one is the item nobody includes and every allocator asks for. A strategy with a Sharpe of 2.0 that dies at $2m AUM is a hobby. A strategy with a Sharpe of 0.6 that holds $500m is a business. Know which one you have before you scale.</p>
 <hr />
+<p><img alt="Drawdown" src="assets/course/drawdown.jpg" /></p>
 <h1>PHASE 4 — RISK &amp; POSITION SIZING</h1>
 <blockquote>
 <p><em>This is the phase where the Protocol's central claim is either true or false. If the edge is in risk management, then this chapter should change your P&amp;L more than the previous three combined. It does. In the §2.4 case study, changing nothing but the sizing rule improved return-over-max-drawdown by roughly 20% and passed the stability test that a new entry filter failed.</em></p>
@@ -1576,6 +1588,14 @@ $$</p>
 </ol>
 <p>Retail content inverts this list. That inversion is the reason most accounts die with a positive-expectancy strategy.</p>
 <p><img alt="Kelly Curve" src="assets/course/kelly_curve.jpg" /></p>
+<div style="background: #050505; border: 1px solid #6FB7D6; border-radius: 4px; padding: 20px; margin: 30px 0; font-family: 'JetBrains Mono', monospace;">
+    <div style="color: #6FB7D6; font-weight: bold; margin-bottom: 10px;">🧠 WOW MOMENT: KELLY CRITERION RUIN</div>
+    <div style="color: #D1D5DB; margin-bottom: 10px;">Run this to see what happens when you over-bet (2x Full Kelly). Notice how the equity goes to ZERO:</div>
+    <code style="color: #FFB000; display: block; background: #111; padding: 10px; border-radius: 4px; user-select: all;">
+python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.rand()<p else eq*(1-f) for _ in range(100)]; print(f'Over-betting 2x Kelly: ${eq:.2f}')"
+    </code>
+</div>
+
 <h2>4.1 The Kelly criterion — what it says, and why you must not use it</h2>
 <p>Kelly (1956), formalised for markets by Thorp (2006), gives the growth-optimal fraction of capital to risk. For a bet with win probability $$p$$, win fraction $$b$$, loss fraction $$a$$:</p>
 <p>$$f^* = \frac{p}{a} - \frac{1-p}{b} = \frac{pb - (1-p)a}{ab}$$</p>
@@ -2055,6 +2075,7 @@ $$</p>
 </table>
 <p>Each layer is independent. This matters because failures are not independent: the day your strategy breaks is often the day spreads widen and your slippage model fails. Layered limits mean one failure does not become three.</p>
 <hr />
+<p><img alt="Volatility" src="assets/course/volatility.jpg" /></p>
 <h1>PHASE 5 — OPTIMIZATION &amp; REGIME ANALYSIS</h1>
 <blockquote>
 <p><em>Optimisation is the art of finding the smallest number of parameters that expresses a mechanism, and then proving that the result does not depend on their exact values. Everything else called "optimisation" is the manufacture of a false positive.</em></p>
@@ -2463,6 +2484,7 @@ $$</p>
 </table>
 <p>The most common instance in practice: a five-year intraday strategy tested over a period in which one index trended upward with unusually low volatility. It will show a beautiful equity curve, a high Sharpe, and a maximum drawdown that is a statistical artefact of the calm. The analysis in §2.4 flagged exactly this — the effect concentrated in the last five years, with much smaller profit per trade going back to 2015 — and flagged it <em>before</em> presenting the improved version, which is the correct order.</p>
 <hr />
+<p><img alt="Correlation" src="assets/course/correlation.jpg" /></p>
 <h1>PHASE 6 — PORTFOLIO CONSTRUCTION &amp; RETIREMENT</h1>
 <blockquote>
 <p><em>A single strategy is a bet. A portfolio of uncorrelated strategies is a business. And every business has a product lifecycle — including the one where you must stop selling.</em></p>
