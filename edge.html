@@ -1,10 +1,18 @@
 
-    <!DOCTYPE html><html lang="en"><head>
-        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Our Edge | ULTRA EDGE</title>
         <link rel="stylesheet" href="assets/style.css">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
-    </head><body>
+        <script>
+          MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[', '\\]']] } };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
         
     <header class="term-header">
         <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
@@ -13,9 +21,21 @@
             UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
         </div>
     </header>
-    <script>setInterval(() => { const now = new Date(); const utcEl = document.getElementById('utc-time'); const locEl = document.getElementById('local-time'); if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0]; if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB'); }, 1000);</script>
-     
+    
+<script>
+    setInterval(() => {
+        const now = new Date();
+        const utcEl = document.getElementById('utc-time');
+        const locEl = document.getElementById('local-time');
+        if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0];
+        if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB');
+    }, 1000);
+</script>
+
+    
+        
         <main class="page-container">
+            
     <div class="panel"><div class="panel-header"><div class="panel-title">F3 · ALPHA REGISTRY</div></div>
         <h1>Our Edge</h1><p style="font-size: 1.1rem; color: var(--text);">Proprietary systematic strategies that have survived strict Out-of-Sample validation, Monte Carlo simulations, and realistic transaction cost modeling.</p>
         <table class="term-table" style="background: #050505; margin-top: 30px;">
@@ -32,7 +52,8 @@
             </tbody>
         </table>
     </div>
-    </main>
+    
+        </main>
         
     <footer class="term-footer">
         <div style="margin-bottom: 16px;"><strong style="color: var(--amber);">ULTRA EDGE RESEARCH</strong> · SYSTEMATIC MACRO & CROSS-ASSET</div>
@@ -41,7 +62,10 @@
             <a href="https://github.com/ABHI99335" target="_blank">GITHUB</a>
             <a href="https://www.instagram.com/abhishex08" target="_blank">INSTAGRAM</a>
         </div>
-        <div style="font-size: 10px; max-width: 800px; margin: 0 auto; color: #4B5563;">DISCLOSURE: This site is for informational purposes only and does not constitute an offer to buy or sell any security. Past performance is not indicative of future results.</div>
+        <div style="font-size: 10px; max-width: 800px; margin: 0 auto; color: #4B5563;">DISCLOSURE: This site is for informational purposes only and does not constitute an offer to buy or sell any security.</div>
     </footer>
-     
-    </body></html>
+    
+        
+    </body>
+    </html>
+    

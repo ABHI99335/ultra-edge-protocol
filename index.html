@@ -1,10 +1,18 @@
 
-    <!DOCTYPE html><html lang="en"><head>
-        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home | ULTRA EDGE</title>
         <link rel="stylesheet" href="assets/style.css">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
-    </head><body>
+        <script>
+          MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[', '\\]']] } };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
         
     <header class="term-header">
         <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
@@ -13,9 +21,21 @@
             UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
         </div>
     </header>
-    <script>setInterval(() => { const now = new Date(); const utcEl = document.getElementById('utc-time'); const locEl = document.getElementById('local-time'); if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0]; if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB'); }, 1000);</script>
-     <div class="ticker-wrap"><div class="ticker" id="ticker-track"><div class="ticker-item text-dim">CONNECTING TO MARKET DATA...</div></div></div>
+    
+<script>
+    setInterval(() => {
+        const now = new Date();
+        const utcEl = document.getElementById('utc-time');
+        const locEl = document.getElementById('local-time');
+        if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0];
+        if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB');
+    }, 1000);
+</script>
+
+    
+        <div class="ticker-wrap"><div class="ticker" id="ticker-track"><div class="ticker-item text-dim">CONNECTING TO MARKET DATA...</div></div></div>
         <main class="page-container">
+            
     <div class="panel">
         <div class="panel-header"><div class="panel-title">SYSTEM OVERVIEW</div><div>EST. 2021 · UTC</div></div>
         <h1 style="font-size: 3.5rem; max-width: 900px;">Evidence-first systematic research across global markets.</h1>
@@ -39,7 +59,8 @@
             <a href="course.html" style="display: inline-block; margin-top: 16px; padding: 12px 24px; border: 1px solid var(--amber); color: var(--amber); text-decoration: none; font-family: var(--mono); font-weight: 700;">VIEW THE COURSE</a>
         </div>
     </div>
-    </main>
+    
+        </main>
         
     <footer class="term-footer">
         <div style="margin-bottom: 16px;"><strong style="color: var(--amber);">ULTRA EDGE RESEARCH</strong> · SYSTEMATIC MACRO & CROSS-ASSET</div>
@@ -48,7 +69,54 @@
             <a href="https://github.com/ABHI99335" target="_blank">GITHUB</a>
             <a href="https://www.instagram.com/abhishex08" target="_blank">INSTAGRAM</a>
         </div>
-        <div style="font-size: 10px; max-width: 800px; margin: 0 auto; color: #4B5563;">DISCLOSURE: This site is for informational purposes only and does not constitute an offer to buy or sell any security. Past performance is not indicative of future results.</div>
+        <div style="font-size: 10px; max-width: 800px; margin: 0 auto; color: #4B5563;">DISCLOSURE: This site is for informational purposes only and does not constitute an offer to buy or sell any security.</div>
     </footer>
-     <script>async function fetchTickerData() { const track = document.getElementById('ticker-track'); if (!track) return; let items = []; async function fetchWithTimeout(url, timeout = 3000) { const controller = new AbortController(); const id = setTimeout(() => controller.abort(), timeout); try { const res = await fetch(url, { signal: controller.signal }); clearTimeout(id); return res; } catch (e) { clearTimeout(id); throw e; } } try { const cryptoSyms = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT']; const query = encodeURIComponent('["' + cryptoSyms.join('","') + '"]'); const res = await fetchWithTimeout(`https://api.binance.com/api/v3/ticker/24hr?symbols=${query}`); if (res.ok) { const data = await res.json(); data.forEach(d => { const sym = d.symbol.replace('USDT', ''); const price = parseFloat(d.lastPrice); const pct = parseFloat(d.priceChangePercent); const color = pct >= 0 ? 'text-up' : 'text-down'; const sign = pct >= 0 ? '+' : ''; const dec = price < 1 ? 4 : 2; items.push(`<div class="ticker-item"><span class="ticker-sym">${sym}</span><span class="ticker-price">$${price.toLocaleString('en-US', {minimumFractionDigits: dec, maximumFractionDigits: dec})}</span><span class="${color}">${sign}${pct.toFixed(2)}%</span></div>`); }); } } catch (e) {} try { const res = await fetchWithTimeout('https://api.frankfurter.app/latest?from=USD'); if (res.ok) { const data = await res.json(); if (data && data.rates) { const pairs = [{ sym: 'EURUSD', val: 1/data.rates.EUR, dec: 4 }, { sym: 'GBPUSD', val: 1/data.rates.GBP, dec: 4 }]; pairs.forEach(p => items.push(`<div class="ticker-item"><span class="ticker-sym">${p.sym}</span><span class="ticker-price">${p.val.toFixed(p.dec)}</span></div>`)); } } } catch (e) {} if (items.length > 0) track.innerHTML = items.join('') + items.join(''); else track.innerHTML = '<div class="ticker-item text-dim">MARKET DATA UNAVAILABLE</div>'; } document.addEventListener("DOMContentLoaded", () => { fetchTickerData(); setInterval(fetchTickerData, 60000); });</script>
-    </body></html>
+    
+        
+<script>
+    async function fetchTickerData() {
+        const track = document.getElementById('ticker-track');
+        if (!track) return;
+        let items = [];
+        async function fetchWithTimeout(url, timeout = 3000) {
+            const controller = new AbortController();
+            const id = setTimeout(() => controller.abort(), timeout);
+            try { const res = await fetch(url, { signal: controller.signal }); clearTimeout(id); return res; } 
+            catch (e) { clearTimeout(id); throw e; }
+        }
+        try {
+            const cryptoSyms = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT'];
+            const query = encodeURIComponent('["' + cryptoSyms.join('","') + '"]');
+            const res = await fetchWithTimeout(`https://api.binance.com/api/v3/ticker/24hr?symbols=${query}`);
+            if (res.ok) {
+                const data = await res.json();
+                data.forEach(d => {
+                    const sym = d.symbol.replace('USDT', '');
+                    const price = parseFloat(d.lastPrice);
+                    const pct = parseFloat(d.priceChangePercent);
+                    const color = pct >= 0 ? 'text-up' : 'text-down';
+                    const sign = pct >= 0 ? '+' : '';
+                    const dec = price < 1 ? 4 : 2;
+                    items.push(`<div class="ticker-item"><span class="ticker-sym">${sym}</span><span class="ticker-price">$${price.toLocaleString('en-US', {minimumFractionDigits: dec, maximumFractionDigits: dec})}</span><span class="${color}">${sign}${pct.toFixed(2)}%</span></div>`);
+                });
+            }
+        } catch (e) {}
+        try {
+            const res = await fetchWithTimeout('https://api.frankfurter.app/latest?from=USD');
+            if (res.ok) {
+                const data = await res.json();
+                if (data && data.rates) {
+                    const pairs = [{ sym: 'EURUSD', val: 1/data.rates.EUR, dec: 4 }, { sym: 'GBPUSD', val: 1/data.rates.GBP, dec: 4 }];
+                    pairs.forEach(p => items.push(`<div class="ticker-item"><span class="ticker-sym">${p.sym}</span><span class="ticker-price">${p.val.toFixed(p.dec)}</span></div>`));
+                }
+            }
+        } catch (e) {}
+        if (items.length > 0) track.innerHTML = items.join('') + items.join(''); 
+        else track.innerHTML = '<div class="ticker-item text-dim">MARKET DATA UNAVAILABLE</div>';
+    }
+    document.addEventListener("DOMContentLoaded", () => { fetchTickerData(); setInterval(fetchTickerData, 60000); });
+</script>
+
+    </body>
+    </html>
+    

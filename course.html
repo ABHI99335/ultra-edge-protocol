@@ -1,10 +1,18 @@
 
-    <!DOCTYPE html><html lang="en"><head>
-        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Course | ULTRA EDGE</title>
         <link rel="stylesheet" href="assets/style.css">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
-    </head><body>
+        <script>
+          MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[', '\\]']] } };
+        </script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body>
         
     <header class="term-header">
         <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
@@ -13,36 +21,3288 @@
             UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
         </div>
     </header>
-    <script>setInterval(() => { const now = new Date(); const utcEl = document.getElementById('utc-time'); const locEl = document.getElementById('local-time'); if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0]; if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB'); }, 1000);</script>
-     
-        <main class="page-container">
-    <div class="panel"><div class="panel-header"><div class="panel-title">F5 · ULTRA EDGE ACADEMY</div></div>
-        <h1>The Course</h1><p style="font-size: 1.1rem; color: var(--text);">A free, institutional-grade curriculum synthesized from 5,000+ research papers and elite market maker interviews. No gurus. No holy grails. Just mathematics.</p>
+    
+<script>
+    setInterval(() => {
+        const now = new Date();
+        const utcEl = document.getElementById('utc-time');
+        const locEl = document.getElementById('local-time');
+        if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0];
+        if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB');
+    }, 1000);
+</script>
+
+    
         
-        <div style="background: #050505; border: 1px solid var(--panel-border); padding: 32px; margin-top: 40px;">
-            <h2 style="color: var(--amber); margin-top: 0;">Curriculum Roadmap</h2>
-            <p style="margin-bottom: 24px;">The course is divided into 6 phases, designed to take you from a retail beginner to a systematic researcher.</p>
+        <main class="page-container">
             
-            <table class="term-table" style="margin-top: 20px;">
-                <thead><tr><th>PHASE</th><th>MODULE NAME</th><th>WHAT YOU WILL LEARN</th></tr></thead>
-                <tbody>
-                    <tr><td data-label="Phase"><strong style="color: var(--ice);">Intro</strong></td><td data-label="Module">The Retail Trap</td><td data-label="Description">Why technical indicators fail. The psychology of losing. The transition from discretionary to systematic trading.</td></tr>
-                    <tr><td data-label="Phase"><strong style="color: var(--amber);">Phase 1</strong></td><td data-label="Module">Data Engineering</td><td data-label="Description">Garbage in = Garbage out. API integration, tick vs. bar data, avoiding look-ahead bias.</td></tr>
-                    <tr><td data-label="Phase"><strong style="color: var(--amber);">Phase 2</strong></td><td data-label="Module">Strategy Architecture</td><td data-label="Description">Defining a hypothesis. Market microstructure (order flow, liquidity sweeps), VWAP alignment.</td></tr>
-                    <tr><td data-label="Phase"><strong style="color: var(--amber);">Phase 3</strong></td><td data-label="Module">Backtesting & Validation</td><td data-label="Description">In-Sample vs. Out-of-Sample splits. Monte Carlo simulation. The 12 Rules.</td></tr>
-                    <tr><td data-label="Phase"><strong style="color: var(--amber);">Phase 4</strong></td><td data-label="Module">Risk & Position Sizing</td><td data-label="Description">Kelly Criterion, Fixed Fractional sizing, circuit breakers, Prop Firm rules.</td></tr>
-                    <tr><td data-label="Phase"><strong style="color: var(--amber);">Phase 5</strong></td><td data-label="Module">Optimization & Regime</td><td data-label="Description">Avoiding curve-fitting. Volatility filters. Adapting to Bull/Bear/Choppy regimes.</td></tr>
-                    <tr><td data-label="Phase"><strong style="color: var(--amber);">Phase 6</strong></td><td data-label="Module">Portfolio & Retirement</td><td data-label="Description">Combining uncorrelated strategies. Knowing exactly when to retire a strategy.</td></tr>
-                </tbody>
-            </table>
-            
-            <div style="margin-top: 32px; padding-top: 24px; border-top: 1px dashed var(--panel-border); text-align: center;">
-                <p style="color: var(--text-dim);">The full textbook is currently being synthesized from 5,000+ research papers by Indus AI.</p>
-                <a href="#" style="display: inline-block; margin-top: 16px; padding: 12px 24px; background: var(--amber); color: #000; text-decoration: none; font-family: var(--mono); font-weight: 700; cursor: not-allowed; opacity: 0.5;">DOWNLOAD TEXTBOOK (COMING SOON)</a>
-            </div>
+    <div class="panel">
+        <div class="panel-header"><div class="panel-title">F5 · ULTRA EDGE ACADEMY</div></div>
+        <div class="textbook-content" style="margin-top: 20px;">
+            <h1>THE ULTRA EDGE PROTOCOL</h1>
+<h2>Master File — Institutional Trading Curriculum</h2>
+<p><strong>Version 1.0 · Ultra Edge Academy</strong>
+<strong>Classification:</strong> Open curriculum. No proprietary signal content.
+<strong>Prerequisite:</strong> None. <strong>Required disposition:</strong> willingness to be wrong on paper rather than on a P&amp;L.</p>
+<hr />
+<h3>A note on sources, names, and what this document is</h3>
+<p>This file is a synthesis of the primary literature that actually governs systematic trading — market microstructure, empirical asset pricing, statistical learning theory, and the small number of practitioner accounts that describe institutional process rather than institutional mythology. The bibliography in Appendix C is the real spine of the document. Where a claim is contested, it is marked as contested. Where a claim is folklore, it is marked as folklore and removed.</p>
+<p>Three corrections to the brief this curriculum was commissioned under, made in the interest of not building a syllabus on misattributed names:</p>
+<table>
+<thead>
+<tr>
+<th>As briefed</th>
+<th>Actual, verifiable attribution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Matteo Conti</td>
+<td>Real. Former equity market maker (seven years, European bank desk), now fund manager and instructor. His public process — three-component strategy decomposition, coarse parameter grids, Monte Carlo envelopes for live monitoring — is the closest retail-accessible description of desk practice used in this document.</td>
+</tr>
+<tr>
+<td>Fabio Valentini</td>
+<td>Real. Multiple top-three finishes in global scalping competitions, including runner-up in the <strong>Robbins</strong> World Cup Championship of Futures Trading. His opening-range/order-flow work is used in Phase 2 as a worked case study — including the part of it that failed replication.</td>
+</tr>
+<tr>
+<td>"Andrea Kimi"</td>
+<td>No such trading practitioner exists in the record. The intended reference is almost certainly <strong>Andrea Cimitan</strong> (order-flow and options trader, macro analyst). Andrea Kimi Antonelli is a racing driver and is unrelated.</td>
+</tr>
+<tr>
+<td>"Tom Ford"</td>
+<td>No such trading practitioner exists in the record. Almost certainly a conflation of <strong>Tom Vorwald</strong> (competition mentor) and/or <strong>Tom Becker</strong> (trading psychologist). Tom Ford is a fashion designer.</td>
+</tr>
+<tr>
+<td>"Robin's Cup"</td>
+<td>The <strong>Robbins World Cup Championship of Futures Trading</strong>, run by Robbins Trading Company. Not a "Robin's Cup."</td>
+</tr>
+<tr>
+<td>"5,000+ research papers analysed"</td>
+<td>Not literally true and we will not pretend otherwise. What is true: this document encodes findings from the core replication-tested literature — the papers that have survived out-of-sample and post-publication scrutiny — plus the handful of practitioner process descriptions that are specific enough to be falsifiable. Roughly 120 primary sources are named in Appendix C. Padding that to 5,000 would be exactly the selection-bias fraud Phase 3 of this curriculum exists to prevent.</td>
+</tr>
+</tbody>
+</table>
+<p>That last row is not pedantry. A curriculum that opens with an unverifiable claim about its own evidence base has already failed its own Phase 3 gate. Hold this document to the standard it teaches.</p>
+<hr />
+<h3>Contents</h3>
+<ul>
+<li><strong>Introduction — The Retail Trap</strong></li>
+<li><strong>Phase 1 — Data Engineering &amp; Integrity</strong></li>
+<li><strong>Phase 2 — Strategy Architecture</strong></li>
+<li><strong>Phase 3 — Backtesting &amp; Validation: The Twelve Rules</strong></li>
+<li><strong>Phase 4 — Risk &amp; Position Sizing</strong></li>
+<li><strong>Phase 5 — Optimization &amp; Regime Analysis</strong></li>
+<li><strong>Phase 6 — Portfolio Construction &amp; Retirement</strong></li>
+<li><strong>Appendix A — The Go/No-Go Gate</strong></li>
+<li><strong>Appendix B — Formulas</strong></li>
+<li><strong>Appendix C — Primary Bibliography</strong></li>
+<li><strong>Appendix D — The Anti-Curriculum</strong></li>
+</ul>
+<hr />
+<h1>INTRODUCTION — THE RETAIL TRAP</h1>
+<h2>0.1 The central error</h2>
+<p>Retail trading education sells a single implicit promise: <strong>that the difficulty of trading is prediction.</strong> Everything downstream of that premise — indicators, patterns, "confluences," alert channels, the search for a higher win rate — is a rational response to a false premise.</p>
+<p>The premise is false because prediction is the <em>cheapest</em> part of the problem. A one-line moving-average crossover predicts direction with a hit rate barely distinguishable from 50%, and so does a $2 million machine-learning stack, and so did the order book at Lehman in 2007. What separates the outcomes is not the forecast. It is what happens after the forecast is made: how much capital was committed, at what price, against what liquidity, with what exit, under what constraint on ruin.</p>
+<p>This is not a rhetorical flourish. It is the arithmetic of the problem. Expected value per trade is</p>
+<p>$$
+E[\text{trade}] = p \cdot W - (1-p) \cdot L - C
+$$</p>
+<p>where $$p$$ is the hit rate, $$W$$ the average win, $$L$$ the average loss, and $$C$$ the all-in cost. A retail system with $$p = 0.58$$, $$W = L$$, and zero costs is a money machine on paper. The same system with realistic costs of 0.15R per round trip (spread, commission, slippage — entirely normal in a liquid intraday market) and a slippage-induced deterioration of $$W$$ to $$0.92L$$ produces:</p>
+<p>$$$E = 0.58(0.92) - 0.42(1.00) - 0.15 = 0.5336 - 0.42 - 0.15 = -0.036$$$</p>
+<p>Negative. A 58% hit rate with a 1:1 payoff — the profile that retail education advertises as "profitable" — is a losing system once you charge it for reality. The edge was never in the 58%. It was in the 0.15, and nobody sold you a course about the 0.15.</p>
+<p><strong>Restated as the Protocol's first principle:</strong> <em>the edge is not in the prediction; it is in the risk management and the execution.</em> Prediction determines whether you have a signal at all. Risk and execution determine whether the signal becomes money. Only the second part is defensible, durable, and — critically — non-copyable by the person who sold you the signal.</p>
+<h2>0.2 Why technical analysis fails, stated precisely</h2>
+<p>"Technical analysis doesn't work" is too crude and it is not what this curriculum claims. Some price-based signals are real and have survived decades of out-of-sample testing: time-series momentum, short-horizon reversal, volatility clustering, intraday session effects. What fails is a specific epistemological package that retail TA bundles with those signals. The distinction matters, because Phase 2 will ask you to build price-based strategies.</p>
+<table>
+<thead>
+<tr>
+<th>Retail claim</th>
+<th>The institutional reading</th>
+<th>Falsifiable test that kills it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"The chart shows support/resistance."</td>
+<td>Price levels cluster where resting limit orders and stop clusters sit. The <em>mechanism</em> is order book depth, not geometry. Levels exist and decay within hours-to-days; the drawn line is a lagging estimate of a liquidity state.</td>
+<td>Measure the fill-to-fill bounce rate at a level vs. matched random levels. Typically indistinguishable once you control for volatility and round-number clustering.</td>
+</tr>
+<tr>
+<td>"Indicators confirm."</td>
+<td>A moving average is a low-pass filter with a lag of roughly $$(n-1)/2$$ bars. RSI is a monotone transform of recent returns. Both are re-expressions of price, not independent evidence. Stacking them does not add information; it adds correlated noise and reduces degrees of freedom.</td>
+<td>Regress the indicator on lagged returns. If $$R^2$$ is high, it carries no information beyond price. Then run the signal against a same-lag random-entry baseline (Phase 3, Rule 9).</td>
+</tr>
+<tr>
+<td>"Win rate is what matters."</td>
+<td>Win rate is one of four moments of a payoff distribution, and the least important. Expectancy per unit risk and the shape of the tail dominate.</td>
+<td>Take any high-win-rate system and compute expectancy net of costs with a slippage model at 1×, 2×, 3× the modelled level. The high-win-rate systems are the first to invert.</td>
+</tr>
+<tr>
+<td>"Cut winners, let losers run — no, the reverse."</td>
+<td>Both are descriptions of a payoff ratio. The correct question is whether the <em>product</em> of hit rate and payoff, minus cost, exceeds zero <strong>and</strong> whether the resulting return distribution is survivable at your sizing.</td>
+<td>Compute the ratio $$p/(1-p)$$ vs. $$L/W$$. If they are close, cost and estimation error decide the sign, not your skill.</td>
+</tr>
+<tr>
+<td>"Risk 1% per trade."</td>
+<td>A fixed percentage of account equity is a <em>convention</em>, not a risk model. It ignores volatility regime, correlation, and the path-dependence of drawdown limits.</td>
+<td>Simulate the same 1% rule across 200 vol regimes. In high-vol regimes it is 3–5% of true economic risk. See Phase 4.</td>
+</tr>
+<tr>
+<td>"Backtested over 10 years, works."</td>
+<td>Ten years of daily data supports at most ~45 independent parameter trials before an in-sample Sharpe of 1.0 is expected to be 0.0 out-of-sample.</td>
+<td>Bailey &amp; López de Prado's Minimum Backtest Length theorem. See Phase 3.</td>
+</tr>
+<tr>
+<td>"It's a holy grail / 90% accuracy."</td>
+<td>After enough trials, a false positive is guaranteed, not unlikely. The false-strategy theorem makes the optimal backtest result right-unbounded in the number of trials.</td>
+<td>Ask for the number of configurations tested. If the answer is "we don't track that," the backtest is worthless regardless of its performance.</td>
+</tr>
+</tbody>
+</table>
+<p>The common thread: retail TA asserts mechanisms that are either not testable or not tested, and then reports outcomes without controlling for the size of the search. Both are Phase 3 violations. The content of the strategy is almost beside the point.</p>
+<h2>0.3 The empirical record of retail failure</h2>
+<p>This is not a matter of opinion. The record is unusually clear, and it is worth reading before you risk capital because it establishes the base rate you are trying to beat.</p>
+<ul>
+<li>Barber &amp; Odean (2000), using 66,465 US brokerage households over 1991–1996, found that the households trading most actively earned roughly <strong>11.4% annually against 17.9% for the market</strong> — underperformance that was not explained by risk, and was large enough to be attributed to trading costs and poor selection.</li>
+<li>Barber, Lee, Liu &amp; Odean (2014), using the complete Taiwanese day-trading record, found that <strong>fewer than 1% of day traders</strong> earned predictable positive abnormal returns net of fees. The rest were, statistically, drawing from a zero-mean distribution and paying for the privilege.</li>
+<li>Chague, De-Losso &amp; Giovannetti (2020), using Brazilian futures data, found that of day traders who persisted more than 300 days, <strong>97% lost money</strong>; roughly 1.1% earned more than the Brazilian minimum wage and 0.5% more than a bank teller.</li>
+</ul>
+<p>Three independent markets, three independent data sets, three decades. The consistent finding is not that retail traders lack discipline. It is that the activity, as typically practised, has a negative expected value <em>before</em> skill is even considered, because cost is charged on turnover and turnover is what retail education optimises for.</p>
+<p>The mechanism is worth naming: <strong>retail trading education monetises attention, not edge.</strong> A system that trades twice a day produces more engagement, more screen time, more perceived learning, and more commission than a system that trades twice a month. The curriculum is not neutral — it is structurally biased toward turnover. You are not the customer of that bias. You are the product of it.</p>
+<h2>0.4 The psychology of losing — what is actually documented</h2>
+<p>Retail psychology content is mostly moralising ("fear and greed"). The research literature is far more specific and far more useful, because it identifies <em>mechanical</em> biases that a systematic process can be designed around.</p>
+<table>
+<thead>
+<tr>
+<th>Bias</th>
+<th>What the evidence shows</th>
+<th>Design countermeasure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Loss aversion</strong></td>
+<td>Losses weigh roughly 2–2.5× gains in decision utility (Tversky &amp; Kahneman, 1992, median λ ≈ 2.25).</td>
+<td>Never let a decision be made at the moment of a loss. Pre-commit exits in code. The exit is a rule, not a choice.</td>
+</tr>
+<tr>
+<td><strong>Disposition effect</strong></td>
+<td>Investors realise gains at ~1.5× the rate they realise losses (Odean, 1998) — they sell winners and hold losers.</td>
+<td>Automate the exit. If the human can override the stop, the stop does not exist.</td>
+</tr>
+<tr>
+<td><strong>Overconfidence / illusion of control</strong></td>
+<td>Trading frequency and perceived skill rise together, while net returns fall (Barber &amp; Odean, 2000).</td>
+<td>Log every decision with a timestamp and a stated reason. Review quarterly. The log is the only defence against your own narrative.</td>
+</tr>
+<tr>
+<td><strong>Recency and regime blindness</strong></td>
+<td>Extrapolation of the last 12–24 months into the next 12–24 months. The single most expensive error in the sample case study in Phase 2.</td>
+<td>Require every hypothesis to be stated with the regime in which it should <em>fail</em>, and check whether that regime is in your test window.</td>
+</tr>
+<tr>
+<td><strong>Narrative fallacy</strong></td>
+<td>Post-hoc causal stories attached to random outcomes, which then become "rules."</td>
+<td>If a rule cannot be expressed as a number with a threshold, it is a story. Phase 2 forbids stories.</td>
+</tr>
+<tr>
+<td><strong>Sunk-cost escalation</strong></td>
+<td>Adding to losers to "average in" — the martingale instinct in its respectable disguise.</td>
+<td>Hard position limits per instrument and per theme, enforced by the system, not by willpower.</td>
+</tr>
+<tr>
+<td><strong>Survivorship of advice</strong></td>
+<td>You hear from the 0.5%, never the 97%. The sample is selected on the outcome you are trying to reproduce.</td>
+<td>Read the base rates in §0.3 annually. Treat any trading educator's P&amp;L claim as unverified until it is audited.</td>
+</tr>
+</tbody>
+</table>
+<p>Note what these have in common: <strong>each is a bias toward action at the wrong moment.</strong> The systematic process in Phases 1–6 is not primarily an analytical improvement. It is a <em>commitment device</em> that removes the moments at which a human is most likely to do the wrong thing.</p>
+<h2>0.5 Discretionary to systematic — the actual transition</h2>
+<p>The transition is not "add rules." Most discretionary traders already have rules; they just don't have <em>specification</em>. The transition is a change in what a rule is required to be.</p>
+<table>
+<thead>
+<tr>
+<th>Dimension</th>
+<th>Discretionary</th>
+<th>Systematic</th>
+<th>Why the change matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rule form</td>
+<td>"I buy strength off support."</td>
+<td><code>if close &gt; ORB_high and delta &gt; θ and time &lt; 15:00: enter(long, size=f(σ))</code></td>
+<td>Only the second can be tested, and therefore falsified.</td>
+</tr>
+<tr>
+<td>Evidence</td>
+<td>Memory of similar past trades; screenshots.</td>
+<td>Full-sample simulation with costs, plus out-of-sample and Monte Carlo.</td>
+<td>Memory is a biased sampler of your own history.</td>
+</tr>
+<tr>
+<td>Sizing</td>
+<td>Fixed lots, or "bigger when confident."</td>
+<td>Function of stop distance, volatility, and headroom.</td>
+<td>Confidence is uncorrelated with edge but highly correlated with size — the exact inverse of what you want.</td>
+</tr>
+<tr>
+<td>Number of variables</td>
+<td>Dozens, informally weighted.</td>
+<td>Three components: entry, exit, sizing.</td>
+<td>A strategy with 15 rules has 15 breaking points. A strategy with 3 has 3.</td>
+</tr>
+<tr>
+<td>Error handling</td>
+<td>Explains away losses.</td>
+<td>Attributes loss to signal, execution, or cost; each has a separate diagnostic.</td>
+<td>Attribution is the only route to improvement.</td>
+</tr>
+<tr>
+<td>Success criterion</td>
+<td>"Did I make money this month?"</td>
+<td>"Did the realised path stay inside the Monte Carlo envelope?"</td>
+<td>Monthly P&amp;L is ~90% noise at realistic Sharpe ratios.</td>
+</tr>
+<tr>
+<td>Relationship to a losing streak</td>
+<td>Emotional; increases size or abandons.</td>
+<td>Pre-defined: pause, re-verify, resume or retire per the Phase 6 protocol.</td>
+<td>Removes the two classic failure modes: doubling down and capitulating at the low.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The one thing to take from this Introduction.</strong> You are not trying to become a better predictor. You are trying to become a person who has removed the ability to make the specific errors listed in §0.4, and who has built the machinery in Phases 1–6 so that the removal is structural rather than aspirational.</p>
+<hr />
+<h1>PHASE 1 — DATA ENGINEERING &amp; INTEGRITY</h1>
+<blockquote>
+<p><em>Garbage in, garbage out — but the failure is silent. Bad data does not throw an error. It produces a beautiful backtest.</em></p>
+</blockquote>
+<p>Data is where the majority of retail and semi-professional strategies die, and it is the phase that receives the least attention because it is unglamorous and produces no chart to post. The rule for this phase: <strong>a data set is not a file of prices; it is a set of claims about the world, each of which can be false.</strong></p>
+<h2>1.1 The data hierarchy</h2>
+<p>Not all price data is equivalent. Each level trades off history length against information content, and choosing wrongly invalidates your hypothesis before you write a line of code.</p>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Content</th>
+<th>Typical history</th>
+<th>Storage per instrument-year</th>
+<th>Enables</th>
+<th>Cannot support</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L3 — Market-by-order (MBO)</strong></td>
+<td>Every order add/modify/cancel with order ID</td>
+<td>Days–months (exchange-dependent)</td>
+<td>100 GB – 1 TB+</td>
+<td>Queue position modelling, order lifetime, cancel-rate studies, true iceberg detection</td>
+<td>Any multi-year study</td>
+</tr>
+<tr>
+<td><strong>L2 — Market-by-price (MBP)</strong></td>
+<td>Aggregated depth per price level, N levels</td>
+<td>Weeks–years</td>
+<td>5–50 GB</td>
+<td>Order flow imbalance (OFI), depth resilience, absorption</td>
+<td>Order-level identification</td>
+</tr>
+<tr>
+<td><strong>Tick / trade prints</strong></td>
+<td>Every trade: price, size, aggressor side (where flagged)</td>
+<td>Months–years</td>
+<td>0.5–5 GB</td>
+<td>Spread proxies, volume-at-price, realised intraday path, stop/TP resolution</td>
+<td>Pre-trade book state</td>
+</tr>
+<tr>
+<td><strong>Second bars</strong></td>
+<td>OHLCV + trade count per second</td>
+<td>Years</td>
+<td>50–500 MB</td>
+<td>Intraday session studies, coarse OFI, execution analysis</td>
+<td>Anything below 1s</td>
+</tr>
+<tr>
+<td><strong>Minute bars</strong></td>
+<td>OHLCV per minute</td>
+<td>Decades</td>
+<td>5–50 MB</td>
+<td>Session/ORB strategies, intraday momentum, most published intraday research</td>
+<td>Path-dependent exits, precise slippage</td>
+</tr>
+<tr>
+<td><strong>Daily bars</strong></td>
+<td>OHLCV per day</td>
+<td>Decades–century</td>
+<td>&lt;1 MB</td>
+<td>Cross-sectional factors, trend, carry, portfolio construction</td>
+<td>Intraday anything; path resolution</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The decision rule.</strong> Build the strategy at the coarsest resolution that still expresses the hypothesis, then <em>validate the fill assumptions</em> at the finest resolution you can afford over a shorter window. A minute-bar ORB strategy validated against tick data over its most recent 12 months is more trustworthy than a tick-level strategy with 3 months of history. This is the practical resolution of the tick-vs-bar question, and it is a cost-benefit question, not a purity question.</p>
+<h2>1.2 Tick versus bar data: the intrabar path problem</h2>
+<p>This is the single most common source of inflated backtest results, and it is not a coding bug — it is an information-theoretic limit.</p>
+<p>A bar records four numbers: open, high, low, close. If your strategy places a stop at price $$S$$ and a target at $$T$$, and both lie inside the bar's range, <strong>the bar does not tell you which was hit first.</strong> You have three options:</p>
+<table>
+<thead>
+<tr>
+<th>Resolution method</th>
+<th>Assumption</th>
+<th>Bias direction</th>
+<th>When to use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Optimistic</td>
+<td>Target hit first</td>
+<td><strong>Systematically inflates</strong> returns and win rate. Can turn a losing system profitable.</td>
+<td>Never, in a backtest you intend to trade.</td>
+</tr>
+<tr>
+<td>Pessimistic</td>
+<td>Stop hit first</td>
+<td>Deflates. Conservative.</td>
+<td>Default for anything with a stop.</td>
+</tr>
+<tr>
+<td>Probabilistic</td>
+<td>Assume a random walk within the bar; weight by distance</td>
+<td>Approximately unbiased on average, high variance per trade</td>
+<td>When trade count is large (&gt;500) and you need an unbiased point estimate</td>
+</tr>
+<tr>
+<td>Tick-resolved</td>
+<td>Actual sequence</td>
+<td>Unbiased</td>
+<td>The only correct answer when tick data exists</td>
+</tr>
+</tbody>
+</table>
+<p>The magnitude is not trivial. On minute bars in a volatile instrument, the fraction of trades where both stop and target fall inside a single bar's range is routinely 8–20%. Under the optimistic assumption, every one of those is a win. That is a 4–10 percentage-point inflation of win rate, which is larger than most real edges.</p>
+<p><strong>Practical protocol.</strong> (a) Resolve with tick data where available. (b) Elsewhere, resolve pessimistically and report both numbers. (c) Never mix resolutions between the backtest and the live system — if you backtest on bars and trade on ticks, your stop is being hit at prices your backtest never saw.</p>
+<p>A related trap: <strong>bar-timestamp semantics.</strong> A bar labelled 09:30 may cover 09:30:00–09:30:59 (left-labelled) or 09:29:01–09:30:00 (right-labelled). Get this wrong by one bar and you have introduced look-ahead bias into every signal you build — and it will look like a working strategy, because you are trading on information you would not have had.</p>
+<h2>1.3 Look-ahead bias — the full taxonomy</h2>
+<p>Look-ahead bias is usually taught as "don't use future prices." That is the least interesting form. Here is the complete taxonomy, ordered roughly by how often it silently destroys real strategies.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Type</th>
+<th>Mechanism</th>
+<th>Classic instance</th>
+<th>Detection test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Timestamp leakage</strong></td>
+<td>Signal computed on a bar that closes after the trade timestamp</td>
+<td>Using the 09:30–10:00 bar's close to enter at 10:00:00.000 when the bar closes at 10:00:00.999</td>
+<td>Assert <code>signal_time &lt; order_time</code> in code. Non-negotiable.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Restatement / revision</strong></td>
+<td>Using the final revised macro or fundamental value instead of the first release</td>
+<td>Q3 GDP revised three times; using the final number as if known at first release</td>
+<td>Point-in-time (PIT) database, or a lag of ≥ the median revision window</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Universe construction</strong></td>
+<td>Selecting the universe using data from the future</td>
+<td>"S&amp;P 500 constituents" pulled today, applied to 2005</td>
+<td>PIT index membership; reconstruct from historical constituent files</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Survivorship</strong></td>
+<td>Dead instruments excluded, so the sample is conditioned on survival</td>
+<td>Backtesting crypto on exchanges that still exist; equities on currently-listed names</td>
+<td>Include delisted names with delisting returns (see §1.4)</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Full-sample parameterisation</strong></td>
+<td>A parameter (normalisation window, vol estimate, threshold) computed over the whole series, then applied historically</td>
+<td>Z-scoring returns by the full-sample mean and σ</td>
+<td>All transforms must be expanding or rolling, causal only</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Label leakage in ML</strong></td>
+<td>Feature or split construction uses future labels</td>
+<td>Random K-fold CV on time series; features built from overlapping future windows</td>
+<td>Purged K-fold with embargo (Phase 3)</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Publication / announcement lag</strong></td>
+<td>Academic anomaly known only after publication, or an event known before its announcement</td>
+<td>Trading an anomaly in 1995 that was documented in 2004</td>
+<td>Restrict test windows; see Phase 6 on post-publication decay</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Forward-filled gaps</strong></td>
+<td>Stale price carried forward, then traded as if live</td>
+<td>Illiquid instrument forward-filled across a halt</td>
+<td>Mark stale bars; forbid trading on them</td>
+</tr>
+<tr>
+<td>9</td>
+<td><strong>Roll-adjusted futures</strong></td>
+<td>Continuous contract built with future roll information, or adjusted in a way that creates phantom returns</td>
+<td>Naïve back-adjustment producing a monotone drift</td>
+<td>Use ratio or difference adjustment, and verify against a single-contract series</td>
+</tr>
+<tr>
+<td>10</td>
+<td><strong>Corporate-action errors</strong></td>
+<td>Unadjusted splits creating −50% "returns"; dividend adjustment applied inconsistently</td>
+<td>Trading a split as a crash</td>
+<td>Reconcile adjusted and unadjusted series; cross-check total return index</td>
+</tr>
+<tr>
+<td>11</td>
+<td><strong>Session/timezone drift</strong></td>
+<td>DST transitions shifting session boundaries by an hour</td>
+<td>US session defined in a fixed UTC offset</td>
+<td>Define sessions in exchange local time, then convert</td>
+</tr>
+<tr>
+<td>12</td>
+<td><strong>Sample-period cherry-picking</strong></td>
+<td>Starting the backtest after a known regime break</td>
+<td>"5 years of data" that happens to start in 2021</td>
+<td>Report results on the full available history, including the bad years</td>
+</tr>
+</tbody>
+</table>
+<p><strong>A specific warning on #5</strong>, because it is the one that survives most code reviews. Any transformation of the form "subtract the mean and divide by the standard deviation" applied to the whole series is look-ahead. So is a Hurst exponent, a correlation matrix, a volatility regime label, or a PCA decomposition fitted on the full sample. The correct pattern is always:</p>
+<pre><code>for t in range(warmup, len(data)):
+    window = data[t-lookback:t]          # strictly past
+    mu, sigma = window.mean(), window.std()
+    signal[t] = (data[t] - mu) / sigma   # transform of the present using the past
+</code></pre>
+<p>Every single one of these is a two-line fix that people do not make, because the wrong version produces a better backtest and the right version produces a worse one. That asymmetry is exactly why Phase 3 exists.</p>
+<h2>1.4 Survivorship bias — why it is worse than you think</h2>
+<p>Survivorship bias is usually described as "you're missing the failures." The quantitative point is sharper: <strong>failures have large negative returns, and excluding them truncates the left tail, which is where your risk model lives.</strong></p>
+<p>For US equities, Shumway (1997) established that delisting returns are systematically large and negative — particularly for performance-related delistings, where the delisting return averaged roughly −30% in his sample — and that omitting them creates a material upward bias in any strategy holding small or distressed names. The bias is small for large-cap momentum and enormous for anything touching microcaps, distressed, or high-turnover universes.</p>
+<table>
+<thead>
+<tr>
+<th>Universe</th>
+<th>Survivorship bias magnitude</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Large-cap developed equity</td>
+<td>Small (0.1–0.5%/yr)</td>
+<td>Very low delisting rate; delistings mostly M&amp;A at a premium</td>
+</tr>
+<tr>
+<td>Small-cap / value</td>
+<td>Large (1–4%/yr)</td>
+<td>Performance delistings concentrated here</td>
+</tr>
+<tr>
+<td>Microcap / distressed</td>
+<td>Severe (&gt;5%/yr, can invert the sign of a factor)</td>
+<td>High failure rate; the left tail is the factor</td>
+</tr>
+<tr>
+<td>Crypto (spot, per exchange)</td>
+<td>Extreme</td>
+<td>Exchange failures (and token delistings) are the dominant risk</td>
+</tr>
+<tr>
+<td>Crypto (aggregated across venues)</td>
+<td>Moderate</td>
+<td>Aggregation masks per-venue death; still must include dead tokens</td>
+</tr>
+<tr>
+<td>FX</td>
+<td>Low</td>
+<td>No delisting; but note the survivorship of <em>brokers</em>, not currencies</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Protocol.</strong> Build the universe from PIT membership where available. Where it is not, apply an explicit haircut and state it: "results shown assume 2% annual drag from survivorship, which is the upper bound for this universe." An honestly haircut number is worth more than an unstated optimistic one, because you can reason about it.</p>
+<h2>1.5 API integration — the engineering that decides your research speed</h2>
+<p>The practical constraints of data acquisition shape what you can research. This is not an implementation detail; a pipeline that takes three days to test a hypothesis means you test ten hypotheses a month instead of three hundred, and your research throughput <em>is</em> your edge in a competitive space.</p>
+<table>
+<thead>
+<tr>
+<th>Concern</th>
+<th>The failure mode</th>
+<th>The correct handling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pagination</strong></td>
+<td>Silently receiving only the first page; discovering 40% of history is missing a month later</td>
+<td>Assert row counts against expected counts per period; log page boundaries</td>
+</tr>
+<tr>
+<td><strong>Rate limits</strong></td>
+<td>Throttling mid-download; partial data written as if complete</td>
+<td>Atomic writes (temp file + rename); checksum the result; resumable downloads</td>
+</tr>
+<tr>
+<td><strong>Timestamp semantics</strong></td>
+<td>Exchange time vs UTC vs local; DST</td>
+<td>Store all raw data in UTC with the source timezone recorded as metadata. Convert at analysis time only.</td>
+</tr>
+<tr>
+<td><strong>Gaps</strong></td>
+<td>Missing bars treated as zero-return bars</td>
+<td>Explicit gap table; never forward-fill silently; distinguish "no trade" from "no data"</td>
+</tr>
+<tr>
+<td><strong>Revisions</strong></td>
+<td>Provider silently restates history; your old results no longer reproduce</td>
+<td>Snapshot every pull with a date stamp. Never overwrite a raw file.</td>
+</tr>
+<tr>
+<td><strong>Contract rolls</strong></td>
+<td>Continuous futures series with phantom jumps</td>
+<td>Store individual contracts; build continuous series in code with a documented roll rule</td>
+</tr>
+<tr>
+<td><strong>Corporate actions</strong></td>
+<td>Split/dividend handling inconsistency between sources</td>
+<td>Single source of truth for adjustments; reconcile against a second source quarterly</td>
+</tr>
+<tr>
+<td><strong>Vendor schema changes</strong></td>
+<td>Pipeline breaks silently on a renamed field</td>
+<td>Schema validation on ingest; fail loudly, never coerce</td>
+</tr>
+<tr>
+<td><strong>Duplicate records</strong></td>
+<td>Double-counted volume inflating liquidity estimates</td>
+<td>Deduplicate on (timestamp, price, size, side); count duplicates per ingest</td>
+</tr>
+<tr>
+<td><strong>Precision</strong></td>
+<td>Float rounding on price ticks</td>
+<td>Store prices as integers in tick units; convert at the last moment</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The one rule that matters most:</strong> <em>raw data is immutable.</em> Every transformation is code, every code version is recorded, and every result is reproducible from raw data plus a commit hash. If you cannot re-run last month's backtest and get last month's number, you do not have a research process — you have a series of unrelated guesses that happened to print.</p>
+<h2>1.6 Costs are data too</h2>
+<p>A backtest without a cost model is not a conservative backtest; it is a fictional one. Costs must be modelled as data, at the same resolution and with the same care as prices.</p>
+<table>
+<thead>
+<tr>
+<th>Cost component</th>
+<th>Model</th>
+<th>Typical magnitude (liquid futures/index)</th>
+<th>Typical magnitude (small-cap equity)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Commission</td>
+<td>Fixed per contract/share</td>
+<td>$0.50–$2.50 per contract round turn</td>
+<td>0.5–2 bps</td>
+</tr>
+<tr>
+<td>Exchange/regulatory fees</td>
+<td>Fixed</td>
+<td>Included above</td>
+<td>Included above</td>
+</tr>
+<tr>
+<td>Bid–ask spread</td>
+<td>Half-spread × side, or measured effective spread</td>
+<td>0.25–1.0 tick</td>
+<td>5–30 bps</td>
+</tr>
+<tr>
+<td>Market impact</td>
+<td>Square-root law: $$\Delta p \approx Y\sigma\sqrt{Q/V}$$</td>
+<td>0.1–2 bps for retail size</td>
+<td>10–100+ bps</td>
+</tr>
+<tr>
+<td>Slippage (latency)</td>
+<td>Empirical distribution of fill vs. signal price</td>
+<td>0.1–0.5 tick</td>
+<td>5–50 bps</td>
+</tr>
+<tr>
+<td>Borrow / financing</td>
+<td>Daily rate on short notional</td>
+<td>n/a for futures</td>
+<td>0.3–50%+ annualised</td>
+</tr>
+<tr>
+<td>Funding (perpetuals)</td>
+<td>8h funding rate × notional</td>
+<td>n/a</td>
+<td>−0.5% to +3% annualised typical</td>
+</tr>
+<tr>
+<td>Opportunity cost of queue</td>
+<td>Probability of non-fill at limit</td>
+<td>Material for passive strategies</td>
+<td>Material</td>
+</tr>
+</tbody>
+</table>
+<p>The square-root impact law — impact scaling with the square root of participation rate, $$\Delta p \propto \sigma\sqrt{Q/V}$$ — is one of the most robust empirical regularities in microstructure (Bouchaud, Farmer &amp; Lillo, 2009; Almgren et al., 2005). Its practical consequence for you: <strong>impact is not linear in size, so small accounts have a structural cost advantage that disappears non-linearly as you scale.</strong> A strategy that works at $50k may be dead at $5m, and not by a factor of 100 — by a factor of 10 in the impact term, plus capacity constraints in the book.</p>
+<p><strong>The brutal rule of this phase.</strong> Novy-Marx &amp; Velikov (2016) and Chen &amp; Velikov (2023) both show that a large fraction of published anomalies — the ones with real gross returns — become statistically and economically insignificant once realistic turnover-adjusted costs are applied. If your strategy's gross Sharpe is under about 0.8 and its turnover is high, assume it is a cost artefact until proven otherwise. That is not cynicism; it is the base rate.</p>
+<h2>1.7 The Phase 1 integrity checklist</h2>
+<p>Run all twelve before any hypothesis testing. A "no" on any of items 1–6 invalidates the study outright.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Check</th>
+<th>Pass criterion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Point-in-time universe</td>
+<td>Membership reconstructed from historical records, not current lists</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Delisting returns included</td>
+<td>Every delisted instrument carries its terminal return</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Timestamp causality</td>
+<td><code>signal_time &lt; order_time</code> asserted programmatically for all signals</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Causal transforms only</td>
+<td>No full-sample statistic used in any feature or normalisation</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Bar semantics documented</td>
+<td>Left/right labelling verified against a known event</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Cost model applied</td>
+<td>Commission + spread + impact + slippage in every reported result</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Gap table exists</td>
+<td>Missing data enumerated and either excluded or explicitly modelled</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Roll rule documented</td>
+<td>Continuous series reproducible from individual contracts</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Raw data immutable</td>
+<td>Snapshots dated; no in-place overwrites</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Reproducibility</td>
+<td>Full re-run from raw data reproduces reported statistics to 4 s.f.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Resolution consistency</td>
+<td>Backtest and live use the same bar/tick resolution, or the difference is measured</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Session definition</td>
+<td>Exchange local time, DST-correct, documented</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1>PHASE 2 — STRATEGY ARCHITECTURE</h1>
+<blockquote>
+<p><em>A strategy is a falsifiable claim about why someone else is systematically willing to lose money to you. If you cannot name that person, you do not have a strategy. You have a pattern.</em></p>
+</blockquote>
+<h2>2.1 The five legitimate sources of edge</h2>
+<p>Every durable strategy in the literature traces to one of five mechanisms. This taxonomy is the most useful thing in the phase, because it tells you in advance how long your edge will last, how much capital it can hold, and who your counterparty is.</p>
+<table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Mechanism</th>
+<th>Counterparty</th>
+<th>Typical gross Sharpe</th>
+<th>Half-life of edge</th>
+<th>Capacity</th>
+<th>Evidence base</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Risk premium / carry</strong></td>
+<td>You are paid to hold a risk others must hedge or cannot hold</td>
+<td>Hedgers, insurers, constrained institutions</td>
+<td>0.3–0.7</td>
+<td>Decades</td>
+<td>Very high</td>
+<td>Strong, century-scale (Hurst, Ooi &amp; Pedersen, 2017; Koijen et al., 2018)</td>
+</tr>
+<tr>
+<td><strong>Behavioural / flow</strong></td>
+<td>Systematic mispricing from investor biases and institutional constraints</td>
+<td>Retail flow, forced sellers, benchmark-constrained funds</td>
+<td>0.4–1.0</td>
+<td>5–20 years, decaying</td>
+<td>Moderate</td>
+<td>Strong but decaying post-publication (McLean &amp; Pontiff, 2016)</td>
+</tr>
+<tr>
+<td><strong>Structural / mechanical</strong></td>
+<td>Mandated flows: index rebalances, option expiry, funding windows, rebalancing dates, dividend timing</td>
+<td>Passive vehicles, option market makers hedging delta/gamma</td>
+<td>0.5–1.5</td>
+<td>Long, but crowded</td>
+<td>Low–moderate</td>
+<td>Strong, mechanism-visible</td>
+</tr>
+<tr>
+<td><strong>Microstructure / liquidity provision</strong></td>
+<td>You provide immediacy and are paid the spread and the impact premium</td>
+<td>Impatient traders, informed flow (who take it back)</td>
+<td>1.0–3.0 gross</td>
+<td>Short, competitive</td>
+<td>Very low</td>
+<td>Strong (Kyle 1985; Glosten–Milgrom 1985; Cont et al. 2014)</td>
+</tr>
+<tr>
+<td><strong>Statistical arbitrage</strong></td>
+<td>Mean reversion of a spread that is economically linked</td>
+<td>Dislocated flow in one leg</td>
+<td>0.8–2.0 gross</td>
+<td>3–10 years</td>
+<td>Low</td>
+<td>Strong historically, heavily degraded (Gatev et al., 2006; Avellaneda &amp; Lee, 2010)</td>
+</tr>
+</tbody>
+</table>
+<p>Two implications that retail education never states:</p>
+<p><strong>First, gross Sharpe and capacity are inversely related.</strong> The microstructure edges with the highest gross Sharpe hold the least capital. This is not a coincidence — it is the reason they persist. Any strategy you can run at $10k with a Sharpe of 2.5 is almost certainly a strategy that cannot be run at $100m, and therefore has not been arbitraged away by people with $100m. Your small size is an <em>asset</em>, and the correct strategic response is to exploit it in exactly the niches institutions cannot enter, rather than to imitate institutions in the niches they dominate.</p>
+<p><strong>Second, decay is a function of visibility.</strong> An edge that is published, taught, or visible on a chart is being harvested by everyone who reads. McLean &amp; Pontiff (2016) found that anomaly portfolio returns are about 26% lower out-of-sample and about 58% lower post-publication — roughly half the decay attributable to the market learning. That number should sit permanently in your head when you are tempted to trade a strategy from a YouTube video.</p>
+<h2>2.2 The falsifiable hypothesis template</h2>
+<p>Before any code, write this paragraph. If you cannot fill every bracket with a number or a name, you are not ready to test.</p>
+<blockquote>
+<p><em>"I claim that <strong>[specific market participants]</strong> are systematically <strong>[buying/selling] [instrument]</strong> at <strong>[specific time/condition]</strong> because <strong>[specific constraint or bias]</strong>. This creates <strong>[specific measurable dislocation]</strong>. I will capture it by <strong>[entry]</strong>, exiting at <strong>[exit]</strong> with <strong>[sizing rule]</strong>. The claim is <strong>false</strong> if <strong>[specific observable]</strong>. The claim should <strong>stop working</strong> when <strong>[specific regime or structural change]</strong>. My test will use <strong>[data, period, costs]</strong>, and I expect the effect to be <strong>absent</strong> in <strong>[control condition]</strong>."</em></p>
+</blockquote>
+<p>The three brackets that people skip, and that separate a hypothesis from a hope:</p>
+<ul>
+<li><strong>The control condition.</strong> If the effect is real, it should be absent where the mechanism is absent. Opening-range breakouts should work on instruments with genuine opening auctions and not on 24-hour crypto with no auction. If they work equally on both, you have found a data artefact or a general trend, not your mechanism.</li>
+<li><strong>The stopping condition.</strong> Naming the regime in which the edge should die is the cheapest available protection against Phase 5's regime blindness. It also converts an unexpected loss into information rather than a crisis.</li>
+<li><strong>The named counterparty.</strong> If the answer is "other traders who are worse than me," you have not answered the question. That is not a mechanism; it is a hope with a story attached.</li>
+</ul>
+<h2>2.3 The three-component decomposition</h2>
+<p>Every strategy — every one, from a $50 billion CTA to a scalping script — consists of exactly three components, sitting on top of the hypothesis:</p>
+<ol>
+<li><strong>Entry</strong> — the condition that opens exposure.</li>
+<li><strong>Exit</strong> — the condition that closes it (target, stop, time, or signal reversal).</li>
+<li><strong>Position sizing</strong> — how much.</li>
+</ol>
+<p>The decomposition matters because retail improvement culture obsesses over (1), and the returns live in (2) and (3). The worked case study below demonstrates this with public numbers.</p>
+<h2>2.4 Case study: an opening-range breakout, falsified and improved</h2>
+<p>This is the most useful worked example available in public, because it shows the entire protocol — hypothesis, test, falsification of a sub-component, improvement via sizing — on a real strategy with real reported numbers.</p>
+<p><strong>The hypothesis.</strong> Gao, Han, Li &amp; Zhou (2018), <em>Market Intraday Momentum</em>, Journal of Financial Economics 129(2): 394–414, document that the return of the first half-hour of the US trading day positively predicts the return of the last half-hour. The proposed mechanism is an opening imbalance between buyers and sellers that persists through the session. A breakout of the opening 30-minute range, taken in the direction of the imbalance, is a direct expression of that documented effect.</p>
+<p><strong>The base strategy.</strong> Define the opening range as the first 30 minutes of the NY session (09:30–10:00 ET). Enter long if a 5-minute candle closes above the range high. Stop below the range low. Target = 1R. Time exit at 15:00 ET. One trade per day, long only. Tested on Nasdaq futures, 2021–2025.</p>
+<p><strong>The reported base result:</strong> 846 trades, ~58% win rate, profit factor 1.33, net profit ~$181k, max drawdown ~$25.3k, return-over-max-drawdown (RoMaD) ≈ 7.2.</p>
+<p>Now the four findings that make this example worth studying:</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>What was done</th>
+<th>Result</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sub-component falsification: the delta filter</strong></td>
+<td>Added an aggressor-volume-delta threshold (&gt;200 contracts) on the breakout candle. Full-sample profit rose from ~$170k to ~$181k (+$11k).</td>
+<td>Split the sample in half. First half: <strong>filter made it worse</strong> ($54k → $52k). Second half: filter made it better.</td>
+<td><strong>Not an edge.</strong> An effect that appears in one half and reverses in the other is a coin toss. The breakout bar already contains the delta information. <strong>Removed.</strong></td>
+</tr>
+<tr>
+<td><strong>Mechanism check: is it just beta?</strong></td>
+<td>Ran a version that trades only in up-trends, stripping out down periods. If the strategy were pure long-beta, removing down-trend periods should not hurt.</td>
+<td>Performance <strong>deteriorated</strong> when up-trend-only was imposed.</td>
+<td><strong>Genuine intraday effect</strong>, not merely long exposure. This is a real pass.</td>
+</tr>
+<tr>
+<td><strong>Symmetry check: does the short leg work?</strong></td>
+<td>Mirrored the rules for the short side.</td>
+<td>Short leg produced <strong>no meaningful edge</strong> — not catastrophic, but zero.</td>
+<td>Consistent with documented long/short asymmetry in intraday momentum. Long-only is the defensible specification, not a curve-fit.</td>
+</tr>
+<tr>
+<td><strong>Improvement via sizing: volatility targeting</strong></td>
+<td>Replaced fixed 1 contract with sizing that risks a constant dollar amount per trade (contracts = risk budget ÷ stop distance).</td>
+<td>Trades identical (846), win rate identical (~58%), net profit ~$317k, max DD ~$36.5k, <strong>RoMaD improved 7.2 → 8.7</strong>. The improvement held in <strong>both</strong> halves (first half RoMaD 2.0 → 3.3; second half 4.3 → 6.0).</td>
+<td><strong>Real improvement.</strong> Passed the two-half stability test that the delta filter failed.</td>
+</tr>
+</tbody>
+</table>
+<p>Four lessons, and they are the core of this phase:</p>
+<ol>
+<li><strong>A filter that helps on the full sample but not in both halves is noise.</strong> This is the cheapest falsification test in existence and almost nobody runs it. It requires one extra backtest.</li>
+<li><strong>Check the mechanism against a control.</strong> The beta test distinguishes a real effect from disguised exposure. If you cannot construct a control, you do not understand your own hypothesis.</li>
+<li><strong>Removing a component is an improvement.</strong> Complexity that does not survive a split test is a fragility multiplier. Three rules have three breaking points.</li>
+<li><strong>The same strategy, resized, improved risk-adjusted return by 20% with zero change to entries.</strong> This is the empirical case for the Protocol's central claim. The edge was in the sizing.</li>
+</ol>
+<p>Note also the honest caveats the analysis itself raised: the effect is concentrated in the last five years, profit per trade is much lower back to 2015, and Nasdaq has behaved more like a trend instrument since 2019. Those are Phase 5 regime concerns, and they belong in the hypothesis statement, not in a footnote discovered after the account is funded.</p>
+<h2>2.5 Market microstructure — what is actually measurable</h2>
+<p>Microstructure is where retail content is most confidently wrong. The useful distinction is between what is <em>in the data</em> and what is <em>a story about the data</em>.</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>What it actually is</th>
+<th>Retail version</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Order flow imbalance (OFI)</strong></td>
+<td>Net change in bid/ask queue sizes at the touch. Cont, Kukanov &amp; Stoikov (2014) show OFI explains a large fraction (roughly two-thirds in their sample) of short-horizon price changes, with an approximately linear relationship.</td>
+<td>"Delta" from a footprint chart</td>
+<td><strong>Real and measurable</strong>, but requires L2 depth. Footprint "delta" is aggressor-side trade volume — a <em>proxy</em> for OFI, correlated but not identical. Usable, weaker.</td>
+</tr>
+<tr>
+<td><strong>Absorption</strong></td>
+<td>Large resting size that does not move price despite aggressive flow hitting it — evidence of a liquidity provider willing to be filled.</td>
+<td>"Big player defending the level"</td>
+<td><strong>Real as an observation</strong>, unfalsifiable as a causal claim about intent. Trade the observable (price fails to move on high volume), not the story.</td>
+</tr>
+<tr>
+<td><strong>Iceberg orders</strong></td>
+<td>Hidden size with visible tip, replenished after execution.</td>
+<td>"They're hiding orders to trap you"</td>
+<td><strong>Real</strong> (exchange-supported on many venues). Only detectable with MBO data or inference from repeated fills at one price.</td>
+</tr>
+<tr>
+<td><strong>Liquidity sweep / stop run</strong></td>
+<td>A rapid move through a cluster of resting stops, triggering them, which adds to the move. Mechanism: stop orders are market orders; clustered stops are a known liquidity pool.</td>
+<td>"The market maker hunts my stop"</td>
+<td><strong>Partly real, badly framed.</strong> The <em>phenomenon</em> — stop clusters acting as a liquidity vacuum — is real and well-documented. The <em>narrative</em> — a cabal targeting you personally — is not. Your stop is not targeted; it is simply in a predictable place, and predictable places get consumed. Fix: place stops where the cluster is not.</td>
+</tr>
+<tr>
+<td><strong>Square-root impact</strong></td>
+<td>$$\Delta p \propto \sigma\sqrt{Q/V}$$</td>
+<td>(Absent from retail content entirely)</td>
+<td><strong>Real and robust.</strong> Explains why capacity is finite and why your size matters.</td>
+</tr>
+<tr>
+<td><strong>VWAP as fair value</strong></td>
+<td>Volume-weighted average price is an <em>execution benchmark</em> — the average price at which the day's volume traded.</td>
+<td>"Above VWAP = bullish"</td>
+<td><strong>Category error.</strong> See §2.7.</td>
+</tr>
+<tr>
+<td><strong>Support/resistance</strong></td>
+<td>Price levels where limit orders cluster (round numbers, prior highs, option strikes with open interest).</td>
+<td>Drawn trendlines</td>
+<td><strong>Real but ephemeral.</strong> Levels decay within hours; the drawn line is a lagging estimate. Tradeable only with book data confirming the depth.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The honest summary for a retail-accessible account:</strong> you can measure OFI (with depth data), absorption (as price-vs-volume divergence), stop clustering (as a location statistic), and impact (as your own fills). You cannot measure intent. Every strategy in this phase must be expressed in terms of the measurable, and every explanatory sentence must be labelled as an interpretation.</p>
+<h2>2.6 Liquidity sweeps — the usable version</h2>
+<p>The claim worth testing is narrow and mechanical:</p>
+<blockquote>
+<p><em>Stops cluster at predictable locations — just beyond prior session extremes, round numbers, and the far side of a consolidation range. When price reaches such a cluster, triggered stop orders execute as market orders, producing a temporary acceleration and a local liquidity vacuum. Price then frequently reverts as the vacuum fills.</em></p>
+</blockquote>
+<p>That is testable, and much of it is true. What is not supported is any claim of deliberate targeting, and what is not tradeable is a sweep you only recognise afterwards.</p>
+<table>
+<thead>
+<tr>
+<th>Sweep type</th>
+<th>Location</th>
+<th>Testable signature</th>
+<th>Trade construction</th>
+<th>Failure mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Session extreme sweep</strong></td>
+<td>Just beyond prior day's high/low</td>
+<td>Wick beyond level, close back inside, volume spike &gt;2σ</td>
+<td>Fade the re-entry into the range; stop beyond the wick</td>
+<td>Genuine breakout — the sweep is the start of a trend</td>
+</tr>
+<tr>
+<td><strong>Range-liquidity sweep</strong></td>
+<td>Beyond consolidation boundary</td>
+<td>Penetration depth &lt; 0.5× range width, rapid return</td>
+<td>Fade with target at range mid</td>
+<td>Range resolution in the sweep direction</td>
+</tr>
+<tr>
+<td><strong>Round-number sweep</strong></td>
+<td>00/50/000 levels</td>
+<td>Same as above, with option-strike OI concentration</td>
+<td>Fade, but only where OI is large</td>
+<td>Thin books at round numbers make the move real</td>
+</tr>
+<tr>
+<td><strong>Liquidation cascade</strong></td>
+<td>Where leverage is concentrated (crypto)</td>
+<td>Funding extreme + OI drop + volume spike</td>
+<td>Trade the <em>aftermath</em> (reversion), not the cascade</td>
+<td>Cascade continues; cascade is the whole move</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The critical discipline:</strong> a sweep is only tradeable if the <em>entry trigger</em> fires while the sweep is still reversible — i.e. you must define the signature in advance (penetration depth, volume, time-to-return) and accept that most sweeps will not qualify. If your definition requires you to see the close of the reversal, you are trading a lagging pattern.</p>
+<h2>2.7 VWAP — benchmark, not signal</h2>
+<p>This deserves its own section because "VWAP alignment" is presented in retail content as a directional filter, and that framing is a category error that costs money.</p>
+<p>VWAP is defined as $$\text{VWAP}<em>t = \sum</em>{i \le t} p_i v_i \big/ \sum_{i \le t} v_i$$ — the average price at which volume has traded so far today. It is, by construction, a <em>descriptive statistic about where volume happened</em>, not a forecast. Its institutional purpose is to answer a completely different question: <strong>"did my execution beat the average price at which the market traded?"</strong></p>
+<table>
+<thead>
+<tr>
+<th>Use</th>
+<th>Legitimate?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Execution benchmark</strong></td>
+<td>Yes — this is its actual purpose</td>
+<td>A buy order filled below VWAP is deemed good execution; the benchmark exists so a desk can be evaluated independently of direction</td>
+</tr>
+<tr>
+<td><strong>Participation scheduling (POV/VWAP algorithms)</strong></td>
+<td>Yes</td>
+<td>Institutional algos schedule child orders along the historical intraday volume curve to minimise impact. This is the real "VWAP alignment" — an <em>execution</em> concept</td>
+</tr>
+<tr>
+<td><strong>Measuring your own slippage</strong></td>
+<td>Yes</td>
+<td>Compare your average fill to VWAP over the holding window. A useful, honest metric</td>
+</tr>
+<tr>
+<td><strong>Directional filter ("price above VWAP = long only")</strong></td>
+<td><strong>No</strong></td>
+<td>VWAP is a lagging average of the same prices you are filtering. Above-VWAP is nearly equivalent to "price rose earlier today." It adds no independent information</td>
+</tr>
+<tr>
+<td><strong>Mean-reversion anchor</strong></td>
+<td><strong>Weakly, with conditions</strong></td>
+<td>There is mild evidence that intraday price deviates from and reverts toward the volume-weighted level, but the effect is small, regime-dependent, and dominated by costs at retail size. Test it against a random-level baseline before believing it</td>
+</tr>
+<tr>
+<td><strong>"Institutional accumulation" inference</strong></td>
+<td><strong>No</strong></td>
+<td>VWAP tells you nothing about who traded or why</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The test that settles it.</strong> Build the strategy with the VWAP filter. Build it without. Then split both in half. If the filter improves performance in only one half — which is the typical result — it is noise, exactly like the delta filter in §2.4. Run this test before you build a course around it.</p>
+<p>What VWAP <em>is</em> genuinely useful for, and this is not trivial: <strong>it tells you whether your fills are being systematically worse than the market's average price.</strong> If your average entry is 3 bps worse than the VWAP over your holding window, you have found a 3 bps per trade leak, which at 500 trades a year is 15% of notional annually. That is a bigger number than most edges.</p>
+<h2>2.8 Time-of-day dynamics</h2>
+<p>Intraday effects are among the best-documented and most mechanically explicable in the literature, which makes them a good hunting ground — and also the most crowded.</p>
+<table>
+<thead>
+<tr>
+<th>Window</th>
+<th>Documented behaviour</th>
+<th>Mechanism</th>
+<th>Tradeable expression</th>
+<th>Caveat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Opening auction / first 30 min</strong></td>
+<td>Highest volume and volatility of the day; opening imbalance</td>
+<td>Overnight information + accumulated order imbalance released at once</td>
+<td>ORB; opening-range fade; intraday momentum (Gao et al., 2018)</td>
+<td>Slippage is highest here; needs careful cost modelling</td>
+</tr>
+<tr>
+<td><strong>Mid-session (11:30–14:00 ET)</strong></td>
+<td>Volume trough; volatility compression</td>
+<td>Information flow exhausted; participants at lunch</td>
+<td>Mean reversion; range fades; volatility-selling</td>
+<td>Thin books → impact per unit size is <em>higher</em>, not lower</td>
+</tr>
+<tr>
+<td><strong>Last 30 min</strong></td>
+<td>Volume and volatility second peak; closing auction</td>
+<td>Benchmark rebalancing, index flows, MOC imbalance</td>
+<td>Intraday momentum continuation; closing-auction imbalance strategies</td>
+<td>Closing auction mechanics are exchange-specific</td>
+</tr>
+<tr>
+<td><strong>Overnight / gap</strong></td>
+<td>Overnight return distribution differs from intraday; the "overnight drift" in equity indices</td>
+<td>Risk premium for holding unhedged overnight risk</td>
+<td>Overnight-only exposure</td>
+<td>Highly regime-dependent; capacity-constrained at index level</td>
+</tr>
+<tr>
+<td><strong>Scheduled events (CPI, FOMC, NFP, earnings)</strong></td>
+<td>Volatility spike, then decay</td>
+<td>Information release</td>
+<td>Post-event drift (PEAD analogue)</td>
+<td>Spreads widen 5–20×; most retail stops are hit by the spread, not the news</td>
+</tr>
+<tr>
+<td><strong>Funding times (perpetual futures)</strong></td>
+<td>Price pressure around 00:00/08:00/16:00 UTC</td>
+<td>Funding payment mechanics; position adjustment</td>
+<td>Funding-rate carry; pre-funding positioning</td>
+<td>Crowded; funding flips are the risk</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The general principle.</strong> Intraday seasonality is a <em>scheduling</em> fact, not a <em>forecasting</em> fact. It tells you when liquidity and information arrive. The most reliable use is not "trade at this time because the pattern says so" but "size and instrument-select according to when liquidity is available and when it is not."</p>
+<h2>2.9 Signal construction — the five properties every signal needs</h2>
+<p>Before a signal reaches Phase 3, it must satisfy five properties. Failing any one of them means Phase 3 will produce a false positive.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Requirement</th>
+<th>Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Stationarity</strong></td>
+<td>The signal's distribution should not drift. Raw prices are non-stationary; returns are closer; z-scores of returns are closer still</td>
+<td>Rolling mean/variance stability; ADF or KPSS on the signal, not the price</td>
+</tr>
+<tr>
+<td><strong>Causality</strong></td>
+<td>Computable from information available strictly before the decision time</td>
+<td>Programmatic assertion (Phase 1, check #3)</td>
+</tr>
+<tr>
+<td><strong>Bounded influence</strong></td>
+<td>A single outlier should not dominate the signal</td>
+<td>Winsorise at 1/99 or 2.5/97.5; verify the backtest survives winsorisation</td>
+</tr>
+<tr>
+<td><strong>Sufficient variation</strong></td>
+<td>The signal must actually cross its thresholds often enough to be tested</td>
+<td>Count signal events; fewer than ~100 events means you cannot distinguish an edge from luck</td>
+</tr>
+<tr>
+<td><strong>Economic interpretability</strong></td>
+<td>You can state why the signal should work</td>
+<td>The §2.2 template, filled in completely</td>
+</tr>
+</tbody>
+</table>
+<p>The fourth is the one that quietly kills research programmes. A signal that fires 40 times in 10 years has a standard error on its Sharpe ratio so wide that no statistical test can rescue it. Bailey &amp; López de Prado's framework is explicit: the minimum track record length required to distinguish a Sharpe of 0.5 from zero at 95% confidence is measured in <em>years</em>, not trades. If your event count is small, your honest conclusion is "untestable," and the correct action is to find a version of the hypothesis that fires more often — not to lower your threshold for belief.</p>
+<hr />
+<h1>PHASE 3 — BACKTESTING &amp; VALIDATION: THE TWELVE RULES</h1>
+<blockquote>
+<p><em>A backtest is not evidence. A backtest is a hypothesis about the past, and the past is a single sample drawn from a distribution you cannot observe. These twelve rules are how you avoid mistaking one draw for the distribution.</em></p>
+</blockquote>
+<p>The organising fact of this phase, and the one that should reorganise your entire approach to research:</p>
+<p><strong>After enough trials, a profitable strategy is guaranteed.</strong> Bailey, Borwein, López de Prado &amp; Zhu (2014) prove that the optimal result of a search over a large enough strategy space is right-unbounded — there is no Sharpe ratio threshold high enough to reject the hypothesis that a strategy is false, if you do not know how many trials produced it. With only ten independent configurations tested on one year of data, the <em>expected maximum</em> in-sample Sharpe ratio is about 1.57, even when the true Sharpe of every configuration is exactly zero.</p>
+<p>The corollary is brutal and it invalidates most published research: <strong>a backtest that does not report the number of trials attempted is worthless, regardless of how good it looks.</strong> That includes yours.</p>
+<h2>3.1 The Twelve Rules</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Rule</th>
+<th>Why</th>
+<th>Pass criterion</th>
+<th>Violation symptom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>Report the number of trials.</strong></td>
+<td>Without $$N$$, no statistical inference is possible.</td>
+<td>A logged count of every configuration tested, including abandoned ones.</td>
+<td>"We iterated until it worked."</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>Split in-sample / out-of-sample before you look.</strong></td>
+<td>The OOS set must be untouched by any decision, including feature choice.</td>
+<td>OOS is ≥25% of data, chronologically last, and opened <strong>once</strong>.</td>
+<td>Peeking at OOS to decide which parameters to try next — the single most common fatal error.</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>Purge and embargo.</strong></td>
+<td>Overlapping labels leak information across the split boundary.</td>
+<td>Purged K-fold with an embargo of at least the label horizon (López de Prado, 2018).</td>
+<td>Random K-fold CV on time series.</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>Walk forward, don't just split once.</strong></td>
+<td>A single split is one draw. Walk-forward gives a distribution.</td>
+<td>Anchored or rolling walk-forward with ≥8 folds.</td>
+<td>One split, one number, one conclusion.</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>Optimise for a plateau, not a peak.</strong></td>
+<td>Peaks are where the search found noise; plateaus are where the mechanism is.</td>
+<td>Neighbouring parameters perform within ~20% of the optimum.</td>
+<td>A parameter set that is 3× better than its neighbours.</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>Charge realistic costs, then stress them.</strong></td>
+<td>Gross returns are fiction.</td>
+<td>Net results at 1×, 2×, 3× modelled costs; sign survives 2×.</td>
+<td>"It's profitable before costs."</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>Beat a random baseline.</strong></td>
+<td>Random entries with the same exit and sizing capture the drift, volatility and exit structure.</td>
+<td>Random-entry distribution of Sharpe ratios; strategy must be outside the 95th percentile.</td>
+<td>Strategy "works" but a random-entry version also works.</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td><strong>Beat the null of no skill: buy-and-hold and the passive alternative.</strong></td>
+<td>Many "edges" are exposure in disguise.</td>
+<td>Sharpe and RoMaD exceed the relevant passive benchmark over the same period.</td>
+<td>Long-only equity strategy that underperforms the index with more drawdown.</td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td><strong>Run Monte Carlo — three kinds.</strong></td>
+<td>Single-path results have enormous variance.</td>
+<td>Trade-order shuffle, block bootstrap, and synthetic-path simulation all reported.</td>
+<td>Reporting only the realised path's drawdown as "max drawdown."</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td><strong>Deflate the Sharpe ratio.</strong></td>
+<td>Controls for trials, skew, kurtosis, and sample length.</td>
+<td>Deflated Sharpe Ratio &gt; 0.95.</td>
+<td>Reporting raw SR with no adjustment.</td>
+</tr>
+<tr>
+<td><strong>11</strong></td>
+<td><strong>Report the probability of backtest overfitting.</strong></td>
+<td>CSCV gives a direct estimate.</td>
+<td>PBO &lt; 0.20, ideally &lt; 0.10.</td>
+<td>PBO above 0.5 — your selection procedure is anti-predictive.</td>
+</tr>
+<tr>
+<td><strong>12</strong></td>
+<td><strong>Replicate on a holdout universe.</strong></td>
+<td>Different instruments, markets, or a disjoint period.</td>
+<td>Edge present, directionally, in a second universe with the same parameters.</td>
+<td>Works only on the instrument it was developed on.</td>
+</tr>
+</tbody>
+</table>
+<p>Rules 1, 2 and 7 are non-negotiable. Rules 5, 10 and 11 are what separate a professional research process from a well-formatted hallucination.</p>
+<h2>3.2 In-sample / out-of-sample — the discipline that is always broken</h2>
+<p>Everyone knows the rule. Almost nobody follows it, because the temptation arrives in a specific, seductive form: you test, it fails, you have an idea about <em>why</em>, you test again, and each iteration is technically "still in-sample" because you have not yet looked at the OOS set. Fifty iterations later you have effectively trained on the full sample and the OOS set is contaminated by your own decision process.</p>
+<p>The structural fix is not willpower. It is:</p>
+<ol>
+<li><strong>Physically separate the data.</strong> Write the OOS set to a file your research environment does not mount. Unlock it once.</li>
+<li><strong>Pre-register the hypothesis and the acceptance threshold</strong> before testing. Written, dated, in a file you will not edit.</li>
+<li><strong>Count and log every trial</strong>, including the ones you abandoned. The abandoned ones are the ones that make the surviving one look good.</li>
+<li><strong>Accept a single OOS evaluation.</strong> If you look twice, you have two trials, and the deflation must account for both.</li>
+</ol>
+<p>The honest accounting: if you test 50 configurations and select the best, your effective OOS significance threshold is not 5%, it is roughly 5%/50. That is why the deflated Sharpe exists.</p>
+<h2>3.3 Walk-forward and purged cross-validation</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>How it works</th>
+<th>Strength</th>
+<th>Weakness</th>
+<th>Use when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Single IS/OOS split</strong></td>
+<td>Train on first 70–75%, test on last 25–30%</td>
+<td>Clean, unambiguous</td>
+<td>One draw; high variance</td>
+<td>Always, as the final gate</td>
+</tr>
+<tr>
+<td><strong>Rolling walk-forward</strong></td>
+<td>Train on window $$[t-w, t]$$, test on $$[t, t+h]$$, roll forward</td>
+<td>Mimics live deployment; gives a distribution of OOS results</td>
+<td>Discards early data; sensitive to window length</td>
+<td>Regime-changing markets; adaptive strategies</td>
+</tr>
+<tr>
+<td><strong>Anchored walk-forward</strong></td>
+<td>Train on $$[0, t]$$, test on $$[t, t+h]$$, expanding</td>
+<td>Uses all history; more stable parameters</td>
+<td>Over-weights old regimes</td>
+<td>Stable, low-parameter strategies</td>
+</tr>
+<tr>
+<td><strong>Purged K-fold</strong></td>
+<td>K folds; remove training observations whose label windows overlap the test fold; add embargo</td>
+<td>Uses data efficiently; controls leakage</td>
+<td>Requires defining the label horizon</td>
+<td>ML models with overlapping labels</td>
+</tr>
+<tr>
+<td><strong>Combinatorial purged CV (CPCV)</strong></td>
+<td>Many train/test combinations from purged folds; yields a <em>distribution</em> of OOS paths</td>
+<td>Best available estimate of the distribution of outcomes</td>
+<td>Computationally expensive; more complex</td>
+<td>Final validation of a strategy you intend to size meaningfully</td>
+</tr>
+<tr>
+<td><strong>Random K-fold</strong></td>
+<td>Shuffle and split</td>
+<td>None, for time series</td>
+<td><strong>Leaks future into past. Invalid.</strong></td>
+<td>Never</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The embargo, explained.</strong> If your label is "return over the next 5 days," then an observation at $$t$$ and one at $$t+3$$ share 2 days of information. Placing them on opposite sides of a split boundary leaks. The embargo removes training observations within the label horizon of the test set. It is a five-line fix and it is skipped in the overwhelming majority of retail and much academic work.</p>
+<h2>3.4 Monte Carlo — the three simulations you actually need</h2>
+<p>A single backtest path is one realisation of a random process. Reporting its maximum drawdown as "the" drawdown is the same error as reporting a single coin flip as "the" probability. Three simulations fix it, and they answer three different questions.</p>
+<p><strong>Simulation 1 — Trade-order shuffle (permutation).</strong> Resample the sequence of trade P&amp;Ls, with replacement or without, thousands of times. Answers: <em>what is the distribution of drawdowns consistent with this edge?</em> Cheap, assumption-light, and the fastest way to discover that your realised max drawdown was lucky. Limitation: destroys autocorrelation, so it <em>understates</em> clustered drawdowns if your strategy's losses cluster.</p>
+<p><strong>Simulation 2 — Stationary block bootstrap (Politis &amp; Romano, 1994).</strong> Resample contiguous blocks of returns, preserving local dependence. Answers: <em>what happens to drawdowns when losses cluster, as they do in reality?</em> This is the one to trust for drawdown estimation and for prop-firm breach probability, because prop-firm rules are path-dependent and clustering is exactly what breaches accounts.</p>
+<p><strong>Simulation 3 — Synthetic price paths.</strong> Generate alternative histories with matched volatility, autocorrelation, and fat tails; run the full strategy on each. Answers: <em>is the edge a property of the mechanism or of this specific price history?</em> The most expensive and the most informative, particularly for detecting a strategy that exploits one historical episode.</p>
+<table>
+<thead>
+<tr>
+<th>Simulation</th>
+<th>Question answered</th>
+<th>Preserves</th>
+<th>Destroys</th>
+<th>Primary output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trade shuffle</td>
+<td>Drawdown distribution under independence</td>
+<td>The trade P&amp;L distribution</td>
+<td>Time ordering, clustering</td>
+<td>Percentile bands on max DD and terminal equity</td>
+</tr>
+<tr>
+<td>Block bootstrap</td>
+<td>Drawdown distribution under realistic clustering</td>
+<td>Local dependence</td>
+<td>Long-range structure</td>
+<td><strong>Breach probability</strong>; realistic DD envelope</td>
+</tr>
+<tr>
+<td>Synthetic paths</td>
+<td>Robustness of the mechanism</td>
+<td>Vol, tails, autocorrelation</td>
+<td>The actual history</td>
+<td>Whether the edge survives alternative worlds</td>
+</tr>
+<tr>
+<td><strong>Parameter perturbation</strong></td>
+<td>Sensitivity to estimation error</td>
+<td>The strategy</td>
+<td>Parameter precision</td>
+<td>Degradation curve; plateau width</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The operational use, which is the real payoff.</strong> Monte Carlo is not only a validation tool; it is the live monitoring yardstick. Run the simulation before deployment and record the envelope: after 20 trades, the 5th–95th percentile range of cumulative P&amp;L. In live trading, if the realised path exits that envelope on the downside, you have a pre-specified, non-emotional trigger to pause. If it stays inside, a losing week is <em>information that nothing is wrong</em> — which is the single most valuable thing a risk framework can tell you, because it prevents you from abandoning a working strategy at its worst moment.</p>
+<p>The distinction that matters operationally: <strong>a broken strategy versus an underperforming one.</strong> A strategy that breaches its simulated worst-case envelope has stopped behaving like the thing you tested — retire it. A strategy whose average trade is simply lower than expected but whose path is inside the envelope is underperforming — pause, monitor, do not panic. Conflating these two is how people both blow up and capitulate.</p>
+<h2>3.5 Random baselines — the test almost nobody runs</h2>
+<p>This is the cheapest, most informative test in the entire curriculum, and it is absent from essentially all retail material.</p>
+<p><strong>Procedure.</strong> Take your strategy's <em>exit and sizing rules</em> exactly as they are. Replace the entry signal with a random entry at a random time within the same session (or the same set of candidate bars). Run 1,000 such random-entry strategies. Plot the distribution of their Sharpe ratios and returns.</p>
+<p><strong>Interpretation.</strong></p>
+<ul>
+<li>If your strategy sits <strong>inside</strong> the random distribution, your entry signal adds nothing. Any apparent performance comes from the exit, the sizing, the drift, or the volatility exposure — all of which the random version also captures. This is extremely common with long-only equity strategies in a bull market, and with strategies whose stops and targets do most of the work.</li>
+<li>If your strategy sits <strong>outside the 95th percentile</strong>, the entry carries information. Now go further: the <em>gap</em> between your strategy and the random median is your entry's true contribution, in the same units. If your strategy returns 12% and random entries return 9%, your signal is worth 3 percentage points — not 12.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Baseline</th>
+<th>What it controls for</th>
+<th>When it is the right test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Random entry, same exit/sizing</strong></td>
+<td>The entire exit and sizing architecture</td>
+<td>Always. First test after costs.</td>
+</tr>
+<tr>
+<td><strong>Random entry, same time-of-day distribution</strong></td>
+<td>Intraday seasonality</td>
+<td>Any intraday strategy</td>
+</tr>
+<tr>
+<td><strong>Coin-flip direction, same holding period</strong></td>
+<td>Directional skill specifically</td>
+<td>Any long/short strategy</td>
+</tr>
+<tr>
+<td><strong>Buy and hold</strong></td>
+<td>Exposure and drift</td>
+<td>Any strategy with net long exposure</td>
+</tr>
+<tr>
+<td><strong>Same strategy, shuffled returns</strong></td>
+<td>Whether the edge needs the specific return sequence</td>
+<td>Any path-dependent strategy</td>
+</tr>
+<tr>
+<td><strong>Same strategy, shifted by one bar</strong></td>
+<td>Whether the edge is a lag artefact</td>
+<td>Any signal using recent price</td>
+</tr>
+</tbody>
+</table>
+<p>That last one deserves emphasis. <strong>Shifting your signal by one bar should destroy the edge.</strong> If it does not, your signal is not predicting anything — it is coincident with price, which means you are measuring the thing you are trying to predict. This is a two-line test and it catches a whole class of look-ahead bugs.</p>
+<h2>3.6 Deflating the Sharpe ratio</h2>
+<p>The Sharpe ratio is the most over-trusted statistic in finance. Its problems: it assumes normality (strategies with negative skew look better than they are), it is inflated in short samples, and it is dramatically inflated by selection.</p>
+<p>The Deflated Sharpe Ratio (Bailey &amp; López de Prado, 2014) corrects for all three. Conceptually:</p>
+<p>$$\text{DSR} = \Phi\left[\frac{(\hat{SR} - SR_0)\sqrt{T-1}}{\sqrt{1 - \hat{\gamma}_3 \hat{SR} + \frac{\hat{\gamma}_4 - 1}{4}\hat{SR}^2}}\right]$$</p>
+<p>where $$\hat{SR}$$ is the observed (non-annualised) Sharpe, $$T$$ the number of observations, $$\hat{\gamma}_3$$ and $$\hat{\gamma}_4$$ the skewness and kurtosis, and $$SR_0$$ the <em>expected maximum</em> Sharpe under the null of zero skill across $$N$$ trials:</p>
+<p>$$SR_0 = \sqrt{V[{SR_n}]}\left[(1-\gamma)\Phi^{-1}!\left(1-\tfrac{1}{N}\right) + \gamma\Phi^{-1}!\left(1-\tfrac{1}{N}e^{-1}\right)\right]$$</p>
+<p>with $$\gamma \approx 0.5772$$ the Euler–Mascheroni constant.</p>
+<p>You do not need to derive it. You need to internalise what it says, which is this table:</p>
+<table>
+<thead>
+<tr>
+<th>Observed annualised Sharpe</th>
+<th>Backtest length</th>
+<th>Independent trials</th>
+<th>Deflated conclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1.0</td>
+<td>10 years daily</td>
+<td>1</td>
+<td>Significant</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>10 years daily</td>
+<td>3</td>
+<td><strong>Below the 95% threshold</strong></td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>10 years daily</td>
+<td>10</td>
+<td>Clearly not significant</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>2 years daily</td>
+<td>7</td>
+<td>Expected max IS SR ≈ 1.0 with true SR = 0. <strong>Worthless.</strong></td>
+</tr>
+<tr>
+<td>1.5</td>
+<td>10 years daily</td>
+<td>20</td>
+<td>Marginal at best</td>
+</tr>
+<tr>
+<td>1.0</td>
+<td>5 years daily</td>
+<td>45</td>
+<td>At the Minimum Backtest Length limit — true SR expected 0</td>
+</tr>
+</tbody>
+</table>
+<p>Read the second row again. <strong>Three independent trials on ten years of data are enough to render an observed Sharpe of 1.0 statistically indistinguishable from zero.</strong> If you have ever optimised a strategy across three parameter sets, you have already spent your significance budget.</p>
+<p><strong>Minimum Backtest Length.</strong> From the same framework: to avoid selecting a strategy with an in-sample Sharpe of 1.0 among $$N$$ independent configurations whose true Sharpe is zero, you need roughly</p>
+<p>$$\text{MinBTL (years)} \lesssim \frac{2\ln N}{E[\max SR]^2}$$</p>
+<p>Practical consequence: <strong>five years of data supports about 45 independent configurations before an in-sample Sharpe of 1.0 is expected to be zero out-of-sample.</strong> Two years supports seven. If you are testing a strategy on two years of data with a 12-parameter grid, you are not researching; you are generating a false positive with extra steps.</p>
+<p>Two further thresholds worth carrying:</p>
+<ul>
+<li><strong>Harvey, Liu &amp; Zhu (2016)</strong> argue that in the cross-section of asset returns, given the hundreds of factors tested in the literature, a <strong>t-statistic of about 3.0</strong> — not 2.0 — is the appropriate hurdle for a new factor. Their argument is a multiple-testing correction applied to the whole field. Your single-strategy research faces the same logic at smaller scale.</li>
+<li><strong>The "halve the Sharpe ratio" rule of thumb</strong> — widely taught as a haircut for overfitting — has <strong>no scientific basis</strong>. It is a folk heuristic that happens to be roughly right for some typical $$(N, T)$$ combinations and badly wrong for others. Use the DSR, which is derived, not the folk rule, which is not.</li>
+</ul>
+<h2>3.7 Probability of backtest overfitting (PBO)</h2>
+<p>The DSR asks "is this Sharpe significant?" PBO asks a different and more direct question: <strong>"given my selection procedure, what is the probability that the configuration I picked in-sample will underperform the median out-of-sample?"</strong></p>
+<p>The estimator is Combinatorially Symmetric Cross-Validation (CSCV; Bailey, Borwein, López de Prado &amp; Zhu, 2017): partition the return matrix of all $$N$$ configurations into $$S$$ blocks, form all $$\binom{S}{S/2}$$ combinations of blocks into IS/OOS pairs, select the best IS configuration in each, and measure its OOS rank. The frequency with which the IS winner lands below the OOS median is your PBO.</p>
+<table>
+<thead>
+<tr>
+<th>PBO</th>
+<th>Reading</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&lt; 0.10</td>
+<td>Selection procedure is sound</td>
+<td>Proceed to live paper trading</td>
+</tr>
+<tr>
+<td>0.10–0.20</td>
+<td>Acceptable with caution</td>
+<td>Reduce size, extend paper period</td>
+</tr>
+<tr>
+<td>0.20–0.50</td>
+<td>Selection is largely noise-fitting</td>
+<td>Re-specify with fewer parameters; retest</td>
+</tr>
+<tr>
+<td>&gt; 0.50</td>
+<td><strong>Your optimiser is anti-predictive</strong> — the configuration it prefers is worse than random</td>
+<td>Discard the entire research programme, not just the strategy</td>
+</tr>
+</tbody>
+</table>
+<p>That last row is the important one. PBO above 0.5 does not mean "this strategy is bad." It means "the method by which I chose this strategy systematically picks losers." Fixing the strategy will not help; the selection process must change.</p>
+<h2>3.8 What a backtest report must contain</h2>
+<p>A backtest that does not contain these items is not a report; it is marketing.</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Full parameter set and the number of configurations tested</td>
+<td>The only defence against selection bias</td>
+</tr>
+<tr>
+<td>Data description: source, period, resolution, universe construction, PIT status</td>
+<td>Reproducibility</td>
+</tr>
+<tr>
+<td>Cost model, with results at 1×/2×/3×</td>
+<td>The most common cause of death</td>
+</tr>
+<tr>
+<td>Equity curve <strong>and</strong> the distribution of drawdowns from block bootstrap</td>
+<td>Single-path DD understates risk</td>
+</tr>
+<tr>
+<td>Trade-level statistics: count, hit rate, average win/loss, expectancy, MAE/MFE distributions</td>
+<td>Diagnoses whether the exit or entry is doing the work</td>
+</tr>
+<tr>
+<td>Sharpe, Sortino, RoMaD, <strong>Deflated Sharpe</strong>, PBO</td>
+<td>The statistics that survive scrutiny</td>
+</tr>
+<tr>
+<td>Random-entry baseline distribution and the strategy's percentile</td>
+<td>Isolates the entry's contribution</td>
+</tr>
+<tr>
+<td>Walk-forward results across ≥8 folds</td>
+<td>Distribution of OOS performance, not a point</td>
+</tr>
+<tr>
+<td>Parameter sensitivity heatmap</td>
+<td>Plateau vs. peak</td>
+</tr>
+<tr>
+<td>Performance by regime (vol quintile, trend/chop, bull/bear)</td>
+<td>Where it works and where it does not</td>
+</tr>
+<tr>
+<td>Performance by year, with the worst year highlighted</td>
+<td>Honesty about concentration</td>
+</tr>
+<tr>
+<td>Capacity estimate: at what AUM does impact consume the edge?</td>
+<td>The number that determines whether this is a business</td>
+</tr>
+</tbody>
+</table>
+<p>The last one is the item nobody includes and every allocator asks for. A strategy with a Sharpe of 2.0 that dies at $2m AUM is a hobby. A strategy with a Sharpe of 0.6 that holds $500m is a business. Know which one you have before you scale.</p>
+<hr />
+<h1>PHASE 4 — RISK &amp; POSITION SIZING</h1>
+<blockquote>
+<p><em>This is the phase where the Protocol's central claim is either true or false. If the edge is in risk management, then this chapter should change your P&amp;L more than the previous three combined. It does. In the §2.4 case study, changing nothing but the sizing rule improved return-over-max-drawdown by roughly 20% and passed the stability test that a new entry filter failed.</em></p>
+</blockquote>
+<p>The ordering of concerns in this phase, from most to least important:</p>
+<ol>
+<li><strong>Survival</strong> — do not reach a state from which you cannot continue.</li>
+<li><strong>Drawdown control</strong> — path, not just terminal wealth.</li>
+<li><strong>Growth rate</strong> — how fast capital compounds.</li>
+<li><strong>Return</strong> — a consequence, not a target.</li>
+</ol>
+<p>Retail content inverts this list. That inversion is the reason most accounts die with a positive-expectancy strategy.</p>
+<h2>4.1 The Kelly criterion — what it says, and why you must not use it</h2>
+<p>Kelly (1956), formalised for markets by Thorp (2006), gives the growth-optimal fraction of capital to risk. For a bet with win probability $$p$$, win fraction $$b$$, loss fraction $$a$$:</p>
+<p>$$f^* = \frac{p}{a} - \frac{1-p}{b} = \frac{pb - (1-p)a}{ab}$$</p>
+<p>For a continuous return distribution with mean $$\mu$$ and variance $$\sigma^2$$, the log-optimal fraction is</p>
+<p>$$f^* = \frac{\mu}{\sigma^2}$$</p>
+<p>This is the fraction that maximises expected log wealth, and it has a genuinely remarkable property: <strong>it maximises the asymptotic growth rate</strong>, and any other fraction grows more slowly with probability one in the long run.</p>
+<p>And yet using it is a mistake for almost everyone. Three reasons, in order of severity.</p>
+<p><strong>Reason 1 — estimation error in the mean dominates everything.</strong> Chopra &amp; Ziemba (1993) showed that errors in estimated <em>means</em> are roughly ten times as damaging to portfolio decisions as errors in variances, and about twenty times as damaging as errors in covariances. Kelly's numerator is the mean. In a market where a strategy's true annual Sharpe is 0.5, a two-year estimate of that mean has a standard error of about 0.35 — a 70% relative error. You are computing $$f^*$$ from a number you do not know, and the function is linear in that number.</p>
+<p><strong>Reason 2 — full Kelly produces drawdowns that are unlivable.</strong> At full Kelly, the probability of experiencing a 50% drawdown at some point is very high — on the order of 50% for a continuous-time log-optimal strategy — and the expected <em>time</em> to recover from a 50% drawdown is measured in years. Growth-optimal is not survival-optimal, and the theory's assumptions (known probabilities, infinite horizon, no constraints, no career risk) do not describe your situation.</p>
+<p><strong>Reason 3 — the loss function is not symmetric.</strong> A 50% drawdown requires a 100% gain to recover. A prop-firm account at −10% is gone permanently, with no path back. Kelly optimises a quantity that is indifferent to your ruin, because ruin has probability zero in the continuous model and non-zero probability in reality.</p>
+<table>
+<thead>
+<tr>
+<th>Fraction of Kelly</th>
+<th>Growth rate (relative to full Kelly)</th>
+<th>Typical max drawdown</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1×</td>
+<td>~10%</td>
+<td>2–5%</td>
+<td>Extremely conservative; appropriate for unproven strategies</td>
+</tr>
+<tr>
+<td>0.25×</td>
+<td>~44%</td>
+<td>10–15%</td>
+<td><strong>The practical sweet spot for most systematic strategies</strong></td>
+</tr>
+<tr>
+<td>0.5×</td>
+<td>~75%</td>
+<td>25–35%</td>
+<td>Aggressive; only with a long live track record and low parameter uncertainty</td>
+</tr>
+<tr>
+<td>1.0× (full)</td>
+<td>100%</td>
+<td>50%+</td>
+<td><strong>Do not.</strong></td>
+</tr>
+<tr>
+<td>2.0×</td>
+<td>0%</td>
+<td>Ruin</td>
+<td>Negative growth: guaranteed long-run failure</td>
+</tr>
+</tbody>
+</table>
+<p>Read the last two rows together. Growth rate is a concave function of leverage, peaking at $$f^<em>$$ and turning negative beyond $$2f^</em>$$. Over-betting by 2× does not halve your growth; it eliminates it. This is the mathematical refutation of martingale and of "double down to recover."</p>
+<p><strong>The practical rule.</strong> Estimate Kelly, then use a quarter of it, then check that the resulting risk per trade is between 0.25% and 1% of capital. If your quarter-Kelly says 3%, your edge estimate is wrong or your volatility estimate is stale. The check is not redundant — it catches estimation failures that the formula cannot see.</p>
+<h2>4.2 Sizing methods compared</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Formula</th>
+<th>Growth</th>
+<th>Drawdown control</th>
+<th>Parameter sensitivity</th>
+<th>Prop-firm fit</th>
+<th>Use when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fixed lots</strong></td>
+<td>$$q = \text{const}$$</td>
+<td>Suboptimal</td>
+<td><strong>None</strong> — risk varies with volatility</td>
+<td>None (that is the problem)</td>
+<td><strong>Poor</strong> — a high-vol day can breach</td>
+<td>Never, except as a baseline for comparison</td>
+</tr>
+<tr>
+<td><strong>Fixed fractional</strong></td>
+<td>$$q = \frac{r \cdot E}{S}$$ where $$S$$ = stop distance</td>
+<td>Good</td>
+<td>Moderate — normalises risk per trade</td>
+<td>Low</td>
+<td>Good</td>
+<td>Default for stop-based strategies</td>
+</tr>
+<tr>
+<td><strong>Fixed ratio</strong></td>
+<td>Increase size after fixed profit increments</td>
+<td>Aggressive early</td>
+<td>Poor — size grows fastest when equity is highest</td>
+<td>Low</td>
+<td>Poor</td>
+<td>Small accounts with a large edge, high risk tolerance</td>
+</tr>
+<tr>
+<td><strong>Volatility targeting</strong></td>
+<td>$$q = \frac{\sigma_{\text{target}}}{\hat{\sigma}} \cdot q_{\text{base}}$$</td>
+<td>Good</td>
+<td><strong>Strong</strong> — documented DD reduction</td>
+<td>Moderate (lookback choice)</td>
+<td><strong>Good</strong></td>
+<td>Any strategy without a natural stop; portfolios</td>
+</tr>
+<tr>
+<td><strong>ATR-based</strong></td>
+<td>$$q = \frac{r \cdot E}{k \cdot \text{ATR}_n}$$</td>
+<td>Good</td>
+<td>Good — adapts to regime</td>
+<td>Moderate ($$k$$, $$n$$)</td>
+<td>Good</td>
+<td>Intraday and swing with variable range</td>
+</tr>
+<tr>
+<td><strong>Risk parity (ERC)</strong></td>
+<td>Equal risk contribution per asset</td>
+<td>Good at portfolio level</td>
+<td>Strong</td>
+<td>Moderate (covariance estimation)</td>
+<td>n/a (portfolio level)</td>
+<td>Multi-asset portfolios (Phase 6)</td>
+</tr>
+<tr>
+<td><strong>Kelly / fractional Kelly</strong></td>
+<td>$$q \propto f^*$$</td>
+<td>Optimal <em>if</em> parameters known</td>
+<td>Poor at full; good at 0.25×</td>
+<td><strong>Very high</strong></td>
+<td>Poor at full</td>
+<td>Theoretical benchmark; 0.25× in practice</td>
+</tr>
+<tr>
+<td><strong>Optimal f (Vince)</strong></td>
+<td>Maximise terminal wealth over history</td>
+<td>Highest in-sample</td>
+<td><strong>Catastrophic</strong> — designed for the sample</td>
+<td>Extreme</td>
+<td>Never</td>
+<td><strong>Not recommended.</strong> Demonstrates the danger, not a method</td>
+</tr>
+</tbody>
+</table>
+<p><strong>On volatility targeting specifically</strong>, because it is the most useful practical result in this phase. Moreira &amp; Muir (2017) show that scaling exposure inversely to recent realised variance raises risk-adjusted returns across equity factors and across asset classes — because volatility is persistent and returns are not proportionally compensated for it. Harvey et al. (2018) show that volatility targeting reduces the depth of drawdowns and improves the Sharpe ratio for trend-following and equity strategies, with the improvement concentrated in the tails. The mechanism is simple and robust: <strong>volatility clusters, expected returns cluster much less, so reducing exposure when volatility is high improves the risk-adjusted return by avoiding the worst states.</strong></p>
+<p>The implementation caveat that matters: volatility targeting reduces drawdowns <em>and</em> reduces the fat right tail. Trend-following strategies earn much of their return in crisis periods of high volatility; scaling down in those periods removes some of the crisis alpha that justifies holding them. Measure both sides.</p>
+<h2>4.3 Circuit breakers — pre-committed, not discretionary</h2>
+<p>A circuit breaker is a rule that stops you trading under conditions you specified when you were calm. It exists because the moment you most need to stop is the moment you are least able to decide to.</p>
+<table>
+<thead>
+<tr>
+<th>Breaker</th>
+<th>Trigger</th>
+<th>Action</th>
+<th>Reset condition</th>
+<th>Why it works</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Daily loss limit</strong></td>
+<td>Day P&amp;L ≤ −$$x$$% of equity</td>
+<td>Flat, close platform</td>
+<td>Next session</td>
+<td>Prevents a single day from becoming a career event; matches prop-firm rules exactly</td>
+</tr>
+<tr>
+<td><strong>Consecutive loss limit</strong></td>
+<td>$$n$$ consecutive losses (e.g. 6)</td>
+<td>Reduce size 50%</td>
+<td>After a win</td>
+<td>Losses cluster; the clustering is information even if the edge is intact</td>
+</tr>
+<tr>
+<td><strong>Drawdown throttle</strong></td>
+<td>Drawdown &gt; 5% / 10% / 15%</td>
+<td>Size × 0.75 / 0.5 / 0.25</td>
+<td>Drawdown recovers to prior band</td>
+<td>Converts a linear drawdown into a sub-linear one; keeps you in the game</td>
+</tr>
+<tr>
+<td><strong>Envelope breaker</strong></td>
+<td>Live path exits the Monte Carlo 5th percentile</td>
+<td>Pause, re-verify, paper trade 20 trades</td>
+<td>Envelope re-entry + review sign-off</td>
+<td>The only breaker that detects <em>strategy death</em> rather than bad luck</td>
+</tr>
+<tr>
+<td><strong>Correlation breaker</strong></td>
+<td>Portfolio risk from one factor &gt; 40%</td>
+<td>Block new positions in that factor</td>
+<td>Correlation normalises</td>
+<td>Prevents six "diversified" trades from being one trade</td>
+</tr>
+<tr>
+<td><strong>Execution anomaly breaker</strong></td>
+<td>Fill slippage &gt; 3× model, or fill rate &lt; 70% of expected</td>
+<td>Halt new orders, investigate</td>
+<td>Manual sign-off</td>
+<td>Detects venue, latency, or liquidity regime changes before they cost you</td>
+</tr>
+<tr>
+<td><strong>News/event breaker</strong></td>
+<td>Position held through a scheduled binary event</td>
+<td>Forbid, or halve size</td>
+<td>Event passes</td>
+<td>Binary risk is not a risk you can size; it is a coin flip with fat tails</td>
+</tr>
+<tr>
+<td><strong>Account-state breaker</strong></td>
+<td>Prop-firm headroom &lt; 1.5× risk-per-trade</td>
+<td>Reduce size to fit headroom</td>
+<td>Headroom restored</td>
+<td>The arithmetic of §4.5</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The design principle:</strong> every breaker must have a <em>pre-specified reset condition</em>. A breaker without a reset condition is not risk management; it is quitting with extra steps. Write the reset condition at the same time as the trigger, and make it mechanical.</p>
+<h2>4.4 The arithmetic of ruin, and why "1% per trade" is not a risk model</h2>
+<p>The classic claim is that risking 1% per trade means you can survive 100 consecutive losses. This is arithmetically true and practically irrelevant, for four reasons:</p>
+<ol>
+<li><strong>Losses are not independent.</strong> In a correlated portfolio, or in a volatility regime shift, your 1% trades arrive together. Ten positions at 1% each with a pairwise correlation of 0.7 is closer to a single 6–7% position than to ten independent 1% bets.</li>
+<li><strong>Stops gap.</strong> A 1% stop is not a 1% loss. Overnight gaps, halts, and event risk mean realised losses exceed planned losses with meaningful frequency. Your true distribution of loss-per-trade has a fat right tail that your stop does not truncate.</li>
+<li><strong>Drawdown is path-dependent and non-linear in recovery.</strong> A 20% drawdown needs +25% to recover; 50% needs +100%. The <em>time</em> cost is the real cost, and it compounds.</li>
+<li><strong>The constraint is not capital, it is the drawdown limit.</strong> For a prop account, for a fund with redemption risk, or for you psychologically, the binding constraint is a drawdown threshold well above zero. Risk sizing must be calibrated to the <em>distance to that threshold</em>, not to total equity.</li>
+</ol>
+<p><strong>The correct formulation.</strong> Let $$D$$ be the maximum tolerable drawdown, $$n$$ the number of consecutive losses you must survive, and $$r$$ the risk per trade. Then approximately</p>
+<p>$$(1-r)^n \ge 1 - D \quad\Longrightarrow\quad r \le 1 - (1-D)^{1/n}$$</p>
+<p>For $$D = 10\%$$ and $$n = 10$$: $$r \le 1.05\%$$. For $$D = 10\%$$ and $$n = 15$$: $$r \le 0.70\%$$. For $$D = 6\%$$ and $$n = 12$$: $$r \le 0.51\%$$.</p>
+<p>Note how much the answer moves with the streak length you demand to survive. And note that a 10-loss streak is <em>not</em> a tail event for a 45%-hit-rate system — the expected maximum streak over 500 trades at $$p=0.45$$ is roughly 8–10. Size for the streak you will actually see, not the one that feels comfortable.</p>
+<h2>4.5 Prop-firm rules — the arithmetic nobody does</h2>
+<p>Prop-firm evaluation accounts are a specific financial product with a specific payoff structure, and treating them as "trading with someone else's money" rather than as a path-dependent option with a fee is the reason most participants lose.</p>
+<h3>The drawdown taxonomy</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>How the floor moves</th>
+<th>Worst-case effect</th>
+<th>Fairness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Static</strong></td>
+<td>Fixed at start balance − limit; never moves</td>
+<td>Predictable; you always know your floor</td>
+<td><strong>Best for the trader</strong></td>
+</tr>
+<tr>
+<td><strong>EOD trailing (balance)</strong></td>
+<td>Floor = highest <em>closing balance</em> − limit; updates once daily</td>
+<td>Modest; intraday spikes do not count</td>
+<td>Reasonable</td>
+</tr>
+<tr>
+<td><strong>EOD trailing (equity)</strong></td>
+<td>Floor = highest <em>closing equity</em> − limit</td>
+<td>Slightly worse than balance-based</td>
+<td>Moderate</td>
+</tr>
+<tr>
+<td><strong>Intraday trailing (balance)</strong></td>
+<td>Floor updates in real time on closed-balance highs</td>
+<td>Worse; every good close raises the floor</td>
+<td>Harsh</td>
+</tr>
+<tr>
+<td><strong>Intraday trailing (equity)</strong></td>
+<td>Floor = highest <em>equity</em> including unrealised − limit</td>
+<td><strong>Worst.</strong> An unrealised spike you never bank permanently raises your floor</td>
+<td><strong>Punishing</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The mechanics of the worst case, worked:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Balance</th>
+<th>Equity</th>
+<th>Floor</th>
+<th>Headroom</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Start, $50k account, $2k trailing</td>
+<td>$50,000</td>
+<td>$50,000</td>
+<td>$48,000</td>
+<td>$2,000</td>
+</tr>
+<tr>
+<td>Trade runs to +$1,300 open</td>
+<td>$50,000</td>
+<td>$51,300</td>
+<td><strong>$49,300</strong></td>
+<td>$2,000</td>
+</tr>
+<tr>
+<td>Price fades to +$200</td>
+<td>$50,000</td>
+<td>$50,200</td>
+<td>$49,300</td>
+<td><strong>$900</strong></td>
+</tr>
+<tr>
+<td>Close at +$200</td>
+<td>$50,200</td>
+<td>$50,200</td>
+<td>$49,300</td>
+<td>$900</td>
+</tr>
+<tr>
+<td>Next trade, $1,000 stop, stopped out</td>
+<td>$49,200</td>
+<td>$49,200</td>
+<td>$49,300</td>
+<td><strong>BREACH</strong></td>
+</tr>
+</tbody>
+</table>
+<p>You made $200 on the first trade and lost the account on the second. The $1,100 of open profit you gave back cost you $1,100 of permanent buffer. <strong>This is the single most important mechanical fact about intraday-trailing prop accounts</strong>, and it has a direct strategic consequence: under intraday trailing, taking profit <em>early</em> and <em>fully</em> is not a psychological weakness, it is the correct response to the rule structure. Under EOD or static drawdown, the opposite is true and you can let winners run.</p>
+<h3>True backing — the number that actually matters</h3>
+<p>A "$100,000 account" with a 10% max drawdown gives you $10,000 to lose before the account dies. The account size is a label; the drawdown limit is the capital. This has a direct sizing consequence:</p>
+<p>$$\text{Risk per trade (\% of labelled account)} = \frac{r_{\text{true}} \times D}{1}$$</p>
+<p>where $$r_{\text{true}}$$ is the fraction of <em>true backing</em> you are willing to risk. If you risk "1% of $100k" = $1,000 on a 10%-drawdown account, you are risking <strong>10% of your true backing per trade</strong>. Ten consecutive losses ends the account. That is not a conservative risk setting; it is a leveraged bet on the first ten trades.</p>
+<table>
+<thead>
+<tr>
+<th>Account label</th>
+<th>Max DD</th>
+<th>True backing</th>
+<th>"1% of label" risk</th>
+<th>As % of true backing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$100k</td>
+<td>10%</td>
+<td>$10,000</td>
+<td>$1,000</td>
+<td><strong>10%</strong></td>
+</tr>
+<tr>
+<td>$100k</td>
+<td>6%</td>
+<td>$6,000</td>
+<td>$1,000</td>
+<td><strong>17%</strong></td>
+</tr>
+<tr>
+<td>$200k</td>
+<td>4%</td>
+<td>$8,000</td>
+<td>$2,000</td>
+<td><strong>25%</strong></td>
+</tr>
+<tr>
+<td>$50k</td>
+<td>4% ($2k trailing)</td>
+<td>$2,000</td>
+<td>$500</td>
+<td><strong>25%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The comparison worth internalising: a $200k account with a 4% drawdown has <em>less</em> usable capital than a $100k account with a 10% drawdown. <strong>Compare accounts on true backing and rule type, not on the headline number.</strong> A smaller account with static drawdown is often a better product than a larger one with intraday trailing.</p>
+<h3>The expected value of an evaluation</h3>
+<p>An evaluation is a paid option. Its expected value is</p>
+<p>$$E[\text{eval}] = P(\text{pass}) \times \big(\text{expected payout stream}\big) - \text{fee} - \text{expected cost of retries}$$</p>
+<p>Two things follow, and both are uncomfortable:</p>
+<ol>
+<li><strong>$$P(\text{pass})$$ is dominated by your risk-per-trade relative to the drawdown limit, not by your edge.</strong> With a Sharpe of 1.0 annualised and 20 trading days in an evaluation, the probability of reaching a +10% target before a −10% breach is close to a coin flip — the edge barely matters over a 20-day horizon, and the volatility of the path dominates. This is why so many skilled traders fail evaluations: they are being tested on 20-day luck, and they size as if they were being tested on skill.</li>
+<li><strong>The profit target and the drawdown limit define a barrier problem.</strong> The optimal strategy for passing is not the optimal strategy for making money after passing. Passing rewards high risk relative to the limit (fast barrier crossing); surviving funded rewards low risk relative to the limit (avoiding the absorbing barrier). <strong>They are different games</strong>, and the traders who pass most reliably are often the ones who then blow the funded account in the first month. Decide in advance which game you are playing.</li>
+</ol>
+<h3>The rule-cluster to model explicitly</h3>
+<table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Typical form</th>
+<th>Modelling consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Daily loss limit</td>
+<td>−4% to −5% of balance, hard breach</td>
+<td>Daily P&amp;L becomes an absorbing barrier; cap daily risk at ~40% of the limit</td>
+</tr>
+<tr>
+<td>Max drawdown</td>
+<td>4–10%, static or trailing</td>
+<td>Absorbing barrier; determines true backing</td>
+</tr>
+<tr>
+<td>Profit target</td>
+<td>6–10% in evaluation</td>
+<td>Upper barrier; passing speed depends on volatility, not edge</td>
+</tr>
+<tr>
+<td>Minimum trading days</td>
+<td>5–10 days</td>
+<td>Forces you to spread risk; prevents a single lucky day</td>
+</tr>
+<tr>
+<td>Consistency rule</td>
+<td>No single day &gt; 30–40% of total profit</td>
+<td>Penalises exactly the high-variance path that passes fastest</td>
+</tr>
+<tr>
+<td>News trading restriction</td>
+<td>No holding through scheduled events</td>
+<td>Removes a whole strategy class; check before you build</td>
+</tr>
+<tr>
+<td>Payout buffer</td>
+<td>Must retain a buffer above the locked floor</td>
+<td>Withdrawing all profit can self-breach the account</td>
+</tr>
+<tr>
+<td>Time limit</td>
+<td>30–60 days</td>
+<td>Adds a deadline constraint; interacts with the consistency rule</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The consistency rule deserves a warning.</strong> It is the rule most often missed and it inverts the optimal strategy: if no single day may exceed 30% of total profit, then a single great day <em>hurts</em> you by forcing you to earn more on other days to dilute it. Strategies must be evaluated for their <em>daily P&amp;L dispersion</em>, not just their total, and a strategy with occasional very large days is structurally penalised.</p>
+<h2>4.6 The risk architecture, assembled</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Function</th>
+<th>Example specification</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Position</strong></td>
+<td>Cap loss per idea</td>
+<td>0.5% of true backing, sized from stop distance</td>
+</tr>
+<tr>
+<td><strong>Instrument</strong></td>
+<td>Cap concentration</td>
+<td>≤2% risk in one instrument; ≤5% notional</td>
+</tr>
+<tr>
+<td><strong>Factor/theme</strong></td>
+<td>Cap hidden correlation</td>
+<td>≤40% of portfolio risk from one factor</td>
+</tr>
+<tr>
+<td><strong>Strategy</strong></td>
+<td>Cap per-strategy drawdown</td>
+<td>Throttle at −8%, halt at −12%</td>
+</tr>
+<tr>
+<td><strong>Day</strong></td>
+<td>Cap daily damage</td>
+<td>−2% hard stop; matches prop daily limit at 40%</td>
+</tr>
+<tr>
+<td><strong>Account</strong></td>
+<td>Cap terminal damage</td>
+<td>−6% from high-water mark → halve size; −10% → halt and review</td>
+</tr>
+<tr>
+<td><strong>Execution</strong></td>
+<td>Cap operational damage</td>
+<td>Slippage &gt; 3× model → halt; fill rate &lt; 70% → halt</td>
+</tr>
+</tbody>
+</table>
+<p>Each layer is independent. This matters because failures are not independent: the day your strategy breaks is often the day spreads widen and your slippage model fails. Layered limits mean one failure does not become three.</p>
+<hr />
+<h1>PHASE 5 — OPTIMIZATION &amp; REGIME ANALYSIS</h1>
+<blockquote>
+<p><em>Optimisation is the art of finding the smallest number of parameters that expresses a mechanism, and then proving that the result does not depend on their exact values. Everything else called "optimisation" is the manufacture of a false positive.</em></p>
+</blockquote>
+<h2>5.1 The Goldilocks zone</h2>
+<p>There is a real tension, and both failure modes are common:</p>
+<ul>
+<li><strong>Too few parameters</strong> → the strategy cannot express the mechanism. A trend filter with no lookback is not a strategy.</li>
+<li><strong>Too many parameters</strong> → the strategy fits noise, has many breaking points, and the DSR kills it. Every parameter is a degree of freedom you spend against your data.</li>
+</ul>
+<p>The resolution is not a number of parameters. It is the ratio of <strong>data to degrees of freedom</strong>, and the shape of the performance surface.</p>
+<table>
+<thead>
+<tr>
+<th>Strategy complexity</th>
+<th>Parameters</th>
+<th>Minimum data (per MinBTL logic)</th>
+<th>Realistic verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–2</td>
+<td>Entry threshold, lookback</td>
+<td>3–5 years</td>
+<td>Testable; usually robust if the mechanism is real</td>
+</tr>
+<tr>
+<td>3–4</td>
+<td>Entry, exit, sizing</td>
+<td>8–10 years</td>
+<td>The practical upper bound for most strategies</td>
+</tr>
+<tr>
+<td>5–7</td>
+<td>Plus filters, regime conditions</td>
+<td>15–20 years or multiple instruments</td>
+<td>Needs cross-sectional replication to be credible</td>
+</tr>
+<tr>
+<td>8+</td>
+<td>Full rule stack</td>
+<td>Effectively untestable</td>
+<td><strong>Assume overfit until proven otherwise</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The plateau test, in practice.</strong> Optimise over a coarse grid (steps of 0.5 in a ratio, 10 bars in a lookback — not 0.1 and 1). Plot performance. A real mechanism produces a <strong>plateau</strong>: a broad region where neighbouring parameter values perform similarly. An overfit strategy produces a <strong>spike</strong>: one cell far above its neighbours.</p>
+<table>
+<thead>
+<tr>
+<th>Surface shape</th>
+<th>Interpretation</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Broad plateau, gentle gradient</td>
+<td>Mechanism is real; parameters are not critical</td>
+<td>Accept the plateau centre, not the peak</td>
+</tr>
+<tr>
+<td>Narrow spike</td>
+<td>Noise-fitting</td>
+<td>Reject</td>
+</tr>
+<tr>
+<td>Multiple separated plateaus</td>
+<td>Two different mechanisms or a regime dependence</td>
+<td>Investigate; likely needs a regime model</td>
+</tr>
+<tr>
+<td>Monotone in one parameter</td>
+<td>The parameter is a trend proxy, not a mechanism</td>
+<td>Simplify: you are just trading trend</td>
+</tr>
+<tr>
+<td>Unstable under ±10% parameter change</td>
+<td>Fragile</td>
+<td>Reject, or simplify until stable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The rule that follows:</strong> choose the parameter at the <em>centre</em> of the plateau, not at its maximum. You are not trying to maximise the backtest; you are trying to maximise the probability that the live result resembles the backtest. Those are different objectives, and the second one systematically prefers the centre.</p>
+<h2>5.2 What actually causes curve-fitting</h2>
+<table>
+<thead>
+<tr>
+<th>Cause</th>
+<th>Mechanism</th>
+<th>Countermeasure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Fine-grained grids</strong></td>
+<td>0.1-step grids over 20 values generate 20 trials for one parameter</td>
+<td>Coarse grids; count every cell as a trial</td>
+</tr>
+<tr>
+<td><strong>Adding filters to fix losses</strong></td>
+<td>Each filter is fitted to a specific historical loss</td>
+<td>Remove filters; the loss was probably variance</td>
+</tr>
+<tr>
+<td><strong>Optimising the exit</strong></td>
+<td>Exits are where the most parameters live and the least data exists (few events per parameter)</td>
+<td>Fix the exit structurally (time, stop multiple); optimise the entry only</td>
+</tr>
+<tr>
+<td><strong>Selecting the instrument</strong></td>
+<td>"It works on Nasdaq" is a trial</td>
+<td>Test the same parameters across instruments; report all</td>
+</tr>
+<tr>
+<td><strong>Selecting the period</strong></td>
+<td>Starting after a known break</td>
+<td>Report the full history, including bad years</td>
+</tr>
+<tr>
+<td><strong>Re-optimising after each loss</strong></td>
+<td>Live curve-fitting; the most expensive form because it costs real money</td>
+<td>Re-optimise only on a schedule (quarterly) with a written rationale</td>
+</tr>
+<tr>
+<td><strong>Feature selection with full-sample data</strong></td>
+<td>Choosing features by their full-sample correlation with returns</td>
+<td>Feature choice must use IS data only, and counts as trials</td>
+</tr>
+<tr>
+<td><strong>Fitting the cost model</strong></td>
+<td>Tuning slippage assumptions until the strategy is profitable</td>
+<td>Fix the cost model independently from the strategy; stress it upward only</td>
+</tr>
+</tbody>
+</table>
+<p>The last one is worth naming explicitly because it is the most insidious. Slippage assumptions are a free parameter, and a researcher who is unconsciously motivated will find the slippage level at which the strategy works. Fix costs <em>before</em> looking at performance, then vary them only upward.</p>
+<h2>5.3 Volatility filters and volatility targeting</h2>
+<p>Volatility is the most predictable quantity in markets. That single fact is why volatility-based conditioning works better than return-based conditioning.</p>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Mechanism</th>
+<th>Evidence</th>
+<th>Implementation note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Volatility targeting</strong></td>
+<td>Scale exposure ∝ 1/σ̂</td>
+<td>Strong: Moreira &amp; Muir (2017) across factors; Harvey et al. (2018) for drawdowns</td>
+<td>Use a 20–60 day estimate; cap the scaling factor at 2–3× to avoid blow-up in quiet periods</td>
+</tr>
+<tr>
+<td><strong>Vol regime filter</strong></td>
+<td>Only trade when σ̂ is in a chosen band</td>
+<td>Moderate; risk of overfitting the band</td>
+<td>Prefer <em>scaling</em> to <em>excluding</em>: exclusion is a binary fitted parameter, scaling is continuous</td>
+</tr>
+<tr>
+<td><strong>Vol-of-vol filter</strong></td>
+<td>Avoid trading when volatility is unstable</td>
+<td>Weak-to-moderate</td>
+<td>Best used to reduce size, not to skip trades</td>
+</tr>
+<tr>
+<td><strong>GARCH / EWMA forecast</strong></td>
+<td>Model conditional variance</td>
+<td>Strong for forecasting σ; weak for forecasting returns</td>
+<td>Use for sizing, never for direction</td>
+</tr>
+<tr>
+<td><strong>Term structure of VIX / implied vol</strong></td>
+<td>Forward-looking risk pricing</td>
+<td>Moderate</td>
+<td>Genuinely forward-looking, unlike realised vol; useful as a regime input</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The trap.</strong> Volatility filters are the most over-optimised component in retail systematic trading, because they are easy to add and easy to fit. A filter that says "only trade when ATR is between 1.2 and 2.4× its 20-day average" has two fitted parameters, each selected by looking at the data, and typically improves the backtest by removing exactly the trades that lost. Test it by shifting the band by ±20%: if performance collapses, the band is a fitted artefact. Prefer the continuous version (size ∝ 1/σ̂), which has one parameter and a documented mechanism.</p>
+<h2>5.4 Correlation matrices — the part everyone gets wrong</h2>
+<p>Portfolio risk is dominated by the correlation matrix, and the correlation matrix is the least stable input in the entire problem.</p>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>Reality</th>
+<th>Consequence</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Estimation error</strong></td>
+<td>Sample correlation of $$N$$ assets has $$N(N-1)/2$$ parameters; for 50 assets that is 1,225 parameters from maybe 500 observations</td>
+<td>Sample matrix is badly conditioned; portfolio optimiser produces extreme, unstable weights</td>
+<td><strong>Shrinkage</strong> (Ledoit &amp; Wolf, 2004): shrink sample covariance toward a structured target</td>
+</tr>
+<tr>
+<td><strong>Eigenvalue noise</strong></td>
+<td>The smallest eigenvalues of a sample covariance matrix are dominated by noise (Marchenko–Pastur)</td>
+<td>Optimiser exploits noise eigenvalues, producing huge offsetting positions</td>
+<td><strong>Eigenvalue cleaning</strong>: replace noisy eigenvalues with their average; keep only signal eigenvalues</td>
+</tr>
+<tr>
+<td><strong>Correlation asymmetry</strong></td>
+<td>Correlations rise in bear markets and crises (Longin &amp; Solnik, 2001)</td>
+<td>Diversification fails exactly when you need it</td>
+<td>Model <em>conditional</em> correlation; stress-test with crisis correlations, not average ones</td>
+</tr>
+<tr>
+<td><strong>Regime dependence</strong></td>
+<td>Correlations shift with volatility regime</td>
+<td>Backtest-era diversification does not survive</td>
+<td>DCC-GARCH, or simply: assume crisis correlation ≈ 0.8 for risk assets</td>
+</tr>
+<tr>
+<td><strong>Non-stationarity</strong></td>
+<td>Correlations drift with the macro environment</td>
+<td>Long estimation windows average incompatible regimes</td>
+<td>Use shorter windows for <em>risk</em>, longer for <em>structure</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>The brutal practical rule.</strong> For risk management, do not use the sample correlation matrix. Use one of:
+1. Shrinkage (Ledoit–Wolf) — robust, simple, always better than sample.
+2. A factor model — estimate exposures to a few common factors plus idiosyncratic risk. Far fewer parameters, far more stable.
+3. A <strong>stress correlation matrix</strong> — assume all risk assets correlate at 0.7–0.9 in a crisis, and size so that this scenario is survivable. This is not a forecast; it is a constraint.</p>
+<p>Option 3 is the one that saves accounts, and it requires no estimation at all. Ask: <em>if everything I hold moves against me together, what happens?</em> If the answer is "the account is gone," the correlation matrix is irrelevant.</p>
+<h2>5.5 Regimes — honest treatment</h2>
+<p>Regime analysis is where systematic traders most often abandon rigour, because regime labels feel explanatory and are almost impossible to validate. The honest position:</p>
+<p><strong>You can detect regimes. You cannot predict regime transitions. Detection is lagging, and lagging detection is a trend-following rule in disguise.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Regime definition</th>
+<th>Method</th>
+<th>Detection lag</th>
+<th>Predictive value</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Volatility regime</strong></td>
+<td>Realised vol quintiles; GARCH state; VIX bands</td>
+<td>1–10 days</td>
+<td><strong>Moderate</strong> — vol is persistent</td>
+<td><strong>Best available.</strong> Use for sizing</td>
+</tr>
+<tr>
+<td><strong>Trend regime</strong></td>
+<td>Price vs. long MA; slope; drawdown from HWM</td>
+<td>1–3 months</td>
+<td>Moderate for trend strategies (by construction)</td>
+<td>Useful as a filter, tautological as a predictor</td>
+</tr>
+<tr>
+<td><strong>Markov switching</strong></td>
+<td>Hamilton (1989) two-state model on returns</td>
+<td>1–2 months</td>
+<td>Low out-of-sample; states unstable</td>
+<td>Academically elegant, practically fragile</td>
+</tr>
+<tr>
+<td><strong>Hidden Markov models</strong></td>
+<td>Multi-state HMM on returns/vol</td>
+<td>Unstable</td>
+<td>Low; prone to label-switching and overfitting</td>
+<td>Overused; test against a vol-quintile baseline</td>
+</tr>
+<tr>
+<td><strong>Macro regime</strong></td>
+<td>Growth/inflation quadrants</td>
+<td>3–6 months (data lags)</td>
+<td>Low for trading; moderate for allocation</td>
+<td>Better for strategic allocation than for tactics</td>
+</tr>
+<tr>
+<td><strong>Liquidity regime</strong></td>
+<td>Spreads, depth, Amihud illiquidity</td>
+<td>Days</td>
+<td><strong>Moderate-high</strong> — liquidity is the real constraint</td>
+<td>Underused; genuinely useful</td>
+</tr>
+<tr>
+<td><strong>Correlation regime</strong></td>
+<td>Average pairwise correlation; eigenvalue concentration</td>
+<td>1–4 weeks</td>
+<td>Moderate</td>
+<td>Useful for portfolio risk, not for direction</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The recommendation, stated plainly.</strong> Use regimes to <strong>size</strong>, not to <strong>switch alpha</strong>. A regime model that doubles your position in low-vol states and halves it in high-vol states is robust, has one or two parameters, and is supported by Moreira–Muir. A regime model that says "in state 2, use strategy B instead of strategy A" requires you to correctly identify the state <em>at the transition</em>, which is precisely when the state is least identifiable. The performance difference between the two designs is large, and it favours the simpler one.</p>
+<p><strong>The regime × strategy table</strong>, which is the genuinely useful artefact:</p>
+<table>
+<thead>
+<tr>
+<th>Regime</th>
+<th>Trend following</th>
+<th>Mean reversion</th>
+<th>Event driven</th>
+<th>Carry</th>
+<th>Microstructure / market making</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Low vol, trending</strong></td>
+<td>Good</td>
+<td>Poor — no dislocations to fade</td>
+<td>Moderate</td>
+<td>Good</td>
+<td>Good but thin spreads compress revenue</td>
+</tr>
+<tr>
+<td><strong>High vol, trending</strong></td>
+<td><strong>Best</strong></td>
+<td><strong>Worst</strong> — fades a freight train</td>
+<td>Moderate</td>
+<td>Poor</td>
+<td>Poor — adverse selection rises</td>
+</tr>
+<tr>
+<td><strong>Low vol, choppy</strong></td>
+<td>Poor — whipsaw</td>
+<td><strong>Best</strong></td>
+<td>Poor — no catalysts</td>
+<td>Good</td>
+<td><strong>Best</strong></td>
+</tr>
+<tr>
+<td><strong>High vol, choppy</strong></td>
+<td>Poor</td>
+<td>Moderate — but tail risk</td>
+<td>Good — volatility is the catalyst</td>
+<td>Poor</td>
+<td>Poor</td>
+</tr>
+<tr>
+<td><strong>Crisis / liquidity vacuum</strong></td>
+<td><strong>Best</strong> (crisis alpha)</td>
+<td>Catastrophic without hard stops</td>
+<td>Good</td>
+<td><strong>Worst</strong></td>
+<td>Catastrophic</td>
+</tr>
+<tr>
+<td><strong>Recovery</strong></td>
+<td>Moderate</td>
+<td>Good</td>
+<td>Good</td>
+<td>Good</td>
+<td>Good</td>
+</tr>
+</tbody>
+</table>
+<p>Two readings of this table, both important. First, no strategy works in all regimes — which is the entire argument for Phase 6's portfolio construction. Second, <strong>the worst cells are where the account dies</strong>, not where it underperforms. A mean-reversion strategy in a high-vol trending regime does not produce a mediocre return; it produces a tail loss, because fading a trend means adding to a loser with a bounded stop and unbounded adverse drift. Position sizing and circuit breakers must be regime-aware <em>even if the strategy is not</em>.</p>
+<h2>5.6 Regime blindness — the specific error to avoid</h2>
+<p>The error is not "ignoring regimes." It is assuming the test period is representative. Every backtest is a sample from one regime history, and the sample is not random.</p>
+<table>
+<thead>
+<tr>
+<th>Test-period bias</th>
+<th>What it hides</th>
+<th>How to detect</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bull-market only</strong></td>
+<td>The strategy's short leg, its drawdown behaviour, its true tail</td>
+<td>Check the period against index drawdowns; count bear months</td>
+<td>Extend to include 2000–02, 2008, 2020, 2022</td>
+</tr>
+<tr>
+<td><strong>Low-volatility only</strong></td>
+<td>Sizing calibrated to a calm regime is 3× too large in a storm</td>
+<td>Realised vol of the test period vs. long-run average</td>
+<td>Vol-target the sizing; stress at 2× test-period vol</td>
+</tr>
+<tr>
+<td><strong>Single rate regime</strong></td>
+<td>Carry strategies, funding strategies, anything rate-sensitive</td>
+<td>Compare the period's rate path to the long-run distribution</td>
+<td>Extend to a full rate cycle</td>
+</tr>
+<tr>
+<td><strong>Single liquidity regime</strong></td>
+<td>Capacity and cost estimates</td>
+<td>Compare spreads and depth to long-run averages</td>
+<td>Stress costs at 3×</td>
+</tr>
+<tr>
+<td><strong>Survivor instruments</strong></td>
+<td>The strategy's dependence on instruments that happened to trend</td>
+<td>Test on instruments that were delisted or stagnated</td>
+<td>Cross-sectional replication (Rule 12)</td>
+</tr>
+</tbody>
+</table>
+<p>The most common instance in practice: a five-year intraday strategy tested over a period in which one index trended upward with unusually low volatility. It will show a beautiful equity curve, a high Sharpe, and a maximum drawdown that is a statistical artefact of the calm. The analysis in §2.4 flagged exactly this — the effect concentrated in the last five years, with much smaller profit per trade going back to 2015 — and flagged it <em>before</em> presenting the improved version, which is the correct order.</p>
+<hr />
+<h1>PHASE 6 — PORTFOLIO CONSTRUCTION &amp; RETIREMENT</h1>
+<blockquote>
+<p><em>A single strategy is a bet. A portfolio of uncorrelated strategies is a business. And every business has a product lifecycle — including the one where you must stop selling.</em></p>
+</blockquote>
+<h2>6.1 Why one strategy is never enough</h2>
+<p>The arithmetic of combining is the most favourable arithmetic in finance, and it is available to anyone.</p>
+<p>Two strategies, each with an annualised Sharpe of 0.6. If their returns are uncorrelated, the combined Sharpe is $$0.6\sqrt{2} = 0.85$$. Four uncorrelated strategies: $$0.6 \times 2 = 1.20$$. Nine: $$1.80$$.</p>
+<table>
+<thead>
+<tr>
+<th>Number of uncorrelated strategies</th>
+<th>Combined Sharpe (each 0.6)</th>
+<th>Combined max DD (approx.)</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0.60</td>
+<td>25–30%</td>
+<td>Fragile; one regime change ends it</td>
+</tr>
+<tr>
+<td>2</td>
+<td>0.85</td>
+<td>18–22%</td>
+<td>The largest single improvement available</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1.20</td>
+<td>12–16%</td>
+<td>Institutional-grade risk profile</td>
+</tr>
+<tr>
+<td>9</td>
+<td>1.80</td>
+<td>8–11%</td>
+<td>Excellent; hard to source honestly</td>
+</tr>
+<tr>
+<td>16</td>
+<td>2.40</td>
+<td>6–8%</td>
+<td>Diminishing returns; the 16th strategy is usually fake</td>
+</tr>
+</tbody>
+</table>
+<p>Two caveats that destroy this table in practice:</p>
+<p><strong>Caveat 1 — "uncorrelated" is aspirational.</strong> Real correlations between systematic strategies are 0.1–0.5, not 0. At a pairwise correlation of $$\rho$$, the combined Sharpe is</p>
+<p>$$SR_{\text{port}} = \frac{SR\sqrt{N}}{\sqrt{1 + (N-1)\rho}}$$</p>
+<p>With $$\rho = 0.3$$, the benefit saturates quickly: ten strategies at 0.6 each give $$1.90/\sqrt{1+2.7} = 0.98$$, not 1.90. <strong>Diversification's ceiling is set by correlation, not by count.</strong> Ten trend strategies on ten instruments is one strategy.</p>
+<p><strong>Caveat 2 — correlations rise exactly when you need them not to.</strong> Longin &amp; Solnik (2001) document that international equity correlations increase in bear markets. The same is true of most strategy families in a liquidity crisis: they all need to sell, and they all sell at once. Your measured average correlation of 0.2 will behave like 0.6 in the week it matters. <strong>Stress the portfolio at crisis correlations, and size so that the crisis case is survivable.</strong></p>
+<h2>6.2 The strategy archetypes and how they combine</h2>
+<table>
+<thead>
+<tr>
+<th>Archetype</th>
+<th>Mechanism</th>
+<th>Typical holding period</th>
+<th>Gross Sharpe</th>
+<th>Capacity</th>
+<th>Correlation to trend</th>
+<th>Crisis behaviour</th>
+<th>Decay risk</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Trend following</strong></td>
+<td>Time-series momentum; under-reaction and herding</td>
+<td>Weeks–months</td>
+<td>0.4–0.8</td>
+<td><strong>Very high</strong></td>
+<td>1.00 (self)</td>
+<td><strong>Positive</strong> (crisis alpha)</td>
+<td>Low — century-scale evidence (Hurst et al., 2017)</td>
+</tr>
+<tr>
+<td><strong>Mean reversion (cross-sectional)</strong></td>
+<td>Liquidity provision; over-reaction</td>
+<td>Days–weeks</td>
+<td>0.5–1.0</td>
+<td>Moderate</td>
+<td><strong>Negative</strong> (−0.2 to −0.4)</td>
+<td><strong>Negative</strong> — worst in crises</td>
+<td>Moderate; degraded since 2005</td>
+</tr>
+<tr>
+<td><strong>Mean reversion (intraday)</strong></td>
+<td>Microstructure; inventory pressure</td>
+<td>Minutes–hours</td>
+<td>1.0–3.0 gross</td>
+<td><strong>Very low</strong></td>
+<td>~0</td>
+<td>Negative</td>
+<td>High — competitive, cost-sensitive</td>
+</tr>
+<tr>
+<td><strong>Event driven</strong></td>
+<td>PEAD, index rebalances, M&amp;A, earnings</td>
+<td>Days–months</td>
+<td>0.5–1.0</td>
+<td>Moderate</td>
+<td>Low</td>
+<td>Mixed — merger arb suffers in crises</td>
+<td>Moderate; well-known events decay</td>
+</tr>
+<tr>
+<td><strong>Carry</strong></td>
+<td>Risk premium for holding yield</td>
+<td>Weeks–months</td>
+<td>0.4–0.8</td>
+<td>High</td>
+<td>Low–moderate</td>
+<td><strong>Very negative</strong> — "picking up pennies"</td>
+<td>Low, but with crash risk</td>
+</tr>
+<tr>
+<td><strong>Statistical arbitrage</strong></td>
+<td>Cointegration / spread reversion</td>
+<td>Hours–days</td>
+<td>0.8–2.0 gross</td>
+<td>Low</td>
+<td>Negative</td>
+<td>Very negative</td>
+<td><strong>High</strong> — heavily arbitraged since 2002</td>
+</tr>
+<tr>
+<td><strong>Microstructure / MM</strong></td>
+<td>Spread capture, adverse selection management</td>
+<td>Seconds–minutes</td>
+<td>2.0–5.0 gross</td>
+<td><strong>Lowest</strong></td>
+<td>~0</td>
+<td>Catastrophic without risk limits</td>
+<td>Moderate; requires infrastructure</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The two combinations that actually work</strong>, and the reason they work:</p>
+<p><strong>Trend + mean reversion.</strong> These have structurally negative correlation, because they are opposite bets on the same phenomenon (persistence vs. reversion). Trend makes money in sustained moves and loses in chop; mean reversion does the reverse. The combination has a materially smoother equity curve than either, and — crucially — its worst month is much better than either's worst month. This is the single most robust combination available and it requires no forecasting of which regime you are in: you hold both, sized by volatility, and let the allocation drift.</p>
+<p><strong>Trend + carry.</strong> Lower correlation than trend/mean-reversion, but with a specific hazard: both are short volatility in different ways, and both suffer in a sharp liquidity event. Carry's crash risk is well-documented (the "picking up pennies in front of a steamroller" profile). Hold carry only with explicit crash protection or a hard drawdown limit.</p>
+<table>
+<thead>
+<tr>
+<th>Combination</th>
+<th>Correlation</th>
+<th>Diversification benefit</th>
+<th>Combined worst-case</th>
+<th>Verdict</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Trend + mean reversion</td>
+<td>−0.2 to −0.4</td>
+<td><strong>Highest</strong></td>
+<td>Moderate</td>
+<td><strong>Core allocation</strong></td>
+</tr>
+<tr>
+<td>Trend + carry</td>
+<td>0.0 to 0.3</td>
+<td>Moderate</td>
+<td>Poor in liquidity crises</td>
+<td>Core, with crash limits</td>
+</tr>
+<tr>
+<td>Trend + event driven</td>
+<td>0.0 to 0.2</td>
+<td>Moderate</td>
+<td>Moderate</td>
+<td>Good</td>
+</tr>
+<tr>
+<td>Mean reversion + stat arb</td>
+<td>0.4 to 0.7</td>
+<td><strong>Low</strong> — same mechanism</td>
+<td><strong>Bad</strong></td>
+<td>Avoid; you have one strategy, not two</td>
+</tr>
+<tr>
+<td>Trend + trend (different instruments)</td>
+<td>0.5 to 0.8</td>
+<td>Low</td>
+<td>Moderate</td>
+<td>One strategy with more instruments</td>
+</tr>
+<tr>
+<td>Everything + microstructure</td>
+<td>~0</td>
+<td>High on paper</td>
+<td>Catastrophic in a liquidity event</td>
+<td>Only with hard operational limits</td>
+</tr>
+</tbody>
+</table>
+<h2>6.3 Allocation — how much to each strategy</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Rule</th>
+<th>Strength</th>
+<th>Weakness</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Equal notional</strong></td>
+<td>1/N</td>
+<td>Simple, robust, hard to beat</td>
+<td>Ignores risk and correlation</td>
+</tr>
+<tr>
+<td><strong>Equal risk contribution (ERC)</strong></td>
+<td>Each strategy contributes equally to portfolio variance</td>
+<td>Accounts for vol and correlation</td>
+<td>Requires a covariance estimate (Phase 5's problem)</td>
+</tr>
+<tr>
+<td><strong>Inverse volatility</strong></td>
+<td>Weight ∝ 1/σ̂</td>
+<td>Robust, one parameter, no correlation needed</td>
+<td>Ignores correlation; overweights low-vol strategies with tail risk</td>
+</tr>
+<tr>
+<td><strong>Volatility targeting at portfolio level</strong></td>
+<td>Scale total exposure to a target portfolio σ</td>
+<td>Strong drawdown control; documented</td>
+<td>Reduces crisis alpha; needs a reliable σ estimate</td>
+</tr>
+<tr>
+<td><strong>Drawdown parity</strong></td>
+<td>Weight inversely to recent drawdown</td>
+<td>Adaptive; de-risks failing strategies automatically</td>
+<td>Can be slow; procyclical</td>
+</tr>
+<tr>
+<td><strong>Performance-weighted (Sharpe)</strong></td>
+<td>Weight ∝ trailing Sharpe</td>
+<td>Intuitive</td>
+<td><strong>Dangerous</strong> — trailing Sharpe is mostly noise at short horizons; chases</td>
+</tr>
+<tr>
+<td><strong>Bayesian / bandit</strong></td>
+<td>Allocate by posterior probability of edge</td>
+<td>Principled; handles uncertainty explicitly</td>
+<td>Complex; requires careful priors</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The honest recommendation.</strong> Inverse-volatility weights, rebalanced quarterly, with a portfolio-level volatility target and a hard cap on any single strategy's contribution to total risk (say 35%). This is unglamorous and it is close to what a well-run multi-strategy shop actually does at the allocation layer. Sharpe-weighted and optimiser-based allocations are where people lose money, because they convert estimation error in the mean (Chopra–Ziemba: ten times as damaging as variance error) directly into portfolio weights.</p>
+<p><strong>Rebalancing frequency.</strong> Rebalance on a schedule, not on a signal. Quarterly is a reasonable default. Signal-based rebalancing ("add to what's working") is momentum applied to strategy returns, where the signal-to-noise ratio is far worse than in asset returns, and it typically degrades performance.</p>
+<h2>6.4 Knowing when to retire a strategy</h2>
+<p>This is the endgame question and the one with the least rigorous retail literature. The framework below is derived from sequential change detection, and it is the part of this curriculum most likely to save an account.</p>
+<h3>The four states of a strategy</h3>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>Definition</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Healthy</strong></td>
+<td>Live path inside the Monte Carlo envelope; rolling stats consistent with backtest</td>
+<td>Trade full size</td>
+</tr>
+<tr>
+<td><strong>Underperforming</strong></td>
+<td>Path inside the envelope but worse than median; average trade below expectation</td>
+<td>Hold size or reduce; monitor; <strong>do not</strong> re-optimise</td>
+</tr>
+<tr>
+<td><strong>Degraded</strong></td>
+<td>Rolling Sharpe significantly below backtest, outside the 90% band; path near envelope edge</td>
+<td>Reduce to 25–50%; formal review</td>
+</tr>
+<tr>
+<td><strong>Broken</strong></td>
+<td>Path breaches the 5th-percentile envelope; behaviour inconsistent with the tested mechanism</td>
+<td><strong>Halt and retire.</strong> Do not re-optimise the same data</td>
+</tr>
+</tbody>
+</table>
+<p>The distinction between "underperforming" and "broken" is the whole framework, and it maps onto a concrete statistical question: <strong>is the live sequence still consistent with the distribution you simulated?</strong> The Monte Carlo envelope answers it without requiring you to guess. That is why Phase 3's simulations are built before deployment, not after a bad quarter.</p>
+<h3>Retirement triggers</h3>
+<table>
+<thead>
+<tr>
+<th>Trigger type</th>
+<th>Specification</th>
+<th>Response</th>
+<th>Rationale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Hard statistical</strong></td>
+<td>Live path below the 5th-percentile Monte Carlo envelope for the observed trade count</td>
+<td>Halt immediately</td>
+<td>The mechanism has stopped behaving as tested</td>
+</tr>
+<tr>
+<td><strong>Hard drawdown</strong></td>
+<td>Strategy drawdown &gt; 1.5× the maximum simulated drawdown</td>
+<td>Halt</td>
+<td>Beyond the modelled worst case; the model was wrong</td>
+</tr>
+<tr>
+<td><strong>Sequential test (CUSUM)</strong></td>
+<td>Cumulative sum of standardised deviations crosses a threshold</td>
+<td>Halt; investigate</td>
+<td>Detects a mean shift faster than rolling averages</td>
+</tr>
+<tr>
+<td><strong>SPRT</strong></td>
+<td>Sequential probability ratio test between $$H_0$$: SR = backtest, $$H_1$$: SR = 0</td>
+<td>Decide when the likelihood ratio crosses either boundary</td>
+<td>Formal, pre-specified, and stops you from eyeballing</td>
+</tr>
+<tr>
+<td><strong>Rolling Sharpe</strong></td>
+<td>12-month rolling Sharpe &lt; 0 for 6 consecutive months</td>
+<td>Reduce to 25%</td>
+<td>Slow but robust; catches slow decay</td>
+</tr>
+<tr>
+<td><strong>Mechanism break</strong></td>
+<td>The structural precondition fails (e.g. the auction changes, the rule changes, the venue changes)</td>
+<td>Retire regardless of P&amp;L</td>
+<td>If the mechanism is gone, the edge is gone, even if P&amp;L is fine — you are now trading noise</td>
+</tr>
+<tr>
+<td><strong>Capacity</strong></td>
+<td>Strategy AUM where estimated impact consumes &gt;50% of gross alpha</td>
+<td>Stop growing; cap size</td>
+<td>The edge exists but is not accessible</td>
+</tr>
+<tr>
+<td><strong>Alpha decay / crowding</strong></td>
+<td>Rolling correlation to a known crowded factor rises; spread capture falls</td>
+<td>Reduce; monitor</td>
+<td>You have become the liquidity, not the provider</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The mechanism-break trigger is the one people ignore</strong>, and it is often the most important. Examples: a strategy exploiting an index-rebalance flow stops working when the index changes its methodology. A strategy exploiting a settlement convention stops when the convention changes. A strategy exploiting a market's opening auction stops when the venue introduces a new auction. In each case the P&amp;L may look fine for months because of residual positioning — and then it stops, permanently, with no statistical warning. <strong>Track the structural precondition as a first-class input, and retire on its failure, not on the P&amp;L's.</strong></p>
+<h3>The decay reality check</h3>
+<p>Before you build a monitoring apparatus, internalise how fast edges actually decay:</p>
+<table>
+<thead>
+<tr>
+<th>Finding</th>
+<th>Magnitude</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anomaly returns post-publication</td>
+<td><strong>~58% lower</strong> than in-sample; ~26% of that is out-of-sample decay, the remainder post-publication</td>
+<td>McLean &amp; Pontiff (2016), Journal of Finance</td>
+</tr>
+<tr>
+<td>Anomalies surviving strict replication</td>
+<td>~35% of 452 tested anomalies remain significant under NYSE breakpoints and value-weighting (i.e. <strong>~65% fail</strong>)</td>
+<td>Hou, Xue &amp; Zhang (2020), Review of Financial Studies</td>
+</tr>
+<tr>
+<td>Anomalies surviving realistic trading costs</td>
+<td>A large further fraction eliminated; net returns insignificant for many high-turnover anomalies</td>
+<td>Novy-Marx &amp; Velikov (2016); Chen &amp; Velikov (2023)</td>
+</tr>
+<tr>
+<td>Reasons ML funds fail</td>
+<td>Sisyphus paradigm (no true out-of-sample), integer differentiation, fixed-time horizon labelling, learning side effects, backtest overfitting, walk-forward backtesting failures, cross-validation leakage, feature importance misinterpretation, forecasting prices vs. forecasting returns, unstable overfitting</td>
+<td>López de Prado (2018)</td>
+</tr>
+<tr>
+<td>Regime non-stationarity</td>
+<td>Strategy parameters that were optimal in one regime are systematically suboptimal in the next</td>
+<td>Lo (2004), Adaptive Markets Hypothesis</td>
+</tr>
+</tbody>
+</table>
+<p>The composite reading: <strong>most published edges decay by half within a few years of publication, two-thirds fail strict replication, and a further large fraction fail realistic costs.</strong> If you are building a business, plan for a strategy half-life of three to five years, and build the pipeline that replaces them rather than the strategy that lasts forever.</p>
+<h2>6.5 The retirement protocol</h2>
+<p>Retirement is a decision that must be pre-specified, because it will be made under maximum emotional pressure. The protocol:</p>
+<ol>
+<li><strong>Pre-register the triggers</strong> before deployment, in the same document as the hypothesis. Include the numerical thresholds.</li>
+<li><strong>Automate the monitoring.</strong> Compute the envelope position, rolling Sharpe, and CUSUM statistic daily. A trigger you have to remember to check is not a trigger.</li>
+<li><strong>Separate the decision from the trade.</strong> The trigger fires a <em>review</em>, not necessarily a halt — except for hard statistical triggers, which halt automatically.</li>
+<li><strong>Do not re-optimise on the same data.</strong> If a strategy is broken, the data that broke it cannot also fix it. Either find a new mechanism, or apply the hypothesis to a new universe (Phase 3, Rule 12).</li>
+<li><strong>Log the post-mortem.</strong> Was it signal failure, execution failure, cost failure, or regime failure? These have different lessons:</li>
+<li><em>Signal failure</em> → the hypothesis was wrong. Reduce belief in similar hypotheses.</li>
+<li><em>Execution failure</em> → the mechanism was right, the implementation was not. Fixable.</li>
+<li><em>Cost failure</em> → the edge was real but smaller than the friction. Change instrument, size, or frequency.</li>
+<li><em>Regime failure</em> → the edge is intact but the environment is wrong. <strong>Do not retire</strong> — reduce size and wait. This is the case where retiring is the error.</li>
+<li><strong>Retire the capital, not just the strategy.</strong> Free capital must be redeployed or withdrawn. Idle capital in a "paused" strategy is a slow bleed of opportunity cost.</li>
+</ol>
+<p>That fourth distinction — regime failure versus mechanism failure — is worth more than the rest of this section. <strong>Retiring a working strategy because the regime turned against it is the most expensive error in systematic trading</strong>, and it is the exact mirror of the retail error of abandoning at the low. The difference between the two is not psychology; it is whether you specified in advance what the failure mode would look like.</p>
+<h2>6.6 The endgame, honestly stated</h2>
+<p>The Protocol has no terminal state where you have "beaten the market." What it has is a process with the following properties:</p>
+<ul>
+<li>You know the expected value of every strategy you trade, net of realistic costs, and you know the uncertainty on that estimate.</li>
+<li>You have pre-specified what failure looks like, so failure is information rather than crisis.</li>
+<li>You size so that the worst realistic path is survivable, which means you get to keep playing.</li>
+<li>You hold several uncorrelated edges, so no single regime can end you.</li>
+<li>You retire strategies on mechanism failure and keep them through regime failure, which is the opposite of what instinct dictates.</li>
+<li>You measure your own results against the base rates in §0.3, honestly, and you know that the most likely explanation for a good month is variance.</li>
+</ul>
+<p>That is the entire content of "edge" available to an individual trader. It is not a secret indicator. It is a small number of small, real, cost-surviving inefficiencies, harvested with discipline, sized for survival, and replaced when they die.</p>
+<hr />
+<h1>APPENDIX A — THE GO/NO-GO GATE</h1>
+<p>Every item must pass before capital is committed. A single "no" in blocks 1–3 means do not trade.</p>
+<h3>Block 1 — Data (Phase 1)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Check</th>
+<th>Pass</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Point-in-time universe</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Delisting returns included</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Timestamp causality asserted in code</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>4</td>
+<td>No full-sample statistics in any transform</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Bar semantics verified</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Cost model: commission + spread + impact + slippage</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Reproducible from raw data</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+<h3>Block 2 — Evidence (Phase 3)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Check</th>
+<th>Pass</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8</td>
+<td>Hypothesis written in the §2.2 template, including failure condition</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Trial count logged, including abandoned trials</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>10</td>
+<td>OOS ≥25%, touched once</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Walk-forward ≥8 folds, positive in ≥60% of folds</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Parameter plateau, not spike</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Profitable at 2× modelled costs</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Outside the 95th percentile of the random-entry baseline</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Beats buy-and-hold on Sharpe <em>and</em> RoMaD</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Signal shifted by one bar destroys the edge</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Deflated Sharpe &gt; 0.95</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>18</td>
+<td>PBO &lt; 0.20</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Replicates on a second universe</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Capacity estimated; viable at intended size</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+<h3>Block 3 — Risk (Phase 4)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Check</th>
+<th>Pass</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>21</td>
+<td>Risk per trade ≤1% of <strong>true backing</strong> (not account label)</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Survives a 12-loss streak within the drawdown limit</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Position size ≤ quarter-Kelly</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>24</td>
+<td>All circuit breakers specified with reset conditions</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Monte Carlo envelope recorded as the live yardstick</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Prop-firm rules modelled: drawdown type, daily limit, consistency rule, payout buffer</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Crisis correlation stress: all positions adverse simultaneously is survivable</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+<h3>Block 4 — Deployment (Phase 6)</h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Check</th>
+<th>Pass</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>28</td>
+<td>Paper trading ≥ 50 trades or 3 months, path inside envelope</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Retirement triggers pre-registered</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Post-mortem template ready, with the four failure categories</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Correlation to existing strategies measured and acceptable</td>
+<td>☐</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Portfolio-level risk contribution capped</td>
+<td>☐</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1>APPENDIX B — FORMULAS</h1>
+<p><strong>Expectancy</strong>
+$$E = pW - (1-p)L - C$$</p>
+<p><strong>Break-even hit rate</strong>
+$$p^* = \frac{L + C}{W + L}$$</p>
+<p><strong>Kelly, discrete</strong>
+$$f^* = \frac{pb - (1-p)a}{ab}$$</p>
+<p><strong>Kelly, continuous</strong>
+$$f^* = \frac{\mu}{\sigma^2}$$</p>
+<p><strong>Survivable risk per trade given a drawdown limit and a loss streak</strong>
+$$r \le 1 - (1-D)^{1/n}$$</p>
+<p><strong>Portfolio Sharpe from $$N$$ strategies</strong>
+$$SR_p = \frac{SR\sqrt{N}}{\sqrt{1 + (N-1)\rho}}$$</p>
+<p><strong>Square-root market impact</strong>
+$$\Delta p \approx Y\,\sigma\sqrt{\frac{Q}{V}}$$</p>
+<p><strong>Deflated Sharpe Ratio</strong>
+$$\text{DSR} = \Phi!\left[\frac{(\hat{SR}-SR_0)\sqrt{T-1}}{\sqrt{1-\hat{\gamma}_3\hat{SR}+\frac{\hat{\gamma}_4-1}{4}\hat{SR}^2}}\right]$$</p>
+<p><strong>Expected maximum Sharpe under the null</strong>
+$$SR_0 = \sqrt{V[{SR_n}]}\left[(1-\gamma)\Phi^{-1}!\left(1-\tfrac1N\right)+\gamma\Phi^{-1}!\left(1-\tfrac1N e^{-1}\right)\right],\quad \gamma\approx0.5772$$</p>
+<p><strong>Minimum backtest length (years)</strong>
+$$\text{MinBTL} \lesssim \frac{2\ln N}{E[\max SR]^2}$$</p>
+<p><strong>Drawdown floor and headroom (trailing)</strong>
+$$\text{Floor} = \text{Peak Equity} - \text{Trailing Distance}, \qquad \text{Headroom} = \text{Equity} - \text{Floor}$$</p>
+<p><strong>True backing</strong>
+$$\text{True Backing} = \text{Account} \times \text{Max DD \%}$$</p>
+<p><strong>Volatility-targeted size</strong>
+$$q = q_{\text{base}} \cdot \min!\left(\frac{\sigma_{\text{target}}}{\hat{\sigma}}, \; c_{\max}\right)$$</p>
+<hr />
+<h1>APPENDIX C — PRIMARY BIBLIOGRAPHY</h1>
+<p>Grouped by the phase that relies on it. These are the sources that carry the load; the document deliberately does not cite 5,000 papers it did not use.</p>
+<h3>Overfitting, multiple testing, validation</h3>
+<ul>
+<li>Bailey, D. H., Borwein, J., López de Prado, M., &amp; Zhu, Q. J. (2014). "Pseudo-Mathematics and Financial Charlatanism: The Effects of Backtest Overfitting on Out-of-Sample Performance." <em>Notices of the AMS</em> 61(5).</li>
+<li>Bailey, D. H., Borwein, J., López de Prado, M., &amp; Zhu, Q. J. (2017). "The Probability of Backtest Overfitting." <em>Journal of Computational Finance</em> 20(4).</li>
+<li>Bailey, D. H., &amp; López de Prado, M. (2014). "The Deflated Sharpe Ratio: Correcting for Selection Bias, Backtest Overfitting, and Non-Normality." <em>Journal of Portfolio Management</em> 40(5), 94–107.</li>
+<li>Bailey, D. H., &amp; López de Prado, M. (2012). "The Sharpe Ratio Efficient Frontier." <em>Journal of Risk</em> 15(2). [Probabilistic Sharpe Ratio; Minimum Track Record Length]</li>
+<li>Harvey, C. R., Liu, Y., &amp; Zhu, H. (2016). "…and the Cross-Section of Expected Returns." <em>Review of Financial Studies</em> 29(1), 5–68.</li>
+<li>Harvey, C. R., &amp; Liu, Y. (2015). "Backtesting." <em>Journal of Portfolio Management</em> 42(1).</li>
+<li>Arnott, R., Harvey, C. R., &amp; Markowitz, H. (2019). "A Backtesting Protocol in the Era of Machine Learning." <em>Journal of Financial Data Science</em> 1(1).</li>
+<li>Sullivan, R., Timmermann, A., &amp; White, H. (1999). "Data-Snooping, Technical Trading Rule Performance, and the Bootstrap." <em>Journal of Finance</em> 54(5).</li>
+<li>White, H. (2000). "A Reality Check for Data Snooping." <em>Econometrica</em> 68(5).</li>
+<li>Politis, D. N., &amp; Romano, J. P. (1994). "The Stationary Bootstrap." <em>JASA</em> 89(428).</li>
+<li>López de Prado, M. (2018). <em>Advances in Financial Machine Learning.</em> Wiley. [Purged K-fold, embargo, CPCV, triple-barrier, meta-labelling, fractional differentiation]</li>
+<li>López de Prado, M. (2018). "The 10 Reasons Most Machine Learning Funds Fail." <em>Journal of Portfolio Management</em> 44(6).</li>
+</ul>
+<h3>Microstructure and execution</h3>
+<ul>
+<li>Kyle, A. S. (1985). "Continuous Auctions and Insider Trading." <em>Econometrica</em> 53(6).</li>
+<li>Glosten, L. R., &amp; Milgrom, P. R. (1985). "Bid, Ask and Transaction Prices in a Specialist Market with Heterogeneously Informed Traders." <em>Journal of Financial Economics</em> 14(1).</li>
+<li>Cont, R., Kukanov, A., &amp; Stoikov, S. (2014). "The Price Impact of Order Book Events." <em>Journal of Financial Econometrics</em> 12(1).</li>
+<li>Bouchaud, J.-P., Farmer, J. D., &amp; Lillo, F. (2009). "How Markets Slowly Digest Changes in Supply and Demand." In <em>Handbook of Financial Markets.</em></li>
+<li>Almgren, R., &amp; Chriss, N. (2001). "Optimal Execution of Portfolio Transactions." <em>Journal of Risk</em> 3(2).</li>
+<li>Harris, L. (2002). <em>Trading and Exchanges: Market Microstructure for Practitioners.</em> Oxford University Press.</li>
+</ul>
+<h3>Intraday effects and time-of-day</h3>
+<ul>
+<li>Gao, L., Han, Y., Li, S. Z., &amp; Zhou, G. (2018). "Market Intraday Momentum." <em>Journal of Financial Economics</em> 129(2), 394–414.</li>
+<li>Heston, S. L., Korajczyk, R. A., &amp; Sadka, R. (2010). "Intraday Patterns in the Cross-section of Stock Returns." <em>Journal of Finance</em> 65(4).</li>
+<li>Lou, D., Polk, C., &amp; Skouras, S. (2019). "A Tug of War: Overnight Versus Intraday Expected Returns." <em>Journal of Financial Economics</em> 134(1).</li>
+<li>Bernard, V. L., &amp; Thomas, J. K. (1989). "Post-Earnings-Announcement Drift: Delayed Price Response or Risk Premium?" <em>Journal of Accounting Research</em> 27.</li>
+</ul>
+<h3>Anomalies, replication, and decay</h3>
+<ul>
+<li>McLean, R. D., &amp; Pontiff, J. (2016). "Does Academic Research Destroy Stock Return Predictability?" <em>Journal of Finance</em> 71(1), 5–32.</li>
+<li>Hou, K., Xue, C., &amp; Zhang, L. (2020). "Replicating Anomalies." <em>Review of Financial Studies</em> 33(5), 2019–2133.</li>
+<li>Jensen, T. I., Kelly, B., &amp; Pedersen, L. H. (2023). "Is There a Replication Crisis in Finance?" <em>Journal of Finance</em> 78(5).</li>
+<li>Novy-Marx, R., &amp; Velikov, M. (2016). "A Taxonomy of Anomalies and Their Trading Costs." <em>Review of Financial Studies</em> 29(1).</li>
+<li>Chen, A. Y., &amp; Velikov, M. (2023). "Zeroing in on the Expected Returns of Anomalies." <em>Journal of Financial and Quantitative Analysis</em> 58(3).</li>
+<li>Frazzini, A., Israel, R., &amp; Moskowitz, T. J. (2018). "Trading Costs." Working paper / <em>SSRN</em>.</li>
+<li>Jegadeesh, N., &amp; Titman, S. (1993). "Returns to Buying Winners and Selling Losers." <em>Journal of Finance</em> 48(1).</li>
+<li>Gatev, E., Goetzmann, W. N., &amp; Rouwenhorst, K. G. (2006). "Pairs Trading: Performance of a Relative-Value Arbitrage Rule." <em>Review of Financial Studies</em> 19(3).</li>
+<li>Avellaneda, M., &amp; Lee, J.-H. (2010). "Statistical Arbitrage in the US Equities Market." <em>Quantitative Finance</em> 10(7).</li>
+</ul>
+<h3>Trend, volatility, and portfolio construction</h3>
+<ul>
+<li>Moskowitz, T. J., Ooi, Y. H., &amp; Pedersen, L. H. (2012). "Time Series Momentum." <em>Journal of Financial Economics</em> 104(2), 228–250.</li>
+<li>Hurst, B., Ooi, Y. H., &amp; Pedersen, L. H. (2017). "A Century of Evidence on Trend-Following Investing." <em>Journal of Portfolio Management</em> 44(1).</li>
+<li>Moreira, A., &amp; Muir, T. (2017). "Volatility-Managed Portfolios." <em>Journal of Finance</em> 72(4), 1611–1644.</li>
+<li>Harvey, C. R., Hoyle, E., Korgaonkar, R., Rattray, S., Sargaison, M., &amp; van Hemert, O. (2018). "The Impact of Volatility Targeting." <em>Journal of Portfolio Management</em> 45(1).</li>
+<li>Ledoit, O., &amp; Wolf, M. (2004). "Honey, I Shrunk the Sample Covariance Matrix." <em>Journal of Portfolio Management</em> 30(4).</li>
+<li>Longin, F., &amp; Solnik, B. (2001). "Extreme Correlation of International Equity Markets." <em>Journal of Finance</em> 56(2).</li>
+<li>Ang, A. (2014). <em>Asset Management: A Systematic Approach to Factor Investing.</em> Oxford University Press.</li>
+</ul>
+<h3>Risk, sizing, and survival</h3>
+<ul>
+<li>Kelly, J. L. (1956). "A New Interpretation of Information Rate." <em>Bell System Technical Journal</em> 35(4).</li>
+<li>Thorp, E. O. (2006). "The Kelly Criterion in Blackjack, Sports Betting, and the Stock Market." In <em>Handbook of Asset and Liability Management.</em></li>
+<li>MacLean, L. C., Thorp, E. O., &amp; Ziemba, W. T. (2011). <em>The Kelly Capital Growth Criterion: Theory and Practice.</em> World Scientific.</li>
+<li>Chopra, V. K., &amp; Ziemba, W. T. (1993). "The Effect of Errors in Means, Variances, and Covariances on Optimal Portfolio Choice." <em>Journal of Portfolio Management</em> 19(2).</li>
+<li>Vince, R. (1990). <em>Portfolio Management Formulas.</em> Wiley. [Optimal f — cited as a demonstration of fragility, not a recommendation]</li>
+<li>Page, E. S. (1954). "Continuous Inspection Schemes." <em>Biometrika</em> 41(1/2). [CUSUM]</li>
+<li>Wald, A. (1945). "Sequential Tests of Statistical Hypotheses." <em>Annals of Mathematical Statistics</em> 16(2). [SPRT]</li>
+</ul>
+<h3>Behavioural evidence and market adaptation</h3>
+<ul>
+<li>Barber, B. M., &amp; Odean, T. (2000). "Trading Is Hazardous to Your Wealth." <em>Journal of Finance</em> 55(2).</li>
+<li>Barber, B. M., Lee, Y.-T., Liu, Y.-J., &amp; Odean, T. (2014). "The Cross-Section of Speculator Skill: Evidence from Day Trading." <em>Journal of Financial Markets</em> 18.</li>
+<li>Chague, F., De-Losso, R., &amp; Giovannetti, B. (2020). "Day Trading for a Living?" Working paper / <em>SSRN</em>.</li>
+<li>Odean, T. (1998). "Are Investors Reluctant to Realize Their Losses?" <em>Journal of Finance</em> 53(5).</li>
+<li>Tversky, A., &amp; Kahneman, D. (1992). "Advances in Prospect Theory: Cumulative Representation of Uncertainty." <em>Journal of Risk and Uncertainty</em> 5(4).</li>
+<li>Shumway, T. (1997). "The Delisting Bias in CRSP Data." <em>Journal of Finance</em> 52(1).</li>
+<li>Lo, A. W. (2004). "The Adaptive Markets Hypothesis." <em>Journal of Portfolio Management</em> 30(5).</li>
+<li>Hamilton, J. D. (1989). "A New Approach to the Economic Analysis of Nonstationary Time Series and the Business Cycle." <em>Econometrica</em> 57(2).</li>
+</ul>
+<h3>Practitioner process (public, verifiable)</h3>
+<ul>
+<li>Conti, M. — public analysis of an opening-range breakout strategy: institutional testing protocol, sub-sample falsification of a delta filter, and volatility-targeted position sizing. Used as the Phase 2 worked case study. (Public video/analysis; the strategy logic is attributable to F. Valentini, the testing protocol to Conti.)</li>
+<li>Valentini, F. — opening-range breakout and order-flow methodology; multiple top-three global scalping finishes, runner-up in the Robbins World Cup Championship of Futures Trading.</li>
+<li>Cimitan, A. — order-flow, options and auction-market-theory methodology.</li>
+<li>Vorwald, T.; Becker, T. — competition mentoring and trading psychology, respectively.</li>
+<li>Schwager, J. (2012). <em>Market Wizards</em> and <em>Hedge Fund Market Wizards.</em> [Read for the process descriptions, not the returns]</li>
+<li>Covel, M. (2009). <em>Trend Following.</em> [Read critically; the survivorship in this genre is severe]</li>
+</ul>
+<hr />
+<h1>APPENDIX D — THE ANTI-CURRICULUM</h1>
+<p>What this Protocol refuses to teach, and why. This list is as important as the rest of the document, because the fastest way to lose money is to spend a year learning something that cannot work.</p>
+<table>
+<thead>
+<tr>
+<th>Rejected concept</th>
+<th>Why it is rejected</th>
+<th>What replaces it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Indicator stacking</strong></td>
+<td>Indicators are transforms of price; stacking them adds correlated noise and spends degrees of freedom</td>
+<td>One signal, tested against a random baseline; mechanism stated</td>
+</tr>
+<tr>
+<td><strong>Holy grails / 90% accuracy</strong></td>
+<td>After enough trials, false positives are guaranteed. High accuracy with poor payoff is a losing system</td>
+<td>Expectancy, Deflated Sharpe, PBO</td>
+</tr>
+<tr>
+<td><strong>Martingale / averaging down</strong></td>
+<td>Growth rate is concave in leverage and negative beyond 2× Kelly. Doubling after losses converts a survivable drawdown into ruin</td>
+<td>Fixed fractional sizing; drawdown throttles</td>
+</tr>
+<tr>
+<td><strong>Grid / no-stop systems</strong></td>
+<td>A no-stop system has an unbounded loss distribution. The expected value may be positive and the median outcome still ruin</td>
+<td>Hard stops, or defined-risk structures</td>
+</tr>
+<tr>
+<td><strong>"The market makers hunt your stop"</strong></td>
+<td>Stops cluster at predictable places and get consumed. There is no targeting; there is a liquidity vacuum</td>
+<td>Place stops outside the cluster; trade the observable</td>
+</tr>
+<tr>
+<td><strong>VWAP as a directional filter</strong></td>
+<td>VWAP is an execution benchmark, not a forecast</td>
+<td>Use VWAP to measure your own slippage</td>
+</tr>
+<tr>
+<td><strong>Correlation as a static fact</strong></td>
+<td>Correlations rise in crises; the measured matrix fails when needed</td>
+<td>Stress at crisis correlation; cap risk contribution</td>
+</tr>
+<tr>
+<td><strong>Regime prediction</strong></td>
+<td>Transitions are not forecastable with useful accuracy; detection lags</td>
+<td>Use regimes to size, not to switch alpha</td>
+</tr>
+<tr>
+<td><strong>Full Kelly</strong></td>
+<td>Errors in means dominate; drawdowns are unlivable; ruin is possible</td>
+<td>Quarter-Kelly, with a sanity check on risk per trade</td>
+</tr>
+<tr>
+<td><strong>Optimising the exit</strong></td>
+<td>Exits have the most parameters and the fewest events per parameter</td>
+<td>Fix the exit structurally; optimise the entry only</td>
+</tr>
+<tr>
+<td><strong>The "halve the Sharpe" haircut</strong></td>
+<td>A folk heuristic with no derivation</td>
+<td>Deflated Sharpe Ratio</td>
+</tr>
+<tr>
+<td><strong>Backtested P&amp;L as evidence</strong></td>
+<td>A backtest is a hypothesis about the past, not evidence about the future</td>
+<td>Trial count, DSR, PBO, OOS, walk-forward, random baseline</td>
+</tr>
+<tr>
+<td><strong>Signal-selling and copy trading</strong></td>
+<td>Unaudited returns, survivorship-selected sample, and the seller's incentive is your subscription, not your P&amp;L</td>
+<td>Your own validated process, or nothing</td>
+</tr>
+<tr>
+<td><strong>"Risk 1% per trade"</strong></td>
+<td>A convention, not a model. Ignores volatility, correlation, and the distance to the actual constraint</td>
+<td>Risk relative to true backing and to headroom</td>
+</tr>
+<tr>
+<td><strong>Abandoning a strategy after a losing streak</strong></td>
+<td>Losing streaks are inside the expected distribution; abandoning at the low is the mirror of doubling down</td>
+<td>Pre-registered envelope; distinguish regime failure from mechanism failure</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2>Closing note</h2>
+<p>The Protocol is falsifiable, and that is its only claim to authority. If a claim in this document fails a test you run, the claim is wrong and the document should be revised — that is the correct outcome, not a failure of the framework.</p>
+<p>The single sentence to carry out of here: <strong>you will not find an edge in a chart pattern, but you can build one out of a mechanism, a cost model, a validation protocol, and a sizing rule — and the last two are where the money is.</strong></p>
+<hr />
+<p><em>Ultra Edge Academy · Master File v1.0</em>
+<em>Every statistic in this document is attributed to a named source in Appendix C. Where the evidence is contested or the effect is regime-dependent, the document says so. Where a widely-taught claim has no derivation behind it, the document names it and removes it.</em></p>
         </div>
     </div>
-    </main>
+    
+        </main>
         
     <footer class="term-footer">
         <div style="margin-bottom: 16px;"><strong style="color: var(--amber);">ULTRA EDGE RESEARCH</strong> · SYSTEMATIC MACRO & CROSS-ASSET</div>
@@ -51,7 +3311,10 @@
             <a href="https://github.com/ABHI99335" target="_blank">GITHUB</a>
             <a href="https://www.instagram.com/abhishex08" target="_blank">INSTAGRAM</a>
         </div>
-        <div style="font-size: 10px; max-width: 800px; margin: 0 auto; color: #4B5563;">DISCLOSURE: This site is for informational purposes only and does not constitute an offer to buy or sell any security. Past performance is not indicative of future results.</div>
+        <div style="font-size: 10px; max-width: 800px; margin: 0 auto; color: #4B5563;">DISCLOSURE: This site is for informational purposes only and does not constitute an offer to buy or sell any security.</div>
     </footer>
-     
-    </body></html>
+    
+        
+    </body>
+    </html>
+    
