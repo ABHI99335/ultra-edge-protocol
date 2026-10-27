@@ -1,90 +1,38 @@
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html><html lang="en"><head>
+        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Approach | ULTRA EDGE</title>
         <link rel="stylesheet" href="assets/style.css">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
-    </head>
-    <body>
+    </head><body>
         
     <header class="term-header">
         <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
-        <div class="nav-links"><a href="index.html" class="nav-btn">F1 · HOME</a><a href="approach.html" class="nav-btn active">F2 · APPROACH</a><a href="edge.html" class="nav-btn">F3 · OUR EDGE</a><a href="graveyard.html" class="nav-btn">F4 · GRAVEYARD</a><a href="principal.html" class="nav-btn">F5 · PRINCIPAL</a><a href="contact.html" class="nav-btn">F6 · CONTACT</a></div>
+        <div class="nav-links"><a href="index.html" class="nav-btn">F1 · HOME</a><a href="approach.html" class="nav-btn active">F2 · APPROACH</a><a href="edge.html" class="nav-btn">F3 · OUR EDGE</a><a href="graveyard.html" class="nav-btn">F4 · GRAVEYARD</a><a href="course.html" class="nav-btn">F5 · COURSE</a><a href="principal.html" class="nav-btn">F6 · PRINCIPAL</a><a href="contact.html" class="nav-btn">F7 · CONTACT</a></div>
         <div class="term-status mono" style="font-size: 11px; color: var(--text-dim);">
             UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
         </div>
     </header>
-    
-<script>
-    setInterval(() => {
-        const now = new Date();
-        const utcEl = document.getElementById('utc-time');
-        const locEl = document.getElementById('local-time');
-        if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0];
-        if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB');
-    }, 1000);
-</script>
-
-    
-        
+    <script>setInterval(() => { const now = new Date(); const utcEl = document.getElementById('utc-time'); const locEl = document.getElementById('local-time'); if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0]; if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB'); }, 1000);</script>
+     
         <main class="page-container">
-            
-    <div class="panel">
-        <div class="panel-header"><div class="panel-title">F2 · METHODOLOGY & PROCESS</div></div>
-        <h1>Approach</h1>
-        <p style="font-size: 1.1rem; color: var(--text);">A systematic process designed to minimize unqualified risk and eliminate cognitive bias.</p>
-        
+    <div class="panel"><div class="panel-header"><div class="panel-title">F2 · METHODOLOGY & PROCESS</div></div>
+        <h1>Approach</h1><p style="font-size: 1.1rem; color: var(--text);">A systematic process designed to minimize unqualified risk and eliminate cognitive bias.</p>
         <h2 style="margin-top: 40px;">Research Standards (The 12 Rules)</h2>
-        <p>Every strategy tested must pass these rules without exception. The value of the project is the process, not the strategies. The retirements matter more than the survivors.</p>
-        
         <div style="background: #050505; border: 1px solid var(--panel-border); padding: 24px; font-family: var(--mono); font-size: 13px; line-height: 2; color: var(--text); margin-bottom: 40px;">
-            1. Split IS/OOS at 2014 or 2021.<br>
-            2. Shift signals by 1 bar. Enter at NEXT bar open.<br>
-            3. Apply realistic costs (2 bps FX, 3 pts NAS, 20 bps crypto).<br>
-            4. Report Sharpe, CAGR, MaxDD, win rate, avg win/loss.<br>
-            5. Include buy-and-hold reference.<br>
-            6. Include random-direction baseline (200+ seeds).<br>
-            7. Report IS/OOS separately. Flag OOS Sharpe > 0 AND |t| > 2.<br>
-            8. Prop-firm: enforce daily loss, total loss, min days.<br>
-            9. If too good, find the bug before celebrating.<br>
-            10. No look-ahead. Ever.<br>
-            11. Log every retired strategy as a case study.<br>
-            12. No curve-fitting. Round numbers only.
+            1. Split IS/OOS at 2014 or 2021.<br>2. Shift signals by 1 bar. Enter at NEXT bar open.<br>3. Apply realistic costs (2 bps FX, 3 pts NAS, 20 bps crypto).<br>4. Report Sharpe, CAGR, MaxDD, win rate, avg win/loss.<br>5. Include buy-and-hold reference.<br>6. Include random-direction baseline (200+ seeds).<br>7. Report IS/OOS separately. Flag OOS Sharpe > 0 AND |t| > 2.<br>8. Prop-firm: enforce daily loss, total loss, min days.<br>9. If too good, find the bug before celebrating.<br>10. No look-ahead. Ever.<br>11. Log every retired strategy as a case study.<br>12. No curve-fitting. Round numbers only.
         </div>
-
-        <h2>Data Pipeline</h2>
-        <p>Before a single strategy is backtested, the data must be pristine.</p>
-        <table class="term-table" style="background: #050505;">
-            <thead><tr><th>ASSET CLASS</th><th>TIMEFRAMES</th><th>INGESTION STATUS</th></tr></thead>
-            <tbody>
-                <tr><td data-label="Asset Class">XAUUSD (Metal)</td><td data-label="Timeframes">1m, 5m, 15m, 1h, 1d</td><td data-label="Status"><span class="badge badge-live">COMPLETE</span></td></tr>
-                <tr><td data-label="Asset Class">NAS100 (Index)</td><td data-label="Timeframes">5m, 15m, 1h</td><td data-label="Status"><span class="badge badge-live">COMPLETE</span></td></tr>
-                <tr><td data-label="Asset Class">NQ Futures</td><td data-label="Timeframes">1m</td><td data-label="Status"><span class="badge badge-live">INGESTED</span></td></tr>
-                <tr><td data-label="Asset Class">Crypto (BTC/ETH)</td><td data-label="Timeframes">1h, 1d</td><td data-label="Status"><span class="badge badge-live">COMPLETE</span></td></tr>
-            </tbody>
-        </table>
     </div>
-    
-        </main>
+    </main>
         
     <footer class="term-footer">
-        <div style="margin-bottom: 16px;">
-            <strong style="color: var(--amber);">ULTRA EDGE RESEARCH</strong> · SYSTEMATIC MACRO & CROSS-ASSET
-        </div>
+        <div style="margin-bottom: 16px;"><strong style="color: var(--amber);">ULTRA EDGE RESEARCH</strong> · SYSTEMATIC MACRO & CROSS-ASSET</div>
         <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 16px;">
             <a href="mailto:abhishekgupta10m@gmail.com">EMAIL</a>
             <a href="https://github.com/ABHI99335" target="_blank">GITHUB</a>
             <a href="https://www.instagram.com/abhishex08" target="_blank">INSTAGRAM</a>
         </div>
-        <div style="font-size: 10px; max-width: 800px; margin: 0 auto; color: #4B5563;">
-            DISCLOSURE: This site is for informational purposes only and does not constitute an offer to buy or sell any security. Past performance is not indicative of future results. The strategies and research presented represent a methodology and are not live trading track records.
-        </div>
+        <div style="font-size: 10px; max-width: 800px; margin: 0 auto; color: #4B5563;">DISCLOSURE: This site is for informational purposes only and does not constitute an offer to buy or sell any security. Past performance is not indicative of future results.</div>
     </footer>
-    
-        
-    </body>
-    </html>
-    
+     
+    </body></html>

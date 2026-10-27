@@ -1,156 +1,54 @@
 
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html><html lang="en"><head>
+        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home | ULTRA EDGE</title>
         <link rel="stylesheet" href="assets/style.css">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
-    </head>
-    <body>
+    </head><body>
         
     <header class="term-header">
         <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
-        <div class="nav-links"><a href="index.html" class="nav-btn active">F1 · HOME</a><a href="approach.html" class="nav-btn">F2 · APPROACH</a><a href="edge.html" class="nav-btn">F3 · OUR EDGE</a><a href="graveyard.html" class="nav-btn">F4 · GRAVEYARD</a><a href="principal.html" class="nav-btn">F5 · PRINCIPAL</a><a href="contact.html" class="nav-btn">F6 · CONTACT</a></div>
+        <div class="nav-links"><a href="index.html" class="nav-btn active">F1 · HOME</a><a href="approach.html" class="nav-btn">F2 · APPROACH</a><a href="edge.html" class="nav-btn">F3 · OUR EDGE</a><a href="graveyard.html" class="nav-btn">F4 · GRAVEYARD</a><a href="course.html" class="nav-btn">F5 · COURSE</a><a href="principal.html" class="nav-btn">F6 · PRINCIPAL</a><a href="contact.html" class="nav-btn">F7 · CONTACT</a></div>
         <div class="term-status mono" style="font-size: 11px; color: var(--text-dim);">
             UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
         </div>
     </header>
-    
-<script>
-    setInterval(() => {
-        const now = new Date();
-        const utcEl = document.getElementById('utc-time');
-        const locEl = document.getElementById('local-time');
-        if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0];
-        if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB');
-    }, 1000);
-</script>
-
-    
-        <div class="ticker-wrap"><div class="ticker" id="ticker-track"><div class="ticker-item text-dim">CONNECTING TO MARKET DATA...</div></div></div>
+    <script>setInterval(() => { const now = new Date(); const utcEl = document.getElementById('utc-time'); const locEl = document.getElementById('local-time'); if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0]; if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB'); }, 1000);</script>
+     <div class="ticker-wrap"><div class="ticker" id="ticker-track"><div class="ticker-item text-dim">CONNECTING TO MARKET DATA...</div></div></div>
         <main class="page-container">
-            
     <div class="panel">
-        <div class="panel-header">
-            <div class="panel-title">SYSTEM OVERVIEW</div>
-            <div>EST. 2021 · UTC</div>
-        </div>
+        <div class="panel-header"><div class="panel-title">SYSTEM OVERVIEW</div><div>EST. 2021 · UTC</div></div>
         <h1 style="font-size: 3.5rem; max-width: 900px;">Evidence-first systematic research across global markets.</h1>
-        <p style="font-size: 1.2rem; color: var(--text); max-width: 800px;">
-            A rules-based research process: signals are validated out-of-sample, costed realistically, and compared against random baselines before any capital is considered.
-        </p>
+        <p style="font-size: 1.2rem; color: var(--text); max-width: 800px;">A rules-based research process: signals are validated out-of-sample, costed realistically, and compared against random baselines before any capital is considered.</p>
         <a href="approach.html" class="btn" style="margin-top: 16px; display: inline-block; background: var(--amber); color: #000; padding: 12px 24px; text-decoration: none; font-family: var(--mono); font-weight: 700;">READ THE METHODOLOGY</a>
-        
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; margin-top: 40px;">
-            <div style="border-left: 2px solid var(--amber); padding-left: 16px;">
-                <div style="font-family: var(--mono); font-size: 3rem; color: var(--amber); font-weight: 700; line-height: 1;">2021</div>
-                <div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Research since</div>
-            </div>
-            <div style="border-left: 2px solid var(--amber); padding-left: 16px;">
-                <div style="font-family: var(--mono); font-size: 3rem; color: var(--amber); font-weight: 700; line-height: 1;">1.27M+</div>
-                <div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Bars in production</div>
-            </div>
-            <div style="border-left: 2px solid var(--amber); padding-left: 16px;">
-                <div style="font-family: var(--mono); font-size: 3rem; color: var(--amber); font-weight: 700; line-height: 1;">26</div>
-                <div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Assets in universe</div>
-            </div>
-            <div style="border-left: 2px solid var(--amber); padding-left: 16px;">
-                <div style="font-family: var(--mono); font-size: 3rem; color: var(--amber); font-weight: 700; line-height: 1;">08</div>
-                <div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Alpha Survivors</div>
-            </div>
+            <div style="border-left: 2px solid var(--amber); padding-left: 16px;"><div style="font-family: var(--mono); font-size: 3rem; color: var(--amber); font-weight: 700; line-height: 1;">2021</div><div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Research since</div></div>
+            <div style="border-left: 2px solid var(--amber); padding-left: 16px;"><div style="font-family: var(--mono); font-size: 3rem; color: var(--amber); font-weight: 700; line-height: 1;">1.27M+</div><div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Bars in production</div></div>
+            <div style="border-left: 2px solid var(--amber); padding-left: 16px;"><div style="font-family: var(--mono); font-size: 3rem; color: var(--amber); font-weight: 700; line-height: 1;">26</div><div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Assets in universe</div></div>
+            <div style="border-left: 2px solid var(--amber); padding-left: 16px;"><div style="font-family: var(--mono); font-size: 3rem; color: var(--amber); font-weight: 700; line-height: 1;">08</div><div style="font-family: var(--mono); font-size: 11px; color: var(--text-dim); text-transform: uppercase;">Alpha Survivors</div></div>
         </div>
     </div>
-
     <div class="grid-2">
-        <div class="panel">
-            <div class="panel-header"><div class="panel-title">HOW I THINK</div></div>
+        <div class="panel"><div class="panel-header"><div class="panel-title">HOW I THINK</div></div>
             <p>My journey began as a retail trader trusting indicators like RSI and MACD. It was noise dressed as signal. The losses in prop-firm accounts served as structured tuition, forcing me to pivot into quantitative finance and order flow.</p>
             <p>Today, I do not deploy capital based on unverified strategies. The research process is entirely systematic. If an edge cannot survive strict In-Sample/Out-of-Sample splits and realistic transaction costs, it is discarded.</p>
             <p><strong>Falsifiability over conviction.</strong> Every hypothesis is treated as false until the data proves otherwise. I do not trade stories; I trade statistical edges that have survived stress-testing.</p>
         </div>
-        <div class="panel">
-            <div class="panel-header"><div class="panel-title">LATEST RESEARCH</div></div>
-            <ul>
-                <li><strong style="color: var(--text);">Alpha 01:</strong> Project Aegis achieves a 62.8% Prop Firm Pass Rate.</li>
-                <li><strong style="color: var(--text);">The Graveyard:</strong> Why I brutally rejected 8 institutional trading strategies.</li>
-                <li><strong style="color: var(--text);">Methodology:</strong> The 3-Stage Factor Validation framework.</li>
-            </ul>
-            <a href="edge.html" style="display: inline-block; margin-top: 16px; padding: 12px 24px; border: 1px solid var(--amber); color: var(--amber); text-decoration: none; font-family: var(--mono); font-weight: 700;">VIEW OUR EDGE</a>
+        <div class="panel"><div class="panel-header"><div class="panel-title">LATEST RESEARCH</div></div>
+            <ul><li><strong style="color: var(--text);">Alpha 01:</strong> Project Aegis achieves a 62.8% Prop Firm Pass Rate.</li><li><strong style="color: var(--text);">The Graveyard:</strong> Why I brutally rejected 8 institutional trading strategies.</li><li><strong style="color: var(--text);">Course:</strong> The Ultra Edge Academy is now live.</li></ul>
+            <a href="course.html" style="display: inline-block; margin-top: 16px; padding: 12px 24px; border: 1px solid var(--amber); color: var(--amber); text-decoration: none; font-family: var(--mono); font-weight: 700;">VIEW THE COURSE</a>
         </div>
     </div>
-    
-        </main>
+    </main>
         
     <footer class="term-footer">
-        <div style="margin-bottom: 16px;">
-            <strong style="color: var(--amber);">ULTRA EDGE RESEARCH</strong> · SYSTEMATIC MACRO & CROSS-ASSET
-        </div>
+        <div style="margin-bottom: 16px;"><strong style="color: var(--amber);">ULTRA EDGE RESEARCH</strong> · SYSTEMATIC MACRO & CROSS-ASSET</div>
         <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 16px;">
             <a href="mailto:abhishekgupta10m@gmail.com">EMAIL</a>
             <a href="https://github.com/ABHI99335" target="_blank">GITHUB</a>
             <a href="https://www.instagram.com/abhishex08" target="_blank">INSTAGRAM</a>
         </div>
-        <div style="font-size: 10px; max-width: 800px; margin: 0 auto; color: #4B5563;">
-            DISCLOSURE: This site is for informational purposes only and does not constitute an offer to buy or sell any security. Past performance is not indicative of future results. The strategies and research presented represent a methodology and are not live trading track records.
-        </div>
+        <div style="font-size: 10px; max-width: 800px; margin: 0 auto; color: #4B5563;">DISCLOSURE: This site is for informational purposes only and does not constitute an offer to buy or sell any security. Past performance is not indicative of future results.</div>
     </footer>
-    
-        
-<script>
-    async function fetchTickerData() {
-        const track = document.getElementById('ticker-track');
-        if (!track) return;
-        
-        let items = [];
-        async function fetchWithTimeout(url, timeout = 3000) {
-            const controller = new AbortController();
-            const id = setTimeout(() => controller.abort(), timeout);
-            try { const res = await fetch(url, { signal: controller.signal }); clearTimeout(id); return res; } 
-            catch (e) { clearTimeout(id); throw e; }
-        }
-
-        try {
-            const cryptoSyms = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'BNBUSDT', 'XRPUSDT', 'ADAUSDT', 'DOGEUSDT', 'AVAXUSDT'];
-            const query = encodeURIComponent('["' + cryptoSyms.join('","') + '"]');
-            const res = await fetchWithTimeout(`https://api.binance.com/api/v3/ticker/24hr?symbols=${query}`);
-            if (res.ok) {
-                const data = await res.json();
-                data.forEach(d => {
-                    const sym = d.symbol.replace('USDT', '');
-                    const price = parseFloat(d.lastPrice);
-                    const pct = parseFloat(d.priceChangePercent);
-                    const color = pct >= 0 ? 'text-up' : 'text-down';
-                    const sign = pct >= 0 ? '+' : '';
-                    const dec = price < 1 ? 4 : 2;
-                    items.push(`<div class="ticker-item"><span class="ticker-sym">${sym}</span><span class="ticker-price">$${price.toLocaleString('en-US', {minimumFractionDigits: dec, maximumFractionDigits: dec})}</span><span class="${color}">${sign}${pct.toFixed(2)}%</span></div>`);
-                });
-            }
-        } catch (e) {}
-
-        try {
-            const res = await fetchWithTimeout('https://api.frankfurter.app/latest?from=USD');
-            if (res.ok) {
-                const data = await res.json();
-                if (data && data.rates) {
-                    const pairs = [
-                        { sym: 'EURUSD', val: 1/data.rates.EUR, dec: 4 },
-                        { sym: 'GBPUSD', val: 1/data.rates.GBP, dec: 4 },
-                        { sym: 'USDJPY', val: data.rates.JPY, dec: 2 },
-                        { sym: 'AUDUSD', val: 1/data.rates.AUD, dec: 4 }
-                    ];
-                    pairs.forEach(p => items.push(`<div class="ticker-item"><span class="ticker-sym">${p.sym}</span><span class="ticker-price">${p.val.toFixed(p.dec)}</span></div>`));
-                }
-            }
-        } catch (e) {}
-
-        if (items.length > 0) track.innerHTML = items.join('') + items.join(''); 
-        else track.innerHTML = '<div class="ticker-item text-dim">MARKET DATA UNAVAILABLE</div>';
-    }
-    document.addEventListener("DOMContentLoaded", () => { fetchTickerData(); setInterval(fetchTickerData, 60000); });
-</script>
-
-    </body>
-    </html>
-    
+     <script>async function fetchTickerData() { const track = document.getElementById('ticker-track'); if (!track) return; let items = []; async function fetchWithTimeout(url, timeout = 3000) { const controller = new AbortController(); const id = setTimeout(() => controller.abort(), timeout); try { const res = await fetch(url, { signal: controller.signal }); clearTimeout(id); return res; } catch (e) { clearTimeout(id); throw e; } } try { const cryptoSyms = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT']; const query = encodeURIComponent('["' + cryptoSyms.join('","') + '"]'); const res = await fetchWithTimeout(`https://api.binance.com/api/v3/ticker/24hr?symbols=${query}`); if (res.ok) { const data = await res.json(); data.forEach(d => { const sym = d.symbol.replace('USDT', ''); const price = parseFloat(d.lastPrice); const pct = parseFloat(d.priceChangePercent); const color = pct >= 0 ? 'text-up' : 'text-down'; const sign = pct >= 0 ? '+' : ''; const dec = price < 1 ? 4 : 2; items.push(`<div class="ticker-item"><span class="ticker-sym">${sym}</span><span class="ticker-price">$${price.toLocaleString('en-US', {minimumFractionDigits: dec, maximumFractionDigits: dec})}</span><span class="${color}">${sign}${pct.toFixed(2)}%</span></div>`); }); } } catch (e) {} try { const res = await fetchWithTimeout('https://api.frankfurter.app/latest?from=USD'); if (res.ok) { const data = await res.json(); if (data && data.rates) { const pairs = [{ sym: 'EURUSD', val: 1/data.rates.EUR, dec: 4 }, { sym: 'GBPUSD', val: 1/data.rates.GBP, dec: 4 }]; pairs.forEach(p => items.push(`<div class="ticker-item"><span class="ticker-sym">${p.sym}</span><span class="ticker-price">${p.val.toFixed(p.dec)}</span></div>`)); } } } catch (e) {} if (items.length > 0) track.innerHTML = items.join('') + items.join(''); else track.innerHTML = '<div class="ticker-item text-dim">MARKET DATA UNAVAILABLE</div>'; } document.addEventListener("DOMContentLoaded", () => { fetchTickerData(); setInterval(fetchTickerData, 60000); });</script>
+    </body></html>

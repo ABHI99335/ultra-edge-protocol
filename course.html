@@ -1,0 +1,57 @@
+
+    <!DOCTYPE html><html lang="en"><head>
+        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Course | ULTRA EDGE</title>
+        <link rel="stylesheet" href="assets/style.css">
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
+    </head><body>
+        
+    <header class="term-header">
+        <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
+        <div class="nav-links"><a href="index.html" class="nav-btn">F1 · HOME</a><a href="approach.html" class="nav-btn">F2 · APPROACH</a><a href="edge.html" class="nav-btn">F3 · OUR EDGE</a><a href="graveyard.html" class="nav-btn">F4 · GRAVEYARD</a><a href="course.html" class="nav-btn active">F5 · COURSE</a><a href="principal.html" class="nav-btn">F6 · PRINCIPAL</a><a href="contact.html" class="nav-btn">F7 · CONTACT</a></div>
+        <div class="term-status mono" style="font-size: 11px; color: var(--text-dim);">
+            UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
+        </div>
+    </header>
+    <script>setInterval(() => { const now = new Date(); const utcEl = document.getElementById('utc-time'); const locEl = document.getElementById('local-time'); if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0]; if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB'); }, 1000);</script>
+     
+        <main class="page-container">
+    <div class="panel"><div class="panel-header"><div class="panel-title">F5 · ULTRA EDGE ACADEMY</div></div>
+        <h1>The Course</h1><p style="font-size: 1.1rem; color: var(--text);">A free, institutional-grade curriculum synthesized from 5,000+ research papers and elite market maker interviews. No gurus. No holy grails. Just mathematics.</p>
+        
+        <div style="background: #050505; border: 1px solid var(--panel-border); padding: 32px; margin-top: 40px;">
+            <h2 style="color: var(--amber); margin-top: 0;">Curriculum Roadmap</h2>
+            <p style="margin-bottom: 24px;">The course is divided into 6 phases, designed to take you from a retail beginner to a systematic researcher.</p>
+            
+            <table class="term-table" style="margin-top: 20px;">
+                <thead><tr><th>PHASE</th><th>MODULE NAME</th><th>WHAT YOU WILL LEARN</th></tr></thead>
+                <tbody>
+                    <tr><td data-label="Phase"><strong style="color: var(--ice);">Intro</strong></td><td data-label="Module">The Retail Trap</td><td data-label="Description">Why technical indicators fail. The psychology of losing. The transition from discretionary to systematic trading.</td></tr>
+                    <tr><td data-label="Phase"><strong style="color: var(--amber);">Phase 1</strong></td><td data-label="Module">Data Engineering</td><td data-label="Description">Garbage in = Garbage out. API integration, tick vs. bar data, avoiding look-ahead bias.</td></tr>
+                    <tr><td data-label="Phase"><strong style="color: var(--amber);">Phase 2</strong></td><td data-label="Module">Strategy Architecture</td><td data-label="Description">Defining a hypothesis. Market microstructure (order flow, liquidity sweeps), VWAP alignment.</td></tr>
+                    <tr><td data-label="Phase"><strong style="color: var(--amber);">Phase 3</strong></td><td data-label="Module">Backtesting & Validation</td><td data-label="Description">In-Sample vs. Out-of-Sample splits. Monte Carlo simulation. The 12 Rules.</td></tr>
+                    <tr><td data-label="Phase"><strong style="color: var(--amber);">Phase 4</strong></td><td data-label="Module">Risk & Position Sizing</td><td data-label="Description">Kelly Criterion, Fixed Fractional sizing, circuit breakers, Prop Firm rules.</td></tr>
+                    <tr><td data-label="Phase"><strong style="color: var(--amber);">Phase 5</strong></td><td data-label="Module">Optimization & Regime</td><td data-label="Description">Avoiding curve-fitting. Volatility filters. Adapting to Bull/Bear/Choppy regimes.</td></tr>
+                    <tr><td data-label="Phase"><strong style="color: var(--amber);">Phase 6</strong></td><td data-label="Module">Portfolio & Retirement</td><td data-label="Description">Combining uncorrelated strategies. Knowing exactly when to retire a strategy.</td></tr>
+                </tbody>
+            </table>
+            
+            <div style="margin-top: 32px; padding-top: 24px; border-top: 1px dashed var(--panel-border); text-align: center;">
+                <p style="color: var(--text-dim);">The full textbook is currently being synthesized from 5,000+ research papers by Indus AI.</p>
+                <a href="#" style="display: inline-block; margin-top: 16px; padding: 12px 24px; background: var(--amber); color: #000; text-decoration: none; font-family: var(--mono); font-weight: 700; cursor: not-allowed; opacity: 0.5;">DOWNLOAD TEXTBOOK (COMING SOON)</a>
+            </div>
+        </div>
+    </div>
+    </main>
+        
+    <footer class="term-footer">
+        <div style="margin-bottom: 16px;"><strong style="color: var(--amber);">ULTRA EDGE RESEARCH</strong> · SYSTEMATIC MACRO & CROSS-ASSET</div>
+        <div style="display: flex; justify-content: center; gap: 24px; margin-bottom: 16px;">
+            <a href="mailto:abhishekgupta10m@gmail.com">EMAIL</a>
+            <a href="https://github.com/ABHI99335" target="_blank">GITHUB</a>
+            <a href="https://www.instagram.com/abhishex08" target="_blank">INSTAGRAM</a>
+        </div>
+        <div style="font-size: 10px; max-width: 800px; margin: 0 auto; color: #4B5563;">DISCLOSURE: This site is for informational purposes only and does not constitute an offer to buy or sell any security. Past performance is not indicative of future results.</div>
+    </footer>
+     
+    </body></html>
