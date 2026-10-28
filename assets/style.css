@@ -23,7 +23,7 @@ body { background-color: var(--void); color: var(--text); font-family: var(--san
 h1, h2, h3, h4 { font-family: var(--mono); color: var(--amber); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
 h1 { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1.1; }
 h2 { font-size: 1.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid var(--panel-border); padding-bottom: 0.5rem; color: var(--ice); }
-h3 { font-size: 1.2rem; color: var(--amber); margin-bottom: 0.5rem; }
+h3 { font-size: 1.2rem; color: var(--amber); margin-bottom: 0.5rem; word-break: break-word; overflow-wrap: break-word; }
 p { margin-bottom: 1.5rem; color: var(--text-dim); max-width: 80ch; }
 a { color: var(--amber); text-decoration: none; } a:hover { text-decoration: underline; }
 ul { margin-bottom: 1.5rem; padding-left: 1.5rem; color: var(--text-dim); }
