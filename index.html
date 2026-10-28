@@ -19,11 +19,23 @@
         <div class="splash-panel bottom"></div>
         <div class="splash-content" id="splash-content">
             <svg class="jarvis-svg" viewBox="0 0 200 200">
-                <circle cx="100" cy="100" r="95" fill="none" stroke="var(--amber)" stroke-width="1" stroke-dasharray="4 8" class="spin-slow" opacity="0.6"/>
-                <circle cx="100" cy="100" r="75" fill="none" stroke="var(--amber)" stroke-width="3" stroke-dasharray="60 30 10 30" class="spin-reverse"/>
-                <circle cx="100" cy="100" r="55" fill="none" stroke="var(--amber-dim)" stroke-width="1"/>
-                <circle cx="100" cy="100" r="45" fill="none" stroke="var(--amber)" stroke-width="2" stroke-dasharray="10 5"/>
-                <path d="M 100 5 A 95 95 0 0 1 195 100" fill="none" stroke="var(--amber)" stroke-width="4" class="spin-fast"/>
+                <!-- Outer subtle ring -->
+                <circle cx="100" cy="100" r="98" fill="none" stroke="var(--amber)" stroke-width="0.5" stroke-dasharray="2 6" class="spin-slow" opacity="0.4"/>
+                <!-- Outer thick segmented ring -->
+                <circle cx="100" cy="100" r="90" fill="none" stroke="var(--amber)" stroke-width="1.5" stroke-dasharray="80 40 20 40" class="spin-medium"/>
+                <!-- Tick marks ring -->
+                <circle cx="100" cy="100" r="78" fill="none" stroke="var(--amber)" stroke-width="5" stroke-dasharray="2 10" class="spin-slow" opacity="0.8"/>
+                <!-- Middle solid ring -->
+                <circle cx="100" cy="100" r="65" fill="none" stroke="var(--amber-dim)" stroke-width="1"/>
+                <!-- Inner segmented ring -->
+                <circle cx="100" cy="100" r="55" fill="none" stroke="var(--amber)" stroke-width="3" stroke-dasharray="30 15 5 15" class="spin-fast"/>
+                <!-- Core ring -->
+                <circle cx="100" cy="100" r="40" fill="none" stroke="var(--amber)" stroke-width="1" stroke-dasharray="4 4"/>
+                <!-- Center crosshair -->
+                <circle cx="100" cy="100" r="15" fill="none" stroke="var(--amber)" stroke-width="2" class="spin-medium"/>
+                <!-- Fast rotating glowing arcs -->
+                <path d="M 100 2 A 98 98 0 0 1 198 100" fill="none" stroke="var(--amber)" stroke-width="4" class="spin-fast" filter="drop-shadow(0 0 5px var(--amber))"/>
+                <path d="M 100 198 A 98 98 0 0 1 2 100" fill="none" stroke="var(--amber)" stroke-width="4" class="spin-slow" filter="drop-shadow(0 0 5px var(--amber))"/>
             </svg>
             <div class="splash-title">ULTRA EDGE</div>
             <div class="splash-line"></div>
