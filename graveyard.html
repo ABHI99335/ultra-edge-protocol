@@ -37,19 +37,67 @@
         
         <main class="page-container">
             
-    <div class="panel"><div class="panel-header"><div class="panel-title">F4 · RESEARCH POST-MORTEMS</div></div>
-        <h1>The Graveyard</h1><p style="font-size: 1.1rem; color: var(--text);">A quantitative researcher is judged not by the strategies they trade, but by the strategies they have the discipline to throw away. Here are the strategies that almost made it.</p>
-        <div class="grid-2" style="margin-top: 30px;">
-            <div style="border: 1px solid var(--panel-border); padding: 24px; background: #050505;"><h3 style="color: var(--down);">NQ 1m Scalp</h3><p><strong>Close-to-Success:</strong> 63.5% Win Rate.</p><p style="font-size: 0.9rem;"><strong>Fatal Flaw:</strong> Cost-to-Risk Ratio. Median risk 1.50 pts. Cost 1.0 pt. Cost 66% of risk. Expected Value negative. Wiped to $0.</p></div>
-            <div style="border: 1px solid var(--panel-border); padding: 24px; background: #050505;"><h3 style="color: var(--down);">NAS100 Overnight</h3><p><strong>Close-to-Success:</strong> Generated +21,300 gross points.</p><p style="font-size: 0.9rem;"><strong>Fatal Flaw:</strong> Max Drawdown. Overlapping 14 entries multiplied exposure, creating a -32,026 point Max Drawdown.</p></div>
-            <div style="border: 1px solid var(--panel-border); padding: 24px; background: #050505;"><h3 style="color: var(--down);">NAS100 30-Min ORB</h3><p><strong>Close-to-Success:</strong> 71.5% Continuation Rate.</p><p style="font-size: 0.9rem;"><strong>Fatal Flaw:</strong> Whipsaw. The "continuation rate" only measured daily close. Stop at opposite OR boundary resulted in 22.3% WR and -79% DD.</p></div>
-            <div style="border: 1px solid var(--panel-border); padding: 24px; background: #050505;"><h3 style="color: var(--down);">XAU Keltner</h3><p><strong>Close-to-Success:</strong> Vendor claimed 53.3% WR and PF 2.79.</p><p style="font-size: 0.9rem;"><strong>Fatal Flaw:</strong> Falling Knives. Triggering on a wick touch resulted in a 28.6% win rate and -100% CAGR. Needs a trend filter.</p></div>
-            <div style="border: 1px solid var(--panel-border); padding: 24px; background: #050505;"><h3 style="color: var(--down);">NQ Streak Fade</h3><p><strong>Close-to-Success:</strong> 70.1% Win Rate.</p><p style="font-size: 0.9rem;"><strong>Fatal Flaw:</strong> Risk-Reward Math. TP 20 pts, SL 60 pts. 70% WR not enough to overcome 1:3 RR. PF was 0.88.</p></div>
-            <div style="border: 1px solid var(--panel-border); padding: 24px; background: #050505;"><h3 style="color: var(--down);">Zeiierman S/R</h3><p><strong>Close-to-Success:</strong> Visually flawless S/R levels on TradingView.</p><p style="font-size: 0.9rem;"><strong>Fatal Flaw:</strong> Over-trading chop. Triggering on every volume pivot resulted in 26,000 trades and 31.6% WR. Visual confirmation does not equal algorithmic edge.</p></div>
-            <div style="border: 1px solid var(--panel-border); padding: 24px; background: #050505;"><h3 style="color: var(--down);">Mean Reversion Trap</h3><p><strong>Close-to-Success:</strong> 78.1% Win Rate (Looked incredible).</p><p style="font-size: 0.9rem;"><strong>Fatal Flaw:</strong> RR < 1 Math. Risked 2.0 ATR to make 0.5 ATR. Even winning 8 out of 10 times, the 2 losses wiped out the profit. PF 0.93.</p></div>
-            <div style="border: 1px solid var(--panel-border); padding: 24px; background: #050505;"><h3 style="color: var(--down);">AOX Model</h3><p><strong>Close-to-Success:</strong> Deep application of ICT PO3 and SMT concepts.</p><p style="font-size: 0.9rem;"><strong>Fatal Flaw:</strong> Gross edge was 1.05 PF. Once a $0.30 spread was applied, the 30,000 trades bled out to a 0.88 PF. The limits are too close to the sweep; transaction costs eat the reversal.</p></div>
-            <div style="border: 1px solid var(--panel-border); padding: 24px; background: #050505;"><h3 style="color: var(--down);">Fibonacci Limit Fade</h3><p><strong>Close-to-Success:</strong> Beautiful theory of fading algorithmic overreactions.</p><p style="font-size: 0.9rem;"><strong>Fatal Flaw:</strong> Stepping in front of momentum. Placing limits at 2.25/4.25 extensions resulted in a 1.3% Win Rate because the market continues trending.</p></div>
-        </div>
+    <div class="panel">
+        <div class="panel-header"><div class="panel-title">F4 · RESEARCH POST-MORTEMS</div></div>
+        <h1>The Graveyard</h1>
+        <p style="font-size: 1.1rem; color: var(--text);">A quantitative researcher is judged not by the strategies they trade, but by the strategies they have the discipline to throw away. Here are the strategies that almost made it.</p>
+        
+        <table class="term-table" style="margin-top: 30px;">
+            <thead>
+                <tr>
+                    <th style="width: 20%;">STRATEGY</th>
+                    <th style="width: 25%;">CLOSE TO SUCCESS</th>
+                    <th style="width: 55%;">FATAL FLAW</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td data-label="Strategy"><strong style="color: var(--down);">NQ 1m Scalp</strong></td>
+                    <td data-label="Close to Success">63.5% Win Rate.</td>
+                    <td data-label="Fatal Flaw">Cost-to-Risk Ratio. Median risk 1.50 pts. Cost 1.0 pt. Cost 66% of risk. Expected Value negative. Wiped to $0.</td>
+                </tr>
+                <tr>
+                    <td data-label="Strategy"><strong style="color: var(--down);">NAS100 Overnight</strong></td>
+                    <td data-label="Close to Success">Generated +21,300 gross points.</td>
+                    <td data-label="Fatal Flaw">Max Drawdown. Overlapping 14 entries multiplied exposure, creating a -32,026 point Max Drawdown.</td>
+                </tr>
+                <tr>
+                    <td data-label="Strategy"><strong style="color: var(--down);">NAS100 30-Min ORB</strong></td>
+                    <td data-label="Close to Success">71.5% Continuation Rate.</td>
+                    <td data-label="Fatal Flaw">Whipsaw. The "continuation rate" only measured daily close. Stop at opposite OR boundary resulted in 22.3% WR and -79% DD.</td>
+                </tr>
+                <tr>
+                    <td data-label="Strategy"><strong style="color: var(--down);">XAU Keltner</strong></td>
+                    <td data-label="Close to Success">Vendor claimed 53.3% WR and PF 2.79.</td>
+                    <td data-label="Fatal Flaw">Falling Knives. Triggering on a wick touch resulted in a 28.6% win rate and -100% CAGR. Needs a trend filter.</td>
+                </tr>
+                <tr>
+                    <td data-label="Strategy"><strong style="color: var(--down);">NQ Streak Fade</strong></td>
+                    <td data-label="Close to Success">70.1% Win Rate.</td>
+                    <td data-label="Fatal Flaw">Risk-Reward Math. TP 20 pts, SL 60 pts. 70% WR not enough to overcome 1:3 RR. PF was 0.88.</td>
+                </tr>
+                <tr>
+                    <td data-label="Strategy"><strong style="color: var(--down);">Zeiierman S/R</strong></td>
+                    <td data-label="Close to Success">Visually flawless S/R levels on TradingView.</td>
+                    <td data-label="Fatal Flaw">Over-trading chop. Triggering on every volume pivot resulted in 26,000 trades and 31.6% WR. Visual confirmation does not equal algorithmic edge.</td>
+                </tr>
+                <tr>
+                    <td data-label="Strategy"><strong style="color: var(--down);">Mean Reversion Trap</strong></td>
+                    <td data-label="Close to Success">78.1% Win Rate (Looked incredible).</td>
+                    <td data-label="Fatal Flaw">RR &lt; 1 Math. Risked 2.0 ATR to make 0.5 ATR. Even winning 8 out of 10 times, the 2 losses wiped out the profit. PF 0.93.</td>
+                </tr>
+                <tr>
+                    <td data-label="Strategy"><strong style="color: var(--down);">AOX Model</strong></td>
+                    <td data-label="Close to Success">Deep application of ICT PO3 and SMT concepts.</td>
+                    <td data-label="Fatal Flaw">Gross edge was 1.05 PF. Once a $0.30 spread was applied, the 30,000 trades bled out to a 0.88 PF. The limits are too close to the sweep; transaction costs eat the reversal.</td>
+                </tr>
+                <tr>
+                    <td data-label="Strategy"><strong style="color: var(--down);">Fibonacci Limit Fade</strong></td>
+                    <td data-label="Close to Success">Beautiful theory of fading algorithmic overreactions.</td>
+                    <td data-label="Fatal Flaw">Stepping in front of momentum. Placing limits at 2.25/4.25 extensions resulted in a 1.3% Win Rate because the market continues trending.</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     
         </main>
