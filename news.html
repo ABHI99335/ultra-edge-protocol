@@ -8,29 +8,12 @@
         <link rel="stylesheet" href="assets/style.css">
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🖥️</text></svg>">
         <script>
-          MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$','$$'], ['\\[', '\\]']] } };
+          MathJax = { tex: { inlineMath: [['$', '$'], ['\(', '\)']], displayMath: [['$$','$$'], ['\[', '\]']] } };
         </script>
         <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
     <body>
-
-        <div id="splash-screen">
-            <div class="splash-panel top"></div>
-            <div class="splash-panel bottom"></div>
-            <div class="splash-content" id="splash-content">
-                <svg class="jarvis-svg" viewBox="0 0 200 200">
-                    <circle cx="100" cy="100" r="95" fill="none" stroke="var(--amber)" stroke-width="1" stroke-dasharray="4 8" class="spin-slow" opacity="0.6"/>
-                    <circle cx="100" cy="100" r="75" fill="none" stroke="var(--amber)" stroke-width="3" stroke-dasharray="60 30 10 30" class="spin-reverse"/>
-                    <circle cx="100" cy="100" r="55" fill="none" stroke="var(--amber-dim)" stroke-width="1"/>
-                    <circle cx="100" cy="100" r="45" fill="none" stroke="var(--amber)" stroke-width="2" stroke-dasharray="10 5"/>
-                    <path d="M 100 5 A 95 95 0 0 1 195 100" fill="none" stroke="var(--amber)" stroke-width="4" class="spin-fast"/>
-                </svg>
-                <div class="splash-title">ULTRA EDGE</div>
-                <div class="splash-line"></div>
-                <div class="splash-subtitle">SYSTEM BOOT</div>
-            </div>
-        </div>
-
+        
         
     <header class="term-header">
         <a class="term-brand" href="index.html">ULTRA EDGE <span>▸ SYSTEM</span></a>
@@ -77,15 +60,28 @@
             .news-title:hover { color: var(--ice); }
             .source-world { color: var(--ice); border: 1px solid rgba(111, 183, 214, 0.3); padding: 1px 4px; }
             .source-mkt { color: var(--up); border: 1px solid rgba(63, 178, 127, 0.3); padding: 1px 4px; }
-            
-/* SPLASH SCREEN */
+            /* SPLASH SCREEN */
 #splash-screen { position: fixed; inset: 0; z-index: 99999; display: flex; flex-direction: column; justify-content: space-between; pointer-events: none; overflow: hidden; }
 .splash-panel { width: 100%; height: 50vh; background: var(--void); transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1); position: relative; z-index: 1; }
 .splash-panel.top { border-bottom: 1px solid var(--amber); }
 .splash-panel.bottom { border-top: 1px solid var(--amber); }
-.splash-content { position: fixed; inset: 0; z-index: 10000; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.4s ease; }
+
+/* PERFECT ABSOLUTE CENTERING */
+.splash-content { 
+    position: fixed; 
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 10000; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    transition: opacity 0.4s ease; 
+}
+
 .splash-content.fade-out { opacity: 0; }
-.jarvis-svg { width: 300px; height: 300px; margin-bottom: 20px; filter: drop-shadow(0 0 10px rgba(255,176,0,0.3)); }
+.jarvis-svg { width: 260px; height: 260px; margin-bottom: 15px; filter: drop-shadow(0 0 15px rgba(255,176,0,0.4)); }
 .spin-slow { transform-origin: 100px 100px; animation: spin 8s linear infinite; }
 .spin-reverse { transform-origin: 100px 100px; animation: spin-rev 5s linear infinite; }
 .spin-fast { transform-origin: 100px 100px; animation: spin 2s linear infinite; }
@@ -172,22 +168,7 @@
     </footer>
     
         
-
-    <script>
-        setTimeout(function() {
-            var splash = document.getElementById('splash-screen');
-            var content = document.getElementById('splash-content');
-            if(splash) {
-                content.classList.add('fade-out');
-                splash.classList.add('open');
-            }
-        }, 2000);
-        setTimeout(function() {
-            var splash = document.getElementById('splash-screen');
-            if(splash) splash.style.display = 'none';
-        }, 3000);
-    </script>
-
+        
     </body>
     </html>
     
