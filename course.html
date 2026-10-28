@@ -14,20 +14,22 @@
     </head>
     <body>
 
-    <div id="splash-screen">
-        <div class="splash-panel top"></div>
-        <div class="splash-panel bottom"></div>
-        <div class="splash-content" id="splash-content">
-            <div class="ring-container">
-                <div class="ring ring-1"></div>
-                <div class="ring ring-2"></div>
-                <div class="ring ring-3"></div>
+        <div id="splash-screen">
+            <div class="splash-panel top"></div>
+            <div class="splash-panel bottom"></div>
+            <div class="splash-content" id="splash-content">
+                <svg class="jarvis-svg" viewBox="0 0 200 200">
+                    <circle cx="100" cy="100" r="95" fill="none" stroke="var(--amber)" stroke-width="1" stroke-dasharray="4 8" class="spin-slow" opacity="0.6"/>
+                    <circle cx="100" cy="100" r="75" fill="none" stroke="var(--amber)" stroke-width="3" stroke-dasharray="60 30 10 30" class="spin-reverse"/>
+                    <circle cx="100" cy="100" r="55" fill="none" stroke="var(--amber-dim)" stroke-width="1"/>
+                    <circle cx="100" cy="100" r="45" fill="none" stroke="var(--amber)" stroke-width="2" stroke-dasharray="10 5"/>
+                    <path d="M 100 5 A 95 95 0 0 1 195 100" fill="none" stroke="var(--amber)" stroke-width="4" class="spin-fast"/>
+                </svg>
+                <div class="splash-title">ULTRA EDGE</div>
+                <div class="splash-line"></div>
+                <div class="splash-subtitle">SYSTEM BOOT</div>
             </div>
-            <div class="splash-title">ULTRA EDGE</div>
-            <div class="splash-line" id="splash-line"></div>
-            <div class="splash-subtitle">SYSTEM BOOT</div>
         </div>
-    </div>
 
         
     <header class="term-header">
@@ -3356,6 +3358,22 @@ $$q = q_{\text{base}} \cdot \min!\left(\frac{\sigma_{\text{target}}}{\hat{\sigma
     </footer>
     
         
+
+    <script>
+        setTimeout(function() {
+            var splash = document.getElementById('splash-screen');
+            var content = document.getElementById('splash-content');
+            if(splash) {
+                content.classList.add('fade-out');
+                splash.classList.add('open');
+            }
+        }, 2000);
+        setTimeout(function() {
+            var splash = document.getElementById('splash-screen');
+            if(splash) splash.style.display = 'none';
+        }, 3000);
+    </script>
+
     </body>
     </html>
     
