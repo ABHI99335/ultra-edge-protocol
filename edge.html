@@ -178,6 +178,12 @@
                         <svg viewBox="0 0 100 30" class="sparkline"><defs><linearGradient id="g12" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3FB27F" stop-opacity="0.4"/><stop offset="100%" stop-color="#3FB27F" stop-opacity="0"/></linearGradient></defs><path d="M0,25 L15,20 L30,22 L45,15 L60,18 L75,5 L90,8 L100,2 L100,30 L0,30 Z" fill="url(#g12)"/><path d="M0,25 L15,20 L30,22 L45,15 L60,18 L75,5 L90,8 L100,2" fill="none" stroke="#3FB27F" stroke-width="1.5"/></svg>
                     </td>
                 </tr>
+
+                <tr>
+                    <td data-label="Strategy"><strong style="color: var(--down);">Intraday Trend Following (NAS100)</strong></td>
+                    <td data-label="Close to Success">Attempted to force a 200 EMA trend filter into a 30-day prop firm intraday schedule.</td>
+                    <td data-label="Fatal Flaw">The EOD close destroys the edge. Trends need days to expand, but you are forced to exit at 16:00. Spread drag on 0.5 RR setups bled the account (PF 0.71).</td>
+                </tr>
             </tbody>
         </table>
     </div>
