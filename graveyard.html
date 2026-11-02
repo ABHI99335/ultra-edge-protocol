@@ -191,6 +191,127 @@
 })();
 </script>
 
+        
+<script>
+(function(){
+  var tables = document.querySelectorAll('table.term-table');
+  var edge = null;
+  for (var i = 0; i < tables.length; i++){
+    if (tables[i].textContent.indexOf('ALPHA CODENAME') >= 0){ edge = tables[i]; break; }
+  }
+  if (!edge) return;
+  var rows = edge.querySelectorAll('tbody tr');
+  if (!rows.length) return;
+
+  var grid = document.createElement('div');
+  grid.className = 'flip-grid';
+
+  function cell(tr, label){
+    return tr.querySelector('[data-label="' + label + '"]');
+  }
+  function val(tr, label){
+    var c = cell(tr, label);
+    return c ? c.textContent.trim() : '';
+  }
+
+  for (var r = 0; r < rows.length; r++){
+    (function(tr){
+      var name = val(tr, 'Codename');
+      var cls = val(tr, 'Classification');
+      var wr = val(tr, 'Win Rate');
+      var exp = val(tr, 'Expectancy');
+      var dd = val(tr, 'Max DD');
+      var fam = val(tr, 'Strategy Family');
+      var curveCell = cell(tr, 'Curve');
+      var svg = curveCell ? curveCell.querySelector('svg') : null;
+
+      var card = document.createElement('div');
+      card.className = 'flip-card';
+
+      var rotor = document.createElement('div');
+      rotor.className = 'flip-card__rotor';
+
+      var front = document.createElement('div');
+      front.className = 'flip-card__face flip-card__face--front';
+      front.innerHTML = '<div class="fc-title">' + name + '</div>'
+        + '<div class="fc-curve">' + (svg ? svg.outerHTML : '') + '</div>'
+        + '<div class="fc-hint">TAP TO FLIP</div>'
+        + '<span class="flip-card__glare"></span>';
+
+      var expCls = exp.indexOf('-') === 0 ? 'down' : 'up';
+      var ddCls = dd.indexOf('-') === 0 ? 'down' : 'up';
+      var clsCls = cls.toLowerCase().indexOf('provisional') >= 0 ? 'warn' : '';
+
+      var back = document.createElement('div');
+      back.className = 'flip-card__face flip-card__face--back';
+      back.innerHTML = '<div class="fc-title" style="min-height:auto;margin-bottom:8px;">' + name + '</div>'
+        + '<div class="fc-row"><span class="fc-k">Classification</span><span class="fc-v ' + clsCls + '">' + cls + '</span></div>'
+        + '<div class="fc-row"><span class="fc-k">Win Rate</span><span class="fc-v">' + wr + '</span></div>'
+        + '<div class="fc-row"><span class="fc-k">Expectancy</span><span class="fc-v ' + expCls + '">' + exp + '</span></div>'
+        + '<div class="fc-row"><span class="fc-k">Max DD</span><span class="fc-v ' + ddCls + '">' + dd + '</span></div>'
+        + '<div class="fc-row"><span class="fc-k">Family</span><span class="fc-v">' + fam + '</span></div>'
+        + '<span class="flip-card__glare"></span>';
+
+      rotor.appendChild(front);
+      rotor.appendChild(back);
+      card.appendChild(rotor);
+
+      var deg = 0, base = 0, startX = 0, moved = false, drag = false, pid = null;
+
+      card.addEventListener('pointerdown', function(e){
+        if (e.button !== 0 && e.pointerType === 'mouse') return;
+        pid = e.pointerId; startX = e.clientX; base = deg; moved = false; drag = true;
+        rotor.style.transition = 'none';
+        try { card.setPointerCapture(pid); } catch(err){}
+      });
+      card.addEventListener('pointermove', function(e){
+        if (!drag || e.pointerId !== pid) return;
+        var dx = e.clientX - startX;
+        if (!moved && Math.abs(dx) < 6) return;
+        moved = true;
+        deg = base + (dx / card.offsetWidth) * 180;
+        rotor.style.transform = 'rotateY(' + deg + 'deg)';
+      });
+      function finish(e){
+        if (!drag || e.pointerId !== pid) return;
+        drag = false;
+        rotor.style.transition = 'transform .65s cubic-bezier(.2,.8,.3,1)';
+        if (!moved) deg = Math.round(deg / 180) * 180 + 180;
+        else deg = Math.round(deg / 180) * 180;
+        rotor.style.transform = 'rotateY(' + deg + 'deg)';
+      }
+      card.addEventListener('pointerup', finish);
+      card.addEventListener('pointercancel', finish);
+      card.addEventListener('pointerleave', function(e){ if (drag && e.pointerId === pid) finish(e); });
+
+      card.addEventListener('pointermove', function(e){
+        if (drag || e.pointerType === 'touch') return;
+        var b = card.getBoundingClientRect();
+        var gl = card.querySelector('.flip-card__glare');
+        if (gl){
+          gl.style.setProperty('--fc-gx', ((e.clientX - b.left) / b.width * 100) + '%');
+          gl.style.setProperty('--fc-gy', ((e.clientY - b.top) / b.height * 100) + '%');
+        }
+      });
+
+      card.addEventListener('keydown', function(e){
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        e.preventDefault();
+        deg = Math.round(deg / 180) * 180 + 180;
+        rotor.style.transition = 'transform .65s cubic-bezier(.2,.8,.3,1)';
+        rotor.style.transform = 'rotateY(' + deg + 'deg)';
+      });
+      card.tabIndex = 0;
+
+      grid.appendChild(card);
+    })(rows[r]);
+  }
+
+  edge.parentNode.insertBefore(grid, edge);
+  edge.style.display = 'none';
+})();
+</script>
+
     </body>
     </html>
     
