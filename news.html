@@ -384,6 +384,113 @@ boot();
 })();
 </script>
 
+        
+<script>
+(function(){
+  var cv = document.getElementById('ai-veil');
+  if (!cv) return;
+  var src = cv.getAttribute('data-src');
+  if (!src || src.length < 100) return;
+  var ctx = cv.getContext('2d');
+  var img = new Image();
+  var dith = null, W = 0, H = 0, cell = 4;
+  var mx = -999, my = -999, tx = 0, ty = 0, R = 140, active = false;
+  var t0 = performance.now();
+
+  function build(){
+    var host = cv.parentNode;
+    W = Math.max(240, Math.min(380, host.clientWidth || 340));
+    H = Math.round(W * 1.27);
+    cv.width = W; cv.height = H;
+    var cols = Math.max(10, Math.floor(W / cell));
+    var rows = Math.max(10, Math.floor(H / cell));
+    var o = document.createElement('canvas');
+    o.width = cols; o.height = rows;
+    var ox = o.getContext('2d');
+    ox.fillStyle = '#000'; ox.fillRect(0, 0, cols, rows);
+    var s = Math.min(cols / img.width, rows / img.height);
+    var dw = img.width * s, dh = img.height * s;
+    ox.drawImage(img, (cols - dw) / 2, (rows - dh) / 2, dw, dh);
+    var id = ox.getImageData(0, 0, cols, rows).data;
+    var g = new Float32Array(cols * rows);
+    for (var i = 0; i < cols * rows; i++){
+      g[i] = (0.2126 * id[i * 4] + 0.7152 * id[i * 4 + 1] + 0.0722 * id[i * 4 + 2]) / 255;
+    }
+    var levels = 3;
+    for (var y = 0; y < rows; y++){
+      for (var x = 0; x < cols; x++){
+        var p = y * cols + x;
+        var old = g[p];
+        var q = Math.round(old * (levels - 1)) / (levels - 1);
+        var err = old - q;
+        g[p] = q;
+        if (x + 1 < cols) g[p + 1] += err * 7 / 16;
+        if (y + 1 < rows){
+          if (x > 0) g[p + cols - 1] += err * 3 / 16;
+          g[p + cols] += err * 5 / 16;
+          if (x + 1 < cols) g[p + cols + 1] += err * 1 / 16;
+        }
+      }
+    }
+    dith = document.createElement('canvas');
+    dith.width = W; dith.height = H;
+    var dc = dith.getContext('2d');
+    dc.fillStyle = '#040406'; dc.fillRect(0, 0, W, H);
+    for (var y2 = 0; y2 < rows; y2++){
+      for (var x2 = 0; x2 < cols; x2++){
+        var lvl = Math.round(g[y2 * cols + x2] * (levels - 1));
+        if (lvl <= 0) continue;
+        dc.fillStyle = lvl === 1 ? 'rgb(122,84,0)' : 'rgb(255,176,0)';
+        dc.fillRect(x2 * cell, y2 * cell, cell, cell);
+      }
+    }
+  }
+
+  function draw(){
+    var t = (performance.now() - t0) / 1000;
+    if (!active){
+      tx = W * 0.5 + Math.sin(t * 0.42) * W * 0.17;
+      ty = H * 0.46 + Math.cos(t * 0.31) * H * 0.15;
+      R = 155;
+    } else {
+      R = 135;
+    }
+    mx += (tx - mx) * 0.10;
+    my += (ty - my) * 0.10;
+    ctx.clearRect(0, 0, W, H);
+    ctx.drawImage(dith, 0, 0);
+    ctx.fillStyle = 'rgba(4,4,6,0.88)';
+    ctx.fillRect(0, 0, W, H);
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(mx, my, R, 0, Math.PI * 2);
+    ctx.clip();
+    ctx.drawImage(dith, 0, 0);
+    ctx.restore();
+    var grad = ctx.createRadialGradient(mx, my, R * 0.55, mx, my, R * 1.2);
+    grad.addColorStop(0, 'rgba(255,176,0,0.12)');
+    grad.addColorStop(1, 'rgba(255,176,0,0)');
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.arc(mx, my, R * 1.2, 0, Math.PI * 2);
+    ctx.fill();
+    requestAnimationFrame(draw);
+  }
+
+  cv.addEventListener('pointermove', function(e){
+    var b = cv.getBoundingClientRect();
+    tx = (e.clientX - b.left) * (W / b.width);
+    ty = (e.clientY - b.top) * (H / b.height);
+    active = true;
+  });
+  cv.addEventListener('pointerleave', function(){ active = false; });
+
+  img.onload = function(){ build(); draw(); };
+  img.src = src;
+  window.addEventListener('resize', function(){ if (dith) build(); });
+})();
+</script>
+
     </body>
     </html>
     
