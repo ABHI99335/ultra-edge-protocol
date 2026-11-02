@@ -37,121 +37,172 @@
         
         <main class="page-container">
             
-    <div class="panel">
-        <div class="panel-header">
-            <div class="panel-title">F7 Â· GLOBAL NEWS WIRE</div>
-            <div style="color: var(--down); font-weight: bold; display: flex; align-items: center; gap: 6px;">
-                <span style="display: inline-block; width: 8px; height: 8px; background: var(--down); border-radius: 50%; animation: pulse 1.5s infinite;"></span>
-                LIVE INTELLIGENCE
-            </div>
-        </div>
-        <h1>Global News Wire</h1>
-        <p style="font-size: 1.1rem; color: var(--text);">Breaking global macro, geopolitical, and financial news. Filtered for market impact.</p>
-        
-        <style>
-            @keyframes pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-            .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 30px; }
-            .news-column { background: #050505; border: 1px solid var(--panel-border); padding: 20px; }
-            .news-header { font-family: var(--mono); color: var(--amber); font-size: 1rem; border-bottom: 1px solid var(--panel-border); padding-bottom: 10px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.1em;}
-            .news-item { border-bottom: 1px solid #111; padding: 12px 0; }
-            .news-item:last-child { border-bottom: none; }
-            .news-meta { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 10px; color: var(--text-dim); margin-bottom: 6px; text-transform: uppercase;}
-            .news-title { color: #FFF; font-weight: 500; font-size: 0.95rem; line-height: 1.4; text-decoration: none; display: block; transition: color 0.2s;}
-            .news-title:hover { color: var(--ice); }
-            .source-world { color: var(--ice); border: 1px solid rgba(111, 183, 214, 0.3); padding: 1px 4px; }
-            .source-mkt { color: var(--up); border: 1px solid rgba(63, 178, 127, 0.3); padding: 1px 4px; }
-            /* SPLASH SCREEN */
-#splash-screen { position: fixed; inset: 0; z-index: 99999; display: flex; flex-direction: column; justify-content: space-between; pointer-events: none; overflow: hidden; }
-.splash-panel { width: 100%; height: 50vh; background: var(--void); transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1); position: relative; z-index: 1; }
-/* Removed borders here */
+    <div class="panel-title">F7 &middot; MARKET BIAS ENGINE</div>
+    <h1>Market Bias</h1>
+    <p style="font-size: 1.1rem; color: var(--text);">Every financial headline scored into a directional read per asset. Each gauge is built from the headlines listed below it &mdash; click a gauge to see exactly what moved it.</p>
 
-/* PERFECT ABSOLUTE CENTERING */
-.splash-content { 
-    position: fixed; 
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    z-index: 10000; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    transition: opacity 0.4s ease; 
-}
+    <style>
+    .bias-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 28px; }
+    @media (max-width: 1100px) { .bias-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px)  { .bias-grid { grid-template-columns: 1fr; } }
+    .bias-card { background: #050505; border: 1px solid var(--panel-border); padding: 14px 10px 10px; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; }
+    .bias-card:hover { border-color: var(--amber); }
+    .bias-card.active { border-color: var(--amber); background: #0a0a0a; }
+    .bias-name { font-family: var(--mono); font-size: 11px; color: var(--text); letter-spacing: .08em; margin-top: 4px; }
+    .bias-verdict { font-family: var(--mono); font-size: 10px; letter-spacing: .1em; margin-top: 3px; }
+    .bias-count { font-family: var(--mono); font-size: 9px; color: var(--text-dim); margin-top: 2px; }
+    .v-bull { color: #3FB27F; } .v-bear { color: #E5484D; } .v-neut { color: #8A8A8A; }
+    .news-grid { display: grid; grid-template-columns: 1fr; gap: 16px; margin-top: 26px; }
+    .news-item { border-bottom: 1px solid #111; padding: 13px 0; }
+    .news-item:last-child { border-bottom: none; }
+    .news-meta { display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 10px; color: var(--text-dim); margin-bottom: 6px; gap: 10px; flex-wrap: wrap; }
+    .news-title { color: #FFF; font-weight: 500; font-size: 0.95rem; line-height: 1.45; text-decoration: none; display: block; transition: color .2s; }
+    .news-title:hover { color: var(--ice); }
+    .chip { font-family: var(--mono); font-size: 9px; padding: 2px 7px; border: 1px solid var(--panel-border); margin-right: 5px; display: inline-block; }
+    .chip-bull { color: #3FB27F; border-color: #3FB27F55; }
+    .chip-bear { color: #E5484D; border-color: #E5484D55; }
+    .feed-bar { display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 10px; color: var(--text-dim); margin-top: 30px; padding-bottom: 8px; border-bottom: 1px solid var(--panel-border); }
+    </style>
 
-.splash-content.fade-out { opacity: 0; }
-.jarvis-svg { width: 300px; height: 300px; margin-bottom: 15px; filter: drop-shadow(0 0 15px rgba(255,176,0,0.3)); }
-.spin-slow { transform-origin: 100px 100px; animation: spin 12s linear infinite; }
-.spin-medium { transform-origin: 100px 100px; animation: spin-rev 8s linear infinite; }
-.spin-fast { transform-origin: 100px 100px; animation: spin 3s linear infinite; }
-@keyframes spin { 100% { transform: rotate(360deg); } }
-@keyframes spin-rev { 100% { transform: rotate(-360deg); } }
-.splash-title { font-family: var(--mono); font-size: 2.5rem; color: var(--amber); font-weight: 700; letter-spacing: 0.2em; text-shadow: 0 0 15px rgba(255,176,0,0.6); margin-bottom: 15px; }
-.splash-line { height: 2px; background: var(--amber); width: 0; animation: expand-line 0.8s ease forwards; box-shadow: 0 0 10px var(--amber); }
-.splash-subtitle { font-family: var(--mono); font-size: 11px; color: var(--ice); margin-top: 15px; letter-spacing: 0.4em; text-transform: uppercase; }
-@keyframes expand-line { 100% { width: 350px; } }
-#splash-screen.open .splash-panel.top { transform: translateY(-100%); }
-#splash-screen.open .splash-panel.bottom { transform: translateY(100%); }
+    <div class="bias-grid" id="bias-grid"></div>
 
-@media (max-width: 900px) { .news-grid { grid-template-columns: 1fr; } }
-        </style>
-
-        <div class="news-grid">
-            <div class="news-column">
-                <div class="news-header">ðŸŒ Global Geopolitics (BBC)</div>
-                <div id="news-world"><div class="text-dim text-center mt-10">Loading headlines...</div></div>
-            </div>
-            <div class="news-column">
-                <div class="news-header">ðŸ“ˆ Market Intelligence (CNBC)</div>
-                <div id="news-markets"><div class="text-dim text-center mt-10">Loading headlines...</div></div>
-            </div>
-        </div>
+    <div class="feed-bar">
+      <span>HEADLINES &middot; <span id="news-count">0</span> market-relevant items</span>
+      <span id="filter-label">SHOWING: ALL ASSETS</span>
     </div>
-    
+    <div class="news-grid"><div id="news-list"><div class="text-dim text-center mt-10">Loading feeds...</div></div></div>
+
     <script>
-    async function fetchNews(feedUrl, containerId, sourceClass, sourceName) {
-        try {
-            const res = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feedUrl)}&api_key=&count=10`);
-            const data = await res.json();
-            
-            if (data.status === 'ok' && data.items.length > 0) {
-                let html = '';
-                data.items.slice(0, 10).forEach(item => {
-                    const date = new Date(item.pubDate);
-                    const timeStr = date.toLocaleTimeString('en-US', {hour: '2-digit', minute:'2-digit'});
-                    const dateStr = date.toLocaleDateString('en-US', {month: 'short', day: 'numeric'});
-                    
-                    html += `<div class="news-item">
-                        <div class="news-meta">
-                            <span class="${sourceClass}">${sourceName}</span>
-                            <span>${dateStr} ${timeStr}</span>
-                        </div>
-                        <a href="${item.link}" target="_blank" class="news-title">${item.title}</a>
-                    </div>`;
-                });
-                document.getElementById(containerId).innerHTML = html;
-            } else {
-                document.getElementById(containerId).innerHTML = `<div class="text-down">Feed unavailable. Check connection.</div>`;
-            }
-        } catch (e) {
-            console.error(e);
-            document.getElementById(containerId).innerHTML = `<div class="text-down">Failed to load feed.</div>`;
+    const ASSETS = [
+      {k:'NAS100', n:'NASDAQ 100', w:['nasdaq','nas100','us100','tech stocks','wall street','s&p','sp500','stocks','equities','dow jones']},
+      {k:'XAUUSD', n:'GOLD', w:['gold','bullion','xau']},
+      {k:'DXY', n:'US DOLLAR', w:['dollar','greenback','dxy','usd']},
+      {k:'EURUSD', n:'EUR / USD', w:['euro','eurusd','ecb','eurozone']},
+      {k:'USDJPY', n:'USD / JPY', w:['yen','jpy','boj','bank of japan']},
+      {k:'BTC', n:'BITCOIN', w:['bitcoin','btc','crypto','cryptocurrency']},
+      {k:'US10Y', n:'US 10Y YIELD', w:['treasury','yields','yield','bonds','10-year','bond market']},
+      {k:'WTI', n:'CRUDE OIL', w:['oil','crude','opec','wti','brent','barrel']}
+    ];
+    const BULL = ['surge','soars','rally','rallies','jump','jumps','rise','rises','rose','gain','gains','climb','climbs','record high','beats','beat','strong','upbeat','boost','boosts','rebound','rebounds','higher','advance','optimism','demand','upgrade'];
+    const BEAR = ['fall','falls','fell','drop','drops','dropped','plunge','plunges','slump','slumps','slide','slides','tumble','tumbles','decline','declines','sink','sinks','crash','crashes','weak','miss','misses','cut','cuts','warning','sell-off','selloff','lower','fear','recession','slowdown','downgrade'];
+
+    const FEEDS = [
+      ['https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114', 'CNBC MARKETS'],
+      ['https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=20910258', 'CNBC ECONOMY'],
+      ['https://finance.yahoo.com/news/rssindex', 'YAHOO FINANCE'],
+      ['https://feeds.content.dowjones.io/public/rss/mw_topstories', 'MARKETWATCH'],
+      ['https://www.fxstreet.com/rss/news', 'FXSTREET'],
+      ['https://www.coindesk.com/arc/outboundfeeds/rss/', 'COINDESK']
+    ];
+
+    let HEADLINES = [];
+    let ACTIVE = null;
+
+    function scoreHeadline(title){
+      const low = ' ' + title.toLowerCase() + ' ';
+      const clauses = low.split(/[.;:,]| as | but | while /);
+      const found = [];
+      ASSETS.forEach(function(a){
+        const hit = clauses.find(function(c){ return a.w.some(function(w){ return c.indexOf(w) >= 0; }); });
+        if (!hit) return;
+        let s = 0;
+        BULL.forEach(function(w){ if (hit.indexOf(w) >= 0) s += 1; });
+        BEAR.forEach(function(w){ if (hit.indexOf(w) >= 0) s -= 1; });
+        if (s === 0) {
+          BULL.forEach(function(w){ if (low.indexOf(w) >= 0) s += 0.5; });
+          BEAR.forEach(function(w){ if (low.indexOf(w) >= 0) s -= 0.5; });
         }
+        if (s !== 0) found.push({k:a.k, s: s > 0 ? 1 : -1});
+      });
+      return found;
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-        const bbcUrl = 'http://feeds.bbci.co.uk/news/world/rss.xml';
-        const cnbcUrl = 'https://search.cnbc.com/rs/search/combinedcms/view.xml?partnerId=wrss01&id=100003114';
-        
-        fetchNews(bbcUrl, 'news-world', 'source-world', 'BBC');
-        fetchNews(cnbcUrl, 'news-markets', 'source-mkt', 'CNBC');
-        
-        // Auto-refresh every 5 minutes
-        setInterval(() => {
-            fetchNews(bbcUrl, 'news-world', 'source-world', 'BBC');
-            fetchNews(cnbcUrl, 'news-markets', 'source-mkt', 'CNBC');
-        }, 300000);
-    });
+    function verdict(t){
+      if (t >= 2) return ['STRONG BULLISH','v-bull'];
+      if (t >= 0.5) return ['BULLISH','v-bull'];
+      if (t <= -2) return ['STRONG BEARISH','v-bear'];
+      if (t <= -0.5) return ['BEARISH','v-bear'];
+      return ['NEUTRAL','v-neut'];
+    }
+
+    function gaugeSVG(t){
+      const clamp = Math.max(-1, Math.min(1, t/3));
+      const th = 90 - clamp*90;
+      const rad = th * Math.PI/180;
+      const nx = 50 + 34*Math.cos(rad), ny = 50 - 34*Math.sin(rad);
+      const col = t >= 0.5 ? '#3FB27F' : (t <= -0.5 ? '#E5484D' : '#8A8A8A');
+      return '<svg viewBox="0 0 100 58" width="100%" height="66">'
+        + '<path d="M 10 50 A 40 40 0 0 1 30 15.4" fill="none" stroke="#E5484D" stroke-width="7" stroke-linecap="round" opacity="0.85"/>'
+        + '<path d="M 30 15.4 A 40 40 0 0 1 70 15.4" fill="none" stroke="#444" stroke-width="7" opacity="0.85"/>'
+        + '<path d="M 70 15.4 A 40 40 0 0 1 90 50" fill="none" stroke="#3FB27F" stroke-width="7" stroke-linecap="round" opacity="0.85"/>'
+        + '<line x1="50" y1="50" x2="' + nx.toFixed(1) + '" y2="' + ny.toFixed(1) + '" stroke="' + col + '" stroke-width="3" stroke-linecap="round"/>'
+        + '<circle cx="50" cy="50" r="3.5" fill="' + col + '"/>'
+        + '</svg>';
+    }
+
+    function renderGauges(){
+      const totals = {};
+      ASSETS.forEach(function(a){ totals[a.k] = {t:0, n:0}; });
+      HEADLINES.forEach(function(h){ h.assets.forEach(function(x){ if (totals[x.k]) { totals[x.k].t += x.s; totals[x.k].n += 1; } }); });
+      document.getElementById('bias-grid').innerHTML = ASSETS.map(function(a){
+        const t = totals[a.k].t, n = totals[a.k].n;
+        const v = verdict(t);
+        return '<div class="bias-card' + (ACTIVE === a.k ? ' active' : '') + '" onclick="setFilter(' + JSON.stringify(a.k) + ')">'
+          + gaugeSVG(t)
+          + '<div class="bias-name">' + a.n + '</div>'
+          + '<div class="bias-verdict ' + v[1] + '">' + v[0] + '</div>'
+          + '<div class="bias-count">' + n + ' headline' + (n === 1 ? '' : 's') + '</div>'
+          + '</div>';
+      }).join('');
+    }
+
+    function setFilter(k){
+      ACTIVE = (ACTIVE === k) ? null : k;
+      renderGauges(); renderNews();
+    }
+
+    function renderNews(){
+      const items = ACTIVE ? HEADLINES.filter(function(h){ return h.assets.some(function(a){ return a.k === ACTIVE; }); }) : HEADLINES;
+      document.getElementById('filter-label').textContent = 'SHOWING: ' + (ACTIVE || 'ALL ASSETS');
+      document.getElementById('news-count').textContent = items.length;
+      const list = document.getElementById('news-list');
+      if (!items.length) { list.innerHTML = '<div class="text-dim text-center mt-10">No market-relevant headlines right now.</div>'; return; }
+      list.innerHTML = items.slice(0, 40).map(function(h){
+        const chips = h.assets.map(function(a){ return '<span class="chip ' + (a.s > 0 ? 'chip-bull' : 'chip-bear') + '">' + a.k + ' ' + (a.s > 0 ? '&#8593;' : '&#8595;') + '</span>'; }).join('');
+        return '<div class="news-item"><div class="news-meta"><span>' + chips + '</span><span>' + h.src + ' &middot; ' + h.time + '</span></div>'
+          + '<a href="' + h.link + '" target="_blank" class="news-title">' + h.title + '</a></div>';
+      }).join('');
+    }
+
+    function loadFeed(url, src){
+      return fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent(url) + '&api_key=&count=20')
+        .then(function(r){ return r.json(); })
+        .then(function(d){
+          if (!d.items) return [];
+          return d.items.map(function(it){
+            const title = (it.title || '').replace(/<[^>]*>/g, '');
+            const assets = scoreHeadline(title);
+            if (!assets.length) return null;
+            const dt = it.pubDate ? new Date(it.pubDate.replace(' ', 'T')) : new Date();
+            return { title: title, link: it.link, src: src, assets: assets, ts: dt.getTime(),
+                     time: dt.toLocaleString('en-GB', {day:'2-digit', month:'short', hour:'2-digit', minute:'2-digit'}) };
+          }).filter(Boolean);
+        })
+        .catch(function(){ return []; });
+    }
+
+    function boot(){
+      Promise.all(FEEDS.map(function(f){ return loadFeed(f[0], f[1]); })).then(function(results){
+        let all = [].concat.apply([], results);
+        const seen = {};
+        all = all.filter(function(h){ const k = h.title.toLowerCase().slice(0,60); if (seen[k]) return false; seen[k] = 1; return true; });
+        all.sort(function(a,b){ return b.ts - a.ts; });
+        HEADLINES = all;
+        renderGauges(); renderNews();
+        if (!all.length) document.getElementById('news-list').innerHTML = '<div class="text-down text-center mt-10">Feeds unavailable. Check connection.</div>';
+      });
+    }
+    boot();
     </script>
     
         </main>
