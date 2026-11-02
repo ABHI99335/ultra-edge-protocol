@@ -10,6 +10,28 @@
 * { box-sizing: border-box; margin: 0; padding: 0; border-radius: 0 !important; }
 body { background-color: var(--void); color: var(--text); font-family: var(--sans); font-size: 14px; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; }
 
+html { background: #000000; }
+body { background-color: transparent; }
+.liquid-bg { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.liquid-bg span { position: absolute; display: block; border-radius: 50%; filter: blur(90px); will-change: transform; }
+.liquid-bg span:nth-child(1) { width: 52vw; height: 52vw; left: -12vw; top: -14vh;
+  background: radial-gradient(circle, rgba(255,176,0,0.13) 0%, rgba(255,176,0,0) 68%);
+  animation: liquidA 38s ease-in-out infinite; }
+.liquid-bg span:nth-child(2) { width: 46vw; height: 46vw; right: -14vw; top: 18vh;
+  background: radial-gradient(circle, rgba(111,183,214,0.11) 0%, rgba(111,183,214,0) 68%);
+  animation: liquidB 47s ease-in-out infinite; }
+.liquid-bg span:nth-child(3) { width: 40vw; height: 40vw; left: 22vw; bottom: -18vh;
+  background: radial-gradient(circle, rgba(255,176,0,0.08) 0%, rgba(255,176,0,0) 70%);
+  animation: liquidC 55s ease-in-out infinite; }
+.liquid-bg span:nth-child(4) { width: 34vw; height: 34vw; right: 12vw; bottom: 8vh;
+  background: radial-gradient(circle, rgba(111,183,214,0.07) 0%, rgba(111,183,214,0) 70%);
+  animation: liquidD 43s ease-in-out infinite; }
+@keyframes liquidA { 0%,100% { transform: translate(0,0) scale(1); } 33% { transform: translate(7vw,5vh) scale(1.14); } 66% { transform: translate(-5vw,9vh) scale(0.94); } }
+@keyframes liquidB { 0%,100% { transform: translate(0,0) scale(1); } 40% { transform: translate(-8vw,6vh) scale(1.1); } 70% { transform: translate(4vw,-7vh) scale(0.92); } }
+@keyframes liquidC { 0%,100% { transform: translate(0,0) scale(1); } 35% { transform: translate(-6vw,-8vh) scale(1.16); } 68% { transform: translate(8vw,4vh) scale(0.96); } }
+@keyframes liquidD { 0%,100% { transform: translate(0,0) scale(1); } 45% { transform: translate(5vw,-6vh) scale(1.08); } 75% { transform: translate(-7vw,5vh) scale(0.9); } }
+@media (prefers-reduced-motion: reduce) { .liquid-bg span { animation: none; } }
+
 /* Ticker */
 .ticker-wrap { width: 100%; overflow: hidden; background: #050505; border-bottom: 1px solid var(--panel-border); display: flex; height: 32px; align-items: center; }
 .ticker { display: flex; white-space: nowrap; padding-left: 100%; animation: ticker 50s linear infinite; }
