@@ -14,6 +14,7 @@
     </head>
     <body>
         <div class="liquid-bg" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+        <div class="liquid-cursor" aria-hidden="true"></div>
         
         
     <header class="term-header">
@@ -121,6 +122,42 @@
     
         
         
+        
+<script>
+(function(){
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var cur = document.querySelector('.liquid-cursor');
+  if (!cur) return;
+  var tx = window.innerWidth / 2, ty = window.innerHeight / 2;
+  var cx = tx, cy = ty, live = false, hue = 0;
+  window.addEventListener('pointermove', function(e){
+    tx = e.clientX; ty = e.clientY;
+    if (!live) { live = true; cur.classList.add('on'); }
+  }, { passive: true });
+  document.addEventListener('mouseleave', function(){ live = false; cur.classList.remove('on'); });
+  function frame(){
+    cx += (tx - cx) * 0.11;
+    cy += (ty - cy) * 0.11;
+    hue += 0.006;
+    var wob = 1 + Math.sin(hue) * 0.035;
+    cur.style.transform = 'translate3d(' + cx.toFixed(1) + 'px,' + cy.toFixed(1) + 'px,0) scale(' + wob.toFixed(3) + ')';
+    requestAnimationFrame(frame);
+  }
+  frame();
+  function ripple(x, y, ice){
+    var r = document.createElement('span');
+    r.className = 'liquid-ripple' + (ice ? ' ice' : '');
+    r.style.left = x + 'px';
+    r.style.top = y + 'px';
+    document.body.appendChild(r);
+    setTimeout(function(){ if (r.parentNode) r.parentNode.removeChild(r); }, 1000);
+  }
+  window.addEventListener('pointerdown', function(e){
+    ripple(e.clientX, e.clientY, Math.random() > 0.5);
+  }, { passive: true });
+})();
+</script>
+
     </body>
     </html>
     
