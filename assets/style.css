@@ -122,6 +122,9 @@ body { background-color: transparent; }
 .term-crow { display: grid; grid-template-columns: 44px repeat(16, 1fr); gap: 1px; }
 .term-ch { color: var(--text-dim); font-size: 8px; overflow: hidden; }
 .term-cc { display: block; height: 16px; }
+.term-grid2 { grid-template-columns: 1fr 380px; margin-top: 16px; }
+@media (max-width: 1320px) { .term-grid2 { grid-template-columns: 1fr; } }
+.term-hint { font-family: var(--mono); font-size: 9px; color: var(--text-dim); margin: -6px 0 10px; letter-spacing: .04em; }
 
 .hero-grid { display: grid; grid-template-columns: 1.4fr 0.6fr; gap: 34px; align-items: center; }
 @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } }
