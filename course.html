@@ -15,6 +15,7 @@
     <body>
         <div class="liquid-bg" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
         <div class="liquid-cursor" aria-hidden="true"></div>
+        <div class="terminal-bg" aria-hidden="true"></div>
         
         
     <header class="term-header">
@@ -3377,6 +3378,38 @@ $$q = q_{\text{base}} \cdot \min!\left(\frac{\sigma_{\text{target}}}{\hat{\sigma
   window.addEventListener('pointerdown', function(e){
     ripple(e.clientX, e.clientY, Math.random() > 0.5);
   }, { passive: true });
+})();
+</script>
+
+        
+<script>
+(function(){
+  var host = document.querySelector('.terminal-bg');
+  if (!host) return;
+  var syms = ['NAS100','XAUUSD','DXY','EURUSD','USDJPY','BTC','US10Y','WTI','SPX','GER40','GBPUSD','ETH'];
+  var seed = 20261102;
+  function rnd(){ seed = (seed * 1103515245 + 12345) % 2147483648; return seed / 2147483648; }
+  var cols = 6, rows = 32;
+  for (var c = 0; c < cols; c++){
+    var col = document.createElement('div');
+    col.className = 'terminal-col';
+    col.style.animationDuration = (70 + c * 15) + 's';
+    var html = '';
+    for (var r = 0; r < rows * 2; r++){
+      var s = syms[(r + c * 3) % syms.length];
+      var price = 1000 + rnd() * 29000;
+      var chg = rnd() * 2 - 1;
+      var cls = chg > 0.08 ? 'term-up' : (chg < -0.08 ? 'term-down' : 'term-flat');
+      var sign = chg > 0 ? '+' : '';
+      var name = (s + '        ').slice(0, 8);
+      var pr = price.toFixed(2);
+      pr = ('        ' + pr).slice(-9);
+      var pc = sign + (chg * 100).toFixed(2) + '%';
+      html += '<div class="terminal-row"><span class="' + cls + '">' + name + ' ' + pr + ' ' + pc + '</span></div>';
+    }
+    col.innerHTML = html;
+    host.appendChild(col);
+  }
 })();
 </script>
 
