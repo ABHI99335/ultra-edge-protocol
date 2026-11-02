@@ -321,7 +321,7 @@
   if (!src || src.length < 100) return;
   var ctx = cv.getContext('2d');
   var img = new Image();
-  var dith = null, W = 0, H = 0, cell = 4;
+  var dith = null, W = 0, H = 0, cell = 2;
   var mx = -999, my = -999, tx = 0, ty = 0, R = 140, active = false;
   var t0 = performance.now();
 
@@ -344,7 +344,7 @@
     for (var i = 0; i < cols * rows; i++){
       g[i] = (0.2126 * id[i * 4] + 0.7152 * id[i * 4 + 1] + 0.0722 * id[i * 4 + 2]) / 255;
     }
-    var levels = 3;
+    var levels = 4;
     for (var y = 0; y < rows; y++){
       for (var x = 0; x < cols; x++){
         var p = y * cols + x;
@@ -368,7 +368,7 @@
       for (var x2 = 0; x2 < cols; x2++){
         var lvl = Math.round(g[y2 * cols + x2] * (levels - 1));
         if (lvl <= 0) continue;
-        dc.fillStyle = lvl === 1 ? 'rgb(122,84,0)' : 'rgb(255,176,0)';
+        dc.fillStyle = lvl === 1 ? 'rgb(86,58,0)' : (lvl === 2 ? 'rgb(176,118,0)' : 'rgb(255,200,72)');
         dc.fillRect(x2 * cell, y2 * cell, cell, cell);
       }
     }
