@@ -41,11 +41,13 @@
         <main class="page-container">
             
     <div class="panel">
-        <div class="panel-header"><div class="panel-title">F5 · ULTRA EDGE ACADEMY</div></div>
-        <div class="textbook-content" style="margin-top: 20px;">
-            <h1>THE ULTRA EDGE PROTOCOL</h1>
-<h2>Master File — Institutional Trading Curriculum</h2>
-<p><strong>Version 1.0 · Ultra Edge Academy</strong>
+        <div class="panel-header"><div class="panel-title">F5  COURSE</div><div id="crs-progress-label"></div></div>
+        <h1>Course</h1>
+        <p style="font-size: 1.05rem; color: var(--text); max-width: 820px;">A structured curriculum in twelve parts, built from the primary literature. Each section opens with a plain-language summary, then the full text. Mark sections as you finish them — your progress is saved in this browser.</p>
+        <div class="crs-progressbar"><div class="crs-progressfill" id="crs-fill"></div></div>
+        <div class="crs-layout">
+            <aside class="crs-side"><div class="crs-group"><div class="crs-phase" data-phase="0">THE ULTRA EDGE PROTOCOL</div><a class="crs-link" href="#p1_u0" data-unit="p1_u0">Master File — Institutional Trading Curriculum</a></div><div class="crs-group"><div class="crs-phase" data-phase="1">INTRODUCTION — THE RETAIL TRAP</div><a class="crs-link" href="#p2_u0" data-unit="p2_u0">0.1  0.1 The central error</a><a class="crs-link" href="#p2_u1" data-unit="p2_u1">0.2  0.2 Why technical analysis fails, stated precisely</a><a class="crs-link" href="#p2_u2" data-unit="p2_u2">0.3  0.3 The empirical record of retail failure</a><a class="crs-link" href="#p2_u3" data-unit="p2_u3">0.4  0.4 The psychology of losing — what is actually documented</a><a class="crs-link" href="#p2_u4" data-unit="p2_u4">0.5  0.5 Discretionary to systematic — the actual transition</a></div><div class="crs-group"><div class="crs-phase" data-phase="2">PHASE 1 — DATA ENGINEERING & INTEGRITY</div><a class="crs-link" href="#p3_u0" data-unit="p3_u0">1.1  1.1 The data hierarchy</a><a class="crs-link" href="#p3_u1" data-unit="p3_u1">1.2  1.2 Tick versus bar data: the intrabar path problem</a><a class="crs-link" href="#p3_u2" data-unit="p3_u2">1.3  1.3 Look-ahead bias — the full taxonomy</a><a class="crs-link" href="#p3_u3" data-unit="p3_u3">1.4  1.4 Survivorship bias — why it is worse than you think</a><a class="crs-link" href="#p3_u4" data-unit="p3_u4">1.5  1.5 API integration — the engineering that decides your res</a><a class="crs-link" href="#p3_u5" data-unit="p3_u5">1.6  1.6 Costs are data too</a><a class="crs-link" href="#p3_u6" data-unit="p3_u6">1.7  1.7 The Phase 1 integrity checklist</a></div><div class="crs-group"><div class="crs-phase" data-phase="3">PHASE 2 — STRATEGY ARCHITECTURE</div><a class="crs-link" href="#p4_u0" data-unit="p4_u0">2.1  2.1 The five legitimate sources of edge</a><a class="crs-link" href="#p4_u1" data-unit="p4_u1">2.2  2.2 The falsifiable hypothesis template</a><a class="crs-link" href="#p4_u2" data-unit="p4_u2">2.3  2.3 The three-component decomposition</a><a class="crs-link" href="#p4_u3" data-unit="p4_u3">2.4  2.4 Case study: an opening-range breakout, falsified and im</a><a class="crs-link" href="#p4_u4" data-unit="p4_u4">2.5  2.5 Market microstructure — what is actually measurable</a><a class="crs-link" href="#p4_u5" data-unit="p4_u5">2.6  2.6 Liquidity sweeps — the usable version</a><a class="crs-link" href="#p4_u6" data-unit="p4_u6">2.7  2.7 VWAP — benchmark, not signal</a><a class="crs-link" href="#p4_u7" data-unit="p4_u7">2.8  2.8 Time-of-day dynamics</a><a class="crs-link" href="#p4_u8" data-unit="p4_u8">2.9  2.9 Signal construction — the five properties every signal </a></div><div class="crs-group"><div class="crs-phase" data-phase="4">PHASE 3 — BACKTESTING & VALIDATION: THE TWELVE RULES</div><a class="crs-link" href="#p5_u0" data-unit="p5_u0">3.1  3.1 The Twelve Rules</a><a class="crs-link" href="#p5_u1" data-unit="p5_u1">3.2  3.2 In-sample / out-of-sample — the discipline that is alwa</a><a class="crs-link" href="#p5_u2" data-unit="p5_u2">3.3  3.3 Walk-forward and purged cross-validation</a><a class="crs-link" href="#p5_u3" data-unit="p5_u3">3.4  3.4 Monte Carlo — the three simulations you actually need</a><a class="crs-link" href="#p5_u4" data-unit="p5_u4">3.5  3.5 Random baselines — the test almost nobody runs</a><a class="crs-link" href="#p5_u5" data-unit="p5_u5">3.6  3.6 Deflating the Sharpe ratio</a><a class="crs-link" href="#p5_u6" data-unit="p5_u6">3.7  3.7 Probability of backtest overfitting (PBO)</a><a class="crs-link" href="#p5_u7" data-unit="p5_u7">3.8  3.8 What a backtest report must contain</a></div><div class="crs-group"><div class="crs-phase" data-phase="5">PHASE 4 — RISK & POSITION SIZING</div><a class="crs-link" href="#p6_u0" data-unit="p6_u0">4.1  4.1 The Kelly criterion — what it says, and why you must no</a><a class="crs-link" href="#p6_u1" data-unit="p6_u1">4.2  4.2 Sizing methods compared</a><a class="crs-link" href="#p6_u2" data-unit="p6_u2">4.3  4.3 Circuit breakers — pre-committed, not discretionary</a><a class="crs-link" href="#p6_u3" data-unit="p6_u3">4.4  4.4 The arithmetic of ruin, and why "1% per trade" is not a</a><a class="crs-link" href="#p6_u4" data-unit="p6_u4">4.5  4.5 Prop-firm rules — the arithmetic nobody does</a><a class="crs-link" href="#p6_u5" data-unit="p6_u5">4.6  4.6 The risk architecture, assembled</a></div><div class="crs-group"><div class="crs-phase" data-phase="6">PHASE 5 — OPTIMIZATION & REGIME ANALYSIS</div><a class="crs-link" href="#p7_u0" data-unit="p7_u0">5.1  5.1 The Goldilocks zone</a><a class="crs-link" href="#p7_u1" data-unit="p7_u1">5.2  5.2 What actually causes curve-fitting</a><a class="crs-link" href="#p7_u2" data-unit="p7_u2">5.3  5.3 Volatility filters and volatility targeting</a><a class="crs-link" href="#p7_u3" data-unit="p7_u3">5.4  5.4 Correlation matrices — the part everyone gets wrong</a><a class="crs-link" href="#p7_u4" data-unit="p7_u4">5.5  5.5 Regimes — honest treatment</a><a class="crs-link" href="#p7_u5" data-unit="p7_u5">5.6  5.6 Regime blindness — the specific error to avoid</a></div><div class="crs-group"><div class="crs-phase" data-phase="7">PHASE 6 — PORTFOLIO CONSTRUCTION & RETIREMENT</div><a class="crs-link" href="#p8_u0" data-unit="p8_u0">6.1  6.1 Why one strategy is never enough</a><a class="crs-link" href="#p8_u1" data-unit="p8_u1">6.2  6.2 The strategy archetypes and how they combine</a><a class="crs-link" href="#p8_u2" data-unit="p8_u2">6.3  6.3 Allocation — how much to each strategy</a><a class="crs-link" href="#p8_u3" data-unit="p8_u3">6.4  6.4 Knowing when to retire a strategy</a><a class="crs-link" href="#p8_u4" data-unit="p8_u4">6.5  6.5 The retirement protocol</a><a class="crs-link" href="#p8_u5" data-unit="p8_u5">6.6  6.6 The endgame, honestly stated</a></div><div class="crs-group"><div class="crs-phase" data-phase="8">APPENDIX D — THE ANTI-CURRICULUM</div><a class="crs-link" href="#p12_u0" data-unit="p12_u0">Closing note</a></div></aside>
+            <main class="crs-main"><div class="crs-section"><h2 class="crs-h2">THE ULTRA EDGE PROTOCOL</h2><div class="crs-unit" id="p1_u0"><div class="crs-head"><button class="crs-dot" data-unit="p1_u0" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">Master File — Institutional Trading Curriculum</div><div class="crs-plain"></div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p><strong>Version 1.0 · Ultra Edge Academy</strong>
 <strong>Classification:</strong> Open curriculum. No proprietary signal content.
 <strong>Prerequisite:</strong> None. <strong>Required disposition:</strong> willingness to be wrong on paper rather than on a P&amp;L.</p>
 <hr />
@@ -103,10 +105,7 @@
 <li><strong>Appendix D — The Anti-Curriculum</strong></li>
 </ul>
 <hr />
-<p><img alt="Retail Trap" src="assets/course/retail_trap.jpg" /></p>
-<h1>INTRODUCTION — THE RETAIL TRAP</h1>
-<h2>0.1 The central error</h2>
-<p>Retail trading education sells a single implicit promise: <strong>that the difficulty of trading is prediction.</strong> Everything downstream of that premise — indicators, patterns, "confluences," alert channels, the search for a higher win rate — is a rational response to a false premise.</p>
+<p><img alt="Retail Trap" src="assets/course/retail_trap.jpg" /></p></div></div></div><div class="crs-section"><h2 class="crs-h2">INTRODUCTION — THE RETAIL TRAP</h2><div class="crs-unit" id="p2_u0"><div class="crs-head"><button class="crs-dot" data-unit="p2_u0" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">0.1 The central error</div><div class="crs-plain">Most retail traders lose because they hunt for a pattern that predicts price, instead of an edge that survives costs.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>Retail trading education sells a single implicit promise: <strong>that the difficulty of trading is prediction.</strong> Everything downstream of that premise — indicators, patterns, "confluences," alert channels, the search for a higher win rate — is a rational response to a false premise.</p>
 <p>The premise is false because prediction is the <em>cheapest</em> part of the problem. A one-line moving-average crossover predicts direction with a hit rate barely distinguishable from 50%, and so does a $2 million machine-learning stack, and so did the order book at Lehman in 2007. What separates the outcomes is not the forecast. It is what happens after the forecast is made: how much capital was committed, at what price, against what liquidity, with what exit, under what constraint on ruin.</p>
 <p>This is not a rhetorical flourish. It is the arithmetic of the problem. Expected value per trade is</p>
 <p>$$
@@ -123,10 +122,7 @@ $$</p>
 python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.58, 0.42]); net = np.where(wins==1, 0.92, -1.0) - 0.15; print(f'Final Equity: ${10000 + np.sum(net * 100):.2f}')"
     </code>
     <div style="color: #9A958A; font-size: 0.9em; margin-top: 10px;">You will see the account bleeds to zero. This is the 0.15R cost erasing the 58% edge.</div>
-</div>
-
-<h2>0.2 Why technical analysis fails, stated precisely</h2>
-<p>"Technical analysis doesn't work" is too crude and it is not what this curriculum claims. Some price-based signals are real and have survived decades of out-of-sample testing: time-series momentum, short-horizon reversal, volatility clustering, intraday session effects. What fails is a specific epistemological package that retail TA bundles with those signals. The distinction matters, because Phase 2 will ask you to build price-based strategies.</p>
+</div></div></div><div class="crs-unit" id="p2_u1"><div class="crs-head"><button class="crs-dot" data-unit="p2_u1" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">0.2 Why technical analysis fails, stated precisely</div><div class="crs-plain">Indicators describe what already happened. They carry no information about the next bar, and the ones that appear to work are usually fitted.</div></div><div class="crs-mins">3 min</div></div><div class="crs-body"><p>"Technical analysis doesn't work" is too crude and it is not what this curriculum claims. Some price-based signals are real and have survived decades of out-of-sample testing: time-series momentum, short-horizon reversal, volatility clustering, intraday session effects. What fails is a specific epistemological package that retail TA bundles with those signals. The distinction matters, because Phase 2 will ask you to build price-based strategies.</p>
 <table>
 <thead>
 <tr>
@@ -173,18 +169,14 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tr>
 </tbody>
 </table>
-<p>The common thread: retail TA asserts mechanisms that are either not testable or not tested, and then reports outcomes without controlling for the size of the search. Both are Phase 3 violations. The content of the strategy is almost beside the point.</p>
-<h2>0.3 The empirical record of retail failure</h2>
-<p>This is not a matter of opinion. The record is unusually clear, and it is worth reading before you risk capital because it establishes the base rate you are trying to beat.</p>
+<p>The common thread: retail TA asserts mechanisms that are either not testable or not tested, and then reports outcomes without controlling for the size of the search. Both are Phase 3 violations. The content of the strategy is almost beside the point.</p></div></div><div class="crs-unit" id="p2_u2"><div class="crs-head"><button class="crs-dot" data-unit="p2_u2" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">0.3 The empirical record of retail failure</div><div class="crs-plain">What broker and regulator data actually show happens to retail accounts over time.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>This is not a matter of opinion. The record is unusually clear, and it is worth reading before you risk capital because it establishes the base rate you are trying to beat.</p>
 <ul>
 <li>Barber &amp; Odean (2000), using 66,465 US brokerage households over 1991–1996, found that the households trading most actively earned roughly <strong>11.4% annually against 17.9% for the market</strong> — underperformance that was not explained by risk, and was large enough to be attributed to trading costs and poor selection.</li>
 <li>Barber, Lee, Liu &amp; Odean (2014), using the complete Taiwanese day-trading record, found that <strong>fewer than 1% of day traders</strong> earned predictable positive abnormal returns net of fees. The rest were, statistically, drawing from a zero-mean distribution and paying for the privilege.</li>
 <li>Chague, De-Losso &amp; Giovannetti (2020), using Brazilian futures data, found that of day traders who persisted more than 300 days, <strong>97% lost money</strong>; roughly 1.1% earned more than the Brazilian minimum wage and 0.5% more than a bank teller.</li>
 </ul>
 <p>Three independent markets, three independent data sets, three decades. The consistent finding is not that retail traders lack discipline. It is that the activity, as typically practised, has a negative expected value <em>before</em> skill is even considered, because cost is charged on turnover and turnover is what retail education optimises for.</p>
-<p>The mechanism is worth naming: <strong>retail trading education monetises attention, not edge.</strong> A system that trades twice a day produces more engagement, more screen time, more perceived learning, and more commission than a system that trades twice a month. The curriculum is not neutral — it is structurally biased toward turnover. You are not the customer of that bias. You are the product of it.</p>
-<h2>0.4 The psychology of losing — what is actually documented</h2>
-<p>Retail psychology content is mostly moralising ("fear and greed"). The research literature is far more specific and far more useful, because it identifies <em>mechanical</em> biases that a systematic process can be designed around.</p>
+<p>The mechanism is worth naming: <strong>retail trading education monetises attention, not edge.</strong> A system that trades twice a day produces more engagement, more screen time, more perceived learning, and more commission than a system that trades twice a month. The curriculum is not neutral — it is structurally biased toward turnover. You are not the customer of that bias. You are the product of it.</p></div></div><div class="crs-unit" id="p2_u3"><div class="crs-head"><button class="crs-dot" data-unit="p2_u3" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">0.4 The psychology of losing — what is actually documented</div><div class="crs-plain">The documented behavioural biases that make people abandon a system at the worst possible moment.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>Retail psychology content is mostly moralising ("fear and greed"). The research literature is far more specific and far more useful, because it identifies <em>mechanical</em> biases that a systematic process can be designed around.</p>
 <table>
 <thead>
 <tr>
@@ -231,9 +223,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tr>
 </tbody>
 </table>
-<p>Note what these have in common: <strong>each is a bias toward action at the wrong moment.</strong> The systematic process in Phases 1–6 is not primarily an analytical improvement. It is a <em>commitment device</em> that removes the moments at which a human is most likely to do the wrong thing.</p>
-<h2>0.5 Discretionary to systematic — the actual transition</h2>
-<p>The transition is not "add rules." Most discretionary traders already have rules; they just don't have <em>specification</em>. The transition is a change in what a rule is required to be.</p>
+<p>Note what these have in common: <strong>each is a bias toward action at the wrong moment.</strong> The systematic process in Phases 1–6 is not primarily an analytical improvement. It is a <em>commitment device</em> that removes the moments at which a human is most likely to do the wrong thing.</p></div></div><div class="crs-unit" id="p2_u4"><div class="crs-head"><button class="crs-dot" data-unit="p2_u4" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">0.5 Discretionary to systematic — the actual transition</div><div class="crs-plain">What has to change in process, not personality, to move from judgement calls to fixed rules.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>The transition is not "add rules." Most discretionary traders already have rules; they just don't have <em>specification</em>. The transition is a change in what a rule is required to be.</p>
 <table>
 <thead>
 <tr>
@@ -290,13 +280,10 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </table>
 <p><strong>The one thing to take from this Introduction.</strong> You are not trying to become a better predictor. You are trying to become a person who has removed the ability to make the specific errors listed in §0.4, and who has built the machinery in Phases 1–6 so that the removal is structural rather than aspirational.</p>
 <hr />
-<p><img alt="Look Ahead" src="assets/course/lookahead.jpg" /></p>
-<h1>PHASE 1 — DATA ENGINEERING &amp; INTEGRITY</h1>
-<blockquote>
+<p><img alt="Look Ahead" src="assets/course/lookahead.jpg" /></p></div></div></div><div class="crs-section"><h2 class="crs-h2">PHASE 1 — DATA ENGINEERING & INTEGRITY</h2><div class="crs-unit" id="p3_u0"><div class="crs-head"><button class="crs-dot" data-unit="p3_u0" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">1.1 The data hierarchy</div><div class="crs-plain">Why tick, bar and adjusted data differ, and which questions each can honestly answer.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><blockquote>
 <p><em>Garbage in, garbage out — but the failure is silent. Bad data does not throw an error. It produces a beautiful backtest.</em></p>
 </blockquote>
 <p>Data is where the majority of retail and semi-professional strategies die, and it is the phase that receives the least attention because it is unglamorous and produces no chart to post. The rule for this phase: <strong>a data set is not a file of prices; it is a set of claims about the world, each of which can be false.</strong></p>
-<h2>1.1 The data hierarchy</h2>
 <p>Not all price data is equivalent. Each level trades off history length against information content, and choosing wrongly invalidates your hypothesis before you write a line of code.</p>
 <table>
 <thead>
@@ -360,9 +347,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tr>
 </tbody>
 </table>
-<p><strong>The decision rule.</strong> Build the strategy at the coarsest resolution that still expresses the hypothesis, then <em>validate the fill assumptions</em> at the finest resolution you can afford over a shorter window. A minute-bar ORB strategy validated against tick data over its most recent 12 months is more trustworthy than a tick-level strategy with 3 months of history. This is the practical resolution of the tick-vs-bar question, and it is a cost-benefit question, not a purity question.</p>
-<h2>1.2 Tick versus bar data: the intrabar path problem</h2>
-<p>This is the single most common source of inflated backtest results, and it is not a coding bug — it is an information-theoretic limit.</p>
+<p><strong>The decision rule.</strong> Build the strategy at the coarsest resolution that still expresses the hypothesis, then <em>validate the fill assumptions</em> at the finest resolution you can afford over a shorter window. A minute-bar ORB strategy validated against tick data over its most recent 12 months is more trustworthy than a tick-level strategy with 3 months of history. This is the practical resolution of the tick-vs-bar question, and it is a cost-benefit question, not a purity question.</p></div></div><div class="crs-unit" id="p3_u1"><div class="crs-head"><button class="crs-dot" data-unit="p3_u1" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">1.2 Tick versus bar data: the intrabar path problem</div><div class="crs-plain">Inside a single bar the path is unknown. Assuming a favourable path quietly invents profit.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>This is the single most common source of inflated backtest results, and it is not a coding bug — it is an information-theoretic limit.</p>
 <p>A bar records four numbers: open, high, low, close. If your strategy places a stop at price $$S$$ and a target at $$T$$, and both lie inside the bar's range, <strong>the bar does not tell you which was hit first.</strong> You have three options:</p>
 <table>
 <thead>
@@ -402,9 +387,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </table>
 <p>The magnitude is not trivial. On minute bars in a volatile instrument, the fraction of trades where both stop and target fall inside a single bar's range is routinely 8–20%. Under the optimistic assumption, every one of those is a win. That is a 4–10 percentage-point inflation of win rate, which is larger than most real edges.</p>
 <p><strong>Practical protocol.</strong> (a) Resolve with tick data where available. (b) Elsewhere, resolve pessimistically and report both numbers. (c) Never mix resolutions between the backtest and the live system — if you backtest on bars and trade on ticks, your stop is being hit at prices your backtest never saw.</p>
-<p>A related trap: <strong>bar-timestamp semantics.</strong> A bar labelled 09:30 may cover 09:30:00–09:30:59 (left-labelled) or 09:29:01–09:30:00 (right-labelled). Get this wrong by one bar and you have introduced look-ahead bias into every signal you build — and it will look like a working strategy, because you are trading on information you would not have had.</p>
-<h2>1.3 Look-ahead bias — the full taxonomy</h2>
-<p>Look-ahead bias is usually taught as "don't use future prices." That is the least interesting form. Here is the complete taxonomy, ordered roughly by how often it silently destroys real strategies.</p>
+<p>A related trap: <strong>bar-timestamp semantics.</strong> A bar labelled 09:30 may cover 09:30:00–09:30:59 (left-labelled) or 09:29:01–09:30:00 (right-labelled). Get this wrong by one bar and you have introduced look-ahead bias into every signal you build — and it will look like a working strategy, because you are trading on information you would not have had.</p></div></div><div class="crs-unit" id="p3_u2"><div class="crs-head"><button class="crs-dot" data-unit="p3_u2" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">1.3 Look-ahead bias — the full taxonomy</div><div class="crs-plain">Every route by which future information leaks into a backtest, and how each one shows up in the results.</div></div><div class="crs-mins">3 min</div></div><div class="crs-body"><p>Look-ahead bias is usually taught as "don't use future prices." That is the least interesting form. Here is the complete taxonomy, ordered roughly by how often it silently destroys real strategies.</p>
 <table>
 <thead>
 <tr>
@@ -508,9 +491,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
     mu, sigma = window.mean(), window.std()
     signal[t] = (data[t] - mu) / sigma   # transform of the present using the past
 </code></pre>
-<p>Every single one of these is a two-line fix that people do not make, because the wrong version produces a better backtest and the right version produces a worse one. That asymmetry is exactly why Phase 3 exists.</p>
-<h2>1.4 Survivorship bias — why it is worse than you think</h2>
-<p>Survivorship bias is usually described as "you're missing the failures." The quantitative point is sharper: <strong>failures have large negative returns, and excluding them truncates the left tail, which is where your risk model lives.</strong></p>
+<p>Every single one of these is a two-line fix that people do not make, because the wrong version produces a better backtest and the right version produces a worse one. That asymmetry is exactly why Phase 3 exists.</p></div></div><div class="crs-unit" id="p3_u3"><div class="crs-head"><button class="crs-dot" data-unit="p3_u3" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">1.4 Survivorship bias — why it is worse than you think</div><div class="crs-plain">Why testing only on instruments that still exist today flatters every result you produce.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>Survivorship bias is usually described as "you're missing the failures." The quantitative point is sharper: <strong>failures have large negative returns, and excluding them truncates the left tail, which is where your risk model lives.</strong></p>
 <p>For US equities, Shumway (1997) established that delisting returns are systematically large and negative — particularly for performance-related delistings, where the delisting return averaged roughly −30% in his sample — and that omitting them creates a material upward bias in any strategy holding small or distressed names. The bias is small for large-cap momentum and enormous for anything touching microcaps, distressed, or high-turnover universes.</p>
 <table>
 <thead>
@@ -553,9 +534,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tr>
 </tbody>
 </table>
-<p><strong>Protocol.</strong> Build the universe from PIT membership where available. Where it is not, apply an explicit haircut and state it: "results shown assume 2% annual drag from survivorship, which is the upper bound for this universe." An honestly haircut number is worth more than an unstated optimistic one, because you can reason about it.</p>
-<h2>1.5 API integration — the engineering that decides your research speed</h2>
-<p>The practical constraints of data acquisition shape what you can research. This is not an implementation detail; a pipeline that takes three days to test a hypothesis means you test ten hypotheses a month instead of three hundred, and your research throughput <em>is</em> your edge in a competitive space.</p>
+<p><strong>Protocol.</strong> Build the universe from PIT membership where available. Where it is not, apply an explicit haircut and state it: "results shown assume 2% annual drag from survivorship, which is the upper bound for this universe." An honestly haircut number is worth more than an unstated optimistic one, because you can reason about it.</p></div></div><div class="crs-unit" id="p3_u4"><div class="crs-head"><button class="crs-dot" data-unit="p3_u4" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">1.5 API integration — the engineering that decides your research speed</div><div class="crs-plain">How the quality of your data plumbing decides how fast you can research at all.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>The practical constraints of data acquisition shape what you can research. This is not an implementation detail; a pipeline that takes three days to test a hypothesis means you test ten hypotheses a month instead of three hundred, and your research throughput <em>is</em> your edge in a competitive space.</p>
 <table>
 <thead>
 <tr>
@@ -617,9 +596,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tr>
 </tbody>
 </table>
-<p><strong>The one rule that matters most:</strong> <em>raw data is immutable.</em> Every transformation is code, every code version is recorded, and every result is reproducible from raw data plus a commit hash. If you cannot re-run last month's backtest and get last month's number, you do not have a research process — you have a series of unrelated guesses that happened to print.</p>
-<h2>1.6 Costs are data too</h2>
-<p>A backtest without a cost model is not a conservative backtest; it is a fictional one. Costs must be modelled as data, at the same resolution and with the same care as prices.</p>
+<p><strong>The one rule that matters most:</strong> <em>raw data is immutable.</em> Every transformation is code, every code version is recorded, and every result is reproducible from raw data plus a commit hash. If you cannot re-run last month's backtest and get last month's number, you do not have a research process — you have a series of unrelated guesses that happened to print.</p></div></div><div class="crs-unit" id="p3_u5"><div class="crs-head"><button class="crs-dot" data-unit="p3_u5" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">1.6 Costs are data too</div><div class="crs-plain">Spread, slippage and commission treated as first-class inputs rather than an afterthought.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>A backtest without a cost model is not a conservative backtest; it is a fictional one. Costs must be modelled as data, at the same resolution and with the same care as prices.</p>
 <table>
 <thead>
 <tr>
@@ -681,9 +658,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tbody>
 </table>
 <p>The square-root impact law — impact scaling with the square root of participation rate, $$\Delta p \propto \sigma\sqrt{Q/V}$$ — is one of the most robust empirical regularities in microstructure (Bouchaud, Farmer &amp; Lillo, 2009; Almgren et al., 2005). Its practical consequence for you: <strong>impact is not linear in size, so small accounts have a structural cost advantage that disappears non-linearly as you scale.</strong> A strategy that works at $50k may be dead at $5m, and not by a factor of 100 — by a factor of 10 in the impact term, plus capacity constraints in the book.</p>
-<p><strong>The brutal rule of this phase.</strong> Novy-Marx &amp; Velikov (2016) and Chen &amp; Velikov (2023) both show that a large fraction of published anomalies — the ones with real gross returns — become statistically and economically insignificant once realistic turnover-adjusted costs are applied. If your strategy's gross Sharpe is under about 0.8 and its turnover is high, assume it is a cost artefact until proven otherwise. That is not cynicism; it is the base rate.</p>
-<h2>1.7 The Phase 1 integrity checklist</h2>
-<p>Run all twelve before any hypothesis testing. A "no" on any of items 1–6 invalidates the study outright.</p>
+<p><strong>The brutal rule of this phase.</strong> Novy-Marx &amp; Velikov (2016) and Chen &amp; Velikov (2023) both show that a large fraction of published anomalies — the ones with real gross returns — become statistically and economically insignificant once realistic turnover-adjusted costs are applied. If your strategy's gross Sharpe is under about 0.8 and its turnover is high, assume it is a cost artefact until proven otherwise. That is not cynicism; it is the base rate.</p></div></div><div class="crs-unit" id="p3_u6"><div class="crs-head"><button class="crs-dot" data-unit="p3_u6" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">1.7 The Phase 1 integrity checklist</div><div class="crs-plain">The pass or fail gate that must be cleared before any strategy work begins.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>Run all twelve before any hypothesis testing. A "no" on any of items 1–6 invalidates the study outright.</p>
 <table>
 <thead>
 <tr>
@@ -755,12 +730,9 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tr>
 </tbody>
 </table>
-<hr />
-<h1>PHASE 2 — STRATEGY ARCHITECTURE</h1>
-<blockquote>
+<hr /></div></div></div><div class="crs-section"><h2 class="crs-h2">PHASE 2 — STRATEGY ARCHITECTURE</h2><div class="crs-unit" id="p4_u0"><div class="crs-head"><button class="crs-dot" data-unit="p4_u0" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">2.1 The five legitimate sources of edge</div><div class="crs-plain">The only durable reasons a strategy can make money at all.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><blockquote>
 <p><em>A strategy is a falsifiable claim about why someone else is systematically willing to lose money to you. If you cannot name that person, you do not have a strategy. You have a pattern.</em></p>
 </blockquote>
-<h2>2.1 The five legitimate sources of edge</h2>
 <p>Every durable strategy in the literature traces to one of five mechanisms. This taxonomy is the most useful thing in the phase, because it tells you in advance how long your edge will last, how much capital it can hold, and who your counterparty is.</p>
 <table>
 <thead>
@@ -824,9 +796,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </table>
 <p>Two implications that retail education never states:</p>
 <p><strong>First, gross Sharpe and capacity are inversely related.</strong> The microstructure edges with the highest gross Sharpe hold the least capital. This is not a coincidence — it is the reason they persist. Any strategy you can run at $10k with a Sharpe of 2.5 is almost certainly a strategy that cannot be run at $100m, and therefore has not been arbitraged away by people with $100m. Your small size is an <em>asset</em>, and the correct strategic response is to exploit it in exactly the niches institutions cannot enter, rather than to imitate institutions in the niches they dominate.</p>
-<p><strong>Second, decay is a function of visibility.</strong> An edge that is published, taught, or visible on a chart is being harvested by everyone who reads. McLean &amp; Pontiff (2016) found that anomaly portfolio returns are about 26% lower out-of-sample and about 58% lower post-publication — roughly half the decay attributable to the market learning. That number should sit permanently in your head when you are tempted to trade a strategy from a YouTube video.</p>
-<h2>2.2 The falsifiable hypothesis template</h2>
-<p>Before any code, write this paragraph. If you cannot fill every bracket with a number or a name, you are not ready to test.</p>
+<p><strong>Second, decay is a function of visibility.</strong> An edge that is published, taught, or visible on a chart is being harvested by everyone who reads. McLean &amp; Pontiff (2016) found that anomaly portfolio returns are about 26% lower out-of-sample and about 58% lower post-publication — roughly half the decay attributable to the market learning. That number should sit permanently in your head when you are tempted to trade a strategy from a YouTube video.</p></div></div><div class="crs-unit" id="p4_u1"><div class="crs-head"><button class="crs-dot" data-unit="p4_u1" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">2.2 The falsifiable hypothesis template</div><div class="crs-plain">How to state a strategy so that reality is allowed to prove it wrong.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>Before any code, write this paragraph. If you cannot fill every bracket with a number or a name, you are not ready to test.</p>
 <blockquote>
 <p><em>"I claim that <strong>[specific market participants]</strong> are systematically <strong>[buying/selling] [instrument]</strong> at <strong>[specific time/condition]</strong> because <strong>[specific constraint or bias]</strong>. This creates <strong>[specific measurable dislocation]</strong>. I will capture it by <strong>[entry]</strong>, exiting at <strong>[exit]</strong> with <strong>[sizing rule]</strong>. The claim is <strong>false</strong> if <strong>[specific observable]</strong>. The claim should <strong>stop working</strong> when <strong>[specific regime or structural change]</strong>. My test will use <strong>[data, period, costs]</strong>, and I expect the effect to be <strong>absent</strong> in <strong>[control condition]</strong>."</em></p>
 </blockquote>
@@ -835,17 +805,13 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 <li><strong>The control condition.</strong> If the effect is real, it should be absent where the mechanism is absent. Opening-range breakouts should work on instruments with genuine opening auctions and not on 24-hour crypto with no auction. If they work equally on both, you have found a data artefact or a general trend, not your mechanism.</li>
 <li><strong>The stopping condition.</strong> Naming the regime in which the edge should die is the cheapest available protection against Phase 5's regime blindness. It also converts an unexpected loss into information rather than a crisis.</li>
 <li><strong>The named counterparty.</strong> If the answer is "other traders who are worse than me," you have not answered the question. That is not a mechanism; it is a hope with a story attached.</li>
-</ul>
-<h2>2.3 The three-component decomposition</h2>
-<p>Every strategy — every one, from a $50 billion CTA to a scalping script — consists of exactly three components, sitting on top of the hypothesis:</p>
+</ul></div></div><div class="crs-unit" id="p4_u2"><div class="crs-head"><button class="crs-dot" data-unit="p4_u2" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">2.3 The three-component decomposition</div><div class="crs-plain">Separating entry, exit and sizing so you can tell which part is actually earning.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>Every strategy — every one, from a $50 billion CTA to a scalping script — consists of exactly three components, sitting on top of the hypothesis:</p>
 <ol>
 <li><strong>Entry</strong> — the condition that opens exposure.</li>
 <li><strong>Exit</strong> — the condition that closes it (target, stop, time, or signal reversal).</li>
 <li><strong>Position sizing</strong> — how much.</li>
 </ol>
-<p>The decomposition matters because retail improvement culture obsesses over (1), and the returns live in (2) and (3). The worked case study below demonstrates this with public numbers.</p>
-<h2>2.4 Case study: an opening-range breakout, falsified and improved</h2>
-<p>This is the most useful worked example available in public, because it shows the entire protocol — hypothesis, test, falsification of a sub-component, improvement via sizing — on a real strategy with real reported numbers.</p>
+<p>The decomposition matters because retail improvement culture obsesses over (1), and the returns live in (2) and (3). The worked case study below demonstrates this with public numbers.</p></div></div><div class="crs-unit" id="p4_u3"><div class="crs-head"><button class="crs-dot" data-unit="p4_u3" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">2.4 Case study: an opening-range breakout, falsified and improved</div><div class="crs-plain">A popular setup tested, falsified, then rebuilt into something defensible.</div></div><div class="crs-mins">3 min</div></div><div class="crs-body"><p>This is the most useful worked example available in public, because it shows the entire protocol — hypothesis, test, falsification of a sub-component, improvement via sizing — on a real strategy with real reported numbers.</p>
 <p><strong>The hypothesis.</strong> Gao, Han, Li &amp; Zhou (2018), <em>Market Intraday Momentum</em>, Journal of Financial Economics 129(2): 394–414, document that the return of the first half-hour of the US trading day positively predicts the return of the last half-hour. The proposed mechanism is an opening imbalance between buyers and sellers that persists through the session. A breakout of the opening 30-minute range, taken in the direction of the imbalance, is a direct expression of that documented effect.</p>
 <p><strong>The base strategy.</strong> Define the opening range as the first 30 minutes of the NY session (09:30–10:00 ET). Enter long if a 5-minute candle closes above the range high. Stop below the range low. Target = 1R. Time exit at 15:00 ET. One trade per day, long only. Tested on Nasdaq futures, 2021–2025.</p>
 <p><strong>The reported base result:</strong> 846 trades, ~58% win rate, profit factor 1.33, net profit ~$181k, max drawdown ~$25.3k, return-over-max-drawdown (RoMaD) ≈ 7.2.</p>
@@ -893,9 +859,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 <li><strong>Removing a component is an improvement.</strong> Complexity that does not survive a split test is a fragility multiplier. Three rules have three breaking points.</li>
 <li><strong>The same strategy, resized, improved risk-adjusted return by 20% with zero change to entries.</strong> This is the empirical case for the Protocol's central claim. The edge was in the sizing.</li>
 </ol>
-<p>Note also the honest caveats the analysis itself raised: the effect is concentrated in the last five years, profit per trade is much lower back to 2015, and Nasdaq has behaved more like a trend instrument since 2019. Those are Phase 5 regime concerns, and they belong in the hypothesis statement, not in a footnote discovered after the account is funded.</p>
-<h2>2.5 Market microstructure — what is actually measurable</h2>
-<p>Microstructure is where retail content is most confidently wrong. The useful distinction is between what is <em>in the data</em> and what is <em>a story about the data</em>.</p>
+<p>Note also the honest caveats the analysis itself raised: the effect is concentrated in the last five years, profit per trade is much lower back to 2015, and Nasdaq has behaved more like a trend instrument since 2019. Those are Phase 5 regime concerns, and they belong in the hypothesis statement, not in a footnote discovered after the account is funded.</p></div></div><div class="crs-unit" id="p4_u4"><div class="crs-head"><button class="crs-dot" data-unit="p4_u4" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">2.5 Market microstructure — what is actually measurable</div><div class="crs-plain">What is genuinely measurable from public market data, and what only appears to be.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>Microstructure is where retail content is most confidently wrong. The useful distinction is between what is <em>in the data</em> and what is <em>a story about the data</em>.</p>
 <table>
 <thead>
 <tr>
@@ -950,9 +914,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tr>
 </tbody>
 </table>
-<p><strong>The honest summary for a retail-accessible account:</strong> you can measure OFI (with depth data), absorption (as price-vs-volume divergence), stop clustering (as a location statistic), and impact (as your own fills). You cannot measure intent. Every strategy in this phase must be expressed in terms of the measurable, and every explanatory sentence must be labelled as an interpretation.</p>
-<h2>2.6 Liquidity sweeps — the usable version</h2>
-<p>The claim worth testing is narrow and mechanical:</p>
+<p><strong>The honest summary for a retail-accessible account:</strong> you can measure OFI (with depth data), absorption (as price-vs-volume divergence), stop clustering (as a location statistic), and impact (as your own fills). You cannot measure intent. Every strategy in this phase must be expressed in terms of the measurable, and every explanatory sentence must be labelled as an interpretation.</p></div></div><div class="crs-unit" id="p4_u5"><div class="crs-head"><button class="crs-dot" data-unit="p4_u5" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">2.6 Liquidity sweeps — the usable version</div><div class="crs-plain">The usable version of a concept usually described in vague, unfalsifiable terms.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>The claim worth testing is narrow and mechanical:</p>
 <blockquote>
 <p><em>Stops cluster at predictable locations — just beyond prior session extremes, round numbers, and the far side of a consolidation range. When price reaches such a cluster, triggered stop orders execute as market orders, producing a temporary acceleration and a local liquidity vacuum. Price then frequently reverts as the vacuum fills.</em></p>
 </blockquote>
@@ -998,9 +960,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tr>
 </tbody>
 </table>
-<p><strong>The critical discipline:</strong> a sweep is only tradeable if the <em>entry trigger</em> fires while the sweep is still reversible — i.e. you must define the signature in advance (penetration depth, volume, time-to-return) and accept that most sweeps will not qualify. If your definition requires you to see the close of the reversal, you are trading a lagging pattern.</p>
-<h2>2.7 VWAP — benchmark, not signal</h2>
-<p>This deserves its own section because "VWAP alignment" is presented in retail content as a directional filter, and that framing is a category error that costs money.</p>
+<p><strong>The critical discipline:</strong> a sweep is only tradeable if the <em>entry trigger</em> fires while the sweep is still reversible — i.e. you must define the signature in advance (penetration depth, volume, time-to-return) and accept that most sweeps will not qualify. If your definition requires you to see the close of the reversal, you are trading a lagging pattern.</p></div></div><div class="crs-unit" id="p4_u6"><div class="crs-head"><button class="crs-dot" data-unit="p4_u6" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">2.7 VWAP — benchmark, not signal</div><div class="crs-plain">Why VWAP is a benchmark for execution quality rather than a buy or sell signal.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>This deserves its own section because "VWAP alignment" is presented in retail content as a directional filter, and that framing is a category error that costs money.</p>
 <p>VWAP is defined as $$\text{VWAP}<em>t = \sum</em>{i \le t} p_i v_i \big/ \sum_{i \le t} v_i$$ — the average price at which volume has traded so far today. It is, by construction, a <em>descriptive statistic about where volume happened</em>, not a forecast. Its institutional purpose is to answer a completely different question: <strong>"did my execution beat the average price at which the market traded?"</strong></p>
 <table>
 <thead>
@@ -1044,9 +1004,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tbody>
 </table>
 <p><strong>The test that settles it.</strong> Build the strategy with the VWAP filter. Build it without. Then split both in half. If the filter improves performance in only one half — which is the typical result — it is noise, exactly like the delta filter in §2.4. Run this test before you build a course around it.</p>
-<p>What VWAP <em>is</em> genuinely useful for, and this is not trivial: <strong>it tells you whether your fills are being systematically worse than the market's average price.</strong> If your average entry is 3 bps worse than the VWAP over your holding window, you have found a 3 bps per trade leak, which at 500 trades a year is 15% of notional annually. That is a bigger number than most edges.</p>
-<h2>2.8 Time-of-day dynamics</h2>
-<p>Intraday effects are among the best-documented and most mechanically explicable in the literature, which makes them a good hunting ground — and also the most crowded.</p>
+<p>What VWAP <em>is</em> genuinely useful for, and this is not trivial: <strong>it tells you whether your fills are being systematically worse than the market's average price.</strong> If your average entry is 3 bps worse than the VWAP over your holding window, you have found a 3 bps per trade leak, which at 500 trades a year is 15% of notional annually. That is a bigger number than most edges.</p></div></div><div class="crs-unit" id="p4_u7"><div class="crs-head"><button class="crs-dot" data-unit="p4_u7" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">2.8 Time-of-day dynamics</div><div class="crs-plain">Intraday behaviour that genuinely repeats, and how to test it without fooling yourself.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>Intraday effects are among the best-documented and most mechanically explicable in the literature, which makes them a good hunting ground — and also the most crowded.</p>
 <table>
 <thead>
 <tr>
@@ -1102,9 +1060,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tr>
 </tbody>
 </table>
-<p><strong>The general principle.</strong> Intraday seasonality is a <em>scheduling</em> fact, not a <em>forecasting</em> fact. It tells you when liquidity and information arrive. The most reliable use is not "trade at this time because the pattern says so" but "size and instrument-select according to when liquidity is available and when it is not."</p>
-<h2>2.9 Signal construction — the five properties every signal needs</h2>
-<p>Before a signal reaches Phase 3, it must satisfy five properties. Failing any one of them means Phase 3 will produce a false positive.</p>
+<p><strong>The general principle.</strong> Intraday seasonality is a <em>scheduling</em> fact, not a <em>forecasting</em> fact. It tells you when liquidity and information arrive. The most reliable use is not "trade at this time because the pattern says so" but "size and instrument-select according to when liquidity is available and when it is not."</p></div></div><div class="crs-unit" id="p4_u8"><div class="crs-head"><button class="crs-dot" data-unit="p4_u8" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">2.9 Signal construction — the five properties every signal needs</div><div class="crs-plain">The five properties any signal must have before it is worth testing.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>Before a signal reaches Phase 3, it must satisfy five properties. Failing any one of them means Phase 3 will produce a false positive.</p>
 <table>
 <thead>
 <tr>
@@ -1143,15 +1099,12 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </table>
 <p>The fourth is the one that quietly kills research programmes. A signal that fires 40 times in 10 years has a standard error on its Sharpe ratio so wide that no statistical test can rescue it. Bailey &amp; López de Prado's framework is explicit: the minimum track record length required to distinguish a Sharpe of 0.5 from zero at 95% confidence is measured in <em>years</em>, not trades. If your event count is small, your honest conclusion is "untestable," and the correct action is to find a version of the hypothesis that fires more often — not to lower your threshold for belief.</p>
 <hr />
-<p><img alt="Equity Curve" src="assets/course/equity_curve.jpg" /></p>
-<h1>PHASE 3 — BACKTESTING &amp; VALIDATION: THE TWELVE RULES</h1>
-<blockquote>
+<p><img alt="Equity Curve" src="assets/course/equity_curve.jpg" /></p></div></div></div><div class="crs-section"><h2 class="crs-h2">PHASE 3 — BACKTESTING & VALIDATION: THE TWELVE RULES</h2><div class="crs-unit" id="p5_u0"><div class="crs-head"><button class="crs-dot" data-unit="p5_u0" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">3.1 The Twelve Rules</div><div class="crs-plain">The twelve rules themselves, stated plainly.</div></div><div class="crs-mins">3 min</div></div><div class="crs-body"><blockquote>
 <p><em>A backtest is not evidence. A backtest is a hypothesis about the past, and the past is a single sample drawn from a distribution you cannot observe. These twelve rules are how you avoid mistaking one draw for the distribution.</em></p>
 </blockquote>
 <p>The organising fact of this phase, and the one that should reorganise your entire approach to research:</p>
 <p><strong>After enough trials, a profitable strategy is guaranteed.</strong> Bailey, Borwein, López de Prado &amp; Zhu (2014) prove that the optimal result of a search over a large enough strategy space is right-unbounded — there is no Sharpe ratio threshold high enough to reject the hypothesis that a strategy is false, if you do not know how many trials produced it. With only ten independent configurations tested on one year of data, the <em>expected maximum</em> in-sample Sharpe ratio is about 1.57, even when the true Sharpe of every configuration is exactly zero.</p>
 <p>The corollary is brutal and it invalidates most published research: <strong>a backtest that does not report the number of trials attempted is worthless, regardless of how good it looks.</strong> That includes yours.</p>
-<h2>3.1 The Twelve Rules</h2>
 <table>
 <thead>
 <tr>
@@ -1249,9 +1202,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tr>
 </tbody>
 </table>
-<p>Rules 1, 2 and 7 are non-negotiable. Rules 5, 10 and 11 are what separate a professional research process from a well-formatted hallucination.</p>
-<h2>3.2 In-sample / out-of-sample — the discipline that is always broken</h2>
-<p>Everyone knows the rule. Almost nobody follows it, because the temptation arrives in a specific, seductive form: you test, it fails, you have an idea about <em>why</em>, you test again, and each iteration is technically "still in-sample" because you have not yet looked at the OOS set. Fifty iterations later you have effectively trained on the full sample and the OOS set is contaminated by your own decision process.</p>
+<p>Rules 1, 2 and 7 are non-negotiable. Rules 5, 10 and 11 are what separate a professional research process from a well-formatted hallucination.</p></div></div><div class="crs-unit" id="p5_u1"><div class="crs-head"><button class="crs-dot" data-unit="p5_u1" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">3.2 In-sample / out-of-sample — the discipline that is always broken</div><div class="crs-plain">The split everyone claims to perform and almost nobody performs correctly.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>Everyone knows the rule. Almost nobody follows it, because the temptation arrives in a specific, seductive form: you test, it fails, you have an idea about <em>why</em>, you test again, and each iteration is technically "still in-sample" because you have not yet looked at the OOS set. Fifty iterations later you have effectively trained on the full sample and the OOS set is contaminated by your own decision process.</p>
 <p>The structural fix is not willpower. It is:</p>
 <ol>
 <li><strong>Physically separate the data.</strong> Write the OOS set to a file your research environment does not mount. Unlock it once.</li>
@@ -1259,9 +1210,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 <li><strong>Count and log every trial</strong>, including the ones you abandoned. The abandoned ones are the ones that make the surviving one look good.</li>
 <li><strong>Accept a single OOS evaluation.</strong> If you look twice, you have two trials, and the deflation must account for both.</li>
 </ol>
-<p>The honest accounting: if you test 50 configurations and select the best, your effective OOS significance threshold is not 5%, it is roughly 5%/50. That is why the deflated Sharpe exists.</p>
-<h2>3.3 Walk-forward and purged cross-validation</h2>
-<table>
+<p>The honest accounting: if you test 50 configurations and select the best, your effective OOS significance threshold is not 5%, it is roughly 5%/50. That is why the deflated Sharpe exists.</p></div></div><div class="crs-unit" id="p5_u2"><div class="crs-head"><button class="crs-dot" data-unit="p5_u2" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">3.3 Walk-forward and purged cross-validation</div><div class="crs-plain">Validation that respects the order of time and prevents information leaking backwards.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><table>
 <thead>
 <tr>
 <th>Method</th>
@@ -1317,9 +1266,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tbody>
 </table>
 <p><strong>The embargo, explained.</strong> If your label is "return over the next 5 days," then an observation at $$t$$ and one at $$t+3$$ share 2 days of information. Placing them on opposite sides of a split boundary leaks. The embargo removes training observations within the label horizon of the test set. It is a five-line fix and it is skipped in the overwhelming majority of retail and much academic work.</p>
-<p><img alt="Monte Carlo" src="assets/course/monte_carlo.jpg" /></p>
-<h2>3.4 Monte Carlo — the three simulations you actually need</h2>
-<p>A single backtest path is one realisation of a random process. Reporting its maximum drawdown as "the" drawdown is the same error as reporting a single coin flip as "the" probability. Three simulations fix it, and they answer three different questions.</p>
+<p><img alt="Monte Carlo" src="assets/course/monte_carlo.jpg" /></p></div></div><div class="crs-unit" id="p5_u3"><div class="crs-head"><button class="crs-dot" data-unit="p5_u3" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">3.4 Monte Carlo — the three simulations you actually need</div><div class="crs-plain">Three simulations, and the specific question each one is able to answer.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>A single backtest path is one realisation of a random process. Reporting its maximum drawdown as "the" drawdown is the same error as reporting a single coin flip as "the" probability. Three simulations fix it, and they answer three different questions.</p>
 <p><strong>Simulation 1 — Trade-order shuffle (permutation).</strong> Resample the sequence of trade P&amp;Ls, with replacement or without, thousands of times. Answers: <em>what is the distribution of drawdowns consistent with this edge?</em> Cheap, assumption-light, and the fastest way to discover that your realised max drawdown was lucky. Limitation: destroys autocorrelation, so it <em>understates</em> clustered drawdowns if your strategy's losses cluster.</p>
 <p><strong>Simulation 2 — Stationary block bootstrap (Politis &amp; Romano, 1994).</strong> Resample contiguous blocks of returns, preserving local dependence. Answers: <em>what happens to drawdowns when losses cluster, as they do in reality?</em> This is the one to trust for drawdown estimation and for prop-firm breach probability, because prop-firm rules are path-dependent and clustering is exactly what breaches accounts.</p>
 <p><strong>Simulation 3 — Synthetic price paths.</strong> Generate alternative histories with matched volatility, autocorrelation, and fat tails; run the full strategy on each. Answers: <em>is the edge a property of the mechanism or of this specific price history?</em> The most expensive and the most informative, particularly for detecting a strategy that exploits one historical episode.</p>
@@ -1365,9 +1312,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tbody>
 </table>
 <p><strong>The operational use, which is the real payoff.</strong> Monte Carlo is not only a validation tool; it is the live monitoring yardstick. Run the simulation before deployment and record the envelope: after 20 trades, the 5th–95th percentile range of cumulative P&amp;L. In live trading, if the realised path exits that envelope on the downside, you have a pre-specified, non-emotional trigger to pause. If it stays inside, a losing week is <em>information that nothing is wrong</em> — which is the single most valuable thing a risk framework can tell you, because it prevents you from abandoning a working strategy at its worst moment.</p>
-<p>The distinction that matters operationally: <strong>a broken strategy versus an underperforming one.</strong> A strategy that breaches its simulated worst-case envelope has stopped behaving like the thing you tested — retire it. A strategy whose average trade is simply lower than expected but whose path is inside the envelope is underperforming — pause, monitor, do not panic. Conflating these two is how people both blow up and capitulate.</p>
-<h2>3.5 Random baselines — the test almost nobody runs</h2>
-<p>This is the cheapest, most informative test in the entire curriculum, and it is absent from essentially all retail material.</p>
+<p>The distinction that matters operationally: <strong>a broken strategy versus an underperforming one.</strong> A strategy that breaches its simulated worst-case envelope has stopped behaving like the thing you tested — retire it. A strategy whose average trade is simply lower than expected but whose path is inside the envelope is underperforming — pause, monitor, do not panic. Conflating these two is how people both blow up and capitulate.</p></div></div><div class="crs-unit" id="p5_u4"><div class="crs-head"><button class="crs-dot" data-unit="p5_u4" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">3.5 Random baselines — the test almost nobody runs</div><div class="crs-plain">Proving that your entry logic is doing the work, rather than your exit.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>This is the cheapest, most informative test in the entire curriculum, and it is absent from essentially all retail material.</p>
 <p><strong>Procedure.</strong> Take your strategy's <em>exit and sizing rules</em> exactly as they are. Replace the entry signal with a random entry at a random time within the same session (or the same set of candidate bars). Run 1,000 such random-entry strategies. Plot the distribution of their Sharpe ratios and returns.</p>
 <p><strong>Interpretation.</strong></p>
 <ul>
@@ -1415,9 +1360,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tr>
 </tbody>
 </table>
-<p>That last one deserves emphasis. <strong>Shifting your signal by one bar should destroy the edge.</strong> If it does not, your signal is not predicting anything — it is coincident with price, which means you are measuring the thing you are trying to predict. This is a two-line test and it catches a whole class of look-ahead bugs.</p>
-<h2>3.6 Deflating the Sharpe ratio</h2>
-<p>The Sharpe ratio is the most over-trusted statistic in finance. Its problems: it assumes normality (strategies with negative skew look better than they are), it is inflated in short samples, and it is dramatically inflated by selection.</p>
+<p>That last one deserves emphasis. <strong>Shifting your signal by one bar should destroy the edge.</strong> If it does not, your signal is not predicting anything — it is coincident with price, which means you are measuring the thing you are trying to predict. This is a two-line test and it catches a whole class of look-ahead bugs.</p></div></div><div class="crs-unit" id="p5_u5"><div class="crs-head"><button class="crs-dot" data-unit="p5_u5" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">3.6 Deflating the Sharpe ratio</div><div class="crs-plain">Correcting a Sharpe ratio for the number of things you tried before finding it.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>The Sharpe ratio is the most over-trusted statistic in finance. Its problems: it assumes normality (strategies with negative skew look better than they are), it is inflated in short samples, and it is dramatically inflated by selection.</p>
 <p>The Deflated Sharpe Ratio (Bailey &amp; López de Prado, 2014) corrects for all three. Conceptually:</p>
 <p>$$\text{DSR} = \Phi\left[\frac{(\hat{SR} - SR_0)\sqrt{T-1}}{\sqrt{1 - \hat{\gamma}_3 \hat{SR} + \frac{\hat{\gamma}_4 - 1}{4}\hat{SR}^2}}\right]$$</p>
 <p>where $$\hat{SR}$$ is the observed (non-annualised) Sharpe, $$T$$ the number of observations, $$\hat{\gamma}_3$$ and $$\hat{\gamma}_4$$ the skewness and kurtosis, and $$SR_0$$ the <em>expected maximum</em> Sharpe under the null of zero skill across $$N$$ trials:</p>
@@ -1480,9 +1423,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 <ul>
 <li><strong>Harvey, Liu &amp; Zhu (2016)</strong> argue that in the cross-section of asset returns, given the hundreds of factors tested in the literature, a <strong>t-statistic of about 3.0</strong> — not 2.0 — is the appropriate hurdle for a new factor. Their argument is a multiple-testing correction applied to the whole field. Your single-strategy research faces the same logic at smaller scale.</li>
 <li><strong>The "halve the Sharpe ratio" rule of thumb</strong> — widely taught as a haircut for overfitting — has <strong>no scientific basis</strong>. It is a folk heuristic that happens to be roughly right for some typical $$(N, T)$$ combinations and badly wrong for others. Use the DSR, which is derived, not the folk rule, which is not.</li>
-</ul>
-<h2>3.7 Probability of backtest overfitting (PBO)</h2>
-<p>The DSR asks "is this Sharpe significant?" PBO asks a different and more direct question: <strong>"given my selection procedure, what is the probability that the configuration I picked in-sample will underperform the median out-of-sample?"</strong></p>
+</ul></div></div><div class="crs-unit" id="p5_u6"><div class="crs-head"><button class="crs-dot" data-unit="p5_u6" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">3.7 Probability of backtest overfitting (PBO)</div><div class="crs-plain">Estimating the probability that your best backtest is overfit.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>The DSR asks "is this Sharpe significant?" PBO asks a different and more direct question: <strong>"given my selection procedure, what is the probability that the configuration I picked in-sample will underperform the median out-of-sample?"</strong></p>
 <p>The estimator is Combinatorially Symmetric Cross-Validation (CSCV; Bailey, Borwein, López de Prado &amp; Zhu, 2017): partition the return matrix of all $$N$$ configurations into $$S$$ blocks, form all $$\binom{S}{S/2}$$ combinations of blocks into IS/OOS pairs, select the best IS configuration in each, and measure its OOS rank. The frequency with which the IS winner lands below the OOS median is your PBO.</p>
 <table>
 <thead>
@@ -1515,9 +1456,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </tr>
 </tbody>
 </table>
-<p>That last row is the important one. PBO above 0.5 does not mean "this strategy is bad." It means "the method by which I chose this strategy systematically picks losers." Fixing the strategy will not help; the selection process must change.</p>
-<h2>3.8 What a backtest report must contain</h2>
-<p>A backtest that does not contain these items is not a report; it is marketing.</p>
+<p>That last row is the important one. PBO above 0.5 does not mean "this strategy is bad." It means "the method by which I chose this strategy systematically picks losers." Fixing the strategy will not help; the selection process must change.</p></div></div><div class="crs-unit" id="p5_u7"><div class="crs-head"><button class="crs-dot" data-unit="p5_u7" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">3.8 What a backtest report must contain</div><div class="crs-plain">What a backtest report must contain before anyone should believe it.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>A backtest that does not contain these items is not a report; it is marketing.</p>
 <table>
 <thead>
 <tr>
@@ -1578,9 +1517,7 @@ python -c "import numpy as np; wins = np.random.choice([1, -1], size=1000, p=[0.
 </table>
 <p>The last one is the item nobody includes and every allocator asks for. A strategy with a Sharpe of 2.0 that dies at $2m AUM is a hobby. A strategy with a Sharpe of 0.6 that holds $500m is a business. Know which one you have before you scale.</p>
 <hr />
-<p><img alt="Drawdown" src="assets/course/drawdown.jpg" /></p>
-<h1>PHASE 4 — RISK &amp; POSITION SIZING</h1>
-<blockquote>
+<p><img alt="Drawdown" src="assets/course/drawdown.jpg" /></p></div></div></div><div class="crs-section"><h2 class="crs-h2">PHASE 4 — RISK & POSITION SIZING</h2><div class="crs-unit" id="p6_u0"><div class="crs-head"><button class="crs-dot" data-unit="p6_u0" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">4.1 The Kelly criterion — what it says, and why you must not use it</div><div class="crs-plain">What the Kelly formula says, and why betting full Kelly is unusable in practice.</div></div><div class="crs-mins">3 min</div></div><div class="crs-body"><blockquote>
 <p><em>This is the phase where the Protocol's central claim is either true or false. If the edge is in risk management, then this chapter should change your P&amp;L more than the previous three combined. It does. In the §2.4 case study, changing nothing but the sizing rule improved return-over-max-drawdown by roughly 20% and passed the stability test that a new entry filter failed.</em></p>
 </blockquote>
 <p>The ordering of concerns in this phase, from most to least important:</p>
@@ -1600,7 +1537,6 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
     </code>
 </div>
 
-<h2>4.1 The Kelly criterion — what it says, and why you must not use it</h2>
 <p>Kelly (1956), formalised for markets by Thorp (2006), gives the growth-optimal fraction of capital to risk. For a bet with win probability $$p$$, win fraction $$b$$, loss fraction $$a$$:</p>
 <p>$$f^* = \frac{p}{a} - \frac{1-p}{b} = \frac{pb - (1-p)a}{ab}$$</p>
 <p>For a continuous return distribution with mean $$\mu$$ and variance $$\sigma^2$$, the log-optimal fraction is</p>
@@ -1653,9 +1589,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 </tbody>
 </table>
 <p>Read the last two rows together. Growth rate is a concave function of leverage, peaking at $$f^<em>$$ and turning negative beyond $$2f^</em>$$. Over-betting by 2× does not halve your growth; it eliminates it. This is the mathematical refutation of martingale and of "double down to recover."</p>
-<p><strong>The practical rule.</strong> Estimate Kelly, then use a quarter of it, then check that the resulting risk per trade is between 0.25% and 1% of capital. If your quarter-Kelly says 3%, your edge estimate is wrong or your volatility estimate is stale. The check is not redundant — it catches estimation failures that the formula cannot see.</p>
-<h2>4.2 Sizing methods compared</h2>
-<table>
+<p><strong>The practical rule.</strong> Estimate Kelly, then use a quarter of it, then check that the resulting risk per trade is between 0.25% and 1% of capital. If your quarter-Kelly says 3%, your edge estimate is wrong or your volatility estimate is stale. The check is not redundant — it catches estimation failures that the formula cannot see.</p></div></div><div class="crs-unit" id="p6_u1"><div class="crs-head"><button class="crs-dot" data-unit="p6_u1" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">4.2 Sizing methods compared</div><div class="crs-plain">Fixed fractional, volatility targeting and their real trade-offs.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><table>
 <thead>
 <tr>
 <th>Method</th>
@@ -1743,9 +1677,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 </tbody>
 </table>
 <p><strong>On volatility targeting specifically</strong>, because it is the most useful practical result in this phase. Moreira &amp; Muir (2017) show that scaling exposure inversely to recent realised variance raises risk-adjusted returns across equity factors and across asset classes — because volatility is persistent and returns are not proportionally compensated for it. Harvey et al. (2018) show that volatility targeting reduces the depth of drawdowns and improves the Sharpe ratio for trend-following and equity strategies, with the improvement concentrated in the tails. The mechanism is simple and robust: <strong>volatility clusters, expected returns cluster much less, so reducing exposure when volatility is high improves the risk-adjusted return by avoiding the worst states.</strong></p>
-<p>The implementation caveat that matters: volatility targeting reduces drawdowns <em>and</em> reduces the fat right tail. Trend-following strategies earn much of their return in crisis periods of high volatility; scaling down in those periods removes some of the crisis alpha that justifies holding them. Measure both sides.</p>
-<h2>4.3 Circuit breakers — pre-committed, not discretionary</h2>
-<p>A circuit breaker is a rule that stops you trading under conditions you specified when you were calm. It exists because the moment you most need to stop is the moment you are least able to decide to.</p>
+<p>The implementation caveat that matters: volatility targeting reduces drawdowns <em>and</em> reduces the fat right tail. Trend-following strategies earn much of their return in crisis periods of high volatility; scaling down in those periods removes some of the crisis alpha that justifies holding them. Measure both sides.</p></div></div><div class="crs-unit" id="p6_u2"><div class="crs-head"><button class="crs-dot" data-unit="p6_u2" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">4.3 Circuit breakers — pre-committed, not discretionary</div><div class="crs-plain">Stopping rules committed in advance rather than decided in the moment.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>A circuit breaker is a rule that stops you trading under conditions you specified when you were calm. It exists because the moment you most need to stop is the moment you are least able to decide to.</p>
 <table>
 <thead>
 <tr>
@@ -1815,9 +1747,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 </tr>
 </tbody>
 </table>
-<p><strong>The design principle:</strong> every breaker must have a <em>pre-specified reset condition</em>. A breaker without a reset condition is not risk management; it is quitting with extra steps. Write the reset condition at the same time as the trigger, and make it mechanical.</p>
-<h2>4.4 The arithmetic of ruin, and why "1% per trade" is not a risk model</h2>
-<p>The classic claim is that risking 1% per trade means you can survive 100 consecutive losses. This is arithmetically true and practically irrelevant, for four reasons:</p>
+<p><strong>The design principle:</strong> every breaker must have a <em>pre-specified reset condition</em>. A breaker without a reset condition is not risk management; it is quitting with extra steps. Write the reset condition at the same time as the trigger, and make it mechanical.</p></div></div><div class="crs-unit" id="p6_u3"><div class="crs-head"><button class="crs-dot" data-unit="p6_u3" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">4.4 The arithmetic of ruin, and why "1% per trade" is not a risk model</div><div class="crs-plain">Why risking one percent per trade is not, on its own, a risk model.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>The classic claim is that risking 1% per trade means you can survive 100 consecutive losses. This is arithmetically true and practically irrelevant, for four reasons:</p>
 <ol>
 <li><strong>Losses are not independent.</strong> In a correlated portfolio, or in a volatility regime shift, your 1% trades arrive together. Ten positions at 1% each with a pairwise correlation of 0.7 is closer to a single 6–7% position than to ten independent 1% bets.</li>
 <li><strong>Stops gap.</strong> A 1% stop is not a 1% loss. Overnight gaps, halts, and event risk mean realised losses exceed planned losses with meaningful frequency. Your true distribution of loss-per-trade has a fat right tail that your stop does not truncate.</li>
@@ -1827,9 +1757,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 <p><strong>The correct formulation.</strong> Let $$D$$ be the maximum tolerable drawdown, $$n$$ the number of consecutive losses you must survive, and $$r$$ the risk per trade. Then approximately</p>
 <p>$$(1-r)^n \ge 1 - D \quad\Longrightarrow\quad r \le 1 - (1-D)^{1/n}$$</p>
 <p>For $$D = 10\%$$ and $$n = 10$$: $$r \le 1.05\%$$. For $$D = 10\%$$ and $$n = 15$$: $$r \le 0.70\%$$. For $$D = 6\%$$ and $$n = 12$$: $$r \le 0.51\%$$.</p>
-<p>Note how much the answer moves with the streak length you demand to survive. And note that a 10-loss streak is <em>not</em> a tail event for a 45%-hit-rate system — the expected maximum streak over 500 trades at $$p=0.45$$ is roughly 8–10. Size for the streak you will actually see, not the one that feels comfortable.</p>
-<h2>4.5 Prop-firm rules — the arithmetic nobody does</h2>
-<p>Prop-firm evaluation accounts are a specific financial product with a specific payoff structure, and treating them as "trading with someone else's money" rather than as a path-dependent option with a fee is the reason most participants lose.</p>
+<p>Note how much the answer moves with the streak length you demand to survive. And note that a 10-loss streak is <em>not</em> a tail event for a 45%-hit-rate system — the expected maximum streak over 500 trades at $$p=0.45$$ is roughly 8–10. Size for the streak you will actually see, not the one that feels comfortable.</p></div></div><div class="crs-unit" id="p6_u4"><div class="crs-head"><button class="crs-dot" data-unit="p6_u4" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">4.5 Prop-firm rules — the arithmetic nobody does</div><div class="crs-plain">The arithmetic of evaluations: drawdown types, true backing, and expected value.</div></div><div class="crs-mins">5 min</div></div><div class="crs-body"><p>Prop-firm evaluation accounts are a specific financial product with a specific payoff structure, and treating them as "trading with someone else's money" rather than as a path-dependent option with a fee is the reason most participants lose.</p>
 <h3>The drawdown taxonomy</h3>
 <table>
 <thead>
@@ -2029,9 +1957,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 </tr>
 </tbody>
 </table>
-<p><strong>The consistency rule deserves a warning.</strong> It is the rule most often missed and it inverts the optimal strategy: if no single day may exceed 30% of total profit, then a single great day <em>hurts</em> you by forcing you to earn more on other days to dilute it. Strategies must be evaluated for their <em>daily P&amp;L dispersion</em>, not just their total, and a strategy with occasional very large days is structurally penalised.</p>
-<h2>4.6 The risk architecture, assembled</h2>
-<table>
+<p><strong>The consistency rule deserves a warning.</strong> It is the rule most often missed and it inverts the optimal strategy: if no single day may exceed 30% of total profit, then a single great day <em>hurts</em> you by forcing you to earn more on other days to dilute it. Strategies must be evaluated for their <em>daily P&amp;L dispersion</em>, not just their total, and a strategy with occasional very large days is structurally penalised.</p></div></div><div class="crs-unit" id="p6_u5"><div class="crs-head"><button class="crs-dot" data-unit="p6_u5" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">4.6 The risk architecture, assembled</div><div class="crs-plain">Assembling the separate pieces into one coherent risk architecture.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><table>
 <thead>
 <tr>
 <th>Layer</th>
@@ -2079,12 +2005,9 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 </table>
 <p>Each layer is independent. This matters because failures are not independent: the day your strategy breaks is often the day spreads widen and your slippage model fails. Layered limits mean one failure does not become three.</p>
 <hr />
-<p><img alt="Volatility" src="assets/course/volatility.jpg" /></p>
-<h1>PHASE 5 — OPTIMIZATION &amp; REGIME ANALYSIS</h1>
-<blockquote>
+<p><img alt="Volatility" src="assets/course/volatility.jpg" /></p></div></div></div><div class="crs-section"><h2 class="crs-h2">PHASE 5 — OPTIMIZATION & REGIME ANALYSIS</h2><div class="crs-unit" id="p7_u0"><div class="crs-head"><button class="crs-dot" data-unit="p7_u0" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">5.1 The Goldilocks zone</div><div class="crs-plain">How much optimisation is too much, and where the line actually sits.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><blockquote>
 <p><em>Optimisation is the art of finding the smallest number of parameters that expresses a mechanism, and then proving that the result does not depend on their exact values. Everything else called "optimisation" is the manufacture of a false positive.</em></p>
 </blockquote>
-<h2>5.1 The Goldilocks zone</h2>
 <p>There is a real tension, and both failure modes are common:</p>
 <ul>
 <li><strong>Too few parameters</strong> → the strategy cannot express the mechanism. A trend filter with no lookback is not a strategy.</li>
@@ -2164,9 +2087,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 </tr>
 </tbody>
 </table>
-<p><strong>The rule that follows:</strong> choose the parameter at the <em>centre</em> of the plateau, not at its maximum. You are not trying to maximise the backtest; you are trying to maximise the probability that the live result resembles the backtest. Those are different objectives, and the second one systematically prefers the centre.</p>
-<h2>5.2 What actually causes curve-fitting</h2>
-<table>
+<p><strong>The rule that follows:</strong> choose the parameter at the <em>centre</em> of the plateau, not at its maximum. You are not trying to maximise the backtest; you are trying to maximise the probability that the live result resembles the backtest. Those are different objectives, and the second one systematically prefers the centre.</p></div></div><div class="crs-unit" id="p7_u1"><div class="crs-head"><button class="crs-dot" data-unit="p7_u1" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">5.2 What actually causes curve-fitting</div><div class="crs-plain">The specific mechanisms that produce curve-fitting, rather than the vague warning.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><table>
 <thead>
 <tr>
 <th>Cause</th>
@@ -2217,9 +2138,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 </tr>
 </tbody>
 </table>
-<p>The last one is worth naming explicitly because it is the most insidious. Slippage assumptions are a free parameter, and a researcher who is unconsciously motivated will find the slippage level at which the strategy works. Fix costs <em>before</em> looking at performance, then vary them only upward.</p>
-<h2>5.3 Volatility filters and volatility targeting</h2>
-<p>Volatility is the most predictable quantity in markets. That single fact is why volatility-based conditioning works better than return-based conditioning.</p>
+<p>The last one is worth naming explicitly because it is the most insidious. Slippage assumptions are a free parameter, and a researcher who is unconsciously motivated will find the slippage level at which the strategy works. Fix costs <em>before</em> looking at performance, then vary them only upward.</p></div></div><div class="crs-unit" id="p7_u2"><div class="crs-head"><button class="crs-dot" data-unit="p7_u2" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">5.3 Volatility filters and volatility targeting</div><div class="crs-plain">Using volatility to size positions and filter trades, and where that breaks.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>Volatility is the most predictable quantity in markets. That single fact is why volatility-based conditioning works better than return-based conditioning.</p>
 <table>
 <thead>
 <tr>
@@ -2262,9 +2181,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 </tr>
 </tbody>
 </table>
-<p><strong>The trap.</strong> Volatility filters are the most over-optimised component in retail systematic trading, because they are easy to add and easy to fit. A filter that says "only trade when ATR is between 1.2 and 2.4× its 20-day average" has two fitted parameters, each selected by looking at the data, and typically improves the backtest by removing exactly the trades that lost. Test it by shifting the band by ±20%: if performance collapses, the band is a fitted artefact. Prefer the continuous version (size ∝ 1/σ̂), which has one parameter and a documented mechanism.</p>
-<h2>5.4 Correlation matrices — the part everyone gets wrong</h2>
-<p>Portfolio risk is dominated by the correlation matrix, and the correlation matrix is the least stable input in the entire problem.</p>
+<p><strong>The trap.</strong> Volatility filters are the most over-optimised component in retail systematic trading, because they are easy to add and easy to fit. A filter that says "only trade when ATR is between 1.2 and 2.4× its 20-day average" has two fitted parameters, each selected by looking at the data, and typically improves the backtest by removing exactly the trades that lost. Test it by shifting the band by ±20%: if performance collapses, the band is a fitted artefact. Prefer the continuous version (size ∝ 1/σ̂), which has one parameter and a documented mechanism.</p></div></div><div class="crs-unit" id="p7_u3"><div class="crs-head"><button class="crs-dot" data-unit="p7_u3" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">5.4 Correlation matrices — the part everyone gets wrong</div><div class="crs-plain">Why naive correlation matrices mislead, and what to use instead.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>Portfolio risk is dominated by the correlation matrix, and the correlation matrix is the least stable input in the entire problem.</p>
 <table>
 <thead>
 <tr>
@@ -2311,9 +2228,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 1. Shrinkage (Ledoit–Wolf) — robust, simple, always better than sample.
 2. A factor model — estimate exposures to a few common factors plus idiosyncratic risk. Far fewer parameters, far more stable.
 3. A <strong>stress correlation matrix</strong> — assume all risk assets correlate at 0.7–0.9 in a crisis, and size so that this scenario is survivable. This is not a forecast; it is a constraint.</p>
-<p>Option 3 is the one that saves accounts, and it requires no estimation at all. Ask: <em>if everything I hold moves against me together, what happens?</em> If the answer is "the account is gone," the correlation matrix is irrelevant.</p>
-<h2>5.5 Regimes — honest treatment</h2>
-<p>Regime analysis is where systematic traders most often abandon rigour, because regime labels feel explanatory and are almost impossible to validate. The honest position:</p>
+<p>Option 3 is the one that saves accounts, and it requires no estimation at all. Ask: <em>if everything I hold moves against me together, what happens?</em> If the answer is "the account is gone," the correlation matrix is irrelevant.</p></div></div><div class="crs-unit" id="p7_u4"><div class="crs-head"><button class="crs-dot" data-unit="p7_u4" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">5.5 Regimes — honest treatment</div><div class="crs-plain">An honest account of what regime detection can and cannot do.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>Regime analysis is where systematic traders most often abandon rigour, because regime labels feel explanatory and are almost impossible to validate. The honest position:</p>
 <p><strong>You can detect regimes. You cannot predict regime transitions. Detection is lagging, and lagging detection is a trend-following rule in disguise.</strong></p>
 <table>
 <thead>
@@ -2441,9 +2356,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 </tr>
 </tbody>
 </table>
-<p>Two readings of this table, both important. First, no strategy works in all regimes — which is the entire argument for Phase 6's portfolio construction. Second, <strong>the worst cells are where the account dies</strong>, not where it underperforms. A mean-reversion strategy in a high-vol trending regime does not produce a mediocre return; it produces a tail loss, because fading a trend means adding to a loser with a bounded stop and unbounded adverse drift. Position sizing and circuit breakers must be regime-aware <em>even if the strategy is not</em>.</p>
-<h2>5.6 Regime blindness — the specific error to avoid</h2>
-<p>The error is not "ignoring regimes." It is assuming the test period is representative. Every backtest is a sample from one regime history, and the sample is not random.</p>
+<p>Two readings of this table, both important. First, no strategy works in all regimes — which is the entire argument for Phase 6's portfolio construction. Second, <strong>the worst cells are where the account dies</strong>, not where it underperforms. A mean-reversion strategy in a high-vol trending regime does not produce a mediocre return; it produces a tail loss, because fading a trend means adding to a loser with a bounded stop and unbounded adverse drift. Position sizing and circuit breakers must be regime-aware <em>even if the strategy is not</em>.</p></div></div><div class="crs-unit" id="p7_u5"><div class="crs-head"><button class="crs-dot" data-unit="p7_u5" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">5.6 Regime blindness — the specific error to avoid</div><div class="crs-plain">The specific error of assuming the current regime will persist.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>The error is not "ignoring regimes." It is assuming the test period is representative. Every backtest is a sample from one regime history, and the sample is not random.</p>
 <table>
 <thead>
 <tr>
@@ -2488,12 +2401,9 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 </table>
 <p>The most common instance in practice: a five-year intraday strategy tested over a period in which one index trended upward with unusually low volatility. It will show a beautiful equity curve, a high Sharpe, and a maximum drawdown that is a statistical artefact of the calm. The analysis in §2.4 flagged exactly this — the effect concentrated in the last five years, with much smaller profit per trade going back to 2015 — and flagged it <em>before</em> presenting the improved version, which is the correct order.</p>
 <hr />
-<p><img alt="Correlation" src="assets/course/correlation.jpg" /></p>
-<h1>PHASE 6 — PORTFOLIO CONSTRUCTION &amp; RETIREMENT</h1>
-<blockquote>
+<p><img alt="Correlation" src="assets/course/correlation.jpg" /></p></div></div></div><div class="crs-section"><h2 class="crs-h2">PHASE 6 — PORTFOLIO CONSTRUCTION & RETIREMENT</h2><div class="crs-unit" id="p8_u0"><div class="crs-head"><button class="crs-dot" data-unit="p8_u0" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">6.1 Why one strategy is never enough</div><div class="crs-plain">Why one strategy is never enough, and what diversification actually means here.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><blockquote>
 <p><em>A single strategy is a bet. A portfolio of uncorrelated strategies is a business. And every business has a product lifecycle — including the one where you must stop selling.</em></p>
 </blockquote>
-<h2>6.1 Why one strategy is never enough</h2>
 <p>The arithmetic of combining is the most favourable arithmetic in finance, and it is available to anyone.</p>
 <p>Two strategies, each with an annualised Sharpe of 0.6. If their returns are uncorrelated, the combined Sharpe is $$0.6\sqrt{2} = 0.85$$. Four uncorrelated strategies: $$0.6 \times 2 = 1.20$$. Nine: $$1.80$$.</p>
 <table>
@@ -2542,9 +2452,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 <p><strong>Caveat 1 — "uncorrelated" is aspirational.</strong> Real correlations between systematic strategies are 0.1–0.5, not 0. At a pairwise correlation of $$\rho$$, the combined Sharpe is</p>
 <p>$$SR_{\text{port}} = \frac{SR\sqrt{N}}{\sqrt{1 + (N-1)\rho}}$$</p>
 <p>With $$\rho = 0.3$$, the benefit saturates quickly: ten strategies at 0.6 each give $$1.90/\sqrt{1+2.7} = 0.98$$, not 1.90. <strong>Diversification's ceiling is set by correlation, not by count.</strong> Ten trend strategies on ten instruments is one strategy.</p>
-<p><strong>Caveat 2 — correlations rise exactly when you need them not to.</strong> Longin &amp; Solnik (2001) document that international equity correlations increase in bear markets. The same is true of most strategy families in a liquidity crisis: they all need to sell, and they all sell at once. Your measured average correlation of 0.2 will behave like 0.6 in the week it matters. <strong>Stress the portfolio at crisis correlations, and size so that the crisis case is survivable.</strong></p>
-<h2>6.2 The strategy archetypes and how they combine</h2>
-<table>
+<p><strong>Caveat 2 — correlations rise exactly when you need them not to.</strong> Longin &amp; Solnik (2001) document that international equity correlations increase in bear markets. The same is true of most strategy families in a liquidity crisis: they all need to sell, and they all sell at once. Your measured average correlation of 0.2 will behave like 0.6 in the week it matters. <strong>Stress the portfolio at crisis correlations, and size so that the crisis case is survivable.</strong></p></div></div><div class="crs-unit" id="p8_u1"><div class="crs-head"><button class="crs-dot" data-unit="p8_u1" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">6.2 The strategy archetypes and how they combine</div><div class="crs-plain">How different strategy types combine, and when they work against each other.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><table>
 <thead>
 <tr>
 <th>Archetype</th>
@@ -2687,9 +2595,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 <td>Only with hard operational limits</td>
 </tr>
 </tbody>
-</table>
-<h2>6.3 Allocation — how much to each strategy</h2>
-<table>
+</table></div></div><div class="crs-unit" id="p8_u2"><div class="crs-head"><button class="crs-dot" data-unit="p8_u2" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">6.3 Allocation — how much to each strategy</div><div class="crs-plain">How much capital each strategy deserves.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><table>
 <thead>
 <tr>
 <th>Method</th>
@@ -2744,9 +2650,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 </tbody>
 </table>
 <p><strong>The honest recommendation.</strong> Inverse-volatility weights, rebalanced quarterly, with a portfolio-level volatility target and a hard cap on any single strategy's contribution to total risk (say 35%). This is unglamorous and it is close to what a well-run multi-strategy shop actually does at the allocation layer. Sharpe-weighted and optimiser-based allocations are where people lose money, because they convert estimation error in the mean (Chopra–Ziemba: ten times as damaging as variance error) directly into portfolio weights.</p>
-<p><strong>Rebalancing frequency.</strong> Rebalance on a schedule, not on a signal. Quarterly is a reasonable default. Signal-based rebalancing ("add to what's working") is momentum applied to strategy returns, where the signal-to-noise ratio is far worse than in asset returns, and it typically degrades performance.</p>
-<h2>6.4 Knowing when to retire a strategy</h2>
-<p>This is the endgame question and the one with the least rigorous retail literature. The framework below is derived from sequential change detection, and it is the part of this curriculum most likely to save an account.</p>
+<p><strong>Rebalancing frequency.</strong> Rebalance on a schedule, not on a signal. Quarterly is a reasonable default. Signal-based rebalancing ("add to what's working") is momentum applied to strategy returns, where the signal-to-noise ratio is far worse than in asset returns, and it typically degrades performance.</p></div></div><div class="crs-unit" id="p8_u3"><div class="crs-head"><button class="crs-dot" data-unit="p8_u3" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">6.4 Knowing when to retire a strategy</div><div class="crs-plain">The four states a strategy can be in, and the triggers for retiring it.</div></div><div class="crs-mins">3 min</div></div><div class="crs-body"><p>This is the endgame question and the one with the least rigorous retail literature. The framework below is derived from sequential change detection, and it is the part of this curriculum most likely to save an account.</p>
 <h3>The four states of a strategy</h3>
 <table>
 <thead>
@@ -2880,9 +2784,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 </tr>
 </tbody>
 </table>
-<p>The composite reading: <strong>most published edges decay by half within a few years of publication, two-thirds fail strict replication, and a further large fraction fail realistic costs.</strong> If you are building a business, plan for a strategy half-life of three to five years, and build the pipeline that replaces them rather than the strategy that lasts forever.</p>
-<h2>6.5 The retirement protocol</h2>
-<p>Retirement is a decision that must be pre-specified, because it will be made under maximum emotional pressure. The protocol:</p>
+<p>The composite reading: <strong>most published edges decay by half within a few years of publication, two-thirds fail strict replication, and a further large fraction fail realistic costs.</strong> If you are building a business, plan for a strategy half-life of three to five years, and build the pipeline that replaces them rather than the strategy that lasts forever.</p></div></div><div class="crs-unit" id="p8_u4"><div class="crs-head"><button class="crs-dot" data-unit="p8_u4" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">6.5 The retirement protocol</div><div class="crs-plain">The process for retiring something without ego getting in the way.</div></div><div class="crs-mins">2 min</div></div><div class="crs-body"><p>Retirement is a decision that must be pre-specified, because it will be made under maximum emotional pressure. The protocol:</p>
 <ol>
 <li><strong>Pre-register the triggers</strong> before deployment, in the same document as the hypothesis. Include the numerical thresholds.</li>
 <li><strong>Automate the monitoring.</strong> Compute the envelope position, rolling Sharpe, and CUSUM statistic daily. A trigger you have to remember to check is not a trigger.</li>
@@ -2895,9 +2797,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 <li><em>Regime failure</em> → the edge is intact but the environment is wrong. <strong>Do not retire</strong> — reduce size and wait. This is the case where retiring is the error.</li>
 <li><strong>Retire the capital, not just the strategy.</strong> Free capital must be redeployed or withdrawn. Idle capital in a "paused" strategy is a slow bleed of opportunity cost.</li>
 </ol>
-<p>That fourth distinction — regime failure versus mechanism failure — is worth more than the rest of this section. <strong>Retiring a working strategy because the regime turned against it is the most expensive error in systematic trading</strong>, and it is the exact mirror of the retail error of abandoning at the low. The difference between the two is not psychology; it is whether you specified in advance what the failure mode would look like.</p>
-<h2>6.6 The endgame, honestly stated</h2>
-<p>The Protocol has no terminal state where you have "beaten the market." What it has is a process with the following properties:</p>
+<p>That fourth distinction — regime failure versus mechanism failure — is worth more than the rest of this section. <strong>Retiring a working strategy because the regime turned against it is the most expensive error in systematic trading</strong>, and it is the exact mirror of the retail error of abandoning at the low. The difference between the two is not psychology; it is whether you specified in advance what the failure mode would look like.</p></div></div><div class="crs-unit" id="p8_u5"><div class="crs-head"><button class="crs-dot" data-unit="p8_u5" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">6.6 The endgame, honestly stated</div><div class="crs-plain">An honest statement of where this ends.</div></div><div class="crs-mins">1 min</div></div><div class="crs-body"><p>The Protocol has no terminal state where you have "beaten the market." What it has is a process with the following properties:</p>
 <ul>
 <li>You know the expected value of every strategy you trade, net of realistic costs, and you know the uncertainty on that estimate.</li>
 <li>You have pre-specified what failure looks like, so failure is information rather than crisis.</li>
@@ -2907,9 +2807,7 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 <li>You measure your own results against the base rates in §0.3, honestly, and you know that the most likely explanation for a good month is variance.</li>
 </ul>
 <p>That is the entire content of "edge" available to an individual trader. It is not a secret indicator. It is a small number of small, real, cost-surviving inefficiencies, harvested with discipline, sized for survival, and replaced when they die.</p>
-<hr />
-<h1>APPENDIX A — THE GO/NO-GO GATE</h1>
-<p>Every item must pass before capital is committed. A single "no" in blocks 1–3 means do not trade.</p>
+<hr /></div></div></div><div class="crs-section"><h2 class="crs-h2">APPENDIX D — THE ANTI-CURRICULUM</h2><div class="crs-unit" id="p12_u0"><div class="crs-head"><button class="crs-dot" data-unit="p12_u0" aria-label="mark complete"></button><div class="crs-headtext"><div class="crs-title">Closing note</div><div class="crs-plain"></div></div><div class="crs-mins">11 min</div></div><div class="crs-body"><p>Every item must pass before capital is committed. A single "no" in blocks 1–3 means do not trade.</p>
 <h3>Block 1 — Data (Phase 1)</h3>
 <table>
 <thead>
@@ -3119,7 +3017,6 @@ python -c "import numpy as np; p=0.6; f=0.2; eq=100; [eq:=eq*(1+f) if np.random.
 </tbody>
 </table>
 <hr />
-<h1>APPENDIX B — FORMULAS</h1>
 <p><strong>Expectancy</strong>
 $$E = pW - (1-p)L - C$$</p>
 <p><strong>Break-even hit rate</strong>
@@ -3147,7 +3044,6 @@ $$\text{True Backing} = \text{Account} \times \text{Max DD \%}$$</p>
 <p><strong>Volatility-targeted size</strong>
 $$q = q_{\text{base}} \cdot \min!\left(\frac{\sigma_{\text{target}}}{\hat{\sigma}}, \; c_{\max}\right)$$</p>
 <hr />
-<h1>APPENDIX C — PRIMARY BIBLIOGRAPHY</h1>
 <p>Grouped by the phase that relies on it. These are the sources that carry the load; the document deliberately does not cite 5,000 papers it did not use.</p>
 <h3>Overfitting, multiple testing, validation</h3>
 <ul>
@@ -3233,7 +3129,6 @@ $$q = q_{\text{base}} \cdot \min!\left(\frac{\sigma_{\text{target}}}{\hat{\sigma
 <li>Covel, M. (2009). <em>Trend Following.</em> [Read critically; the survivorship in this genre is severe]</li>
 </ul>
 <hr />
-<h1>APPENDIX D — THE ANTI-CURRICULUM</h1>
 <p>What this Protocol refuses to teach, and why. This list is as important as the rest of the document, because the fastest way to lose money is to spend a year learning something that cannot work.</p>
 <table>
 <thead>
@@ -3322,14 +3217,56 @@ $$q = q_{\text{base}} \cdot \min!\left(\frac{\sigma_{\text{target}}}{\hat{\sigma
 </tbody>
 </table>
 <hr />
-<h2>Closing note</h2>
 <p>The Protocol is falsifiable, and that is its only claim to authority. If a claim in this document fails a test you run, the claim is wrong and the document should be revised — that is the correct outcome, not a failure of the framework.</p>
 <p>The single sentence to carry out of here: <strong>you will not find an edge in a chart pattern, but you can build one out of a mechanism, a cost model, a validation protocol, and a sizing rule — and the last two are where the money is.</strong></p>
 <hr />
 <p><em>Ultra Edge Academy · Master File v1.0</em>
-<em>Every statistic in this document is attributed to a named source in Appendix C. Where the evidence is contested or the effect is regime-dependent, the document says so. Where a widely-taught claim has no derivation behind it, the document names it and removes it.</em></p>
+<em>Every statistic in this document is attributed to a named source in Appendix C. Where the evidence is contested or the effect is regime-dependent, the document says so. Where a widely-taught claim has no derivation behind it, the document names it and removes it.</em></p></div></div></div></main>
         </div>
     </div>
+    <script>
+    (function(){
+      var KEY = 'ue_course_done';
+      var done = {};
+      try { done = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch(e){ done = {}; }
+      var dots = Array.prototype.slice.call(document.querySelectorAll('.crs-dot'));
+      var total = dots.length;
+
+      function save(){ try { localStorage.setItem(KEY, JSON.stringify(done)); } catch(e){} }
+      function paint(){
+        var n = 0;
+        dots.forEach(function(d){
+          var id = d.getAttribute('data-unit');
+          var isDone = !!done[id];
+          if (isDone) n++;
+          d.classList.toggle('done', isDone);
+          var link = document.querySelector('.crs-link[data-unit="' + id + '"]');
+          if (link) link.classList.toggle('done', isDone);
+        });
+        var pct = total ? Math.round(n / total * 100) : 0;
+        var fill = document.getElementById('crs-fill');
+        if (fill) fill.style.width = pct + '%';
+        var lbl = document.getElementById('crs-progress-label');
+        if (lbl) lbl.textContent = n + ' / ' + total + ' COMPLETE  ' + pct + '%';
+      }
+      dots.forEach(function(d){
+        d.addEventListener('click', function(e){
+          e.preventDefault();
+          var id = d.getAttribute('data-unit');
+          if (done[id]) delete done[id]; else done[id] = 1;
+          save(); paint();
+        });
+      });
+      Array.prototype.forEach.call(document.querySelectorAll('.crs-link'), function(a){
+        a.addEventListener('click', function(e){
+          e.preventDefault();
+          var t = document.getElementById(a.getAttribute('data-unit'));
+          if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+      paint();
+    })();
+    </script>
     
         </main>
         
