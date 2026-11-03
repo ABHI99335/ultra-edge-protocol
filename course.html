@@ -19,7 +19,14 @@
         
         
     <header class="term-header">
-        <a class="term-brand" href="index.html">ULTRA EDGE <span>â–¸ SYSTEM</span></a>
+        <div class="term-left">
+            <a class="term-brand" href="index.html">ULTRA EDGE <span>â–¸ SYSTEM</span></a>
+            <button class="term-refresh" id="ue-refresh" type="button" title="Refresh page" aria-label="Refresh page">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12a9 9 0 1 1-2.64-6.36"/><polyline points="21 3 21 9 15 9"/>
+                </svg>
+            </button>
+        </div>
         <div class="nav-links"><a href="index.html" class="nav-btn">F1 · HOME</a><a href="approach.html" class="nav-btn">F2 · APPROACH</a><a href="edge.html" class="nav-btn">F3 · OUR EDGE</a><a href="graveyard.html" class="nav-btn">F4 · GRAVEYARD</a><a href="course.html" class="nav-btn active">F5 · COURSE</a><a href="principal.html" class="nav-btn">F6 · PRINCIPAL</a><a href="news.html" class="nav-btn">F7 · NEWS</a><a href="contact.html" class="nav-btn">F8 · CONTACT</a><a href="terminal.html" class="nav-btn">F9 · TERMINAL</a></div>
         <div class="term-status mono" style="font-size: 11px; color: var(--text-dim);">
             UTC <span id="utc-time" class="text-amber">00:00:00</span> | LOC <span id="local-time" class="text-amber">00:00:00</span>
@@ -34,6 +41,28 @@
         if(utcEl) utcEl.innerText = now.toISOString().split('T')[1].split('.')[0];
         if(locEl) locEl.innerText = now.toLocaleTimeString('en-GB');
     }, 1000);
+</script>
+
+    
+<script>
+(function(){
+  var btn = document.getElementById('ue-refresh');
+  if (!btn) return;
+  btn.addEventListener('click', function(){
+    btn.classList.add('spin');
+    btn.disabled = true;
+    try {
+      var u = new URL(window.location.href);
+      u.searchParams.set('r', Date.now());
+      window.location.replace(u.toString());
+    } catch (e) {
+      window.location.reload();
+    }
+  });
+  window.addEventListener('pageshow', function(){
+    if (btn) { btn.classList.remove('spin'); btn.disabled = false; }
+  });
+})();
 </script>
 
     
