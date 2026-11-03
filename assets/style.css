@@ -88,6 +88,47 @@ body { background-color: transparent; }
 .term-shell::after { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 3;
   background: repeating-linear-gradient(0deg, rgba(255,255,255,0.014) 0px, rgba(255,255,255,0.014) 1px, transparent 1px, transparent 3px); }
 .term-user { font-family: var(--mono); font-size: 10px; letter-spacing: .14em; color: var(--text-dim); }
+.tx-grid { display: grid; grid-template-columns: 1.55fr 1fr 0.95fr; gap: 14px; align-items: start; }
+@media (max-width: 1400px) { .tx-grid { grid-template-columns: 1fr 1fr; } .tx-right { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; } }
+@media (max-width: 900px) { .tx-grid { grid-template-columns: 1fr; } .tx-right { grid-template-columns: 1fr; } }
+.tx-right { display: grid; gap: 14px; }
+.tx-row { margin-top: 14px; }
+.tx-whead { display: grid; grid-template-columns: 1.5fr 60px 74px 66px 46px 52px 48px; gap: 6px; font-family: var(--mono); font-size: 8px; letter-spacing: .1em; color: var(--text-dim); padding: 0 4px 6px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.tx-whead span:not(:first-child) { text-align: right; }
+.tx-wrow { display: grid; grid-template-columns: 1.5fr 60px 74px 66px 46px 52px 48px; gap: 6px; align-items: center; font-family: var(--mono); font-size: 11px; padding: 5px 4px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.tx-wrow:hover { background: rgba(255,176,0,0.05); }
+.tx-wsym { color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tx-wspk { width: 54px; }
+.tx-wpx { color: #fff; text-align: right; }
+.tx-wrsi, .tx-watr, .tx-wvol { color: var(--text-dim); text-align: right; }
+.tx-crow { display: grid; grid-template-columns: 42px repeat(12, 1fr); gap: 1px; }
+.tx-ch { font-family: var(--mono); font-size: 7.5px; color: var(--text-dim); overflow: hidden; }
+.tx-chl { color: var(--amber); }
+.tx-cc { display: block; height: 15px; }
+.tx-rowline { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; font-family: var(--mono); font-size: 11px; padding: 5px 4px; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.tx-rowline.hi { background: rgba(255,176,0,0.10); border-left: 2px solid var(--amber); padding-left: 8px; }
+.tx-rowline.hi span:first-child { color: var(--amber); font-weight: 700; }
+.tx-treas { display: grid; grid-template-columns: 1.6fr 0.6fr 1fr; gap: 20px; align-items: end; }
+@media (max-width: 900px) { .tx-treas { grid-template-columns: 1fr; } }
+.tx-curve { display: flex; align-items: flex-end; gap: 8px; height: 96px; }
+.tx-bar { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; flex: 1; height: 100%; }
+.tx-barf { width: 100%; background: linear-gradient(180deg, var(--amber), rgba(255,176,0,0.25)); border-radius: 2px 2px 0 0; }
+.tx-barv { font-family: var(--mono); font-size: 9px; color: #fff; margin-top: 4px; }
+.tx-bark { font-family: var(--mono); font-size: 8px; color: var(--text-dim); }
+.tx-srow { display: flex; justify-content: space-between; font-family: var(--mono); font-size: 11px; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+.tx-sk { color: var(--text-dim); letter-spacing: .1em; }
+.tx-hlabel { font-family: var(--mono); font-size: 8px; letter-spacing: .12em; color: var(--text-dim); margin-bottom: 4px; }
+.tx-btc { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 26px; }
+@media (max-width: 900px) { .tx-btc { grid-template-columns: 1fr; } }
+.tx-btcnums { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.tx-bn { display: flex; flex-direction: column; border-left: 2px solid var(--amber); padding-left: 12px; }
+.tx-bnv { font-family: var(--mono); font-size: 22px; color: var(--amber); font-weight: 700; line-height: 1.1; }
+.tx-bnk { font-family: var(--mono); font-size: 8px; letter-spacing: .14em; color: var(--text-dim); margin-top: 4px; }
+.tx-brow { display: grid; grid-template-columns: 150px 1fr 70px; gap: 10px; align-items: center; font-family: var(--mono); font-size: 10px; padding: 4px 0; }
+.tx-bname { color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tx-btrack { height: 8px; background: rgba(255,255,255,0.06); border-radius: 4px; overflow: hidden; }
+.tx-bfill { display: block; height: 100%; background: linear-gradient(90deg, var(--amber), #3FB27F); }
+.tx-bnum { color: #fff; text-align: right; }
 .term-ticker { overflow: hidden; border-top: 1px solid var(--panel-border); border-bottom: 1px solid var(--panel-border);
   margin: 0 0 20px; padding: 9px 0; }
 .term-ticker-track { display: inline-flex; gap: 30px; white-space: nowrap; animation: termMarquee 70s linear infinite; }
