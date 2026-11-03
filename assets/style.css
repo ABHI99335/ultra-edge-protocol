@@ -122,6 +122,21 @@ body { background-color: transparent; }
 .term-crow { display: grid; grid-template-columns: 44px repeat(16, 1fr); gap: 1px; }
 .term-ch { color: var(--text-dim); font-size: 8px; overflow: hidden; }
 .term-cc { display: block; height: 16px; }
+.rules-stack { display: flex; flex-direction: column; gap: 18px; margin-top: 18px; }
+.rule-tube { position: relative; background: rgba(255,255,255,0.028); border: 1px solid rgba(255,255,255,0.10);
+  border-left: 2px solid rgba(255,176,0,0.55); border-radius: 12px; padding: 20px 24px 20px 22px;
+  box-shadow: 0 10px 34px rgba(0,0,0,0.42), inset 0 1px 0 rgba(255,255,255,0.06);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
+.rule-tube:hover { border-left-color: var(--amber); box-shadow: 0 14px 44px rgba(0,0,0,0.55), 0 0 26px rgba(255,176,0,0.10), inset 0 1px 0 rgba(255,255,255,0.09); transform: translateY(-1px); }
+.rule-head { display: flex; align-items: flex-start; gap: 18px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.rule-num { font-family: var(--mono); font-size: 26px; font-weight: 700; color: var(--amber); line-height: 1; letter-spacing: .04em; min-width: 42px; opacity: .92; }
+.rule-title { font-family: var(--mono); font-size: 14px; color: #fff; letter-spacing: .03em; text-transform: uppercase; line-height: 1.35; }
+.rule-line { font-family: var(--mono); font-size: 11px; color: var(--text-dim); margin-top: 5px; letter-spacing: .04em; }
+.rule-body { display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; margin-top: 15px; }
+@media (max-width: 980px) { .rule-body { grid-template-columns: 1fr; gap: 14px; } }
+.rule-col p { font-size: 13px; line-height: 1.62; color: var(--text); margin: 6px 0 0; }
+.rule-k { font-family: var(--mono); font-size: 9px; letter-spacing: .18em; color: var(--amber); opacity: .8; }
 .term-grid2 { grid-template-columns: 1fr 380px; margin-top: 16px; }
 @media (max-width: 1320px) { .term-grid2 { grid-template-columns: 1fr; } }
 .term-hint { font-family: var(--mono); font-size: 9px; color: var(--text-dim); margin: -6px 0 10px; letter-spacing: .04em; }
